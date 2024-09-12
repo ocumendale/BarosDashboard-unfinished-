@@ -35,7 +35,6 @@
             clear_btn = new Button();
             signup_Btn = new Button();
             checkbxShowPass = new CheckBox();
-            txtConPass = new TextBox();
             conPass = new Label();
             password_txtb = new TextBox();
             password_lbl = new Label();
@@ -114,18 +113,6 @@
             checkbxShowPass.TabIndex = 28;
             checkbxShowPass.Text = "Show Password";
             checkbxShowPass.UseVisualStyleBackColor = true;
-            // 
-            // txtConPass
-            // 
-            txtConPass.BackColor = Color.DarkGoldenrod;
-            txtConPass.BorderStyle = BorderStyle.FixedSingle;
-            txtConPass.Cursor = Cursors.IBeam;
-            txtConPass.ForeColor = Color.FromArgb(24, 25, 56);
-            txtConPass.Location = new Point(93, 286);
-            txtConPass.Multiline = true;
-            txtConPass.Name = "txtConPass";
-            txtConPass.Size = new Size(216, 28);
-            txtConPass.TabIndex = 27;
             // 
             // conPass
             // 
@@ -242,7 +229,6 @@
             Controls.Add(clear_btn);
             Controls.Add(signup_Btn);
             Controls.Add(checkbxShowPass);
-            Controls.Add(txtConPass);
             Controls.Add(conPass);
             Controls.Add(password_txtb);
             Controls.Add(password_lbl);
@@ -268,7 +254,6 @@
         private Button clear_btn;
         private Button signup_Btn;
         private CheckBox checkbxShowPass;
-        private TextBox txtConPass;
         private Label conPass;
         private TextBox password_txtb;
         private Label password_lbl;
