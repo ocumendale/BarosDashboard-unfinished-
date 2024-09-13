@@ -86,6 +86,7 @@
             label2.Size = new Size(538, 276);
             label2.TabIndex = 1;
             label2.Text = resources.GetString("label2.Text");
+            label2.Click += label2_Click;
             // 
             // panel1
             // 
@@ -173,7 +174,6 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.DarkGoldenrod;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold);
