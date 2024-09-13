@@ -32,7 +32,10 @@
             panel3 = new Panel();
             label1 = new Label();
             panel2 = new Panel();
-            label2 = new Label();
+            button8 = new Button();
+            button7 = new Button();
+            request = new Label();
+            reservation = new Label();
             panel1 = new Panel();
             button6 = new Button();
             button5 = new Button();
@@ -69,23 +72,56 @@
             // 
             panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
             panel2.BackgroundImageLayout = ImageLayout.Stretch;
-            panel2.Controls.Add(label2);
+            panel2.Controls.Add(button8);
+            panel2.Controls.Add(button7);
+            panel2.Controls.Add(request);
+            panel2.Controls.Add(reservation);
             panel2.Location = new Point(210, 91);
             panel2.Name = "panel2";
             panel2.Size = new Size(590, 312);
             panel2.TabIndex = 4;
             // 
-            // label2
+            // button8
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Century", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(-23, 47);
-            label2.Name = "label2";
-            label2.Size = new Size(656, 220);
-            label2.TabIndex = 1;
-            label2.Text = resources.GetString("label2.Text");
-            label2.Click += label2_Click;
+            button8.BackColor = Color.DarkGoldenrod;
+            button8.Location = new Point(78, 240);
+            button8.Name = "button8";
+            button8.Size = new Size(99, 23);
+            button8.TabIndex = 3;
+            button8.Text = "click to view!";
+            button8.UseVisualStyleBackColor = false;
+            button8.Click += button8_Click;
+            // 
+            // button7
+            // 
+            button7.BackColor = Color.DarkGoldenrod;
+            button7.Location = new Point(78, 100);
+            button7.Name = "button7";
+            button7.Size = new Size(99, 23);
+            button7.TabIndex = 2;
+            button7.Text = "click to view!";
+            button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
+            // 
+            // request
+            // 
+            request.AutoSize = true;
+            request.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            request.Location = new Point(30, 183);
+            request.Name = "request";
+            request.Size = new Size(99, 24);
+            request.TabIndex = 1;
+            request.Text = "Request";
+            // 
+            // reservation
+            // 
+            reservation.AutoSize = true;
+            reservation.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            reservation.Location = new Point(30, 61);
+            reservation.Name = "reservation";
+            reservation.Size = new Size(138, 24);
+            reservation.TabIndex = 0;
+            reservation.Text = "Reservation";
             // 
             // panel1
             // 
@@ -212,6 +248,9 @@
         private Button button3;
         private Button button2;
         private Button button1;
-        private Label label2;
+        private Label reservation;
+        private Label request;
+        private Button button8;
+        private Button button7;
     }
 }

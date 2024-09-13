@@ -34,13 +34,13 @@
             panel2 = new Panel();
             label2 = new Label();
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             button6 = new Button();
             button5 = new Button();
             button4 = new Button();
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
-            pictureBox1 = new PictureBox();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
@@ -87,6 +87,7 @@
             label2.TabIndex = 1;
             label2.Text = resources.GetString("label2.Text");
             label2.Click += label2_Click;
+            label2.DoubleClick += label2_DoubleClick;
             // 
             // panel1
             // 
@@ -102,6 +103,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(204, 449);
             panel1.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(11, 10);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(46, 25);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 7;
+            pictureBox1.TabStop = false;
             // 
             // button6
             // 
@@ -185,17 +197,6 @@
             button1.Text = "Home";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(11, 10);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(46, 25);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 7;
-            pictureBox1.TabStop = false;
             // 
             // Contact
             // 
