@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
-            pictureBox1 = new PictureBox();
+            HBF1 = new PictureBox();
             button6 = new Button();
             button5 = new Button();
             button4 = new Button();
@@ -43,7 +43,7 @@
             label1 = new Label();
             panel3 = new Panel();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)HBF1).BeginInit();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
@@ -52,7 +52,7 @@
             // 
             panel1.BackColor = Color.FromArgb(246, 180, 71);
             panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(HBF1);
             panel1.Controls.Add(button6);
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button4);
@@ -64,17 +64,17 @@
             panel1.Size = new Size(204, 449);
             panel1.TabIndex = 0;
             // 
-            // pictureBox1
+            // HBF1
             // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(11, 10);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(46, 25);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 6;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
+            HBF1.BackColor = Color.Transparent;
+            HBF1.Image = (Image)resources.GetObject("HBF1.Image");
+            HBF1.Location = new Point(11, 10);
+            HBF1.Name = "HBF1";
+            HBF1.Size = new Size(46, 25);
+            HBF1.SizeMode = PictureBoxSizeMode.Zoom;
+            HBF1.TabIndex = 6;
+            HBF1.TabStop = false;
+            HBF1.Click += pictureBox1_Click;
             // 
             // button6
             // 
@@ -226,7 +226,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "BAROS Dashboard";
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)HBF1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel3.ResumeLayout(false);
@@ -248,6 +248,6 @@
         private Panel panel3;
         private Label label2;
         private Label Greet;
-        private PictureBox pictureBox1;
+        private PictureBox HBF1;
     }
 }

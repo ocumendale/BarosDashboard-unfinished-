@@ -40,9 +40,11 @@
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
+            HBF2 = new PictureBox();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)HBF2).BeginInit();
             SuspendLayout();
             // 
             // panel3
@@ -89,6 +91,7 @@
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(HBF2);
             panel1.Controls.Add(button6);
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button4);
@@ -169,7 +172,7 @@
             button1.BackColor = Color.FromArgb(246, 180, 71);
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Century", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Font = new Font("MS UI Gothic", 17.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ActiveCaptionText;
             button1.Location = new Point(23, 77);
             button1.Name = "button1";
@@ -178,6 +181,17 @@
             button1.Text = "Home";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
+            // 
+            // HBF2
+            // 
+            HBF2.BackColor = Color.Transparent;
+            HBF2.Image = (Image)resources.GetObject("HBF2.Image");
+            HBF2.Location = new Point(11, 10);
+            HBF2.Name = "HBF2";
+            HBF2.Size = new Size(46, 25);
+            HBF2.SizeMode = PictureBoxSizeMode.Zoom;
+            HBF2.TabIndex = 7;
+            HBF2.TabStop = false;
             // 
             // AboutUsForm
             // 
@@ -197,6 +211,7 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)HBF2).EndInit();
             ResumeLayout(false);
         }
 
@@ -213,5 +228,6 @@
         private Button button2;
         private Button button1;
         private Label label1;
+        private PictureBox HBF2;
     }
 }

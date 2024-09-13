@@ -40,9 +40,11 @@
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
+            pictureBox1 = new PictureBox();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel3
@@ -89,6 +91,7 @@
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(button6);
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button4);
@@ -133,10 +136,10 @@
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold);
-            button4.Location = new Point(20, 196);
+            button4.Location = new Point(20, 190);
             button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
-            button4.Size = new Size(165, 38);
+            button4.Size = new Size(179, 38);
             button4.TabIndex = 3;
             button4.Text = "How it works?";
             button4.UseVisualStyleBackColor = true;
@@ -175,13 +178,24 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold);
             button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(23, 77);
+            button1.Location = new Point(20, 59);
             button1.Name = "button1";
             button1.Size = new Size(165, 38);
             button1.TabIndex = 0;
             button1.Text = "Home";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(11, 10);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(46, 25);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 7;
+            pictureBox1.TabStop = false;
             // 
             // Contact
             // 
@@ -200,6 +214,7 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -216,5 +231,6 @@
         private Button button2;
         private Button button1;
         private Label label2;
+        private PictureBox pictureBox1;
     }
 }
