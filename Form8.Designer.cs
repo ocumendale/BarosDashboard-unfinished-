@@ -155,7 +155,7 @@
             fullname_txtb.BorderStyle = BorderStyle.FixedSingle;
             fullname_txtb.Cursor = Cursors.IBeam;
             fullname_txtb.ForeColor = Color.FromArgb(24, 25, 56);
-            fullname_txtb.Location = new Point(106, 109);
+            fullname_txtb.Location = new Point(106, 110);
             fullname_txtb.Margin = new Padding(3, 4, 3, 4);
             fullname_txtb.Multiline = true;
             fullname_txtb.Name = "fullname_txtb";
