@@ -59,13 +59,17 @@ namespace BarosDashboard
 
         private void button7_Click(object sender, EventArgs e)
         {
-            
+            this.Hide();
+            Reservation reserve = new Reservation();
+            reserve.ShowDialog();
 
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-           
+            this.Hide();
+            Form10 request = new Form10();
+            request.ShowDialog();
         }
     }
 }

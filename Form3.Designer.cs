@@ -41,6 +41,7 @@
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
+            contactbtn = new Button();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
@@ -71,6 +72,7 @@
             // 
             panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
             panel2.BackgroundImageLayout = ImageLayout.Stretch;
+            panel2.Controls.Add(contactbtn);
             panel2.Controls.Add(label2);
             panel2.Location = new Point(210, 91);
             panel2.Name = "panel2";
@@ -81,7 +83,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Century", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(84, 36);
+            label2.Location = new Point(96, -67);
             label2.Name = "label2";
             label2.Size = new Size(422, 240);
             label2.TabIndex = 1;
@@ -198,6 +200,16 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // contactbtn
+            // 
+            contactbtn.Location = new Point(257, 215);
+            contactbtn.Name = "contactbtn";
+            contactbtn.Size = new Size(75, 23);
+            contactbtn.TabIndex = 2;
+            contactbtn.Text = "Contacts";
+            contactbtn.UseVisualStyleBackColor = true;
+            contactbtn.Click += contactbtn_Click;
+            // 
             // Contact
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -233,5 +245,6 @@
         private Button button1;
         private Label label2;
         private PictureBox pictureBox1;
+        private Button contactbtn;
     }
 }

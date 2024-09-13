@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BarosDashboard
 {
-    public partial class Reservation : Form
+    public partial class Form10 : Form
     {
-        public Reservation()
+        public Form10()
         {
             InitializeComponent();
         }
