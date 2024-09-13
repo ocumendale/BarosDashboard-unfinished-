@@ -59,7 +59,7 @@
             // 
             AboutUs.AutoSize = true;
             AboutUs.Font = new Font("Century", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            AboutUs.Location = new Point(3, 37);
+            AboutUs.Location = new Point(3, 40);
             AboutUs.Name = "AboutUs";
             AboutUs.Size = new Size(124, 28);
             AboutUs.TabIndex = 2;
@@ -67,7 +67,7 @@
             // 
             // panel2
             // 
-            panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
+            panel2.BackColor = Color.Transparent;
             panel2.BackgroundImageLayout = ImageLayout.Stretch;
             panel2.Controls.Add(label1);
             panel2.Location = new Point(210, 91);
@@ -78,12 +78,14 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Century", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(64, 47);
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("MS UI Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(0, 26);
             label1.Name = "label1";
-            label1.Size = new Size(422, 240);
+            label1.Size = new Size(584, 240);
             label1.TabIndex = 0;
             label1.Text = resources.GetString("label1.Text");
+            label1.Click += label1_Click_1;
             // 
             // panel1
             // 
@@ -165,7 +167,7 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.DarkGoldenrod;
+            button1.BackColor = Color.FromArgb(246, 180, 71);
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Century", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -182,7 +184,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DarkGoldenrod;
+            BackColor = Color.FromArgb(246, 180, 71);
             ClientSize = new Size(800, 450);
             Controls.Add(panel3);
             Controls.Add(panel2);

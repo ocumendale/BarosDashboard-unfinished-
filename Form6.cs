@@ -51,5 +51,10 @@ namespace BarosDashboard
             Services services = new Services();
             services.ShowDialog();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

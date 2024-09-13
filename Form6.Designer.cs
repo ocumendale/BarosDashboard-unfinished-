@@ -79,11 +79,12 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Century", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(84, 36);
+            label2.Location = new Point(-26, 63);
             label2.Name = "label2";
-            label2.Size = new Size(422, 240);
+            label2.Size = new Size(656, 220);
             label2.TabIndex = 1;
             label2.Text = resources.GetString("label2.Text");
+            label2.Click += label2_Click;
             // 
             // panel1
             // 

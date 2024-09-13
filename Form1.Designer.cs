@@ -37,18 +37,22 @@
             button2 = new Button();
             button1 = new Button();
             panel2 = new Panel();
+            Greet = new Label();
             label2 = new Label();
             label1 = new Label();
             panel3 = new Panel();
-            Greet = new Label();
+            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.BackColor = Color.FromArgb(246, 180, 71);
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(button6);
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button4);
@@ -151,6 +155,17 @@
             panel2.Size = new Size(590, 312);
             panel2.TabIndex = 1;
             // 
+            // Greet
+            // 
+            Greet.AutoSize = true;
+            Greet.BackColor = Color.Transparent;
+            Greet.Font = new Font("MS UI Gothic", 17.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Greet.Location = new Point(50, 243);
+            Greet.Name = "Greet";
+            Greet.Size = new Size(457, 69);
+            Greet.TabIndex = 4;
+            Greet.Text = "Please let us know how we can help you. \r\nBecause here, A helping hand is always \r\nwithin reach.";
+            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -176,7 +191,6 @@
             // 
             // panel3
             // 
-            panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(label1);
             panel3.ForeColor = Color.Black;
             panel3.Location = new Point(210, 1);
@@ -184,16 +198,17 @@
             panel3.Size = new Size(590, 69);
             panel3.TabIndex = 2;
             // 
-            // Greet
+            // pictureBox1
             // 
-            Greet.AutoSize = true;
-            Greet.BackColor = Color.Transparent;
-            Greet.Font = new Font("MS UI Gothic", 17.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Greet.Location = new Point(48, 243);
-            Greet.Name = "Greet";
-            Greet.Size = new Size(457, 69);
-            Greet.TabIndex = 4;
-            Greet.Text = "Please let us know how we can help you. \r\nBecause here, A helping hand is always \r\nwithin reach.";
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(11, 10);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(46, 25);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // Form1
             // 
@@ -206,6 +221,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             DoubleBuffered = true;
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "BAROS Dashboard";
@@ -214,6 +230,7 @@
             panel2.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -231,5 +248,6 @@
         private Panel panel3;
         private Label label2;
         private Label Greet;
+        private PictureBox pictureBox1;
     }
 }
