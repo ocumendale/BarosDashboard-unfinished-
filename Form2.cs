@@ -61,5 +61,10 @@ namespace BarosDashboard
         {
 
         }
+
+        private void AboutUsForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
