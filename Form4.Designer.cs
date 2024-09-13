@@ -32,15 +32,24 @@
             panel3 = new Panel();
             label1 = new Label();
             panel2 = new Panel();
+            GetStarted = new Button();
+            label7 = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
             label2 = new Label();
             panel1 = new Panel();
+            HBF4 = new PictureBox();
             button6 = new Button();
             button5 = new Button();
             button4 = new Button();
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
-            HBF4 = new PictureBox();
+            label8 = new Label();
+            label9 = new Label();
+            label10 = new Label();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
@@ -72,21 +81,94 @@
             // 
             panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
             panel2.BackgroundImageLayout = ImageLayout.Stretch;
+            panel2.Controls.Add(label10);
+            panel2.Controls.Add(label9);
+            panel2.Controls.Add(label8);
+            panel2.Controls.Add(GetStarted);
+            panel2.Controls.Add(label7);
+            panel2.Controls.Add(label6);
+            panel2.Controls.Add(label5);
+            panel2.Controls.Add(label4);
+            panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
             panel2.Location = new Point(210, 91);
             panel2.Name = "panel2";
             panel2.Size = new Size(590, 312);
             panel2.TabIndex = 4;
             // 
+            // GetStarted
+            // 
+            GetStarted.BackColor = Color.Silver;
+            GetStarted.FlatStyle = FlatStyle.System;
+            GetStarted.Font = new Font("MS UI Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            GetStarted.Location = new Point(219, 266);
+            GetStarted.Name = "GetStarted";
+            GetStarted.Size = new Size(121, 29);
+            GetStarted.TabIndex = 6;
+            GetStarted.Text = "Get Started";
+            GetStarted.UseVisualStyleBackColor = false;
+            GetStarted.Click += GetStarted_Click;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("MS UI Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Location = new Point(446, 136);
+            label7.Name = "label7";
+            label7.Size = new Size(29, 29);
+            label7.TabIndex = 5;
+            label7.Text = "3";
+            label7.Click += label7_Click;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("MS UI Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(262, 136);
+            label6.Name = "label6";
+            label6.Size = new Size(29, 29);
+            label6.TabIndex = 4;
+            label6.Text = "2";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("MS UI Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(92, 136);
+            label5.Name = "label5";
+            label5.Size = new Size(29, 29);
+            label5.TabIndex = 3;
+            label5.Text = "1";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(416, 174);
+            label4.Name = "label4";
+            label4.Size = new Size(98, 24);
+            label4.TabIndex = 2;
+            label4.Text = "SUBMIT";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(231, 174);
+            label3.Name = "label3";
+            label3.Size = new Size(99, 24);
+            label3.TabIndex = 1;
+            label3.Text = "FILL UP";
+            // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Century", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(84, 36);
+            label2.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(49, 174);
             label2.Name = "label2";
-            label2.Size = new Size(422, 240);
-            label2.TabIndex = 1;
-            label2.Text = resources.GetString("label2.Text");
+            label2.Size = new Size(109, 24);
+            label2.TabIndex = 0;
+            label2.Text = "CHOOSE";
             // 
             // panel1
             // 
@@ -102,6 +184,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(204, 449);
             panel1.TabIndex = 3;
+            // 
+            // HBF4
+            // 
+            HBF4.BackColor = Color.Transparent;
+            HBF4.Image = (Image)resources.GetObject("HBF4.Image");
+            HBF4.Location = new Point(11, 10);
+            HBF4.Name = "HBF4";
+            HBF4.Size = new Size(46, 25);
+            HBF4.SizeMode = PictureBoxSizeMode.Zoom;
+            HBF4.TabIndex = 7;
+            HBF4.TabStop = false;
             // 
             // button6
             // 
@@ -182,16 +275,35 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // HBF4
+            // label8
             // 
-            HBF4.BackColor = Color.Transparent;
-            HBF4.Image = (Image)resources.GetObject("HBF4.Image");
-            HBF4.Location = new Point(11, 10);
-            HBF4.Name = "HBF4";
-            HBF4.Size = new Size(46, 25);
-            HBF4.SizeMode = PictureBoxSizeMode.Zoom;
-            HBF4.TabIndex = 7;
-            HBF4.TabStop = false;
+            label8.AutoSize = true;
+            label8.BackColor = Color.Transparent;
+            label8.Location = new Point(49, 212);
+            label8.Name = "label8";
+            label8.Size = new Size(136, 45);
+            label8.TabIndex = 7;
+            label8.Text = "Choose your transaction\r\n(Barangay documents\r\n of reservations)";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.BackColor = Color.Transparent;
+            label9.Location = new Point(219, 212);
+            label9.Name = "label9";
+            label9.Size = new Size(134, 30);
+            label9.TabIndex = 8;
+            label9.Text = "Fill up the given form of\r\nyour transaction";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = Color.Transparent;
+            label10.Location = new Point(402, 212);
+            label10.Name = "label10";
+            label10.Size = new Size(142, 30);
+            label10.TabIndex = 9;
+            label10.Text = "Submit the form and wait\r\nfor your schedule";
             // 
             // HowItWorks
             // 
@@ -226,7 +338,16 @@
         private Button button3;
         private Button button2;
         private Button button1;
-        private Label label2;
         private PictureBox HBF4;
+        private Label label7;
+        private Label label6;
+        private Label label5;
+        private Label label4;
+        private Label label3;
+        private Label label2;
+        private Button GetStarted;
+        private Label label9;
+        private Label label8;
+        private Label label10;
     }
 }

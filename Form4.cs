@@ -51,5 +51,17 @@ namespace BarosDashboard
             ManageTransaction manage = new ManageTransaction();
             manage.ShowDialog();
         }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GetStarted_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Services services = new Services();
+            services.ShowDialog();
+        }
     }
 }
