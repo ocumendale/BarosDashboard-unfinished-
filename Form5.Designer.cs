@@ -32,6 +32,8 @@
             panel3 = new Panel();
             label1 = new Label();
             panel2 = new Panel();
+            button8 = new Button();
+            button7 = new Button();
             label2 = new Label();
             panel1 = new Panel();
             button6 = new Button();
@@ -69,21 +71,47 @@
             // 
             panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
             panel2.BackgroundImageLayout = ImageLayout.Stretch;
+            panel2.Controls.Add(button8);
+            panel2.Controls.Add(button7);
             panel2.Controls.Add(label2);
             panel2.Location = new Point(210, 91);
             panel2.Name = "panel2";
             panel2.Size = new Size(590, 312);
             panel2.TabIndex = 4;
             // 
+            // button8
+            // 
+            button8.BackColor = Color.Goldenrod;
+            button8.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold);
+            button8.Location = new Point(314, 145);
+            button8.Name = "button8";
+            button8.Size = new Size(195, 82);
+            button8.TabIndex = 2;
+            button8.Text = "BARANGAY DOCUMENT REQUEST";
+            button8.UseVisualStyleBackColor = false;
+            button8.Click += button8_Click;
+            // 
+            // button7
+            // 
+            button7.BackColor = Color.Goldenrod;
+            button7.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold);
+            button7.Location = new Point(60, 145);
+            button7.Name = "button7";
+            button7.Size = new Size(195, 82);
+            button7.TabIndex = 1;
+            button7.Text = "RESERVATION";
+            button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
+            // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Century", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(84, 36);
+            label2.Font = new Font("MS UI Gothic", 28F, FontStyle.Bold);
+            label2.Location = new Point(60, 43);
             label2.Name = "label2";
-            label2.Size = new Size(422, 240);
-            label2.TabIndex = 2;
-            label2.Text = resources.GetString("label2.Text");
+            label2.Size = new Size(481, 38);
+            label2.TabIndex = 0;
+            label2.Text = "CHOOSE A TRANSACTION";
             // 
             // panel1
             // 
@@ -209,6 +237,8 @@
         private Button button3;
         private Button button2;
         private Button button1;
+        private Button button7;
         private Label label2;
+        private Button button8;
     }
 }

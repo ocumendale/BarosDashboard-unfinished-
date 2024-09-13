@@ -1,6 +1,6 @@
 ﻿namespace BarosDashboard
 {
-    partial class Form10
+    partial class reserve
     {
         /// <summary>
         /// Required designer variable.
@@ -28,31 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form10));
-            pictureBox = new PictureBox();
             panel2 = new Panel();
             Request = new Label();
             panel1 = new Panel();
-            ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
+            button3 = new Button();
+            button2 = new Button();
+            button1 = new Button();
+            FormBas = new Button();
+            backReq = new Button();
             panel2.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // pictureBox
-            // 
-            pictureBox.BackColor = Color.Transparent;
-            pictureBox.BackgroundImage = (Image)resources.GetObject("pictureBox.BackgroundImage");
-            pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox.ErrorImage = (Image)resources.GetObject("pictureBox.ErrorImage");
-            pictureBox.Location = new Point(12, 8);
-            pictureBox.Name = "pictureBox";
-            pictureBox.Size = new Size(49, 26);
-            pictureBox.TabIndex = 4;
-            pictureBox.TabStop = false;
-            pictureBox.Click += pictureBox1_Click;
             // 
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.Fixed3D;
+            panel2.Controls.Add(backReq);
             panel2.Controls.Add(Request);
             panel2.Location = new Point(12, 40);
             panel2.Name = "panel2";
@@ -63,43 +54,105 @@
             // 
             Request.AutoSize = true;
             Request.Font = new Font("MS UI Gothic", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Request.Location = new Point(298, 37);
+            Request.Location = new Point(266, 37);
             Request.Name = "Request";
-            Request.Size = new Size(132, 33);
+            Request.Size = new Size(232, 33);
             Request.TabIndex = 0;
-            Request.Text = "Request";
+            Request.Text = "RESERVATION";
+            Request.Click += Request_Click;
             // 
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.Controls.Add(button3);
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(FormBas);
             panel1.Location = new Point(12, 120);
             panel1.Name = "panel1";
             panel1.Size = new Size(776, 323);
             panel1.TabIndex = 2;
             // 
-            // Form10
+            // button3
+            // 
+            button3.BackColor = Color.Goldenrod;
+            button3.Location = new Point(424, 169);
+            button3.Name = "button3";
+            button3.Size = new Size(136, 69);
+            button3.TabIndex = 3;
+            button3.Text = "TENT";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Goldenrod;
+            button2.Location = new Point(220, 169);
+            button2.Name = "button2";
+            button2.Size = new Size(136, 69);
+            button2.TabIndex = 2;
+            button2.Text = "CHAIR";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Goldenrod;
+            button1.Location = new Point(424, 61);
+            button1.Name = "button1";
+            button1.Size = new Size(136, 69);
+            button1.TabIndex = 1;
+            button1.Text = "TABLE";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // FormBas
+            // 
+            FormBas.BackColor = Color.Goldenrod;
+            FormBas.Location = new Point(220, 61);
+            FormBas.Name = "FormBas";
+            FormBas.Size = new Size(136, 69);
+            FormBas.TabIndex = 0;
+            FormBas.Text = "BASKETBALL COURT";
+            FormBas.UseVisualStyleBackColor = false;
+            FormBas.Click += reserveCourt_Click;
+            // 
+            // backReq
+            // 
+            backReq.BackColor = Color.Goldenrod;
+            backReq.Location = new Point(3, 3);
+            backReq.Name = "backReq";
+            backReq.Size = new Size(85, 42);
+            backReq.TabIndex = 4;
+            backReq.Text = "Back";
+            backReq.UseVisualStyleBackColor = false;
+            backReq.Click += backReq_Click;
+            // 
+            // reserve
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 180, 71);
             ClientSize = new Size(800, 450);
-            Controls.Add(pictureBox);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Name = "Form10";
+            Name = "reserve";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Request";
-            ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private PictureBox pictureBox;
         private Panel panel2;
         private Label Request;
         private Panel panel1;
+        private Button FormBas;
+        private Button button3;
+        private Button button2;
+        private Button button1;
+        private Button backReq;
     }
 }

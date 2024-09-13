@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -50,6 +51,20 @@ namespace BarosDashboard
             this.Hide();
             ManageTransaction manage = new ManageTransaction();
             manage.ShowDialog();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            reserve reserve = new reserve();
+            reserve.Show();
+            Visible = false;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            DocuReq docuReq = new DocuReq();
+            docuReq.Show();
+            Visible = false;
         }
     }
 }
