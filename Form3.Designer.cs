@@ -58,12 +58,13 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Century", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold);
             label1.Location = new Point(3, 37);
             label1.Name = "label1";
-            label1.Size = new Size(141, 28);
+            label1.Size = new Size(124, 24);
             label1.TabIndex = 2;
             label1.Text = "CONTACT";
+            label1.Click += label1_Click;
             // 
             // panel2
             // 
@@ -84,6 +85,7 @@
             label2.Size = new Size(422, 240);
             label2.TabIndex = 1;
             label2.Text = resources.GetString("label2.Text");
+            label2.Click += label2_Click;
             // 
             // panel1
             // 
@@ -103,7 +105,7 @@
             // 
             button6.FlatAppearance.BorderSize = 0;
             button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Century", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button6.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold);
             button6.Location = new Point(23, 375);
             button6.Name = "button6";
             button6.Size = new Size(165, 62);
@@ -116,7 +118,7 @@
             // 
             button5.FlatAppearance.BorderSize = 0;
             button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Century", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button5.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold);
             button5.Location = new Point(23, 317);
             button5.Name = "button5";
             button5.Size = new Size(165, 38);
@@ -129,8 +131,8 @@
             // 
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Century", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.Location = new Point(23, 256);
+            button4.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold);
+            button4.Location = new Point(23, 262);
             button4.Name = "button4";
             button4.Size = new Size(165, 38);
             button4.TabIndex = 3;
@@ -142,7 +144,7 @@
             // 
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Century", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold);
             button3.Location = new Point(23, 198);
             button3.Name = "button3";
             button3.Size = new Size(165, 38);
@@ -154,7 +156,7 @@
             // 
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Century", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold);
             button2.Location = new Point(23, 136);
             button2.Name = "button2";
             button2.Size = new Size(165, 38);
@@ -165,10 +167,9 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.DarkGoldenrod;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Century", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold);
             button1.ForeColor = SystemColors.ActiveCaptionText;
             button1.Location = new Point(23, 77);
             button1.Name = "button1";
@@ -182,7 +183,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DarkGoldenrod;
+            BackColor = Color.FromArgb(246, 180, 71);
             ClientSize = new Size(800, 450);
             Controls.Add(panel3);
             Controls.Add(panel2);
