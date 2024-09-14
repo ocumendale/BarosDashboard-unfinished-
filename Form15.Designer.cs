@@ -50,6 +50,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(backId);
             Name = "FormId";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "BARANGAY ID";
             Load += Form15_Load;
             ResumeLayout(false);

@@ -50,6 +50,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(backTent);
             Name = "FormTent";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormTent";
             ResumeLayout(false);
         }

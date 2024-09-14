@@ -36,12 +36,15 @@ namespace BarosDashboard
 
         private void cam_Load(object sender, EventArgs e)
         {
-            CaptureDevice = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            /*CaptureDevice = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             foreach (FilterInfo device in CaptureDevice)
                 comboBox1.Items.Add(device.Name);
 
             comboBox1.SelectedIndex = 0;
             FinalFrame = new VideoCaptureDevice();
+            
+             //Ginawa ko munang comment para magrun sakin
+             */
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -50,6 +50,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(backChair);
             Name = "FormChair";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CHAIR";
             ResumeLayout(false);
         }

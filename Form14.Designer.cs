@@ -50,6 +50,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(backCer);
             Name = "FormCertif";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "BARANGAY CERTIFICATE";
             ResumeLayout(false);
         }
