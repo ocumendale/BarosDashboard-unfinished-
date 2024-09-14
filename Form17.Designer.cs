@@ -50,6 +50,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(backTable);
             Name = "FormTable";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "TABLE";
             ResumeLayout(false);
         }

@@ -50,6 +50,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(backCourt);
             Name = "FormBas";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "BASKETBALL COURT";
             Load += Form16_Load;
             ResumeLayout(false);

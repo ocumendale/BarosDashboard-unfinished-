@@ -50,6 +50,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(backIn);
             Name = "FormIn";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "BARANGAY INDIGENCY";
             ResumeLayout(false);
         }

@@ -140,6 +140,7 @@
             Controls.Add(label1);
             Controls.Add(panel1);
             Name = "DocuReq";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "BARANGAY DOCUMENT REQUEST";
             Load += DocuReq_Load;
             panel1.ResumeLayout(false);

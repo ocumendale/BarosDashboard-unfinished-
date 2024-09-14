@@ -67,9 +67,9 @@ namespace BarosDashboard
 
         private void button8_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            reserve request = new reserve();
-            request.ShowDialog();
+            DocuReq docuReq = new DocuReq();
+            docuReq.Show();
+            Visible = false;
         }
     }
 }

@@ -50,6 +50,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(backCLear);
             Name = "FormClear";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "BARANGAY CLEARANCE";
             ResumeLayout(false);
         }
