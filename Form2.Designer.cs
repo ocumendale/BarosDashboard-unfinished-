@@ -34,13 +34,13 @@
             panel2 = new Panel();
             label1 = new Label();
             panel1 = new Panel();
+            HBF2 = new PictureBox();
             button6 = new Button();
             button5 = new Button();
             button4 = new Button();
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
-            HBF2 = new PictureBox();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
@@ -49,6 +49,7 @@
             // 
             // panel3
             // 
+            panel3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panel3.Controls.Add(AboutUs);
             panel3.ForeColor = Color.Black;
             panel3.Location = new Point(210, 1);
@@ -58,6 +59,7 @@
             // 
             // AboutUs
             // 
+            AboutUs.Anchor = AnchorStyles.Top;
             AboutUs.AutoSize = true;
             AboutUs.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold);
             AboutUs.Location = new Point(3, 37);
@@ -68,6 +70,7 @@
             // 
             // panel2
             // 
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackColor = Color.Transparent;
             panel2.BackgroundImageLayout = ImageLayout.Stretch;
             panel2.Controls.Add(label1);
@@ -78,6 +81,7 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("MS UI Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -90,6 +94,7 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(HBF2);
             panel1.Controls.Add(button6);
@@ -103,8 +108,20 @@
             panel1.Size = new Size(204, 449);
             panel1.TabIndex = 3;
             // 
+            // HBF2
+            // 
+            HBF2.BackColor = Color.Transparent;
+            HBF2.Image = (Image)resources.GetObject("HBF2.Image");
+            HBF2.Location = new Point(11, 10);
+            HBF2.Name = "HBF2";
+            HBF2.Size = new Size(46, 25);
+            HBF2.SizeMode = PictureBoxSizeMode.Zoom;
+            HBF2.TabIndex = 7;
+            HBF2.TabStop = false;
+            // 
             // button6
             // 
+            button6.Anchor = AnchorStyles.Left;
             button6.FlatAppearance.BorderSize = 0;
             button6.FlatStyle = FlatStyle.Flat;
             button6.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold);
@@ -118,6 +135,7 @@
             // 
             // button5
             // 
+            button5.Anchor = AnchorStyles.Left;
             button5.FlatAppearance.BorderSize = 0;
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold);
@@ -131,6 +149,7 @@
             // 
             // button4
             // 
+            button4.Anchor = AnchorStyles.Left;
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold);
@@ -144,6 +163,7 @@
             // 
             // button3
             // 
+            button3.Anchor = AnchorStyles.Left;
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold);
@@ -157,6 +177,7 @@
             // 
             // button2
             // 
+            button2.Anchor = AnchorStyles.Left;
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold);
@@ -169,6 +190,7 @@
             // 
             // button1
             // 
+            button1.Anchor = AnchorStyles.Left;
             button1.BackColor = Color.FromArgb(246, 180, 71);
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
@@ -181,17 +203,6 @@
             button1.Text = "Home";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
-            // 
-            // HBF2
-            // 
-            HBF2.BackColor = Color.Transparent;
-            HBF2.Image = (Image)resources.GetObject("HBF2.Image");
-            HBF2.Location = new Point(11, 10);
-            HBF2.Name = "HBF2";
-            HBF2.Size = new Size(46, 25);
-            HBF2.SizeMode = PictureBoxSizeMode.Zoom;
-            HBF2.TabIndex = 7;
-            HBF2.TabStop = false;
             // 
             // AboutUsForm
             // 

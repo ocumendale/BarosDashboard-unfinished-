@@ -43,6 +43,7 @@
             // 
             // signUpLogo
             // 
+            signUpLogo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             signUpLogo.Image = (Image)resources.GetObject("signUpLogo.Image");
             signUpLogo.Location = new Point(383, 96);
             signUpLogo.Name = "signUpLogo";
@@ -134,6 +135,7 @@
             // 
             // loginlbl
             // 
+            loginlbl.Anchor = AnchorStyles.Top;
             loginlbl.AutoSize = true;
             loginlbl.Font = new Font("MS UI Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             loginlbl.Location = new Point(301, 54);

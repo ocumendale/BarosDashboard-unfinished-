@@ -23,5 +23,10 @@ namespace BarosDashboard
             ManageTransaction manage = new ManageTransaction();
             manage.ShowDialog();
         }
+
+        private void Reservation_Resize(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

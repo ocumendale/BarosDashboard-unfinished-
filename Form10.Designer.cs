@@ -29,19 +29,20 @@
         private void InitializeComponent()
         {
             panel2 = new Panel();
+            backReq = new Button();
             Request = new Label();
             panel1 = new Panel();
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
             FormBas = new Button();
-            backReq = new Button();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel2
             // 
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BorderStyle = BorderStyle.Fixed3D;
             panel2.Controls.Add(backReq);
             panel2.Controls.Add(Request);
@@ -49,6 +50,17 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(776, 74);
             panel2.TabIndex = 3;
+            // 
+            // backReq
+            // 
+            backReq.BackColor = Color.Goldenrod;
+            backReq.Location = new Point(3, 3);
+            backReq.Name = "backReq";
+            backReq.Size = new Size(85, 42);
+            backReq.TabIndex = 4;
+            backReq.Text = "Back";
+            backReq.UseVisualStyleBackColor = false;
+            backReq.Click += backReq_Click;
             // 
             // Request
             // 
@@ -63,6 +75,7 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BorderStyle = BorderStyle.Fixed3D;
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
@@ -116,17 +129,6 @@
             FormBas.Text = "BASKETBALL COURT";
             FormBas.UseVisualStyleBackColor = false;
             FormBas.Click += reserveCourt_Click;
-            // 
-            // backReq
-            // 
-            backReq.BackColor = Color.Goldenrod;
-            backReq.Location = new Point(3, 3);
-            backReq.Name = "backReq";
-            backReq.Size = new Size(85, 42);
-            backReq.TabIndex = 4;
-            backReq.Text = "Back";
-            backReq.UseVisualStyleBackColor = false;
-            backReq.Click += backReq_Click;
             // 
             // reserve
             // 

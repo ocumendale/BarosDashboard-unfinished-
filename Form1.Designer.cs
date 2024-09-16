@@ -50,6 +50,7 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel1.BackColor = Color.FromArgb(246, 180, 71);
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(HBF1);
@@ -78,6 +79,7 @@
             // 
             // button6
             // 
+            button6.Anchor = AnchorStyles.Left;
             button6.FlatAppearance.BorderSize = 0;
             button6.FlatStyle = FlatStyle.Flat;
             button6.Font = new Font("MS UI Gothic", 17.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -91,6 +93,7 @@
             // 
             // button5
             // 
+            button5.Anchor = AnchorStyles.Left;
             button5.FlatAppearance.BorderSize = 0;
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -104,6 +107,7 @@
             // 
             // button4
             // 
+            button4.Anchor = AnchorStyles.Left;
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -117,6 +121,7 @@
             // 
             // button3
             // 
+            button3.Anchor = AnchorStyles.Left;
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -130,6 +135,7 @@
             // 
             // button2
             // 
+            button2.Anchor = AnchorStyles.Left;
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -143,6 +149,7 @@
             // 
             // button1
             // 
+            button1.Anchor = AnchorStyles.Left;
             button1.BackColor = Color.FromArgb(246, 180, 71);
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
@@ -158,6 +165,7 @@
             // 
             // panel2
             // 
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
             panel2.BackgroundImageLayout = ImageLayout.Stretch;
             panel2.Controls.Add(Greet);
@@ -169,17 +177,19 @@
             // 
             // Greet
             // 
+            Greet.Anchor = AnchorStyles.Top;
             Greet.AutoSize = true;
             Greet.BackColor = Color.Transparent;
-            Greet.Font = new Font("MS UI Gothic", 17.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Greet.Location = new Point(50, 243);
+            Greet.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Greet.Location = new Point(71, 166);
             Greet.Name = "Greet";
-            Greet.Size = new Size(457, 69);
+            Greet.Size = new Size(462, 72);
             Greet.TabIndex = 4;
             Greet.Text = "Please let us know how we can help you. \r\nBecause here, A helping hand is always \r\nwithin reach.";
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.Top;
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.FlatStyle = FlatStyle.Flat;
@@ -203,6 +213,7 @@
             // 
             // panel3
             // 
+            panel3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel3.Controls.Add(label1);
             panel3.ForeColor = Color.Black;
             panel3.Location = new Point(210, 1);
@@ -221,7 +232,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             DoubleBuffered = true;
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "BAROS Dashboard";
