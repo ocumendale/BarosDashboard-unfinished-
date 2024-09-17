@@ -49,6 +49,7 @@
             // 
             // panel3
             // 
+            panel3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(label1);
             panel3.ForeColor = Color.Black;
@@ -69,6 +70,7 @@
             // 
             // panel2
             // 
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
             panel2.BackgroundImageLayout = ImageLayout.Stretch;
             panel2.Controls.Add(button8);
@@ -81,7 +83,7 @@
             // 
             // button8
             // 
-            button8.BackColor = Color.Goldenrod;
+            button8.BackColor = Color.Beige;
             button8.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold);
             button8.Location = new Point(314, 145);
             button8.Name = "button8";
@@ -93,7 +95,7 @@
             // 
             // button7
             // 
-            button7.BackColor = Color.Goldenrod;
+            button7.BackColor = Color.Beige;
             button7.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold);
             button7.Location = new Point(60, 145);
             button7.Name = "button7";
@@ -106,6 +108,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Beige;
             label2.Font = new Font("MS UI Gothic", 28F, FontStyle.Bold);
             label2.Location = new Point(60, 43);
             label2.Name = "label2";
@@ -115,6 +118,7 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(button6);
             panel1.Controls.Add(button5);

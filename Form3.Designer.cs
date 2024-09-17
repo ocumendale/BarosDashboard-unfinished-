@@ -32,6 +32,8 @@
             panel3 = new Panel();
             label1 = new Label();
             panel2 = new Panel();
+            label3 = new Label();
+            contactbtn = new Button();
             label2 = new Label();
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
@@ -41,7 +43,6 @@
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
-            contactbtn = new Button();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
@@ -50,6 +51,7 @@
             // 
             // panel3
             // 
+            panel3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(label1);
             panel3.ForeColor = Color.Black;
@@ -70,8 +72,10 @@
             // 
             // panel2
             // 
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
             panel2.BackgroundImageLayout = ImageLayout.Stretch;
+            panel2.Controls.Add(label3);
             panel2.Controls.Add(contactbtn);
             panel2.Controls.Add(label2);
             panel2.Location = new Point(210, 91);
@@ -79,20 +83,48 @@
             panel2.Size = new Size(590, 312);
             panel2.TabIndex = 4;
             // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.None;
+            label3.AutoSize = true;
+            label3.BackColor = Color.Beige;
+            label3.Font = new Font("MS UI Gothic", 17.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(92, 123);
+            label3.Name = "label3";
+            label3.Size = new Size(382, 46);
+            label3.TabIndex = 3;
+            label3.Text = "If you have questions or inquiries, \r\n             Please Contact us.";
+            // 
+            // contactbtn
+            // 
+            contactbtn.Anchor = AnchorStyles.None;
+            contactbtn.BackColor = Color.Beige;
+            contactbtn.Location = new Point(195, 192);
+            contactbtn.Name = "contactbtn";
+            contactbtn.Size = new Size(178, 35);
+            contactbtn.TabIndex = 2;
+            contactbtn.Text = "Contacts";
+            contactbtn.UseVisualStyleBackColor = false;
+            contactbtn.Click += contactbtn_Click;
+            // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
-            label2.Font = new Font("Century", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(96, -67);
+            label2.BackColor = Color.Beige;
+            label2.Font = new Font("MS UI Gothic", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(157, 76);
             label2.Name = "label2";
-            label2.Size = new Size(422, 240);
+            label2.Size = new Size(258, 35);
             label2.TabIndex = 1;
-            label2.Text = resources.GetString("label2.Text");
+            label2.Text = "GET IN TOUCH";
             label2.Click += label2_Click;
             label2.DoubleClick += label2_DoubleClick;
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(button6);
@@ -200,16 +232,6 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // contactbtn
-            // 
-            contactbtn.Location = new Point(257, 215);
-            contactbtn.Name = "contactbtn";
-            contactbtn.Size = new Size(75, 23);
-            contactbtn.TabIndex = 2;
-            contactbtn.Text = "Contacts";
-            contactbtn.UseVisualStyleBackColor = true;
-            contactbtn.Click += contactbtn_Click;
-            // 
             // Contact
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -246,5 +268,6 @@
         private Label label2;
         private PictureBox pictureBox1;
         private Button contactbtn;
+        private Label label3;
     }
 }
