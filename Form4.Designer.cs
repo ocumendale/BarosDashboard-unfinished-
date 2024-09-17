@@ -58,6 +58,7 @@
             // 
             // panel3
             // 
+            panel3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel3.BackColor = Color.FromArgb(246, 180, 71);
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(label1);
@@ -79,6 +80,7 @@
             // 
             // panel2
             // 
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
             panel2.BackgroundImageLayout = ImageLayout.Stretch;
             panel2.Controls.Add(label10);
@@ -99,7 +101,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.BackColor = Color.Transparent;
+            label10.BackColor = Color.Beige;
             label10.Location = new Point(402, 212);
             label10.Name = "label10";
             label10.Size = new Size(142, 30);
@@ -109,7 +111,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.BackColor = Color.Transparent;
+            label9.BackColor = Color.Beige;
             label9.Location = new Point(219, 212);
             label9.Name = "label9";
             label9.Size = new Size(134, 30);
@@ -119,7 +121,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.BackColor = Color.Transparent;
+            label8.BackColor = Color.Beige;
             label8.Location = new Point(49, 212);
             label8.Name = "label8";
             label8.Size = new Size(136, 45);
@@ -128,7 +130,7 @@
             // 
             // GetStarted
             // 
-            GetStarted.BackColor = Color.Silver;
+            GetStarted.BackColor = Color.Beige;
             GetStarted.FlatStyle = FlatStyle.System;
             GetStarted.Font = new Font("MS UI Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             GetStarted.Location = new Point(219, 266);
@@ -142,6 +144,7 @@
             // label7
             // 
             label7.AutoSize = true;
+            label7.BackColor = Color.Beige;
             label7.Font = new Font("MS UI Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.Location = new Point(446, 136);
             label7.Name = "label7";
@@ -153,6 +156,7 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.BackColor = Color.Beige;
             label6.Font = new Font("MS UI Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.Location = new Point(262, 136);
             label6.Name = "label6";
@@ -163,6 +167,7 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.BackColor = Color.Beige;
             label5.Font = new Font("MS UI Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.Location = new Point(92, 136);
             label5.Name = "label5";
@@ -173,6 +178,7 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.BackColor = Color.Beige;
             label4.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.Location = new Point(416, 174);
             label4.Name = "label4";
@@ -183,6 +189,7 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Beige;
             label3.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.Location = new Point(231, 174);
             label3.Name = "label3";
@@ -193,6 +200,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Beige;
             label2.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(49, 174);
             label2.Name = "label2";
@@ -202,6 +210,7 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(HBF4);
             panel1.Controls.Add(button6);

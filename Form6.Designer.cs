@@ -50,6 +50,7 @@
             // 
             // panel3
             // 
+            panel3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(label1);
             panel3.ForeColor = Color.Black;
@@ -70,6 +71,7 @@
             // 
             // panel2
             // 
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
             panel2.BackgroundImageLayout = ImageLayout.Stretch;
             panel2.Controls.Add(button8);
@@ -83,10 +85,10 @@
             // 
             // button8
             // 
-            button8.BackColor = Color.DarkGoldenrod;
-            button8.Location = new Point(78, 240);
+            button8.BackColor = Color.Beige;
+            button8.Location = new Point(382, 136);
             button8.Name = "button8";
-            button8.Size = new Size(99, 23);
+            button8.Size = new Size(142, 35);
             button8.TabIndex = 3;
             button8.Text = "click to view!";
             button8.UseVisualStyleBackColor = false;
@@ -94,10 +96,10 @@
             // 
             // button7
             // 
-            button7.BackColor = Color.DarkGoldenrod;
-            button7.Location = new Point(78, 100);
+            button7.BackColor = Color.Beige;
+            button7.Location = new Point(54, 136);
             button7.Name = "button7";
-            button7.Size = new Size(99, 23);
+            button7.Size = new Size(142, 35);
             button7.TabIndex = 2;
             button7.Text = "click to view!";
             button7.UseVisualStyleBackColor = false;
@@ -106,25 +108,28 @@
             // request
             // 
             request.AutoSize = true;
-            request.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            request.Location = new Point(30, 183);
+            request.BackColor = Color.Beige;
+            request.Font = new Font("MS UI Gothic", 22F, FontStyle.Bold);
+            request.Location = new Point(382, 73);
             request.Name = "request";
-            request.Size = new Size(99, 24);
+            request.Size = new Size(124, 30);
             request.TabIndex = 1;
             request.Text = "Request";
             // 
             // reservation
             // 
             reservation.AutoSize = true;
-            reservation.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            reservation.Location = new Point(30, 61);
+            reservation.BackColor = Color.Beige;
+            reservation.Font = new Font("MS UI Gothic", 22F, FontStyle.Bold);
+            reservation.Location = new Point(39, 73);
             reservation.Name = "reservation";
-            reservation.Size = new Size(138, 24);
+            reservation.Size = new Size(172, 30);
             reservation.TabIndex = 0;
             reservation.Text = "Reservation";
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(button6);
             panel1.Controls.Add(button5);

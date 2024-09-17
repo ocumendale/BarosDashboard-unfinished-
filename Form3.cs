@@ -65,7 +65,7 @@ namespace BarosDashboard
 
         private void contactbtn_Click(object sender, EventArgs e)
         {
-            string url = "https://www.canva.com/design/DAGPZrCQMYg/kRR2q1L5j6451GLDqUJ4tg/edit?fbclid=IwY2xjawFQykdleHRuA2FlbQIxMAABHTnbZTsQPuq1-wzMj303kK4XpbXv2c63wu55W5VXIeH_dY_fv0eQKjb58g_aem_xcaBP4PYyhRpQj-e_074xw";
+            string url = "https://www.facebook.com/profile.php?id=100063713499582";
 
             try
             {
