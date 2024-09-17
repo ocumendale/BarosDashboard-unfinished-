@@ -36,8 +36,7 @@ namespace BarosDashboard
 
             if (IsValidUsername(username) && IsValidPassword(password))
             {
-                MessageBox.Show("Login successful!");
-
+                MessageBox.Show("Login Successful!");
             }
             else
             {

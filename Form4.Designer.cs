@@ -32,6 +32,9 @@
             panel3 = new Panel();
             label1 = new Label();
             panel2 = new Panel();
+            label10 = new Label();
+            label9 = new Label();
+            label8 = new Label();
             GetStarted = new Button();
             label7 = new Label();
             label6 = new Label();
@@ -47,9 +50,6 @@
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
-            label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
@@ -95,6 +95,36 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(590, 312);
             panel2.TabIndex = 4;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = Color.Transparent;
+            label10.Location = new Point(402, 212);
+            label10.Name = "label10";
+            label10.Size = new Size(142, 30);
+            label10.TabIndex = 9;
+            label10.Text = "Submit the form and wait\r\nfor your schedule";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.BackColor = Color.Transparent;
+            label9.Location = new Point(219, 212);
+            label9.Name = "label9";
+            label9.Size = new Size(134, 30);
+            label9.TabIndex = 8;
+            label9.Text = "Fill up the given form of\r\nyour transaction";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.Transparent;
+            label8.Location = new Point(49, 212);
+            label8.Name = "label8";
+            label8.Size = new Size(136, 45);
+            label8.TabIndex = 7;
+            label8.Text = "Choose your transaction\r\n(Barangay documents\r\n of reservations)";
             // 
             // GetStarted
             // 
@@ -227,9 +257,9 @@
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold);
-            button4.Location = new Point(23, 256);
+            button4.Location = new Point(11, 253);
             button4.Name = "button4";
-            button4.Size = new Size(165, 38);
+            button4.Size = new Size(189, 58);
             button4.TabIndex = 3;
             button4.Text = "How it works?";
             button4.UseVisualStyleBackColor = true;
@@ -274,36 +304,6 @@
             button1.Text = "Home";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.BackColor = Color.Transparent;
-            label8.Location = new Point(49, 212);
-            label8.Name = "label8";
-            label8.Size = new Size(136, 45);
-            label8.TabIndex = 7;
-            label8.Text = "Choose your transaction\r\n(Barangay documents\r\n of reservations)";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.BackColor = Color.Transparent;
-            label9.Location = new Point(219, 212);
-            label9.Name = "label9";
-            label9.Size = new Size(134, 30);
-            label9.TabIndex = 8;
-            label9.Text = "Fill up the given form of\r\nyour transaction";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.BackColor = Color.Transparent;
-            label10.Location = new Point(402, 212);
-            label10.Name = "label10";
-            label10.Size = new Size(142, 30);
-            label10.TabIndex = 9;
-            label10.Text = "Submit the form and wait\r\nfor your schedule";
             // 
             // HowItWorks
             // 
