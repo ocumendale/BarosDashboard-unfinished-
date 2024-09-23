@@ -19,9 +19,19 @@ namespace BarosDashboard
 
         private void backTent_Click(object sender, EventArgs e)
         {
-            Services services = new Services();
-            services.Show();
+            reserve res = new reserve();
+            res.Show();
             Visible = false;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

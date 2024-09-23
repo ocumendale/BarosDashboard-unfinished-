@@ -19,9 +19,14 @@ namespace BarosDashboard
 
         private void backChair_Click(object sender, EventArgs e)
         {
-            Services services = new Services();
-            services.Show();
+            reserve res = new reserve();
+            res.Show();
             Visible = false;
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

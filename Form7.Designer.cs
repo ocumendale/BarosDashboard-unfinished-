@@ -39,6 +39,7 @@ namespace BarosDashboard
             txt_password = new TextBox();
             passWord = new Label();
             loginlbl = new Label();
+            signUp_btn = new Button();
             ((System.ComponentModel.ISupportInitialize)signUpLogo).BeginInit();
             SuspendLayout();
             // 
@@ -53,6 +54,7 @@ namespace BarosDashboard
             signUpLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             signUpLogo.TabIndex = 26;
             signUpLogo.TabStop = false;
+            signUpLogo.Click += signUpLogo_Click;
             // 
             // exit
             // 
@@ -151,12 +153,28 @@ namespace BarosDashboard
             loginlbl.TabIndex = 18;
             loginlbl.Text = "Sign In";
             // 
+            // signUp_btn
+            // 
+            signUp_btn.BackColor = Color.FromArgb(24, 25, 56);
+            signUp_btn.FlatAppearance.BorderSize = 0;
+            signUp_btn.FlatStyle = FlatStyle.Flat;
+            signUp_btn.ForeColor = Color.FromArgb(246, 180, 71);
+            signUp_btn.Location = new Point(40, 481);
+            signUp_btn.Margin = new Padding(3, 4, 3, 4);
+            signUp_btn.Name = "signUp_btn";
+            signUp_btn.Size = new Size(114, 47);
+            signUp_btn.TabIndex = 27;
+            signUp_btn.Text = "Sign Up";
+            signUp_btn.UseVisualStyleBackColor = false;
+            signUp_btn.Click += signUp_btn_Click;
+            // 
             // login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 180, 71);
             ClientSize = new Size(914, 600);
+            Controls.Add(signUp_btn);
             Controls.Add(signUpLogo);
             Controls.Add(exit);
             Controls.Add(clear2_btn);
@@ -177,7 +195,7 @@ namespace BarosDashboard
 
         private void exit_Click(object sender, EventArgs e)
         {
-           
+            this.Close();
         }
 
         private void cNum_tb_TextChanged(object sender, EventArgs e)
@@ -196,5 +214,6 @@ namespace BarosDashboard
         private TextBox txt_password;
         private Label passWord;
         private Label loginlbl;
+        private Button signUp_btn;
     }
 }

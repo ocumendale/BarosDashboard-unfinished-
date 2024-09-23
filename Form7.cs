@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 using System.Data.SqlClient;
 
 namespace BarosDashboard
@@ -18,8 +19,6 @@ namespace BarosDashboard
         {
             InitializeComponent();
         }
-
-        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-0VUJ82CU;Initial Catalog=userregcs;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
 
         private void login_Load(object sender, EventArgs e)
         {
@@ -36,47 +35,66 @@ namespace BarosDashboard
 
         private void signin_Btn_Click(object sender, EventArgs e)
         {
-            String username, user_password;
-            username = txt_ContactNum.Text;
-            user_password = txt_password.Text;
+
+
+            string conn = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
+            string contact = txt_ContactNum.Text.Trim();
+            string password = txt_password.Text.Trim();
+
+            if (string.IsNullOrEmpty(contact) || string.IsNullOrEmpty(password))
+            {
+                signin_Btn.Text = "Please enter both contact and password.";
+                return;
+            }
 
             try
             {
-                con.Open();
-                String query = "SELECT * FROM register WHERE contactNumber = @contactNumber AND password = @password";
-                SqlDataAdapter adapter = new SqlDataAdapter(query, con);
-                adapter.SelectCommand.Parameters.AddWithValue("@contactNumber", txt_ContactNum.Text);
-                adapter.SelectCommand.Parameters.AddWithValue("@password", txt_password.Text);
-
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-
-                if (dt.Rows.Count > 0)
+                using (MySqlConnection con = new MySqlConnection(conn))
                 {
-                    username = txt_ContactNum.Text;
-                    user_password = txt_password.Text;
+                    con.Open();
+                    string query = "SELECT COUNT(1) FROM users WHERE contact=@contact AND password=@password";
+                    using (MySqlCommand cmd = new MySqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@contact", contact);
+                        cmd.Parameters.AddWithValue("@password", password);
 
-                    Form1 form1 = new Form1();
-                    form1.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Invalid Login Details", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txt_ContactNum.Clear();
-                    txt_password.Clear();
+                        int count = Convert.ToInt32(cmd.ExecuteScalar());
 
-                    txt_ContactNum.Focus();
+                        if (count == 1)
+                        {
+                            signin_Btn.Text = "Login successful!";
+                            Form1 form1 = new Form1();
+                            form1.Show();
+                            this.Hide();
+
+                        }
+                        else
+                        {
+                            signin_Btn.Text = "Incorrect contact or password.";
+                        }
+                    }
                 }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("MySQL Error: " + ex.Message);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("An error occurred: " + ex.Message);
             }
-            finally
-            {
-                con.Close();
-            }
+        }
+
+        private void signUpLogo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void signUp_btn_Click(object sender, EventArgs e)
+        {
+            userRegistration userRegistration = new userRegistration();
+            userRegistration.Show();
+            this.Hide();
         }
     }
 }

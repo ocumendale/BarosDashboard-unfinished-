@@ -19,8 +19,8 @@ namespace BarosDashboard
 
         private void backIn_Click(object sender, EventArgs e)
         {
-            Services services = new Services();
-            services.Show();
+            DocuReq docureq = new DocuReq();
+            docureq.Show();
             Visible = false;
         }
     }

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace BarosDashboard
 {
@@ -25,24 +25,47 @@ namespace BarosDashboard
 
         private void signup_Btn_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=LAPTOP-0VUJ82CU;Initial Catalog=userregcs;Integrated Security=True;TrustServerCertificate=True";
-            string query = "INSERT INTO [dbo].[register] ([fullname], [email], [contactNumber], [password]) VALUES (@FullName, @Email, @ContactNumber, @Password)";
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    cmd.Parameters.AddWithValue("@FullName", fullname_txtb.Text);
-                    cmd.Parameters.AddWithValue("@Email", email_txtb.Text);
-                    cmd.Parameters.AddWithValue("@ContactNumber", contact_txtb.Text);
-                    cmd.Parameters.AddWithValue("@Password", password_txtb.Text);
+            string connString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
+            string fullName = fullname_txtb.Text.Trim();
+            string contact = contact_txtb.Text.Trim();      
+            string email = email_txtb.Text.Trim();
+            string password = password_txtb.Text.Trim();
 
-                    con.Open();
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                }
+            if (string.IsNullOrEmpty(fullName) || string.IsNullOrEmpty(contact) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(email))
+            {
+                MessageBox.Show("Please fill in all fields.");
+                login log = new login();
+                log.Show();
+                this.Hide();
+                return;
             }
 
-            MessageBox.Show("Register Successfully");
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(connString))
+                {
+                    con.Open();
+                    string query = "INSERT INTO users (fullName, contact, password, email) VALUES (@fullName, @contact, @password, @email)";
+                    using (MySqlCommand cmd = new MySqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@fullName", fullName);
+                        cmd.Parameters.AddWithValue("@contact", contact);
+                        cmd.Parameters.AddWithValue("@password", password);
+                        cmd.Parameters.AddWithValue("@email", email);
+
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Registration successful!");
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("MySQL Error: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
         }
 
         private void userRegistration_Load(object sender, EventArgs e)

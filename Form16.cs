@@ -24,9 +24,19 @@ namespace BarosDashboard
 
         private void backCourt_Click(object sender, EventArgs e)
         {
-            Services services = new Services();
-            services.Show();
+            reserve res = new reserve();
+            res.Show();
             Visible = false;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
