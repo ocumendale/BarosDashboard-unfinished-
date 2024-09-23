@@ -33,5 +33,10 @@ namespace BarosDashboard
         {
 
         }
+
+        private void FormTent_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

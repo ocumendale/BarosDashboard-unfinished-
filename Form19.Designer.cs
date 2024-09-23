@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTent));
+            backTent = new Button();
+            button1 = new Button();
             textBox6 = new TextBox();
             label12 = new Label();
             label11 = new Label();
@@ -46,184 +49,9 @@
             textBox1 = new TextBox();
             label2 = new Label();
             label1 = new Label();
-            backTent = new Button();
-            button1 = new Button();
+            signUpLogo = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)signUpLogo).BeginInit();
             SuspendLayout();
-            // 
-            // textBox6
-            // 
-            textBox6.BackColor = Color.DarkGoldenrod;
-            textBox6.Location = new Point(557, 325);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(184, 23);
-            textBox6.TabIndex = 59;
-            textBox6.TextAlign = HorizontalAlignment.Center;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.Location = new Point(603, 351);
-            label12.Name = "label12";
-            label12.Size = new Size(108, 25);
-            label12.TabIndex = 58;
-            label12.Text = "QUANTITY";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(278, 290);
-            label11.Name = "label11";
-            label11.Size = new Size(245, 25);
-            label11.TabIndex = 57;
-            label11.Text = "DETAILS OF RESERVATION";
-            // 
-            // textBox5
-            // 
-            textBox5.BackColor = Color.DarkGoldenrod;
-            textBox5.Location = new Point(305, 325);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(184, 23);
-            textBox5.TabIndex = 56;
-            textBox5.TextAlign = HorizontalAlignment.Center;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(370, 351);
-            label10.Name = "label10";
-            label10.Size = new Size(57, 25);
-            label10.TabIndex = 55;
-            label10.Text = "TIME";
-            // 
-            // textBox4
-            // 
-            textBox4.BackColor = Color.DarkGoldenrod;
-            textBox4.Location = new Point(64, 325);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(184, 23);
-            textBox4.TabIndex = 54;
-            textBox4.TextAlign = HorizontalAlignment.Center;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(125, 351);
-            label9.Name = "label9";
-            label9.Size = new Size(59, 25);
-            label9.TabIndex = 53;
-            label9.Text = "DATE";
-            // 
-            // textBox3
-            // 
-            textBox3.BackColor = Color.DarkGoldenrod;
-            textBox3.Location = new Point(544, 253);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(244, 23);
-            textBox3.TabIndex = 52;
-            textBox3.TextAlign = HorizontalAlignment.Center;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(565, 227);
-            label8.Name = "label8";
-            label8.Size = new Size(203, 25);
-            label8.TabIndex = 51;
-            label8.Text = "REASON OF REQUEST";
-            // 
-            // textBox2
-            // 
-            textBox2.BackColor = Color.DarkGoldenrod;
-            textBox2.Location = new Point(12, 253);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(244, 23);
-            textBox2.TabIndex = 50;
-            textBox2.TextAlign = HorizontalAlignment.Center;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(42, 228);
-            label7.Name = "label7";
-            label7.Size = new Size(185, 25);
-            label7.TabIndex = 49;
-            label7.Text = "CONTACT NUMBER";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(473, 188);
-            label6.Name = "label6";
-            label6.Size = new Size(111, 20);
-            label6.TabIndex = 48;
-            label6.Text = "MIDDLENAME";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(213, 188);
-            label5.Name = "label5";
-            label5.Size = new Size(90, 20);
-            label5.TabIndex = 47;
-            label5.Text = "LASTNAME";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(354, 188);
-            label4.Name = "label4";
-            label4.Size = new Size(94, 20);
-            label4.TabIndex = 46;
-            label4.Text = "FIRSTNAME";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(349, 127);
-            label3.Name = "label3";
-            label3.Size = new Size(117, 25);
-            label3.TabIndex = 45;
-            label3.Text = "FULL NAME";
-            // 
-            // textBox1
-            // 
-            textBox1.BackColor = Color.DarkGoldenrod;
-            textBox1.Location = new Point(213, 153);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(371, 23);
-            textBox1.TabIndex = 44;
-            textBox1.TextAlign = HorizontalAlignment.Center;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(213, 85);
-            label2.Name = "label2";
-            label2.Size = new Size(359, 20);
-            label2.TabIndex = 43;
-            label2.Text = "FILL OUT THIS FORM FOR RESERVATION OF TENT";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(359, 37);
-            label1.Name = "label1";
-            label1.Size = new Size(84, 37);
-            label1.TabIndex = 42;
-            label1.Text = "TENT";
-            label1.Click += label1_Click;
             // 
             // backTent
             // 
@@ -238,24 +66,231 @@
             // 
             // button1
             // 
+            button1.Anchor = AnchorStyles.Bottom;
             button1.BackColor = Color.DarkGoldenrod;
-            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(349, 403);
+            button1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(840, 986);
             button1.Name = "button1";
-            button1.Size = new Size(105, 35);
-            button1.TabIndex = 60;
+            button1.Size = new Size(239, 74);
+            button1.TabIndex = 84;
             button1.Text = "SUBMIT";
             button1.UseVisualStyleBackColor = false;
+            // 
+            // textBox6
+            // 
+            textBox6.Anchor = AnchorStyles.Bottom;
+            textBox6.BackColor = Color.DarkGoldenrod;
+            textBox6.Font = new Font("Segoe UI", 15.75F);
+            textBox6.Location = new Point(1265, 791);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(493, 35);
+            textBox6.TabIndex = 83;
+            // 
+            // label12
+            // 
+            label12.Anchor = AnchorStyles.Bottom;
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.Location = new Point(1456, 829);
+            label12.Name = "label12";
+            label12.Size = new Size(135, 32);
+            label12.TabIndex = 82;
+            label12.Text = "QUANTITY";
+            // 
+            // label11
+            // 
+            label11.Anchor = AnchorStyles.Bottom;
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.Location = new Point(656, 656);
+            label11.Name = "label11";
+            label11.Size = new Size(621, 65);
+            label11.TabIndex = 81;
+            label11.Text = "DETAILS OF RESERVATION";
+            // 
+            // textBox5
+            // 
+            textBox5.Anchor = AnchorStyles.Bottom;
+            textBox5.BackColor = Color.DarkGoldenrod;
+            textBox5.Font = new Font("Segoe UI", 15.75F);
+            textBox5.Location = new Point(702, 742);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(523, 35);
+            textBox5.TabIndex = 80;
+            textBox5.TextAlign = HorizontalAlignment.Center;
+            // 
+            // label10
+            // 
+            label10.Anchor = AnchorStyles.Bottom;
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.Location = new Point(928, 780);
+            label10.Name = "label10";
+            label10.Size = new Size(72, 32);
+            label10.TabIndex = 79;
+            label10.Text = "TIME";
+            // 
+            // textBox4
+            // 
+            textBox4.Anchor = AnchorStyles.Bottom;
+            textBox4.BackColor = Color.DarkGoldenrod;
+            textBox4.Font = new Font("Segoe UI", 15.75F);
+            textBox4.Location = new Point(153, 791);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(493, 35);
+            textBox4.TabIndex = 78;
+            textBox4.TextAlign = HorizontalAlignment.Center;
+            // 
+            // label9
+            // 
+            label9.Anchor = AnchorStyles.Bottom;
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.Location = new Point(362, 829);
+            label9.Name = "label9";
+            label9.Size = new Size(74, 32);
+            label9.TabIndex = 77;
+            label9.Text = "DATE";
+            // 
+            // textBox3
+            // 
+            textBox3.Anchor = AnchorStyles.Right;
+            textBox3.BackColor = Color.DarkGoldenrod;
+            textBox3.Font = new Font("Segoe UI", 15.75F);
+            textBox3.Location = new Point(1072, 527);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(580, 35);
+            textBox3.TabIndex = 76;
+            textBox3.TextAlign = HorizontalAlignment.Center;
+            // 
+            // label8
+            // 
+            label8.Anchor = AnchorStyles.Right;
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 36F, FontStyle.Bold);
+            label8.Location = new Point(1106, 452);
+            label8.Name = "label8";
+            label8.Size = new Size(517, 65);
+            label8.TabIndex = 75;
+            label8.Text = "REASON OF REQUEST";
+            // 
+            // textBox2
+            // 
+            textBox2.Anchor = AnchorStyles.Left;
+            textBox2.BackColor = Color.DarkGoldenrod;
+            textBox2.Font = new Font("Segoe UI", 15.75F);
+            textBox2.Location = new Point(219, 527);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(580, 35);
+            textBox2.TabIndex = 74;
+            textBox2.TextAlign = HorizontalAlignment.Center;
+            // 
+            // label7
+            // 
+            label7.Anchor = AnchorStyles.Left;
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 36F, FontStyle.Bold);
+            label7.Location = new Point(286, 452);
+            label7.Name = "label7";
+            label7.Size = new Size(467, 65);
+            label7.TabIndex = 73;
+            label7.Text = "CONTACT NUMBER";
+            // 
+            // label6
+            // 
+            label6.Anchor = AnchorStyles.Top;
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(1068, 348);
+            label6.Name = "label6";
+            label6.Size = new Size(178, 32);
+            label6.TabIndex = 72;
+            label6.Text = "MIDDLENAME";
+            // 
+            // label5
+            // 
+            label5.Anchor = AnchorStyles.Top;
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(656, 348);
+            label5.Name = "label5";
+            label5.Size = new Size(143, 32);
+            label5.TabIndex = 71;
+            label5.Text = "LASTNAME";
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.Top;
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(874, 348);
+            label4.Name = "label4";
+            label4.Size = new Size(149, 32);
+            label4.TabIndex = 70;
+            label4.Text = "FIRSTNAME";
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.Top;
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 36F, FontStyle.Bold);
+            label3.Location = new Point(817, 245);
+            label3.Name = "label3";
+            label3.Size = new Size(295, 65);
+            label3.TabIndex = 69;
+            label3.Text = "FULL NAME";
+            // 
+            // textBox1
+            // 
+            textBox1.Anchor = AnchorStyles.Top;
+            textBox1.BackColor = Color.DarkGoldenrod;
+            textBox1.Font = new Font("Segoe UI", 15.75F);
+            textBox1.Location = new Point(660, 310);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(586, 35);
+            textBox1.TabIndex = 68;
+            textBox1.TextAlign = HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.Top;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(702, 156);
+            label2.Name = "label2";
+            label2.Size = new Size(507, 30);
+            label2.TabIndex = 67;
+            label2.Text = "FILL OUT THIS FORM FOR RESERVATION OF TENT";
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 60F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(834, 50);
+            label1.Name = "label1";
+            label1.Size = new Size(245, 106);
+            label1.TabIndex = 66;
+            label1.Text = "TENT";
+            // 
+            // signUpLogo
+            // 
+            signUpLogo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            signUpLogo.Image = (Image)resources.GetObject("signUpLogo.Image");
+            signUpLogo.Location = new Point(375, 4);
+            signUpLogo.Name = "signUpLogo";
+            signUpLogo.Size = new Size(1161, 1110);
+            signUpLogo.SizeMode = PictureBoxSizeMode.StretchImage;
+            signUpLogo.TabIndex = 86;
+            signUpLogo.TabStop = false;
             // 
             // FormTent
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 180, 71);
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1911, 1118);
             Controls.Add(button1);
-            Controls.Add(backTent);
-            Controls.Add(label1);
             Controls.Add(textBox6);
             Controls.Add(label12);
             Controls.Add(label11);
@@ -273,14 +308,21 @@
             Controls.Add(label3);
             Controls.Add(textBox1);
             Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(backTent);
+            Controls.Add(signUpLogo);
             Name = "FormTent";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormTent";
+            Load += FormTent_Load;
+            ((System.ComponentModel.ISupportInitialize)signUpLogo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
+        private Button backTent;
+        private Button button1;
         private TextBox textBox6;
         private Label label12;
         private Label label11;
@@ -299,7 +341,6 @@
         private TextBox textBox1;
         private Label label2;
         private Label label1;
-        private Button backTent;
-        private Button button1;
+        private PictureBox signUpLogo;
     }
 }

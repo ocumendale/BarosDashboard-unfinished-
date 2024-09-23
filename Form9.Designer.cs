@@ -41,9 +41,9 @@
             // 
             panel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BorderStyle = BorderStyle.Fixed3D;
-            panel1.Location = new Point(12, 115);
+            panel1.Location = new Point(12, 787);
             panel1.Name = "panel1";
-            panel1.Size = new Size(776, 323);
+            panel1.Size = new Size(1884, 323);
             panel1.TabIndex = 0;
             // 
             // panel2
@@ -53,14 +53,14 @@
             panel2.Controls.Add(label1);
             panel2.Location = new Point(12, 35);
             panel2.Name = "panel2";
-            panel2.Size = new Size(776, 74);
+            panel2.Size = new Size(1884, 74);
             panel2.TabIndex = 1;
             // 
             // label1
             // 
             label1.Anchor = AnchorStyles.Top;
             label1.Font = new Font("MS UI Gothic", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(274, 21);
+            label1.Location = new Point(828, 21);
             label1.Name = "label1";
             label1.Size = new Size(184, 33);
             label1.TabIndex = 0;
@@ -84,7 +84,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 180, 71);
-            ClientSize = new Size(803, 446);
+            ClientSize = new Size(1911, 1118);
             Controls.Add(pictureBox1);
             Controls.Add(panel2);
             Controls.Add(panel1);

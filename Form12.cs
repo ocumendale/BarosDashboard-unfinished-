@@ -23,5 +23,22 @@ namespace BarosDashboard
             docureq.Show();
             Visible = false;
         }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void backCourt_Click(object sender, EventArgs e)
+        {
+            DocuReq backIn = new DocuReq();
+            backIn.Show();
+            Visible = false;
+        }
     }
 }

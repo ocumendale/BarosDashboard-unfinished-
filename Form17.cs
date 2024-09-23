@@ -28,5 +28,10 @@ namespace BarosDashboard
         {
 
         }
+
+        private void FormTable_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

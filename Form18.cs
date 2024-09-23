@@ -28,5 +28,10 @@ namespace BarosDashboard
         {
 
         }
+
+        private void FormChair_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
