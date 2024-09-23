@@ -55,9 +55,9 @@
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(label1);
             panel3.ForeColor = Color.Black;
-            panel3.Location = new Point(448, 1);
+            panel3.Location = new Point(442, 1);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1450, 84);
+            panel3.Size = new Size(1471, 84);
             panel3.TabIndex = 5;
             // 
             // label1
@@ -78,19 +78,19 @@
             panel2.Controls.Add(label3);
             panel2.Controls.Add(contactbtn);
             panel2.Controls.Add(label2);
-            panel2.Location = new Point(448, 91);
+            panel2.Location = new Point(441, 84);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1464, 1025);
+            panel2.Size = new Size(1468, 1020);
             panel2.TabIndex = 4;
             // 
             // label3
             // 
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
-            label3.BackColor = Color.Beige;
+            label3.BackColor = Color.DarkGoldenrod;
             label3.Font = new Font("MS UI Gothic", 17.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(522, 317);
+            label3.Location = new Point(564, 465);
             label3.Name = "label3";
             label3.Size = new Size(382, 46);
             label3.TabIndex = 3;
@@ -99,9 +99,9 @@
             // contactbtn
             // 
             contactbtn.Anchor = AnchorStyles.None;
-            contactbtn.BackColor = Color.Beige;
+            contactbtn.BackColor = Color.DarkGoldenrod;
             contactbtn.Font = new Font("Segoe UI", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            contactbtn.Location = new Point(610, 377);
+            contactbtn.Location = new Point(652, 525);
             contactbtn.Name = "contactbtn";
             contactbtn.Size = new Size(237, 67);
             contactbtn.TabIndex = 2;
@@ -113,9 +113,9 @@
             // 
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
-            label2.BackColor = Color.Beige;
+            label2.BackColor = Color.DarkGoldenrod;
             label2.Font = new Font("MS UI Gothic", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(387, 204);
+            label2.Location = new Point(429, 352);
             label2.Name = "label2";
             label2.Size = new Size(687, 97);
             label2.TabIndex = 1;
@@ -183,7 +183,7 @@
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold);
-            button4.Location = new Point(11, 557);
+            button4.Location = new Point(11, 562);
             button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
             button4.Size = new Size(431, 97);
@@ -197,7 +197,7 @@
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold);
-            button3.Location = new Point(11, 406);
+            button3.Location = new Point(6, 394);
             button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
             button3.Size = new Size(431, 97);
@@ -210,7 +210,7 @@
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold);
-            button2.Location = new Point(10, 231);
+            button2.Location = new Point(6, 238);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
             button2.Size = new Size(431, 97);
@@ -225,7 +225,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold);
             button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(11, 89);
+            button1.Location = new Point(3, 90);
             button1.Name = "button1";
             button1.Size = new Size(431, 97);
             button1.TabIndex = 0;

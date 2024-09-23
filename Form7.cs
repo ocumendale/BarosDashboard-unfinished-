@@ -40,7 +40,7 @@ namespace BarosDashboard
             string conn = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
             string contact = txt_ContactNum.Text.Trim();
             string password = txt_password.Text.Trim();
-
+            LoggedInUser.uname = txt_ContactNum.Text;
             if (string.IsNullOrEmpty(contact) || string.IsNullOrEmpty(password))
             {
                 signin_Btn.Text = "Please enter both contact and password.";

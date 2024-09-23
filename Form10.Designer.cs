@@ -124,7 +124,7 @@
             // 
             signUpLogo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             signUpLogo.Image = (Image)resources.GetObject("signUpLogo.Image");
-            signUpLogo.Location = new Point(375, 4);
+            signUpLogo.Location = new Point(368, -26);
             signUpLogo.Name = "signUpLogo";
             signUpLogo.Size = new Size(1161, 1110);
             signUpLogo.SizeMode = PictureBoxSizeMode.StretchImage;
