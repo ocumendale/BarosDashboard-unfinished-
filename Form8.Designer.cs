@@ -48,7 +48,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 180, 71);
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1370, 749);
             Controls.Add(backReq);
             Name = "manageReq";
             Text = "ManageReq";

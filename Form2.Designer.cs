@@ -52,7 +52,7 @@
             panel3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panel3.Controls.Add(AboutUs);
             panel3.ForeColor = Color.Black;
-            panel3.Location = new Point(445, 1);
+            panel3.Location = new Point(-96, 1);
             panel3.Name = "panel3";
             panel3.Size = new Size(1453, 69);
             panel3.TabIndex = 5;
@@ -76,7 +76,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold);
             button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(3, 90);
+            button1.Location = new Point(3, -94);
             button1.Name = "button1";
             button1.Size = new Size(431, 97);
             button1.TabIndex = 0;
@@ -90,7 +90,7 @@
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold);
-            button2.Location = new Point(7, 226);
+            button2.Location = new Point(7, 42);
             button2.Name = "button2";
             button2.Size = new Size(431, 97);
             button2.TabIndex = 1;
@@ -103,7 +103,7 @@
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold);
-            button3.Location = new Point(3, 379);
+            button3.Location = new Point(3, 195);
             button3.Name = "button3";
             button3.Size = new Size(431, 97);
             button3.TabIndex = 2;
@@ -117,7 +117,7 @@
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold);
-            button4.Location = new Point(3, 527);
+            button4.Location = new Point(3, 343);
             button4.Name = "button4";
             button4.Size = new Size(431, 97);
             button4.TabIndex = 3;
@@ -131,7 +131,7 @@
             button5.FlatAppearance.BorderSize = 0;
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold);
-            button5.Location = new Point(7, 699);
+            button5.Location = new Point(7, 515);
             button5.Name = "button5";
             button5.Size = new Size(431, 97);
             button5.TabIndex = 4;
@@ -145,7 +145,7 @@
             button6.FlatAppearance.BorderSize = 0;
             button6.FlatStyle = FlatStyle.Flat;
             button6.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold);
-            button6.Location = new Point(3, 872);
+            button6.Location = new Point(3, 688);
             button6.Name = "button6";
             button6.Size = new Size(435, 155);
             button6.TabIndex = 5;
@@ -177,7 +177,7 @@
             panel1.Controls.Add(button1);
             panel1.Location = new Point(0, 1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(439, 1115);
+            panel1.Size = new Size(439, 746);
             panel1.TabIndex = 3;
             // 
             // signUpLogo
@@ -186,7 +186,7 @@
             signUpLogo.Image = (Image)resources.GetObject("signUpLogo.Image");
             signUpLogo.Location = new Point(441, 76);
             signUpLogo.Name = "signUpLogo";
-            signUpLogo.Size = new Size(1457, 1040);
+            signUpLogo.Size = new Size(916, 671);
             signUpLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             signUpLogo.TabIndex = 87;
             signUpLogo.TabStop = false;
@@ -197,7 +197,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("MS UI Gothic", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(548, 243);
+            label1.Location = new Point(278, 243);
             label1.Name = "label1";
             label1.Size = new Size(1251, 555);
             label1.TabIndex = 0;
@@ -210,7 +210,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 180, 71);
-            ClientSize = new Size(1911, 1118);
+            ClientSize = new Size(1370, 749);
             Controls.Add(label1);
             Controls.Add(signUpLogo);
             Controls.Add(panel3);

@@ -65,7 +65,7 @@
             panel3.ForeColor = Color.Black;
             panel3.Location = new Point(210, 1);
             panel3.Name = "panel3";
-            panel3.Size = new Size(590, 69);
+            panel3.Size = new Size(1160, 69);
             panel3.TabIndex = 5;
             // 
             // label1
@@ -93,9 +93,9 @@
             panel2.Controls.Add(label4);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
-            panel2.Location = new Point(210, 91);
+            panel2.Location = new Point(495, 91);
             panel2.Name = "panel2";
-            panel2.Size = new Size(590, 312);
+            panel2.Size = new Size(590, 611);
             panel2.TabIndex = 4;
             // 
             // label10
@@ -221,7 +221,7 @@
             panel1.Controls.Add(button1);
             panel1.Location = new Point(0, 1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(204, 449);
+            panel1.Size = new Size(204, 748);
             panel1.TabIndex = 3;
             // 
             // HBF4
@@ -319,7 +319,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 180, 71);
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1370, 749);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
