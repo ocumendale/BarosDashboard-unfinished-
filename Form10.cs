@@ -66,5 +66,10 @@ namespace BarosDashboard
             services.Show();
             Visible = false;
         }
+
+        private void reserve_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

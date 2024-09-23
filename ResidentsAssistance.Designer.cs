@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResidentsAssistance));
             panel4 = new Panel();
             panel3 = new Panel();
-            label2 = new Label();
             panel1 = new Panel();
             Events = new Button();
             Announcements = new Button();
@@ -43,6 +42,7 @@
             panel2 = new Panel();
             label1 = new Label();
             pictureBox1 = new PictureBox();
+            label3 = new Label();
             panel3.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -60,22 +60,11 @@
             // panel3
             // 
             panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(label2);
+            panel3.Controls.Add(label3);
             panel3.Location = new Point(245, 62);
             panel3.Name = "panel3";
             panel3.Size = new Size(617, 53);
             panel3.TabIndex = 4;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("MS UI Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.FromArgb(0, 0, 192);
-            label2.Location = new Point(59, 17);
-            label2.Name = "label2";
-            label2.Size = new Size(209, 19);
-            label2.TabIndex = 0;
-            label2.Text = "Residents' Assistance";
             // 
             // panel1
             // 
@@ -218,6 +207,17 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("MS UI Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.FromArgb(0, 0, 192);
+            label3.Location = new Point(70, 16);
+            label3.Name = "label3";
+            label3.Size = new Size(245, 19);
+            label3.TabIndex = 1;
+            label3.Text = "RESIDENTS' ASSISTANCE";
+            // 
             // ResidentsAssistance
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -242,7 +242,6 @@
 
         private Panel panel4;
         private Panel panel3;
-        private Label label2;
         private Panel panel1;
         private Button Events;
         private Button Announcements;
@@ -254,5 +253,6 @@
         private Panel panel2;
         private Label label1;
         private PictureBox pictureBox1;
+        private Label label3;
     }
 }

@@ -140,7 +140,8 @@
             Controls.Add(panel1);
             Name = "reserve";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Request";
+            Text = "Reservation";
+            Load += reserve_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel1.ResumeLayout(false);

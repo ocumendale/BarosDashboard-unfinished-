@@ -63,7 +63,7 @@
             // alreadytxt
             // 
             alreadytxt.AutoSize = true;
-            alreadytxt.Location = new Point(147, 526);
+            alreadytxt.Location = new Point(142, 490);
             alreadytxt.Name = "alreadytxt";
             alreadytxt.Size = new Size(178, 20);
             alreadytxt.TabIndex = 47;
@@ -74,7 +74,7 @@
             clear_btn.BackColor = Color.DarkGoldenrod;
             clear_btn.FlatStyle = FlatStyle.Flat;
             clear_btn.ForeColor = Color.FromArgb(24, 25, 56);
-            clear_btn.Location = new Point(105, 464);
+            clear_btn.Location = new Point(105, 424);
             clear_btn.Margin = new Padding(3, 4, 3, 4);
             clear_btn.Name = "clear_btn";
             clear_btn.Size = new Size(114, 47);
@@ -88,7 +88,7 @@
             signup_Btn.FlatAppearance.BorderSize = 0;
             signup_Btn.FlatStyle = FlatStyle.Flat;
             signup_Btn.ForeColor = Color.FromArgb(246, 180, 71);
-            signup_Btn.Location = new Point(238, 464);
+            signup_Btn.Location = new Point(238, 427);
             signup_Btn.Margin = new Padding(3, 4, 3, 4);
             signup_Btn.Name = "signup_Btn";
             signup_Btn.Size = new Size(114, 47);
@@ -102,7 +102,7 @@
             checkbxShowPass.AutoSize = true;
             checkbxShowPass.Cursor = Cursors.Hand;
             checkbxShowPass.FlatStyle = FlatStyle.Flat;
-            checkbxShowPass.Location = new Point(216, 428);
+            checkbxShowPass.Location = new Point(224, 395);
             checkbxShowPass.Margin = new Padding(3, 4, 3, 4);
             checkbxShowPass.Name = "checkbxShowPass";
             checkbxShowPass.Size = new Size(128, 24);
@@ -226,7 +226,7 @@
             button1.BackColor = Color.FromArgb(24, 25, 56);
             button1.FlatStyle = FlatStyle.Flat;
             button1.ForeColor = Color.FromArgb(246, 180, 71);
-            button1.Location = new Point(171, 549);
+            button1.Location = new Point(169, 522);
             button1.Name = "button1";
             button1.Size = new Size(114, 44);
             button1.TabIndex = 50;

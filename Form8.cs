@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace BarosDashboard
 {
-    public partial class FormClear : Form
+    public partial class manageReq : Form
     {
-        public FormClear()
+        public manageReq()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void backReq_Click(object sender, EventArgs e)
         {
-            DocuReq docureq = new DocuReq();
-            docureq.Show();
+            ManageTransaction manage = new ManageTransaction();
+            manage.Show();
             Visible = false;
         }
     }

@@ -161,9 +161,9 @@
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold);
-            button4.Location = new Point(23, 256);
+            button4.Location = new Point(19, 253);
             button4.Name = "button4";
-            button4.Size = new Size(165, 38);
+            button4.Size = new Size(180, 45);
             button4.TabIndex = 3;
             button4.Text = "How it works?";
             button4.UseVisualStyleBackColor = true;
