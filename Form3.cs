@@ -80,5 +80,10 @@ namespace BarosDashboard
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
         }
+
+        private void Contact_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

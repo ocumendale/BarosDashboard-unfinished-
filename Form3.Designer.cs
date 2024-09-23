@@ -55,9 +55,9 @@
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(label1);
             panel3.ForeColor = Color.Black;
-            panel3.Location = new Point(210, 1);
+            panel3.Location = new Point(448, 1);
             panel3.Name = "panel3";
-            panel3.Size = new Size(590, 69);
+            panel3.Size = new Size(1450, 84);
             panel3.TabIndex = 5;
             // 
             // label1
@@ -78,9 +78,9 @@
             panel2.Controls.Add(label3);
             panel2.Controls.Add(contactbtn);
             panel2.Controls.Add(label2);
-            panel2.Location = new Point(210, 91);
+            panel2.Location = new Point(448, 91);
             panel2.Name = "panel2";
-            panel2.Size = new Size(590, 312);
+            panel2.Size = new Size(1464, 1025);
             panel2.TabIndex = 4;
             // 
             // label3
@@ -90,7 +90,7 @@
             label3.BackColor = Color.Beige;
             label3.Font = new Font("MS UI Gothic", 17.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(92, 123);
+            label3.Location = new Point(522, 317);
             label3.Name = "label3";
             label3.Size = new Size(382, 46);
             label3.TabIndex = 3;
@@ -100,9 +100,10 @@
             // 
             contactbtn.Anchor = AnchorStyles.None;
             contactbtn.BackColor = Color.Beige;
-            contactbtn.Location = new Point(195, 192);
+            contactbtn.Font = new Font("Segoe UI", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            contactbtn.Location = new Point(610, 377);
             contactbtn.Name = "contactbtn";
-            contactbtn.Size = new Size(178, 35);
+            contactbtn.Size = new Size(237, 67);
             contactbtn.TabIndex = 2;
             contactbtn.Text = "Contacts";
             contactbtn.UseVisualStyleBackColor = false;
@@ -113,10 +114,10 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.BackColor = Color.Beige;
-            label2.Font = new Font("MS UI Gothic", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(157, 76);
+            label2.Font = new Font("MS UI Gothic", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(387, 204);
             label2.Name = "label2";
-            label2.Size = new Size(258, 35);
+            label2.Size = new Size(687, 97);
             label2.TabIndex = 1;
             label2.Text = "GET IN TOUCH";
             label2.Click += label2_Click;
@@ -135,7 +136,7 @@
             panel1.Controls.Add(button1);
             panel1.Location = new Point(0, 1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(204, 449);
+            panel1.Size = new Size(442, 1115);
             panel1.TabIndex = 3;
             // 
             // pictureBox1
@@ -153,11 +154,11 @@
             // 
             button6.FlatAppearance.BorderSize = 0;
             button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold);
-            button6.Location = new Point(20, 281);
+            button6.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold);
+            button6.Location = new Point(3, 876);
             button6.Margin = new Padding(3, 2, 3, 2);
             button6.Name = "button6";
-            button6.Size = new Size(165, 62);
+            button6.Size = new Size(435, 155);
             button6.TabIndex = 5;
             button6.Text = "Manage\r\nTransaction";
             button6.UseVisualStyleBackColor = true;
@@ -167,11 +168,11 @@
             // 
             button5.FlatAppearance.BorderSize = 0;
             button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold);
-            button5.Location = new Point(20, 238);
+            button5.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold);
+            button5.Location = new Point(6, 728);
             button5.Margin = new Padding(3, 2, 3, 2);
             button5.Name = "button5";
-            button5.Size = new Size(165, 38);
+            button5.Size = new Size(431, 97);
             button5.TabIndex = 4;
             button5.Text = "Services";
             button5.UseVisualStyleBackColor = true;
@@ -181,11 +182,11 @@
             // 
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold);
-            button4.Location = new Point(20, 190);
+            button4.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold);
+            button4.Location = new Point(11, 557);
             button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
-            button4.Size = new Size(179, 38);
+            button4.Size = new Size(431, 97);
             button4.TabIndex = 3;
             button4.Text = "How it works?";
             button4.UseVisualStyleBackColor = true;
@@ -195,11 +196,11 @@
             // 
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold);
-            button3.Location = new Point(20, 148);
+            button3.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold);
+            button3.Location = new Point(11, 406);
             button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
-            button3.Size = new Size(165, 38);
+            button3.Size = new Size(431, 97);
             button3.TabIndex = 2;
             button3.Text = "Contact";
             button3.UseVisualStyleBackColor = true;
@@ -208,11 +209,11 @@
             // 
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold);
-            button2.Location = new Point(20, 102);
+            button2.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold);
+            button2.Location = new Point(10, 231);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(165, 38);
+            button2.Size = new Size(431, 97);
             button2.TabIndex = 1;
             button2.Text = "About Us";
             button2.UseVisualStyleBackColor = true;
@@ -222,11 +223,11 @@
             // 
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold);
+            button1.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold);
             button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(20, 59);
+            button1.Location = new Point(11, 89);
             button1.Name = "button1";
-            button1.Size = new Size(165, 38);
+            button1.Size = new Size(431, 97);
             button1.TabIndex = 0;
             button1.Text = "Home";
             button1.UseVisualStyleBackColor = false;
@@ -237,13 +238,14 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 180, 71);
-            ClientSize = new Size(813, 452);
+            ClientSize = new Size(1911, 1118);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "Contact";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Contact";
+            Load += Contact_Load;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel2.ResumeLayout(false);
