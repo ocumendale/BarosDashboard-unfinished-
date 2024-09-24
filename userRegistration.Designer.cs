@@ -52,10 +52,9 @@
             // 
             signUpLogo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             signUpLogo.Image = (Image)resources.GetObject("signUpLogo.Image");
-            signUpLogo.Location = new Point(449, 110);
-            signUpLogo.Margin = new Padding(3, 4, 3, 4);
+            signUpLogo.Location = new Point(1016, 267);
             signUpLogo.Name = "signUpLogo";
-            signUpLogo.Size = new Size(362, 400);
+            signUpLogo.Size = new Size(845, 641);
             signUpLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             signUpLogo.TabIndex = 49;
             signUpLogo.TabStop = false;
@@ -63,9 +62,10 @@
             // alreadytxt
             // 
             alreadytxt.AutoSize = true;
-            alreadytxt.Location = new Point(142, 490);
+            alreadytxt.Font = new Font("Segoe UI", 24F);
+            alreadytxt.Location = new Point(351, 859);
             alreadytxt.Name = "alreadytxt";
-            alreadytxt.Size = new Size(178, 20);
+            alreadytxt.Size = new Size(380, 45);
             alreadytxt.TabIndex = 47;
             alreadytxt.Text = "Already have an account?";
             // 
@@ -73,25 +73,26 @@
             // 
             clear_btn.BackColor = Color.DarkGoldenrod;
             clear_btn.FlatStyle = FlatStyle.Flat;
+            clear_btn.Font = new Font("Segoe UI", 20.25F);
             clear_btn.ForeColor = Color.FromArgb(24, 25, 56);
-            clear_btn.Location = new Point(105, 424);
-            clear_btn.Margin = new Padding(3, 4, 3, 4);
+            clear_btn.Location = new Point(301, 751);
             clear_btn.Name = "clear_btn";
-            clear_btn.Size = new Size(114, 47);
+            clear_btn.Size = new Size(188, 69);
             clear_btn.TabIndex = 46;
             clear_btn.Text = "Clear";
             clear_btn.UseVisualStyleBackColor = false;
+            clear_btn.Click += clear_btn_Click;
             // 
             // signup_Btn
             // 
             signup_Btn.BackColor = Color.FromArgb(24, 25, 56);
             signup_Btn.FlatAppearance.BorderSize = 0;
             signup_Btn.FlatStyle = FlatStyle.Flat;
+            signup_Btn.Font = new Font("Segoe UI", 20.25F);
             signup_Btn.ForeColor = Color.FromArgb(246, 180, 71);
-            signup_Btn.Location = new Point(238, 427);
-            signup_Btn.Margin = new Padding(3, 4, 3, 4);
+            signup_Btn.Location = new Point(571, 751);
             signup_Btn.Name = "signup_Btn";
-            signup_Btn.Size = new Size(114, 47);
+            signup_Btn.Size = new Size(188, 69);
             signup_Btn.TabIndex = 45;
             signup_Btn.Text = "Sign Up";
             signup_Btn.UseVisualStyleBackColor = false;
@@ -102,10 +103,10 @@
             checkbxShowPass.AutoSize = true;
             checkbxShowPass.Cursor = Cursors.Hand;
             checkbxShowPass.FlatStyle = FlatStyle.Flat;
-            checkbxShowPass.Location = new Point(224, 395);
-            checkbxShowPass.Margin = new Padding(3, 4, 3, 4);
+            checkbxShowPass.Font = new Font("Segoe UI", 24F);
+            checkbxShowPass.Location = new Point(504, 687);
             checkbxShowPass.Name = "checkbxShowPass";
-            checkbxShowPass.Size = new Size(128, 24);
+            checkbxShowPass.Size = new Size(255, 49);
             checkbxShowPass.TabIndex = 44;
             checkbxShowPass.Text = "Show Password";
             checkbxShowPass.UseVisualStyleBackColor = true;
@@ -113,9 +114,10 @@
             // conPass
             // 
             conPass.AutoSize = true;
-            conPass.Location = new Point(105, 356);
+            conPass.Font = new Font("Segoe UI", 24F);
+            conPass.Location = new Point(301, 689);
             conPass.Name = "conPass";
-            conPass.Size = new Size(127, 20);
+            conPass.Size = new Size(276, 45);
             conPass.TabIndex = 43;
             conPass.Text = "Confirm Password";
             // 
@@ -124,21 +126,23 @@
             password_txtb.BackColor = Color.DarkGoldenrod;
             password_txtb.BorderStyle = BorderStyle.FixedSingle;
             password_txtb.Cursor = Cursors.IBeam;
+            password_txtb.Font = new Font("Segoe UI", 20.25F);
             password_txtb.ForeColor = Color.FromArgb(24, 25, 56);
-            password_txtb.Location = new Point(105, 314);
-            password_txtb.Margin = new Padding(3, 4, 3, 4);
+            password_txtb.Location = new Point(301, 613);
             password_txtb.Multiline = true;
             password_txtb.Name = "password_txtb";
             password_txtb.PasswordChar = '*';
-            password_txtb.Size = new Size(247, 37);
+            password_txtb.Size = new Size(458, 61);
             password_txtb.TabIndex = 42;
+            password_txtb.TextChanged += password_txtb_TextChanged;
             // 
             // password_lbl
             // 
             password_lbl.AutoSize = true;
-            password_lbl.Location = new Point(105, 288);
+            password_lbl.Font = new Font("Segoe UI", 24F);
+            password_lbl.Location = new Point(301, 566);
             password_lbl.Name = "password_lbl";
-            password_lbl.Size = new Size(70, 20);
+            password_lbl.Size = new Size(153, 45);
             password_lbl.TabIndex = 41;
             password_lbl.Text = "Password";
             // 
@@ -147,21 +151,22 @@
             fullname_txtb.BackColor = Color.DarkGoldenrod;
             fullname_txtb.BorderStyle = BorderStyle.FixedSingle;
             fullname_txtb.Cursor = Cursors.IBeam;
+            fullname_txtb.Font = new Font("Segoe UI", 20.25F);
             fullname_txtb.ForeColor = Color.FromArgb(24, 25, 56);
-            fullname_txtb.Location = new Point(105, 110);
-            fullname_txtb.Margin = new Padding(3, 4, 3, 4);
+            fullname_txtb.Location = new Point(301, 379);
             fullname_txtb.Multiline = true;
             fullname_txtb.Name = "fullname_txtb";
-            fullname_txtb.Size = new Size(247, 37);
+            fullname_txtb.Size = new Size(456, 61);
             fullname_txtb.TabIndex = 40;
             fullname_txtb.TextChanged += fullname_txtb_TextChanged;
             // 
             // fullnamelbl
             // 
             fullnamelbl.AutoSize = true;
-            fullnamelbl.Location = new Point(105, 84);
+            fullnamelbl.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            fullnamelbl.Location = new Point(301, 213);
             fullnamelbl.Name = "fullnamelbl";
-            fullnamelbl.Size = new Size(76, 20);
+            fullnamelbl.Size = new Size(164, 45);
             fullnamelbl.TabIndex = 39;
             fullnamelbl.Text = "Full Name";
             // 
@@ -170,42 +175,45 @@
             contact_txtb.BackColor = Color.DarkGoldenrod;
             contact_txtb.BorderStyle = BorderStyle.FixedSingle;
             contact_txtb.Cursor = Cursors.IBeam;
+            contact_txtb.Font = new Font("Segoe UI", 20.25F);
             contact_txtb.ForeColor = Color.FromArgb(24, 25, 56);
-            contact_txtb.Location = new Point(105, 246);
-            contact_txtb.Margin = new Padding(3, 4, 3, 4);
+            contact_txtb.Location = new Point(301, 502);
             contact_txtb.Multiline = true;
             contact_txtb.Name = "contact_txtb";
-            contact_txtb.Size = new Size(247, 37);
+            contact_txtb.Size = new Size(456, 61);
             contact_txtb.TabIndex = 38;
             // 
             // contact_lbl
             // 
             contact_lbl.AutoSize = true;
-            contact_lbl.Location = new Point(105, 220);
+            contact_lbl.Font = new Font("Segoe UI", 24F);
+            contact_lbl.Location = new Point(301, 454);
             contact_lbl.Name = "contact_lbl";
-            contact_lbl.Size = new Size(118, 20);
+            contact_lbl.Size = new Size(256, 45);
             contact_lbl.TabIndex = 37;
             contact_lbl.Text = "Contact Number";
+            contact_lbl.Click += contact_lbl_Click;
             // 
             // email_txtb
             // 
             email_txtb.BackColor = Color.DarkGoldenrod;
             email_txtb.BorderStyle = BorderStyle.FixedSingle;
             email_txtb.Cursor = Cursors.IBeam;
+            email_txtb.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             email_txtb.ForeColor = Color.FromArgb(24, 25, 56);
-            email_txtb.Location = new Point(105, 178);
-            email_txtb.Margin = new Padding(3, 4, 3, 4);
+            email_txtb.Location = new Point(301, 261);
             email_txtb.Multiline = true;
             email_txtb.Name = "email_txtb";
-            email_txtb.Size = new Size(247, 37);
+            email_txtb.Size = new Size(456, 61);
             email_txtb.TabIndex = 36;
             // 
             // email_lbl
             // 
             email_lbl.AutoSize = true;
-            email_lbl.Location = new Point(105, 152);
+            email_lbl.Font = new Font("Segoe UI", 24F);
+            email_lbl.Location = new Point(301, 331);
             email_lbl.Name = "email_lbl";
-            email_lbl.Size = new Size(46, 20);
+            email_lbl.Size = new Size(96, 45);
             email_lbl.TabIndex = 35;
             email_lbl.Text = "Email";
             // 
@@ -213,10 +221,10 @@
             // 
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
-            label1.Font = new Font("MS UI Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(335, 28);
+            label1.Font = new Font("MS UI Gothic", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(742, 94);
             label1.Name = "label1";
-            label1.Size = new Size(191, 37);
+            label1.Size = new Size(482, 97);
             label1.TabIndex = 34;
             label1.Text = "REGISTER";
             label1.Click += label1_Click;
@@ -225,10 +233,12 @@
             // 
             button1.BackColor = Color.FromArgb(24, 25, 56);
             button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 20.25F);
             button1.ForeColor = Color.FromArgb(246, 180, 71);
-            button1.Location = new Point(169, 522);
+            button1.Location = new Point(441, 906);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(114, 44);
+            button1.Size = new Size(188, 69);
             button1.TabIndex = 50;
             button1.Text = "Sign In";
             button1.UseVisualStyleBackColor = false;
@@ -236,10 +246,10 @@
             // 
             // userRegistration
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 180, 71);
-            ClientSize = new Size(912, 605);
+            ClientSize = new Size(1911, 1118);
             Controls.Add(button1);
             Controls.Add(signUpLogo);
             Controls.Add(alreadytxt);
@@ -256,7 +266,10 @@
             Controls.Add(email_txtb);
             Controls.Add(email_lbl);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "userRegistration";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "userRegistration";
             Load += userRegistration_Load;
             ((System.ComponentModel.ISupportInitialize)signUpLogo).EndInit();

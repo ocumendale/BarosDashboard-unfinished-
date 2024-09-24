@@ -87,7 +87,7 @@
             // 
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
-            label3.BackColor = Color.DarkGoldenrod;
+            label3.BackColor = Color.Goldenrod;
             label3.Font = new Font("MS UI Gothic", 17.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Black;
             label3.Location = new Point(564, 465);
@@ -99,7 +99,7 @@
             // contactbtn
             // 
             contactbtn.Anchor = AnchorStyles.None;
-            contactbtn.BackColor = Color.DarkGoldenrod;
+            contactbtn.BackColor = Color.Goldenrod;
             contactbtn.Font = new Font("Segoe UI", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             contactbtn.Location = new Point(652, 525);
             contactbtn.Name = "contactbtn";
@@ -113,7 +113,7 @@
             // 
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
-            label2.BackColor = Color.DarkGoldenrod;
+            label2.BackColor = Color.Goldenrod;
             label2.Font = new Font("MS UI Gothic", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(429, 352);
             label2.Name = "label2";

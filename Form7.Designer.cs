@@ -47,10 +47,9 @@ namespace BarosDashboard
             // 
             signUpLogo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             signUpLogo.Image = (Image)resources.GetObject("signUpLogo.Image");
-            signUpLogo.Location = new Point(438, 128);
-            signUpLogo.Margin = new Padding(3, 4, 3, 4);
+            signUpLogo.Location = new Point(952, 267);
             signUpLogo.Name = "signUpLogo";
-            signUpLogo.Size = new Size(362, 400);
+            signUpLogo.Size = new Size(845, 641);
             signUpLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             signUpLogo.TabIndex = 26;
             signUpLogo.TabStop = false;
@@ -59,10 +58,10 @@ namespace BarosDashboard
             // exit
             // 
             exit.AutoSize = true;
-            exit.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            exit.Location = new Point(206, 345);
+            exit.Font = new Font("Segoe UI", 24F);
+            exit.Location = new Point(83, 1006);
             exit.Name = "exit";
-            exit.Size = new Size(65, 30);
+            exit.Size = new Size(70, 45);
             exit.TabIndex = 25;
             exit.Text = "Exit";
             exit.Click += exit_Click;
@@ -71,11 +70,11 @@ namespace BarosDashboard
             // 
             clear2_btn.BackColor = Color.DarkGoldenrod;
             clear2_btn.FlatStyle = FlatStyle.Flat;
+            clear2_btn.Font = new Font("Segoe UI", 20.25F);
             clear2_btn.ForeColor = Color.FromArgb(24, 25, 56);
-            clear2_btn.Location = new Point(114, 280);
-            clear2_btn.Margin = new Padding(3, 4, 3, 4);
+            clear2_btn.Location = new Point(384, 641);
             clear2_btn.Name = "clear2_btn";
-            clear2_btn.Size = new Size(114, 47);
+            clear2_btn.Size = new Size(188, 69);
             clear2_btn.TabIndex = 24;
             clear2_btn.Text = "Clear";
             clear2_btn.UseVisualStyleBackColor = false;
@@ -86,11 +85,11 @@ namespace BarosDashboard
             signin_Btn.BackColor = Color.FromArgb(24, 25, 56);
             signin_Btn.FlatAppearance.BorderSize = 0;
             signin_Btn.FlatStyle = FlatStyle.Flat;
+            signin_Btn.Font = new Font("Segoe UI", 20.25F);
             signin_Btn.ForeColor = Color.FromArgb(246, 180, 71);
-            signin_Btn.Location = new Point(247, 280);
-            signin_Btn.Margin = new Padding(3, 4, 3, 4);
+            signin_Btn.Location = new Point(652, 641);
             signin_Btn.Name = "signin_Btn";
-            signin_Btn.Size = new Size(114, 47);
+            signin_Btn.Size = new Size(188, 69);
             signin_Btn.TabIndex = 23;
             signin_Btn.Text = "Sign In";
             signin_Btn.UseVisualStyleBackColor = false;
@@ -101,21 +100,22 @@ namespace BarosDashboard
             txt_ContactNum.BackColor = Color.DarkGoldenrod;
             txt_ContactNum.BorderStyle = BorderStyle.FixedSingle;
             txt_ContactNum.Cursor = Cursors.IBeam;
+            txt_ContactNum.Font = new Font("Segoe UI", 20.25F);
             txt_ContactNum.ForeColor = Color.FromArgb(24, 25, 56);
-            txt_ContactNum.Location = new Point(114, 155);
-            txt_ContactNum.Margin = new Padding(3, 4, 3, 4);
+            txt_ContactNum.Location = new Point(384, 402);
             txt_ContactNum.Multiline = true;
             txt_ContactNum.Name = "txt_ContactNum";
-            txt_ContactNum.Size = new Size(247, 37);
+            txt_ContactNum.Size = new Size(456, 61);
             txt_ContactNum.TabIndex = 22;
             txt_ContactNum.TextChanged += cNum_tb_TextChanged;
             // 
             // contactNum
             // 
             contactNum.AutoSize = true;
-            contactNum.Location = new Point(114, 128);
+            contactNum.Font = new Font("Segoe UI", 24F);
+            contactNum.Location = new Point(384, 357);
             contactNum.Name = "contactNum";
-            contactNum.Size = new Size(118, 20);
+            contactNum.Size = new Size(256, 45);
             contactNum.TabIndex = 21;
             contactNum.Text = "Contact Number";
             // 
@@ -124,21 +124,22 @@ namespace BarosDashboard
             txt_password.BackColor = Color.DarkGoldenrod;
             txt_password.BorderStyle = BorderStyle.FixedSingle;
             txt_password.Cursor = Cursors.IBeam;
+            txt_password.Font = new Font("Segoe UI", 20.25F);
             txt_password.ForeColor = Color.FromArgb(24, 25, 56);
-            txt_password.Location = new Point(114, 223);
-            txt_password.Margin = new Padding(3, 4, 3, 4);
+            txt_password.Location = new Point(384, 553);
             txt_password.Multiline = true;
             txt_password.Name = "txt_password";
             txt_password.PasswordChar = '*';
-            txt_password.Size = new Size(247, 37);
+            txt_password.Size = new Size(456, 61);
             txt_password.TabIndex = 20;
             // 
             // passWord
             // 
             passWord.AutoSize = true;
-            passWord.Location = new Point(114, 196);
+            passWord.Font = new Font("Segoe UI", 24F);
+            passWord.Location = new Point(384, 505);
             passWord.Name = "passWord";
-            passWord.Size = new Size(74, 20);
+            passWord.Size = new Size(162, 45);
             passWord.TabIndex = 19;
             passWord.Text = "Password ";
             // 
@@ -146,23 +147,23 @@ namespace BarosDashboard
             // 
             loginlbl.Anchor = AnchorStyles.Top;
             loginlbl.AutoSize = true;
-            loginlbl.Font = new Font("MS UI Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            loginlbl.Location = new Point(344, 72);
+            loginlbl.Font = new Font("MS UI Gothic", 72F, FontStyle.Bold);
+            loginlbl.Location = new Point(742, 94);
             loginlbl.Name = "loginlbl";
-            loginlbl.Size = new Size(129, 37);
+            loginlbl.Size = new Size(373, 97);
             loginlbl.TabIndex = 18;
-            loginlbl.Text = "Sign In";
+            loginlbl.Text = "SIGN IN";
             // 
             // signUp_btn
             // 
             signUp_btn.BackColor = Color.FromArgb(24, 25, 56);
             signUp_btn.FlatAppearance.BorderSize = 0;
             signUp_btn.FlatStyle = FlatStyle.Flat;
+            signUp_btn.Font = new Font("Segoe UI", 20.25F);
             signUp_btn.ForeColor = Color.FromArgb(246, 180, 71);
-            signUp_btn.Location = new Point(40, 481);
-            signUp_btn.Margin = new Padding(3, 4, 3, 4);
+            signUp_btn.Location = new Point(515, 743);
             signUp_btn.Name = "signUp_btn";
-            signUp_btn.Size = new Size(114, 47);
+            signUp_btn.Size = new Size(188, 69);
             signUp_btn.TabIndex = 27;
             signUp_btn.Text = "Sign Up";
             signUp_btn.UseVisualStyleBackColor = false;
@@ -170,10 +171,10 @@ namespace BarosDashboard
             // 
             // login
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 180, 71);
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(1911, 1118);
             Controls.Add(signUp_btn);
             Controls.Add(signUpLogo);
             Controls.Add(exit);
@@ -184,8 +185,9 @@ namespace BarosDashboard
             Controls.Add(txt_password);
             Controls.Add(passWord);
             Controls.Add(loginlbl);
-            Margin = new Padding(3, 4, 3, 4);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "login";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             Load += login_Load;
             ((System.ComponentModel.ISupportInitialize)signUpLogo).EndInit();

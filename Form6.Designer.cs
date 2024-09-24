@@ -85,7 +85,7 @@
             // 
             // button8
             // 
-            button8.BackColor = Color.DarkGoldenrod;
+            button8.BackColor = Color.Goldenrod;
             button8.Location = new Point(1005, 518);
             button8.Name = "button8";
             button8.Size = new Size(184, 59);
@@ -96,7 +96,7 @@
             // 
             // button7
             // 
-            button7.BackColor = Color.DarkGoldenrod;
+            button7.BackColor = Color.Goldenrod;
             button7.Location = new Point(384, 518);
             button7.Name = "button7";
             button7.Size = new Size(184, 59);
@@ -108,7 +108,7 @@
             // request
             // 
             request.AutoSize = true;
-            request.BackColor = Color.DarkGoldenrod;
+            request.BackColor = Color.Goldenrod;
             request.Font = new Font("MS UI Gothic", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
             request.Location = new Point(903, 397);
             request.Name = "request";
@@ -119,7 +119,7 @@
             // reservation
             // 
             reservation.AutoSize = true;
-            reservation.BackColor = Color.DarkGoldenrod;
+            reservation.BackColor = Color.Goldenrod;
             reservation.Font = new Font("MS UI Gothic", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
             reservation.Location = new Point(215, 397);
             reservation.Name = "reservation";

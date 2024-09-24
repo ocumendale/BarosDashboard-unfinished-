@@ -27,7 +27,7 @@ namespace BarosDashboard
         {
             string connString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
             string fullName = fullname_txtb.Text.Trim();
-            string contact = contact_txtb.Text.Trim();      
+            string contact = contact_txtb.Text.Trim();
             string email = email_txtb.Text.Trim();
             string password = password_txtb.Text.Trim();
 
@@ -88,6 +88,21 @@ namespace BarosDashboard
             login login = new login();
             login.Show();
             Visible = false;
+        }
+
+        private void contact_lbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void password_txtb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clear_btn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

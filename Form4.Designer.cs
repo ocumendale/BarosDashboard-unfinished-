@@ -101,7 +101,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.BackColor = Color.DarkGoldenrod;
+            label10.BackColor = Color.Goldenrod;
             label10.Font = new Font("Segoe UI", 24F);
             label10.Location = new Point(1015, 459);
             label10.Name = "label10";
@@ -113,7 +113,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.BackColor = Color.DarkGoldenrod;
+            label9.BackColor = Color.Goldenrod;
             label9.Font = new Font("Segoe UI", 24F);
             label9.Location = new Point(582, 459);
             label9.Name = "label9";
@@ -125,7 +125,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.BackColor = Color.DarkGoldenrod;
+            label8.BackColor = Color.Goldenrod;
             label8.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label8.Location = new Point(138, 459);
             label8.Name = "label8";
@@ -136,7 +136,7 @@
             // 
             // GetStarted
             // 
-            GetStarted.BackColor = Color.DarkGoldenrod;
+            GetStarted.BackColor = Color.Goldenrod;
             GetStarted.FlatStyle = FlatStyle.System;
             GetStarted.Font = new Font("MS UI Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             GetStarted.ForeColor = Color.DarkGoldenrod;
@@ -151,7 +151,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.BackColor = Color.DarkGoldenrod;
+            label7.BackColor = Color.Goldenrod;
             label7.Font = new Font("MS UI Gothic", 72F, FontStyle.Bold);
             label7.Location = new Point(1173, 274);
             label7.Name = "label7";
@@ -163,7 +163,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.BackColor = Color.DarkGoldenrod;
+            label6.BackColor = Color.Goldenrod;
             label6.Font = new Font("MS UI Gothic", 72F, FontStyle.Bold);
             label6.Location = new Point(708, 274);
             label6.Name = "label6";
@@ -174,7 +174,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.BackColor = Color.DarkGoldenrod;
+            label5.BackColor = Color.Goldenrod;
             label5.Font = new Font("MS UI Gothic", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.Location = new Point(267, 274);
             label5.Name = "label5";
@@ -185,7 +185,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.BackColor = Color.DarkGoldenrod;
+            label4.BackColor = Color.Goldenrod;
             label4.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold);
             label4.Location = new Point(1124, 392);
             label4.Name = "label4";
@@ -196,7 +196,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.BackColor = Color.DarkGoldenrod;
+            label3.BackColor = Color.Goldenrod;
             label3.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold);
             label3.Location = new Point(653, 392);
             label3.Name = "label3";
@@ -207,7 +207,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = Color.DarkGoldenrod;
+            label2.BackColor = Color.Goldenrod;
             label2.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(205, 392);
             label2.Name = "label2";

@@ -83,8 +83,8 @@
             // 
             // button8
             // 
-            button8.BackColor = Color.DarkGoldenrod;
-            button8.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold);
+            button8.BackColor = Color.Goldenrod;
+            button8.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold);
             button8.Location = new Point(886, 518);
             button8.Name = "button8";
             button8.Size = new Size(490, 216);
@@ -95,8 +95,8 @@
             // 
             // button7
             // 
-            button7.BackColor = Color.DarkGoldenrod;
-            button7.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold);
+            button7.BackColor = Color.Goldenrod;
+            button7.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button7.Location = new Point(187, 520);
             button7.Name = "button7";
             button7.Size = new Size(490, 214);
@@ -108,7 +108,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = Color.DarkGoldenrod;
+            label2.BackColor = Color.Goldenrod;
             label2.Font = new Font("MS UI Gothic", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(187, 312);
             label2.Name = "label2";
