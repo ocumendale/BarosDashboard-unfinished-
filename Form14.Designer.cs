@@ -100,7 +100,7 @@
             textBox2.Anchor = AnchorStyles.Left;
             textBox2.BackColor = Color.DarkGoldenrod;
             textBox2.Font = new Font("Segoe UI", 26.25F);
-            textBox2.Location = new Point(325, 540);
+            textBox2.Location = new Point(325, 534);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(592, 54);
             textBox2.TabIndex = 135;
@@ -111,7 +111,7 @@
             label7.Anchor = AnchorStyles.Left;
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold);
-            label7.Location = new Point(325, 497);
+            label7.Location = new Point(325, 491);
             label7.Name = "label7";
             label7.Size = new Size(283, 40);
             label7.TabIndex = 134;

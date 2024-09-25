@@ -44,7 +44,7 @@
             // 
             button3.BackColor = Color.Goldenrod;
             button3.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold);
-            button3.Location = new Point(1085, 796);
+            button3.Location = new Point(1031, 667);
             button3.Name = "button3";
             button3.Size = new Size(505, 284);
             button3.TabIndex = 3;
@@ -56,7 +56,7 @@
             // 
             button2.BackColor = Color.Goldenrod;
             button2.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold);
-            button2.Location = new Point(339, 796);
+            button2.Location = new Point(399, 667);
             button2.Name = "button2";
             button2.Size = new Size(505, 284);
             button2.TabIndex = 2;
@@ -68,7 +68,7 @@
             // 
             button1.BackColor = Color.Goldenrod;
             button1.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold);
-            button1.Location = new Point(1085, 321);
+            button1.Location = new Point(1031, 309);
             button1.Name = "button1";
             button1.Size = new Size(505, 284);
             button1.TabIndex = 1;
@@ -80,7 +80,7 @@
             // 
             FormBas.BackColor = Color.Goldenrod;
             FormBas.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold);
-            FormBas.Location = new Point(339, 321);
+            FormBas.Location = new Point(399, 309);
             FormBas.Name = "FormBas";
             FormBas.Size = new Size(505, 284);
             FormBas.TabIndex = 0;
@@ -102,9 +102,10 @@
             // backReq
             // 
             backReq.BackColor = Color.Goldenrod;
+            backReq.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             backReq.Location = new Point(12, 12);
             backReq.Name = "backReq";
-            backReq.Size = new Size(85, 42);
+            backReq.Size = new Size(97, 53);
             backReq.TabIndex = 4;
             backReq.Text = "Back";
             backReq.UseVisualStyleBackColor = false;

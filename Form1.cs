@@ -69,7 +69,6 @@ namespace BarosDashboard
 
 
             this.WindowState = FormWindowState.Maximized;
-            this.FormBorderStyle = FormBorderStyle.None;
             this.TopMost = true;
         }
     }
