@@ -49,19 +49,14 @@ namespace BarosDashboard
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
             // Create a PDF document
-            //Document doc = new Document();
-            //PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream("BRGY-Indigency.pdf", FileMode.Create));
-            
+            Document doc = new Document();
+            PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream("BRGY-Indigency.pdf", FileMode.Create));
 
             // Open the document to write content
-            //doc.Open();
+            doc.Open();
 
-            /* Add image
-            iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance("D:\\Programs c#\\PdfGenerator\\pictures\\scene.jpg");
-            doc.Add(img);*/
-/*
+
             iTextSharp.text.Image background = iTextSharp.text.Image.GetInstance("D:\\Barangay Picture\\Caloocan_City.png");
 
             float imageWidth = 500f;
@@ -94,6 +89,7 @@ namespace BarosDashboard
 
             background.ScaleToFit(doc.PageSize.Width, doc.PageSize.Height);
             background.SetAbsolutePosition(0, 0); // Position it at the bottom-left corner
+            // Add the image to the document
 
 
 
@@ -110,9 +106,9 @@ namespace BarosDashboard
             Paragraph headerClearance3 = new Paragraph($"Barangay 22, Zone 2, District II", font);
             Paragraph title = new Paragraph($"\n\nBARANGAY INDIGENCY", fontTitle);
             Paragraph bodyIndigency = new Paragraph($"\n\n\n\n\n\n\n\n\t\t\tThis is to Certify that {textBox1.Text}., A resident of {textBox4.Text} will use this Barangay Indigency.\n" +
-                $"\n\t\tThis indigency is issued for whatever legal purpose or purposes this may serve.\n" +
+                $"\n\t\tThis Indigency is issued for whatever legal purpose or purposes this may serve.\n" +
                 $"\n\t\tSigned this on the (Date Today) at BARANGAY 22 ZONE 2 DISTRICT II , CALOOCAN CITY, NATIONAL CAPITAL REGION, PHILIPPINES.\n" +
-                $"\n\t\tThis clearance is valid only for 1 year from the issuance.\n");
+                $"\n\t\tThis Indigency is valid only for 1 year from the issuance.\n");
 
             Paragraph signature = new Paragraph($"\n\nSIGNATURE", fontTitle);
             Paragraph punongBarangay = new Paragraph($"Punong Barangay", font);
@@ -166,10 +162,10 @@ namespace BarosDashboard
             // --------------------------------------------------------
 
 
-*/
+
 
             // Close the document
-           // doc.Close();
+            doc.Close();
 
             MessageBox.Show("PDF GENERATED SUCCESSFULLY!");
             GetDataFromMySQL();
