@@ -51,16 +51,15 @@ namespace BarosDashboard
             // 
             // backCourt
             // 
-            button1.Anchor = AnchorStyles.Bottom;
-            button1.BackColor = Color.DarkGoldenrod;
-            button1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(860, 990);
-            button1.Name = "button1";
-            button1.Size = new Size(239, 74);
-            button1.TabIndex = 102;
-            button1.Text = "SUBMIT";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            backCourt.BackColor = Color.Goldenrod;
+            backCourt.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
+            backCourt.Location = new Point(12, 12);
+            backCourt.Name = "backCourt";
+            backCourt.Size = new Size(97, 53);
+            backCourt.TabIndex = 191;
+            backCourt.Text = "Back";
+            backCourt.UseVisualStyleBackColor = false;
+            backCourt.Click += backCourt_Click_1;
             // 
             // textBox4
             // 
@@ -96,6 +95,7 @@ namespace BarosDashboard
             button1.TabIndex = 187;
             button1.Text = "SUBMIT";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // textBox3
             // 

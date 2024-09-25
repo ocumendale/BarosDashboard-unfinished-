@@ -94,6 +94,7 @@
             button1.TabIndex = 157;
             button1.Text = "NEXT";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // textBox3
             // 

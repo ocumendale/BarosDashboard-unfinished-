@@ -32,8 +32,52 @@ namespace BarosDashboard
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            
+        }
+        private void GetDataFromMySQL()
+        {
+            string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
+            string query = "INSERT INTO brgy_clear (Fname, contact_num, home, reason) VALUES (@Fullname, @Contactnumber, @home, @reason)";
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        // Add parameters
+                        cmd.Parameters.AddWithValue("@Fullname", textBox1.Text);
+                        cmd.Parameters.AddWithValue("@Contactnumber", textBox2.Text);
+                        cmd.Parameters.AddWithValue("@home", textBox4.Text);
+                        cmd.Parameters.AddWithValue("@reason", textBox3.Text);
+
+                        // Open the connection
+                        conn.Open();
+
+                        // Execute the query
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        // Close the connection
+                        conn.Close();
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        private void FormClear_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            this.TopMost = true;
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
             // Create a PDF document
-            Document doc = new Document();
+            /*Document doc = new Document();
             PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream("BRGY-Clearance.pdf", FileMode.Create));
 
             // Open the document to write content
@@ -43,7 +87,8 @@ namespace BarosDashboard
             iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance("D:\\Programs c#\\PdfGenerator\\pictures\\scene.jpg");
             doc.Add(img);*/
 
-            iTextSharp.text.Image background = iTextSharp.text.Image.GetInstance("D:\\Barangay Picture\\Caloocan_City.png");
+
+            /*iTextSharp.text.Image background = iTextSharp.text.Image.GetInstance("D:\\Barangay Picture\\Caloocan_City.png");
 
             float imageWidth = 500f;
             float imageHeight = 300f;
@@ -150,49 +195,11 @@ namespace BarosDashboard
 
 
             // Close the document
-            doc.Close();
+            doc.Close();*/
 
             MessageBox.Show("PDF GENERATED SUCCESSFULLY!");
             GetDataFromMySQL();
-        }
-        private void GetDataFromMySQL()
-        {
-            string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
-            string query = "INSERT INTO brgy_clear (Fname, contact_num, home, reason) VALUES (@Fullname, @Fullname, @Contactnumber, @home, @reason)";
 
-            try
-            {
-                using (MySqlConnection conn = new MySqlConnection(connectionString))
-                {
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
-                    {
-                        // Add parameters
-                        cmd.Parameters.AddWithValue("@Fullname", textBox1.Text);
-                        cmd.Parameters.AddWithValue("@Contactnumber", textBox2.Text);
-                        cmd.Parameters.AddWithValue("@home", textBox4.Text);
-                        cmd.Parameters.AddWithValue("@reason", textBox3.Text);
-
-                        // Open the connection
-                        conn.Open();
-
-                        // Execute the query
-                        int rowsAffected = cmd.ExecuteNonQuery();
-
-                        // Close the connection
-                        conn.Close();
-                    }
-                }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
-            }
-        }
-
-        private void FormClear_Load(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;          
-            this.TopMost = true;
         }
     }
 }

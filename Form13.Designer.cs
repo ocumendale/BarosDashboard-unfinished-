@@ -94,6 +94,7 @@
             button1.TabIndex = 172;
             button1.Text = "SUBMIT";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_2;
             // 
             // textBox3
             // 

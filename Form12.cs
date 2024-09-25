@@ -49,17 +49,19 @@ namespace BarosDashboard
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             // Create a PDF document
-            Document doc = new Document();
-            PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream("BRGY-Indigency.pdf", FileMode.Create));
+            //Document doc = new Document();
+            //PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream("BRGY-Indigency.pdf", FileMode.Create));
+            
 
             // Open the document to write content
-            doc.Open();
+            //doc.Open();
 
             /* Add image
             iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance("D:\\Programs c#\\PdfGenerator\\pictures\\scene.jpg");
             doc.Add(img);*/
-
+/*
             iTextSharp.text.Image background = iTextSharp.text.Image.GetInstance("D:\\Barangay Picture\\Caloocan_City.png");
 
             float imageWidth = 500f;
@@ -164,10 +166,10 @@ namespace BarosDashboard
             // --------------------------------------------------------
 
 
-
+*/
 
             // Close the document
-            doc.Close();
+           // doc.Close();
 
             MessageBox.Show("PDF GENERATED SUCCESSFULLY!");
             GetDataFromMySQL();
@@ -175,7 +177,7 @@ namespace BarosDashboard
         private void GetDataFromMySQL()
         {
             string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
-            string query = "INSERT INTO brgy_clear (Fname, contact_num, home, reason) VALUES (@Fullname, @Fullname, @Contactnumber, @home, @reason)";
+            string query = "INSERT INTO brgy_in (Fname, contact_num, home, reason) VALUES (@Fullname, @Contactnumber, @home, @reason)";
 
             try
             {
@@ -204,6 +206,13 @@ namespace BarosDashboard
             {
                 MessageBox.Show($"Error: {ex.Message}");
             }
+        }
+
+        private void backCourt_Click_1(object sender, EventArgs e)
+        {
+            DocuReq docureq = new DocuReq();
+            docureq.Show();
+            Visible = false;
         }
     }
 }
