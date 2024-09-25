@@ -57,7 +57,7 @@
             // 
             backChair.BackColor = Color.Goldenrod;
             backChair.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
-            backChair.Location = new Point(60, 24);
+            backChair.Location = new Point(12, 12);
             backChair.Name = "backChair";
             backChair.Size = new Size(97, 53);
             backChair.TabIndex = 0;
@@ -71,7 +71,7 @@
             button1.BackColor = Color.FromArgb(24, 25, 56);
             button1.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold);
             button1.ForeColor = Color.FromArgb(246, 180, 71);
-            button1.Location = new Point(434, 929);
+            button1.Location = new Point(415, 930);
             button1.Name = "button1";
             button1.Size = new Size(239, 74);
             button1.TabIndex = 104;
@@ -93,7 +93,7 @@
             label12.Anchor = AnchorStyles.Bottom;
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            label12.Location = new Point(694, 873);
+            label12.Location = new Point(696, 873);
             label12.Name = "label12";
             label12.Size = new Size(108, 25);
             label12.TabIndex = 102;
@@ -126,7 +126,7 @@
             label10.Anchor = AnchorStyles.Bottom;
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            label10.Location = new Point(514, 873);
+            label10.Location = new Point(515, 873);
             label10.Name = "label10";
             label10.Size = new Size(57, 25);
             label10.TabIndex = 99;

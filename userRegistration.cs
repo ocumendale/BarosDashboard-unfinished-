@@ -104,5 +104,10 @@ namespace BarosDashboard
         {
 
         }
+
+        private void email_txtb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

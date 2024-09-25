@@ -57,7 +57,7 @@
             // 
             backTent.BackColor = Color.Goldenrod;
             backTent.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
-            backTent.Location = new Point(12, 12);
+            backTent.Location = new Point(52, 42);
             backTent.Name = "backTent";
             backTent.Size = new Size(97, 53);
             backTent.TabIndex = 0;

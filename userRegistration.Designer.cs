@@ -206,6 +206,7 @@
             email_txtb.Name = "email_txtb";
             email_txtb.Size = new Size(456, 61);
             email_txtb.TabIndex = 36;
+            email_txtb.TextChanged += email_txtb_TextChanged;
             // 
             // email_lbl
             // 
