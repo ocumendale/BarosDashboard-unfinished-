@@ -255,7 +255,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "BARANGAY CERTIFICATE";
             TopMost = true;
-            Load += FormCertif_Load;
             ((System.ComponentModel.ISupportInitialize)signUpLogo).EndInit();
             ResumeLayout(false);
             PerformLayout();

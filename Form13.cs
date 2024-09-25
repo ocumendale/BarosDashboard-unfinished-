@@ -158,7 +158,7 @@ namespace BarosDashboard
         private void GetDataFromMySQL()
         {
             string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
-            string query = "INSERT INTO brgy_clear (Fname, contact_num, email, home, reason) VALUES (@Fullname, @Fullname, @Contactnumber, @email, @home, @reason)";
+            string query = "INSERT INTO brgy_clear (Fname, contact_num, home, reason) VALUES (@Fullname, @Fullname, @Contactnumber, @home, @reason)";
 
             try
             {
@@ -169,7 +169,6 @@ namespace BarosDashboard
                         // Add parameters
                         cmd.Parameters.AddWithValue("@Fullname", textBox1.Text);
                         cmd.Parameters.AddWithValue("@Contactnumber", textBox2.Text);
-                        cmd.Parameters.AddWithValue("@email", textBox5.Text);
                         cmd.Parameters.AddWithValue("@home", textBox4.Text);
                         cmd.Parameters.AddWithValue("@reason", textBox3.Text);
 
