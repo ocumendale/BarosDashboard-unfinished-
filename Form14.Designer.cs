@@ -84,6 +84,7 @@
             button1.TabIndex = 118;
             button1.Text = "SUBMIT";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label11
             // 

@@ -62,6 +62,7 @@ namespace BarosDashboard
             button1.TabIndex = 102;
             button1.Text = "SUBMIT";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label11
             // 
