@@ -66,5 +66,11 @@ namespace BarosDashboard
             docuReq.Show();
             Visible = false;
         }
+
+        private void Services_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            this.TopMost = true;
+        }
     }
 }

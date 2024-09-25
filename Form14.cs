@@ -23,5 +23,11 @@ namespace BarosDashboard
             docureq.Show();
             Visible = false;
         }
+
+        private void FormCertif_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            this.TopMost = true;
+        }
     }
 }

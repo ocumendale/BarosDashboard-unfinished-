@@ -26,7 +26,13 @@ namespace BarosDashboard
 
         private void Reservation_Resize(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void Reservation_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            this.TopMost = true;
         }
     }
 }

@@ -43,10 +43,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("MS UI Gothic", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(469, 131);
+            label1.Font = new Font("Segoe UI", 48F, FontStyle.Bold);
+            label1.Location = new Point(469, 75);
             label1.Name = "label1";
-            label1.Size = new Size(1028, 64);
+            label1.Size = new Size(1067, 86);
             label1.TabIndex = 0;
             label1.Text = "BARANGAY DOCUMENT REQUEST";
             label1.Click += label1_Click;
@@ -54,10 +54,10 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("MS UI Gothic", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(891, 274);
+            label2.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold);
+            label2.Location = new Point(883, 179);
             label2.Name = "label2";
-            label2.Size = new Size(191, 37);
+            label2.Size = new Size(188, 50);
             label2.TabIndex = 1;
             label2.Text = "SERVICES";
             // 
@@ -77,8 +77,8 @@
             // button1
             // 
             button1.BackColor = Color.Goldenrod;
-            button1.Font = new Font("Segoe UI", 26.25F);
-            button1.Location = new Point(285, 796);
+            button1.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold);
+            button1.Location = new Point(339, 796);
             button1.Name = "button1";
             button1.Size = new Size(505, 284);
             button1.TabIndex = 3;
@@ -89,8 +89,8 @@
             // button2
             // 
             button2.BackColor = Color.Goldenrod;
-            button2.Font = new Font("Segoe UI", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(1175, 377);
+            button2.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold);
+            button2.Location = new Point(1085, 321);
             button2.Name = "button2";
             button2.Size = new Size(505, 284);
             button2.TabIndex = 4;
@@ -101,8 +101,8 @@
             // button3
             // 
             button3.BackColor = Color.Goldenrod;
-            button3.Font = new Font("Segoe UI", 26.25F);
-            button3.Location = new Point(285, 377);
+            button3.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.Location = new Point(339, 321);
             button3.Name = "button3";
             button3.Size = new Size(505, 284);
             button3.TabIndex = 5;
@@ -113,8 +113,8 @@
             // button4
             // 
             button4.BackColor = Color.Goldenrod;
-            button4.Font = new Font("Segoe UI", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.Location = new Point(1175, 796);
+            button4.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold);
+            button4.Location = new Point(1085, 796);
             button4.Name = "button4";
             button4.Size = new Size(505, 284);
             button4.TabIndex = 6;
@@ -126,11 +126,12 @@
             // 
             signUpLogo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             signUpLogo.Image = (Image)resources.GetObject("signUpLogo.Image");
-            signUpLogo.Location = new Point(375, 4);
+            signUpLogo.Location = new Point(444, 229);
+            signUpLogo.Margin = new Padding(0);
             signUpLogo.Name = "signUpLogo";
-            signUpLogo.Size = new Size(1161, 1110);
+            signUpLogo.Size = new Size(1060, 821);
             signUpLogo.SizeMode = PictureBoxSizeMode.StretchImage;
-            signUpLogo.TabIndex = 86;
+            signUpLogo.TabIndex = 144;
             signUpLogo.TabStop = false;
             // 
             // DocuReq

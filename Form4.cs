@@ -63,5 +63,11 @@ namespace BarosDashboard
             Services services = new Services();
             services.ShowDialog();
         }
+
+        private void HowItWorks_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            this.TopMost = true;
+        }
     }
 }

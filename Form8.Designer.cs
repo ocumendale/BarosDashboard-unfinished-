@@ -52,6 +52,7 @@
             Controls.Add(backReq);
             Name = "manageReq";
             Text = "ManageReq";
+            Load += manageReq_Load;
             ResumeLayout(false);
         }
 

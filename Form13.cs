@@ -28,5 +28,11 @@ namespace BarosDashboard
         {
 
         }
+
+        private void FormClear_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;          
+            this.TopMost = true;
+        }
     }
 }

@@ -221,6 +221,7 @@
             Name = "Services";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Services";
+            Load += Services_Load;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel2.ResumeLayout(false);
