@@ -83,7 +83,8 @@ namespace BarosDashboard
 
         private void Contact_Load(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Maximized;
+            this.TopMost = true;
         }
 
         private void button3_Click(object sender, EventArgs e)

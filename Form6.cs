@@ -77,5 +77,11 @@ namespace BarosDashboard
         {
 
         }
+
+        private void ManageTransaction_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            this.TopMost = true;
+        }
     }
 }

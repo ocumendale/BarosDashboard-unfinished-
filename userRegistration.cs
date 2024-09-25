@@ -70,7 +70,8 @@ namespace BarosDashboard
 
         private void userRegistration_Load(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Maximized;
+            this.TopMost = true;
         }
 
         private void label1_Click(object sender, EventArgs e)

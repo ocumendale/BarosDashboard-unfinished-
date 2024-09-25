@@ -23,5 +23,11 @@ namespace BarosDashboard
             manage.Show();
             Visible = false;
         }
+
+        private void manageReq_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            this.TopMost = true;
+        }
     }
 }

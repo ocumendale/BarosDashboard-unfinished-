@@ -234,6 +234,7 @@
             Name = "ManageTransaction";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Manage Transaction";
+            Load += ManageTransaction_Load;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel2.ResumeLayout(false);

@@ -189,5 +189,11 @@ namespace BarosDashboard
                 MessageBox.Show($"Error: {ex.Message}");
             }
         }
+
+        private void FormClear_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;          
+            this.TopMost = true;
+        }
     }
 }

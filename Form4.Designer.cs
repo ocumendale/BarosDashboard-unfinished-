@@ -333,6 +333,7 @@
             Name = "HowItWorks";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "How It Works";
+            Load += HowItWorks_Load;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel2.ResumeLayout(false);

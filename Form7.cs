@@ -22,7 +22,8 @@ namespace BarosDashboard
 
         private void login_Load(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Maximized;
+            this.TopMost = true;
         }
 
         private void clear2_btn_Click(object sender, EventArgs e)

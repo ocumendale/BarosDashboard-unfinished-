@@ -19,7 +19,8 @@ namespace BarosDashboard
 
         private void Form15_Load(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Maximized;
+            this.TopMost = true;
         }
 
         private void backId_Click(object sender, EventArgs e)

@@ -43,8 +43,8 @@
             // button3
             // 
             button3.BackColor = Color.Goldenrod;
-            button3.Font = new Font("Segoe UI", 26.25F);
-            button3.Location = new Point(1148, 750);
+            button3.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold);
+            button3.Location = new Point(1031, 667);
             button3.Name = "button3";
             button3.Size = new Size(505, 284);
             button3.TabIndex = 3;
@@ -55,8 +55,8 @@
             // button2
             // 
             button2.BackColor = Color.Goldenrod;
-            button2.Font = new Font("Segoe UI", 26.25F);
-            button2.Location = new Point(258, 750);
+            button2.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold);
+            button2.Location = new Point(399, 667);
             button2.Name = "button2";
             button2.Size = new Size(505, 284);
             button2.TabIndex = 2;
@@ -67,8 +67,8 @@
             // button1
             // 
             button1.BackColor = Color.Goldenrod;
-            button1.Font = new Font("Segoe UI", 26.25F);
-            button1.Location = new Point(1148, 331);
+            button1.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold);
+            button1.Location = new Point(1031, 309);
             button1.Name = "button1";
             button1.Size = new Size(505, 284);
             button1.TabIndex = 1;
@@ -79,8 +79,8 @@
             // FormBas
             // 
             FormBas.BackColor = Color.Goldenrod;
-            FormBas.Font = new Font("Segoe UI", 26.25F);
-            FormBas.Location = new Point(258, 331);
+            FormBas.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold);
+            FormBas.Location = new Point(399, 309);
             FormBas.Name = "FormBas";
             FormBas.Size = new Size(505, 284);
             FormBas.TabIndex = 0;
@@ -91,10 +91,10 @@
             // Request
             // 
             Request.AutoSize = true;
-            Request.Font = new Font("MS UI Gothic", 48F, FontStyle.Bold);
-            Request.Location = new Point(746, 85);
+            Request.Font = new Font("Segoe UI", 48F, FontStyle.Bold);
+            Request.Location = new Point(730, 93);
             Request.Name = "Request";
-            Request.Size = new Size(451, 64);
+            Request.Size = new Size(464, 86);
             Request.TabIndex = 0;
             Request.Text = "RESERVATION";
             Request.Click += Request_Click;
@@ -102,9 +102,10 @@
             // backReq
             // 
             backReq.BackColor = Color.Goldenrod;
+            backReq.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             backReq.Location = new Point(12, 12);
             backReq.Name = "backReq";
-            backReq.Size = new Size(85, 42);
+            backReq.Size = new Size(97, 53);
             backReq.TabIndex = 4;
             backReq.Text = "Back";
             backReq.UseVisualStyleBackColor = false;
@@ -113,10 +114,10 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("MS UI Gothic", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(864, 228);
+            label2.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold);
+            label2.Location = new Point(883, 179);
             label2.Name = "label2";
-            label2.Size = new Size(191, 37);
+            label2.Size = new Size(188, 50);
             label2.TabIndex = 8;
             label2.Text = "SERVICES";
             // 
@@ -124,9 +125,9 @@
             // 
             signUpLogo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             signUpLogo.Image = (Image)resources.GetObject("signUpLogo.Image");
-            signUpLogo.Location = new Point(368, -26);
+            signUpLogo.Location = new Point(444, 229);
             signUpLogo.Name = "signUpLogo";
-            signUpLogo.Size = new Size(1161, 1110);
+            signUpLogo.Size = new Size(1060, 821);
             signUpLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             signUpLogo.TabIndex = 86;
             signUpLogo.TabStop = false;

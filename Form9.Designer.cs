@@ -91,6 +91,7 @@
             Name = "Reservation";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Reservation";
+            Load += Reservation_Load;
             Resize += Reservation_Resize;
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

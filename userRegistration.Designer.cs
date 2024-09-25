@@ -34,7 +34,6 @@
             clear_btn = new Button();
             signup_Btn = new Button();
             checkbxShowPass = new CheckBox();
-            conPass = new Label();
             password_txtb = new TextBox();
             password_lbl = new Label();
             fullname_txtb = new TextBox();
@@ -104,22 +103,12 @@
             checkbxShowPass.Cursor = Cursors.Hand;
             checkbxShowPass.FlatStyle = FlatStyle.Flat;
             checkbxShowPass.Font = new Font("Segoe UI", 24F);
-            checkbxShowPass.Location = new Point(504, 687);
+            checkbxShowPass.Location = new Point(504, 696);
             checkbxShowPass.Name = "checkbxShowPass";
             checkbxShowPass.Size = new Size(255, 49);
             checkbxShowPass.TabIndex = 44;
             checkbxShowPass.Text = "Show Password";
             checkbxShowPass.UseVisualStyleBackColor = true;
-            // 
-            // conPass
-            // 
-            conPass.AutoSize = true;
-            conPass.Font = new Font("Segoe UI", 24F);
-            conPass.Location = new Point(301, 689);
-            conPass.Name = "conPass";
-            conPass.Size = new Size(276, 45);
-            conPass.TabIndex = 43;
-            conPass.Text = "Confirm Password";
             // 
             // password_txtb
             // 
@@ -257,7 +246,6 @@
             Controls.Add(clear_btn);
             Controls.Add(signup_Btn);
             Controls.Add(checkbxShowPass);
-            Controls.Add(conPass);
             Controls.Add(password_txtb);
             Controls.Add(password_lbl);
             Controls.Add(fullname_txtb);
@@ -285,7 +273,6 @@
         private Button clear_btn;
         private Button signup_Btn;
         private CheckBox checkbxShowPass;
-        private Label conPass;
         private TextBox password_txtb;
         private Label password_lbl;
         private TextBox fullname_txtb;
