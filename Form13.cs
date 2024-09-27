@@ -116,7 +116,6 @@ namespace BarosDashboard
 
             background.ScaleToFit(doc.PageSize.Width, doc.PageSize.Height);
             background.SetAbsolutePosition(0, 0); // Position it at the bottom-left corner
-            // Add the image to the document
 
 
 

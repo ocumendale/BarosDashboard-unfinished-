@@ -14,6 +14,10 @@ using MySql.Data.MySqlClient;
 using iTextSharp.text.pdf;
 using iTextSharp.text;
 using System.IO;
+using Rectangle = iTextSharp.text.Rectangle;
+using Font = iTextSharp.text.Font;
+using Image = iTextSharp.text.Image;
+using ZXing;
 
 namespace BarosDashboard
 {
@@ -49,28 +53,7 @@ namespace BarosDashboard
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Document doc = new Document();
-            PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream("Tables.pdf", FileMode.Create));
-
-            // Open the document to write content
-            doc.Open();
-
-
-            // Add a paragraph
-            Paragraph name = new Paragraph($"Full Name: {textBox1.Text}");
-            Paragraph cnum = new Paragraph($"Contact Number: {textBox2.Text}");
-            Paragraph reas = new Paragraph($"Reason: {textBox3.Text}");
-            Paragraph dateNtime = new Paragraph($"Date: {textBox4.Text} \n Time: {textBox5.Text}");
-            Paragraph quanti = new Paragraph($"Quantity: {textBox6.Text}");
-            doc.Add(name);
-            doc.Add(cnum);
-            doc.Add(reas);
-            doc.Add(dateNtime);
-            doc.Add(quanti);
-
-            // Close the document
-            doc.Close();
-
+            GeneratePDF();
             MessageBox.Show("Your PDF has been successfully Generated!");
             GetDataFromMySQL();
         }
@@ -108,6 +91,117 @@ namespace BarosDashboard
             {
                 MessageBox.Show($"Error: {ex.Message}");
             }
+        }
+        private void GeneratePDF()
+        {
+            string outputPath = "TentReservationDetails.pdf";
+            DateTime currentDate = DateTime.Now;
+
+            // Create a new document
+            Document document = new Document(PageSize.A4);
+            PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(outputPath, FileMode.Create));
+
+            // Open the document to enable writing
+            document.Open();
+
+            //background image with opacity
+            iTextSharp.text.Image background = iTextSharp.text.Image.GetInstance("C:\\Barangay Picture\\Caloocan_City.png");
+
+            float imageWidth = 500f;
+            float imageHeight = 300f;
+            background.ScaleAbsolute(imageWidth, imageHeight);
+
+            // Get the page size
+            Rectangle pageSize = document.PageSize;
+            float pageWidth = pageSize.Width;
+            float pageHeight = pageSize.Height;
+
+            // Calculate the center position
+            float xPosition = (pageWidth - imageWidth) / 2;
+            float yPosition = (pageHeight - imageHeight) / 2;
+
+            // Set the absolute position to center the image
+            background.SetAbsolutePosition(xPosition, yPosition);
+
+            // Create a PdfGState to control the opacity
+            PdfGState gState = new PdfGState();
+            gState.FillOpacity = 0.1f; // Set opacity (0.0f to 1.0f, where 1.0 is fully opaque)
+                                       
+            // Add the background image with opacity
+            PdfContentByte canvas = writer.DirectContent;
+            canvas.SaveState();
+            canvas.SetGState(gState);
+            canvas.AddImage(background);
+            canvas.RestoreState();
+
+            // Set up fonts and colors
+            Font titleFont = FontFactory.GetFont("Arial", 18, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
+            Font contentFont = FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
+            Font labelFont = FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
+
+
+            // Title Section
+            Paragraph title = new Paragraph("TENT RESERVATION DETAILS", titleFont);
+            title.Alignment = Element.ALIGN_CENTER;
+            document.Add(title);
+
+            // Adding Spacing
+            document.Add(new Paragraph("\n"));
+            document.Add(new Paragraph("\n"));
+            document.Add(new Paragraph("\n"));
+            // Table for content
+            PdfPTable table = new PdfPTable(2);
+            table.WidthPercentage = 90;
+
+            AddTableRow(table, " ", " ", labelFont, contentFont);
+            // Add cells to the table with borders
+            AddTableRow(table, $"FULL NAME", textBox1.Text, labelFont, contentFont);
+            AddTableRow(table, " ", " ", labelFont, contentFont);
+            AddTableRow(table, $"CONTACT NUMBER", textBox2.Text, labelFont, contentFont);
+            AddTableRow(table, " ", " ", labelFont, contentFont);
+            AddTableRow(table, $"REASON OF REQUEST", textBox3.Text, labelFont, contentFont);
+            AddTableRow(table, " ", " ", labelFont, contentFont);
+            AddTableRow(table, $"DATE OF TRANSACTION", currentDate.ToString("yyyy-MM-dd"), labelFont, contentFont);
+            AddTableRow(table, " ", " ", labelFont, contentFont);
+            AddTableRow(table, $"TIME OF TRANSACTION", currentDate.ToString("hh:mm tt"), labelFont, contentFont);
+            AddTableRow(table, " ", " ", labelFont, contentFont);
+            AddTableRow(table, $"LOCATION", "475 Tilapia St. CC", labelFont, contentFont);
+            AddTableRow(table, " ", " ", labelFont, contentFont);
+            AddTableRow(table, $"QUANTITY", textBox5.Text, labelFont, contentFont);  // Added quantity field
+            AddTableRow(table, " ", " ", labelFont, contentFont);
+            AddTableRow(table, $"DATE OF RESERVATION", textBox4.Text, labelFont, contentFont);
+            AddTableRow(table, " ", " ", labelFont, contentFont);
+            AddTableRow(table, $"TIME OF RESERVATION", textBox6.Text, labelFont, contentFont);
+            AddTableRow(table, " ", " ", labelFont, contentFont);
+            AddTableRow(table, $"SIZE", "Good for 10", labelFont, contentFont);  // Added size field
+            AddTableRow(table, " ", " ", labelFont, contentFont);
+            AddTableRow(table, $"TRANSACTION STATUS", "Pending", labelFont, contentFont);
+            AddTableRow(table, " ", " ", labelFont, contentFont);
+            AddTableRow(table, " ", " ", labelFont, contentFont);
+
+            // Add the table to the document
+            document.Add(table);
+
+            // Closing instructions
+            document.Add(new Paragraph("\n"));
+            document.Add(new Paragraph("\n"));
+            Paragraph instruction = new Paragraph("Please present this copy to the Brgy. Hall, hours before the reservation", contentFont);
+            instruction.Alignment = Element.ALIGN_CENTER;
+            document.Add(instruction);
+
+            // Close the document
+            document.Close();
+        }
+        // Helper method for adding rows to the table
+        private static void AddTableRow(PdfPTable table, string label, string content, Font labelFont, Font contentFont)
+        {
+            PdfPCell labelCell = new PdfPCell(new Phrase(label, labelFont));
+            labelCell.Border = Rectangle.NO_BORDER;
+            table.AddCell(labelCell);
+
+            PdfPCell contentCell = new PdfPCell(new Phrase(content, contentFont));
+            contentCell.Border = Rectangle.NO_BORDER;
+            table.AddCell(contentCell);
         }
     }
 }
