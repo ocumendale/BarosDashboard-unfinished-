@@ -14,6 +14,7 @@ using MySql.Data.MySqlClient;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
 using Rectangle = iTextSharp.text.Rectangle;
+using Org.BouncyCastle.Utilities.Encoders;
 
 namespace BarosDashboard
 {
@@ -32,7 +33,7 @@ namespace BarosDashboard
         private void GetDataFromMySQL()
         {
             string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
-            string query = "INSERT INTO brgy_in (Fname, contact_num, home, reason, years) VALUES (@Fullname, @Contactnumber, @home, @reason, @years)";
+            string query = "INSERT INTO brgy_id (Fname, contact_num, home, height, weight, blood_type, birthday, sex, civil_status, emergency_contact_name, emergency_contact_number, precinct_number) VALUES (@Fullname, @ContactNumber, @home, @height, @weight, @bloodType, @birthday, @sex, @civilStatus, @emergency_name, @emergency_Con, @precinctNumber)";
 
             try
             {
@@ -42,10 +43,17 @@ namespace BarosDashboard
                     {
                         // Add parameters
                         cmd.Parameters.AddWithValue("@Fullname", textBox1.Text);
-                        cmd.Parameters.AddWithValue("@Contactnumber", textBox2.Text);
+                        cmd.Parameters.AddWithValue("@ContactNumber", textBox2.Text);
                         cmd.Parameters.AddWithValue("@home", textBox4.Text);
-                        cmd.Parameters.AddWithValue("@reason", textBox3.Text);
-                        
+                        cmd.Parameters.AddWithValue("@height", Convert.ToDecimal(txt_Height.Text));
+                        cmd.Parameters.AddWithValue("@weight", Convert.ToDecimal(txt_Weight.Text));
+                        cmd.Parameters.AddWithValue("@bloodType", bloodTypeBox.Text);
+                        cmd.Parameters.AddWithValue("@birthday", dateTimePickerBirthday.Value.Date);
+                        cmd.Parameters.AddWithValue("@sex", GetSelectedSex());
+                        cmd.Parameters.AddWithValue("@civilStatus", GetSelectedCivilStatus());
+                        cmd.Parameters.AddWithValue("@emergency_name", Fname_Em.Text); 
+                        cmd.Parameters.AddWithValue("@emergency_Con", contact_Em.Text);
+                        cmd.Parameters.AddWithValue("@precinctNumber", textBoxPrecinctNumber.Text);
 
                         // Open the connection
                         conn.Open();
@@ -55,6 +63,7 @@ namespace BarosDashboard
 
                         // Close the connection
                         conn.Close();
+
                     }
                 }
             }
@@ -63,6 +72,30 @@ namespace BarosDashboard
                 MessageBox.Show($"Error: {ex.Message}");
             }
         }
+        private string GetSelectedSex()
+        {
+            if (radioButtonMale.Checked)
+                return "Male";
+            else if (radioButtonFemale.Checked)
+                return "Female";
+            else
+                return null; // or handle as needed
+        }
+
+        private string GetSelectedCivilStatus()
+        {
+            if (radioButtonSingle.Checked)
+                return "Single";
+            else if (Married.Checked)
+                return "Married";
+            else if (radioButtonDivorced.Checked)
+                return "Divorced";
+            else if (radioButtonWidowed.Checked)
+                return "Widowed";
+            else
+                return null; // or handle as needed
+        }
+
 
         private void backId_Click(object sender, EventArgs e)
         {
@@ -73,13 +106,18 @@ namespace BarosDashboard
 
         private void button1_Click(object sender, EventArgs e)
         {
-            brgyIdNext next = new brgyIdNext();
-            next.Show();
-            Visible = false;
+            MessageBox.Show("Damn");
+            GetDataFromMySQL();
+
         }
 
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePickerBirthday_ValueChanged(object sender, EventArgs e)
         {
 
         }
