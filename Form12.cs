@@ -96,6 +96,7 @@ namespace BarosDashboard
         }
         private void GeneratePDF()
         {
+            DateTime currentDate = DateTime.Now;
             // Create a PDF document
             Document doc = new Document();
             PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream($"{textBox1.Text}_Indigency.pdf", FileMode.Create));
@@ -155,17 +156,17 @@ namespace BarosDashboard
             Paragraph whom = new Paragraph($"\n\n\nTO WHOM MAY IT CONCERN:", fontTitle);
             Paragraph bodyIndigency = new Paragraph($"\n\n\t\t\tThis is to Certify that {textBox1.Text}., A resident of {textBox4.Text} will use this Barangay Clearance.\n" +
                 $"\n\t\tThis Clearance is issued for whatever legal purpose or purposes this may serve.\n" +
-                $"\n\t\tSigned this on the (Date Today) at BARANGAY 22 ZONE 2 DISTRICT II , CALOOCAN CITY, NATIONAL CAPITAL REGION, PHILIPPINES.\n" +
+                $"\n\t\tSigned this on the {currentDate.ToString("yyyy-MM-dd")} at BARANGAY 22 ZONE 2 DISTRICT II , CALOOCAN CITY, NATIONAL CAPITAL REGION, PHILIPPINES.\n" +
                 $"\n\t\tThis Clearance is valid only for 1 year from the issuance.\n", font);
 
 
-            Paragraph dateRight = new Paragraph($"DATE TODAY", font);
+            Paragraph dateRight = new Paragraph($"{currentDate.ToString("yyyy-MM-dd")}", font);
 
             Paragraph verify = new Paragraph($"\n\n\n\n\nVERIFIED BY:", font);
             Paragraph witnessMan = new Paragraph($"ANTHONY S. MULAWIN", fontRight);
             Paragraph pos = new Paragraph($"Secretary", font);
 
-            Paragraph dateLeft = new Paragraph($"\t\t\tDATE TODAY", font);
+            Paragraph dateLeft = new Paragraph($"\t\t\t{currentDate.ToString("yyyy-MM-dd")}", font);
             Paragraph attest = new Paragraph($"\n\n\t\t\tATTESTED BY:", font);
             Paragraph punongBarangay = new Paragraph($"\t\t\tPunong Barangay", font);
             Paragraph chairMan = new Paragraph($"\t\t\tRONALD BAUTISTA", fontRight);

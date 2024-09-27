@@ -33,6 +33,7 @@ namespace BarosDashboard
 
         private void button1_Click(object sender, EventArgs e)
         {
+            DateTime currentDate = DateTime.Now;
             // Create a PDF document
             Document doc = new Document();
             PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream("BRGY-Cert.pdf", FileMode.Create));
@@ -91,13 +92,13 @@ namespace BarosDashboard
             Paragraph title = new Paragraph($"\n\nBARANGAY CERTIFICATION", fontTitle);
             Paragraph bodyIndigency = new Paragraph($"\n\n\n\n\n\n\n\n\t\t\tThis is to Certify that {textBox1.Text}., A resident of {textBox4.Text} will use this Barangay Certification.\n" +
                 $"\n\t\tThis certification is issued for whatever legal purpose or purposes this may serve.\n" +
-                $"\n\t\tSigned this on the (Date Today) at BARANGAY 22 ZONE 2 DISTRICT II , CALOOCAN CITY, NATIONAL CAPITAL REGION, PHILIPPINES.\n" +
+                $"\n\t\tSigned this on the {currentDate.ToString("yyyy-MM-dd")} at BARANGAY 22 ZONE 2 DISTRICT II , CALOOCAN CITY, NATIONAL CAPITAL REGION, PHILIPPINES.\n" +
                 $"\n\t\tThis certification is valid only for 1 year from the issuance.\n");
 
             Paragraph signature = new Paragraph($"\n\nSIGNATURE", fontTitle);
             Paragraph punongBarangay = new Paragraph($"Punong Barangay", font);
             Paragraph chairMan = new Paragraph($"RONALDO B. BAUTISTA", fontRight);
-            Paragraph dateRight = new Paragraph($"DATE TODAY", font);
+            Paragraph dateRight = new Paragraph($"{currentDate.ToString("yyyy-MM-dd")}", font);
 
             Paragraph witness = new Paragraph($"\n\nWitnessed by:", font);
             Paragraph wSignature = new Paragraph($"SIGNATURE", fontTitle);
