@@ -49,9 +49,56 @@ namespace BarosDashboard
 
         private void button1_Click(object sender, EventArgs e)
         {
+            GeneratePDF();
+            MessageBox.Show("PDF GENERATED SUCCESSFULLY!");
+            GetDataFromMySQL();
+        }
+        private void GetDataFromMySQL()
+        {
+            string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
+            string query = "INSERT INTO brgy_in (Fname, contact_num, home, reason, years) VALUES (@Fullname, @Contactnumber, @home, @reason, @years)";
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        // Add parameters
+                        cmd.Parameters.AddWithValue("@Fullname", textBox1.Text);
+                        cmd.Parameters.AddWithValue("@Contactnumber", textBox2.Text);
+                        cmd.Parameters.AddWithValue("@home", textBox4.Text);
+                        cmd.Parameters.AddWithValue("@reason", textBox3.Text);
+                        cmd.Parameters.AddWithValue("@years", textBox5.Text);
+
+                        // Open the connection
+                        conn.Open();
+
+                        // Execute the query
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        // Close the connection
+                        conn.Close();
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        private void backCourt_Click_1(object sender, EventArgs e)
+        {
+            DocuReq docureq = new DocuReq();
+            docureq.Show();
+            Visible = false;
+        }
+        private void GeneratePDF()
+        {
             // Create a PDF document
             Document doc = new Document();
-            PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream($"{textBox1.Text}Barangay_Indigency.pdf", FileMode.Create));
+            PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream($"{textBox1.Text}_Indigency.pdf", FileMode.Create));
 
             // Open the document to write content
             doc.Open();
@@ -169,50 +216,6 @@ namespace BarosDashboard
 
             // Close the document
             doc.Close();
-
-            MessageBox.Show("PDF GENERATED SUCCESSFULLY!");
-            GetDataFromMySQL();
-        }
-        private void GetDataFromMySQL()
-        {
-            string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
-            string query = "INSERT INTO brgy_in (Fname, contact_num, home, reason, years) VALUES (@Fullname, @Contactnumber, @home, @reason, @years)";
-
-            try
-            {
-                using (MySqlConnection conn = new MySqlConnection(connectionString))
-                {
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
-                    {
-                        // Add parameters
-                        cmd.Parameters.AddWithValue("@Fullname", textBox1.Text);
-                        cmd.Parameters.AddWithValue("@Contactnumber", textBox2.Text);
-                        cmd.Parameters.AddWithValue("@home", textBox4.Text);
-                        cmd.Parameters.AddWithValue("@reason", textBox3.Text);
-                        cmd.Parameters.AddWithValue("@years", textBox5.Text);
-
-                        // Open the connection
-                        conn.Open();
-
-                        // Execute the query
-                        int rowsAffected = cmd.ExecuteNonQuery();
-
-                        // Close the connection
-                        conn.Close();
-                    }
-                }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
-            }
-        }
-
-        private void backCourt_Click_1(object sender, EventArgs e)
-        {
-            DocuReq docureq = new DocuReq();
-            docureq.Show();
-            Visible = false;
         }
     }
 }
