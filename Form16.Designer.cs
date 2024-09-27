@@ -128,6 +128,7 @@
             textBox4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox4.Location = new Point(320, 801);
             textBox4.Name = "textBox4";
+            textBox4.PlaceholderText = "yyyy/mm/dd";
             textBox4.Size = new Size(160, 29);
             textBox4.TabIndex = 118;
             textBox4.TextAlign = HorizontalAlignment.Center;
