@@ -40,6 +40,7 @@ namespace BarosDashboard
             passWord = new Label();
             loginlbl = new Label();
             signUp_btn = new Button();
+            checkBox1 = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)signUpLogo).BeginInit();
             SuspendLayout();
             // 
@@ -72,7 +73,7 @@ namespace BarosDashboard
             clear2_btn.FlatStyle = FlatStyle.Flat;
             clear2_btn.Font = new Font("Segoe UI", 20.25F);
             clear2_btn.ForeColor = Color.FromArgb(24, 25, 56);
-            clear2_btn.Location = new Point(384, 641);
+            clear2_btn.Location = new Point(384, 668);
             clear2_btn.Name = "clear2_btn";
             clear2_btn.Size = new Size(188, 69);
             clear2_btn.TabIndex = 24;
@@ -87,7 +88,7 @@ namespace BarosDashboard
             signin_Btn.FlatStyle = FlatStyle.Flat;
             signin_Btn.Font = new Font("Segoe UI", 20.25F);
             signin_Btn.ForeColor = Color.FromArgb(246, 180, 71);
-            signin_Btn.Location = new Point(652, 641);
+            signin_Btn.Location = new Point(652, 668);
             signin_Btn.Name = "signin_Btn";
             signin_Btn.Size = new Size(188, 69);
             signin_Btn.TabIndex = 23;
@@ -161,7 +162,7 @@ namespace BarosDashboard
             signUp_btn.FlatStyle = FlatStyle.Flat;
             signUp_btn.Font = new Font("Segoe UI", 20.25F);
             signUp_btn.ForeColor = Color.FromArgb(246, 180, 71);
-            signUp_btn.Location = new Point(515, 743);
+            signUp_btn.Location = new Point(515, 770);
             signUp_btn.Name = "signUp_btn";
             signUp_btn.Size = new Size(188, 69);
             signUp_btn.TabIndex = 27;
@@ -169,12 +170,25 @@ namespace BarosDashboard
             signUp_btn.UseVisualStyleBackColor = false;
             signUp_btn.Click += signUp_btn_Click;
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            checkBox1.Location = new Point(656, 620);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(184, 29);
+            checkBox1.TabIndex = 28;
+            checkBox1.Text = "Show Password";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            // 
             // login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 180, 71);
             ClientSize = new Size(1911, 1118);
+            Controls.Add(checkBox1);
             Controls.Add(signUp_btn);
             Controls.Add(signUpLogo);
             Controls.Add(exit);
@@ -217,5 +231,6 @@ namespace BarosDashboard
         private Label passWord;
         private Label loginlbl;
         private Button signUp_btn;
+        private CheckBox checkBox1;
     }
 }

@@ -97,5 +97,17 @@ namespace BarosDashboard
             userRegistration.Show();
             this.Hide();
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                txt_password.PasswordChar = '\0'; // Show password
+            }
+            else
+            {
+                txt_password.PasswordChar = '*'; // Hide password
+            }
+        }
     }
 }

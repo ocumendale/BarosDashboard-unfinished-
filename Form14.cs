@@ -41,7 +41,7 @@ namespace BarosDashboard
             doc.Open();
 
 
-            iTextSharp.text.Image background = iTextSharp.text.Image.GetInstance("D:\\Barangay Picture\\Caloocan_City.png");
+            iTextSharp.text.Image background = iTextSharp.text.Image.GetInstance("C:\\Barangay Picture\\Caloocan_City.png");
 
             float imageWidth = 500f;
             float imageHeight = 300f;
