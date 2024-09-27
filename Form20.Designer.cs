@@ -52,6 +52,7 @@
             label1 = new Label();
             signUpLogo = new PictureBox();
             backId = new Button();
+            radioButton1 = new RadioButton();
             ((System.ComponentModel.ISupportInitialize)signUpLogo).BeginInit();
             SuspendLayout();
             // 
@@ -145,19 +146,20 @@
             // 
             radioButtonMale.AutoSize = true;
             radioButtonMale.Font = new Font("Segoe UI", 18F);
-            radioButtonMale.Location = new Point(649, 401);
+            radioButtonMale.Location = new Point(634, 401);
             radioButtonMale.Name = "radioButtonMale";
             radioButtonMale.Size = new Size(85, 36);
             radioButtonMale.TabIndex = 11;
             radioButtonMale.TabStop = true;
             radioButtonMale.Text = "Male";
             radioButtonMale.UseVisualStyleBackColor = true;
+            radioButtonMale.CheckedChanged += radioButtonMale_CheckedChanged;
             // 
             // radioButtonFemale
             // 
             radioButtonFemale.AutoSize = true;
             radioButtonFemale.Font = new Font("Segoe UI", 18F);
-            radioButtonFemale.Location = new Point(740, 401);
+            radioButtonFemale.Location = new Point(728, 401);
             radioButtonFemale.Name = "radioButtonFemale";
             radioButtonFemale.Size = new Size(109, 36);
             radioButtonFemale.TabIndex = 12;
@@ -301,12 +303,25 @@
             backId.UseVisualStyleBackColor = false;
             backId.Click += backId_Click;
             // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.Font = new Font("Segoe UI", 18F);
+            radioButton1.Location = new Point(843, 401);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(103, 36);
+            radioButton1.TabIndex = 161;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "Others";
+            radioButton1.UseVisualStyleBackColor = true;
+            // 
             // brgyIdNext
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 180, 71);
             ClientSize = new Size(1911, 1118);
+            Controls.Add(radioButton1);
             Controls.Add(backId);
             Controls.Add(label1);
             Controls.Add(label2);
@@ -362,5 +377,6 @@
         private Label label1;
         private PictureBox signUpLogo;
         private Button backId;
+        private RadioButton radioButton1;
     }
 }

@@ -38,7 +38,7 @@ namespace BarosDashboard
         {
 
         }
-      
+
 
         private void Form20_Load(object sender, EventArgs e)
         {
@@ -59,6 +59,10 @@ namespace BarosDashboard
             submit.Show();
             Visible = false;
         }
-       
+
+        private void radioButtonMale_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
