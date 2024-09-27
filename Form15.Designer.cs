@@ -1,4 +1,5 @@
-﻿namespace BarosDashboard
+﻿
+namespace BarosDashboard
 {
     partial class FormId
     {
@@ -123,7 +124,7 @@
             textBox2.Anchor = AnchorStyles.Left;
             textBox2.BackColor = Color.DarkGoldenrod;
             textBox2.Font = new Font("Segoe UI", 26.25F);
-            textBox2.Location = new Point(325, 534);
+            textBox2.Location = new Point(329, 534);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(592, 54);
             textBox2.TabIndex = 154;
@@ -134,7 +135,7 @@
             label7.Anchor = AnchorStyles.Left;
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold);
-            label7.Location = new Point(325, 491);
+            label7.Location = new Point(329, 491);
             label7.Name = "label7";
             label7.Size = new Size(283, 40);
             label7.TabIndex = 153;
@@ -200,11 +201,12 @@
             label2.Anchor = AnchorStyles.Top;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(697, 218);
+            label2.Location = new Point(666, 218);
             label2.Name = "label2";
             label2.Size = new Size(516, 30);
             label2.TabIndex = 147;
             label2.Text = "FILL OUT THIS FORM FOR RESERVATION OF FORM";
+            label2.Click += this.label2_Click;
             // 
             // label1
             // 
@@ -216,6 +218,7 @@
             label1.Size = new Size(705, 128);
             label1.TabIndex = 146;
             label1.Text = "BARANGAY ID";
+            label1.Click += label1_Click;
             // 
             // signUpLogo
             // 
@@ -258,6 +261,11 @@
             ((System.ComponentModel.ISupportInitialize)signUpLogo).EndInit();
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

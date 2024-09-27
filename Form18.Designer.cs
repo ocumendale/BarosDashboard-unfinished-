@@ -88,6 +88,7 @@
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(160, 29);
             textBox6.TabIndex = 103;
+            textBox6.TextAlign = HorizontalAlignment.Center;
             // 
             // label12
             // 

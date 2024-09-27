@@ -17,24 +17,11 @@ using Rectangle = iTextSharp.text.Rectangle;
 
 namespace BarosDashboard
 {
-    public partial class FormId : Form
+    public partial class submitId : Form
     {
-        public FormId()
+        public submitId()
         {
             InitializeComponent();
-        }
-
-        private void Form15_Load(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-            this.TopMost = true;
-        }
-
-        private void backId_Click(object sender, EventArgs e)
-        {
-            DocuReq docureq = new DocuReq();
-            docureq.Show();
-            Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -44,10 +31,20 @@ namespace BarosDashboard
             Visible = false;
         }
 
-
-        private void label1_Click(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void submitId_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            this.TopMost = true;
+        }
+      
+        private void button2_Click(object sender, EventArgs e)
+        {
+     
         }
     }
 }

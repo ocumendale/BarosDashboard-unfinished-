@@ -19,8 +19,8 @@ namespace BarosDashboard
 
         private void DocuReq_Load(object sender, EventArgs e)
         {
-            /*this.WindowState = FormWindowState.Maximized;
-            this.TopMost = true;*/
+            this.WindowState = FormWindowState.Maximized;
+            this.TopMost = true;
         }
 
         private void label1_Click(object sender, EventArgs e)

@@ -68,7 +68,7 @@
             button1.BackColor = Color.FromArgb(24, 25, 56);
             button1.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold);
             button1.ForeColor = Color.FromArgb(246, 180, 71);
-            button1.Location = new Point(489, 995);
+            button1.Location = new Point(482, 982);
             button1.Name = "button1";
             button1.Size = new Size(239, 74);
             button1.TabIndex = 142;
@@ -81,7 +81,7 @@
             textBox3.Anchor = AnchorStyles.Right;
             textBox3.BackColor = Color.DarkGoldenrod;
             textBox3.Font = new Font("Segoe UI", 26.25F);
-            textBox3.Location = new Point(318, 758);
+            textBox3.Location = new Point(321, 758);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(592, 54);
             textBox3.TabIndex = 137;
@@ -103,7 +103,7 @@
             textBox2.Anchor = AnchorStyles.Left;
             textBox2.BackColor = Color.DarkGoldenrod;
             textBox2.Font = new Font("Segoe UI", 26.25F);
-            textBox2.Location = new Point(325, 496);
+            textBox2.Location = new Point(330, 496);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(592, 54);
             textBox2.TabIndex = 135;
@@ -114,7 +114,7 @@
             label7.Anchor = AnchorStyles.Left;
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold);
-            label7.Location = new Point(325, 453);
+            label7.Location = new Point(334, 453);
             label7.Name = "label7";
             label7.Size = new Size(283, 40);
             label7.TabIndex = 134;
@@ -125,7 +125,7 @@
             label6.Anchor = AnchorStyles.Top;
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(718, 385);
+            label6.Location = new Point(724, 385);
             label6.Name = "label6";
             label6.Size = new Size(178, 32);
             label6.TabIndex = 133;
@@ -136,7 +136,7 @@
             label5.Anchor = AnchorStyles.Top;
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(323, 386);
+            label5.Location = new Point(329, 386);
             label5.Name = "label5";
             label5.Size = new Size(143, 32);
             label5.TabIndex = 132;
@@ -147,7 +147,7 @@
             label4.Anchor = AnchorStyles.Top;
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(521, 385);
+            label4.Location = new Point(527, 385);
             label4.Name = "label4";
             label4.Size = new Size(149, 32);
             label4.TabIndex = 131;
@@ -158,7 +158,7 @@
             label3.Anchor = AnchorStyles.Top;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(323, 286);
+            label3.Location = new Point(329, 286);
             label3.Name = "label3";
             label3.Size = new Size(177, 40);
             label3.TabIndex = 130;
@@ -169,7 +169,7 @@
             textBox1.Anchor = AnchorStyles.Top;
             textBox1.BackColor = Color.DarkGoldenrod;
             textBox1.Font = new Font("Segoe UI", 26.25F);
-            textBox1.Location = new Point(323, 329);
+            textBox1.Location = new Point(327, 329);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(592, 54);
             textBox1.TabIndex = 129;
@@ -214,7 +214,7 @@
             textBox4.Anchor = AnchorStyles.Right;
             textBox4.BackColor = Color.DarkGoldenrod;
             textBox4.Font = new Font("Segoe UI", 26.25F);
-            textBox4.Location = new Point(318, 635);
+            textBox4.Location = new Point(321, 635);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(592, 54);
             textBox4.TabIndex = 145;
@@ -236,7 +236,7 @@
             textBox5.Anchor = AnchorStyles.Top;
             textBox5.BackColor = Color.DarkGoldenrod;
             textBox5.Font = new Font("Segoe UI", 26.25F);
-            textBox5.Location = new Point(318, 892);
+            textBox5.Location = new Point(324, 892);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(592, 54);
             textBox5.TabIndex = 146;
@@ -247,7 +247,7 @@
             label10.Anchor = AnchorStyles.Right;
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold);
-            label10.Location = new Point(318, 847);
+            label10.Location = new Point(321, 847);
             label10.Name = "label10";
             label10.Size = new Size(314, 40);
             label10.TabIndex = 147;
