@@ -49,124 +49,7 @@ namespace BarosDashboard
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Create a PDF document
-            Document doc = new Document();
-            PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream("BRGY-Indigency.pdf", FileMode.Create));
-
-            // Open the document to write content
-            doc.Open();
-
-
-            iTextSharp.text.Image background = iTextSharp.text.Image.GetInstance("C:\\Barangay Picture\\Caloocan_City.png");
-
-            float imageWidth = 500f;
-            float imageHeight = 300f;
-            background.ScaleAbsolute(imageWidth, imageHeight);
-
-            // Get the page size
-            Rectangle pageSize = doc.PageSize;
-            float pageWidth = pageSize.Width;
-            float pageHeight = pageSize.Height;
-
-            // Calculate the center position
-            float xPosition = (pageWidth - imageWidth) / 2;
-            float yPosition = (pageHeight - imageHeight) / 2;
-
-            // Set the absolute position to center the image
-            background.SetAbsolutePosition(xPosition, yPosition);
-
-            // Create a PdfGState to control the opacity
-            PdfGState gState = new PdfGState();
-            gState.FillOpacity = 0.1f; // Set opacity (0.0f to 1.0f, where 1.0 is fully opaque)
-
-            // Add the background image with opacity
-            PdfContentByte canvas = writer.DirectContent;
-            canvas.SaveState();
-            canvas.SetGState(gState);
-            canvas.AddImage(background);
-            canvas.RestoreState();
-
-
-            background.ScaleToFit(doc.PageSize.Width, doc.PageSize.Height);
-            background.SetAbsolutePosition(0, 0); // Position it at the bottom-left corner
-            // Add the image to the document
-
-
-
-            // Header of the document
-            iTextSharp.text.Font font1bold = FontFactory.GetFont(FontFactory.TIMES_BOLD, 16, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
-            iTextSharp.text.Font font1 = FontFactory.GetFont(FontFactory.TIMES, 16, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
-            iTextSharp.text.Font font = FontFactory.GetFont(FontFactory.TIMES, 11, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
-            iTextSharp.text.Font fontTitle = FontFactory.GetFont(FontFactory.TIMES_BOLD, 14, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
-            iTextSharp.text.Font fontRight = FontFactory.GetFont(FontFactory.TIMES_BOLD, 13, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
-
-            Paragraph headerClearance = new Paragraph($"Republic City of the Philippines", font1bold);
-            Paragraph headerClearance1 = new Paragraph($"City of Caloocan", font);
-            Paragraph headerClearance2 = new Paragraph($"OFFICE OF THE PUNONG BARANGAY", font1);
-            Paragraph headerClearance3 = new Paragraph($"Barangay 22, Zone 2, District II", font);
-            Paragraph title = new Paragraph($"\n\nBARANGAY INDIGENCY", fontTitle);
-            Paragraph bodyIndigency = new Paragraph($"\n\n\n\n\n\n\n\n\t\t\tThis is to Certify that {textBox1.Text}., A resident of {textBox4.Text} will use this Barangay Indigency.\n" +
-                $"\n\t\tThis Indigency is issued for whatever legal purpose or purposes this may serve.\n" +
-                $"\n\t\tSigned this on the (Date Today) at BARANGAY 22 ZONE 2 DISTRICT II , CALOOCAN CITY, NATIONAL CAPITAL REGION, PHILIPPINES.\n" +
-                $"\n\t\tThis Indigency is valid only for 1 year from the issuance.\n");
-
-            Paragraph signature = new Paragraph($"\n\nSIGNATURE", fontTitle);
-            Paragraph punongBarangay = new Paragraph($"Punong Barangay", font);
-            Paragraph chairMan = new Paragraph($"RONALDO B. BAUTISTA", fontRight);
-            Paragraph dateRight = new Paragraph($"DATE TODAY", font);
-
-            Paragraph witness = new Paragraph($"\n\nWitnessed by:", font);
-            Paragraph wSignature = new Paragraph($"SIGNATURE", fontTitle);
-            Paragraph witnessMan = new Paragraph($"ANTHONY S. MULAWIN", fontRight);
-            Paragraph pos = new Paragraph($"Secretary", font);
-
-
-            headerClearance.Alignment = Element.ALIGN_CENTER;
-            headerClearance1.Alignment = Element.ALIGN_CENTER;
-            headerClearance2.Alignment = Element.ALIGN_CENTER;
-            headerClearance3.Alignment = Element.ALIGN_CENTER;
-            title.Alignment = Element.ALIGN_CENTER;
-
-            signature.Alignment = Element.ALIGN_RIGHT;
-            punongBarangay.Alignment = Element.ALIGN_RIGHT;
-            chairMan.Alignment = Element.ALIGN_RIGHT;
-            dateRight.Alignment = Element.ALIGN_RIGHT;
-            witness.Alignment = Element.ALIGN_RIGHT;
-            chairMan.Alignment = Element.ALIGN_RIGHT;
-            dateRight.Alignment = Element.ALIGN_RIGHT;
-            witness.Alignment = Element.ALIGN_RIGHT;
-            wSignature.Alignment = Element.ALIGN_RIGHT;
-            witnessMan.Alignment = Element.ALIGN_RIGHT;
-            pos.Alignment = Element.ALIGN_RIGHT;
-
-            doc.Add(headerClearance);
-            doc.Add(headerClearance1);
-            doc.Add(headerClearance2);
-            doc.Add(headerClearance3);
-            doc.Add(title);
-            doc.Add(bodyIndigency);
-
-            doc.Add(signature);
-            doc.Add(chairMan);
-            doc.Add(punongBarangay);
-            doc.Add(dateRight);
-
-            doc.Add(witness);
-            doc.Add(wSignature);
-            doc.Add(witnessMan);
-            doc.Add(pos);
-            doc.Add(dateRight);
-
-
-
-            // --------------------------------------------------------
-
-
-
-
-            // Close the document
-            doc.Close();
-
+            GeneratePDF();
             MessageBox.Show("PDF GENERATED SUCCESSFULLY!");
             GetDataFromMySQL();
         }
@@ -210,6 +93,129 @@ namespace BarosDashboard
             DocuReq docureq = new DocuReq();
             docureq.Show();
             Visible = false;
+        }
+        private void GeneratePDF()
+        {
+            // Create a PDF document
+            Document doc = new Document();
+            PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream($"{textBox1.Text}_Indigency.pdf", FileMode.Create));
+
+            // Open the document to write content
+            doc.Open();
+
+
+            iTextSharp.text.Image background = iTextSharp.text.Image.GetInstance("C:\\Barangay Picture\\Caloocan_City.png");
+
+            float imageWidth = 500f;
+            float imageHeight = 300f;
+            background.ScaleAbsolute(imageWidth, imageHeight);
+
+            // Get the page size
+            Rectangle pageSize = doc.PageSize;
+            float pageWidth = pageSize.Width;
+            float pageHeight = pageSize.Height;
+
+            // Calculate the center position
+            float xPosition = (pageWidth - imageWidth) / 2;
+            float yPosition = (pageHeight - imageHeight) / 2;
+
+            // Set the absolute position to center the image
+            background.SetAbsolutePosition(xPosition, yPosition);
+
+            // Create a PdfGState to control the opacity
+            PdfGState gState = new PdfGState();
+            gState.FillOpacity = 0.1f; // Set opacity (0.0f to 1.0f, where 1.0 is fully opaque)
+
+            // Add the background image with opacity
+            PdfContentByte canvas = writer.DirectContent;
+            canvas.SaveState();
+            canvas.SetGState(gState);
+            canvas.AddImage(background);
+            canvas.RestoreState();
+
+
+            background.ScaleToFit(doc.PageSize.Width, doc.PageSize.Height);
+            background.SetAbsolutePosition(0, 0); // Position it at the bottom-left corner
+                                                  // Add the image to the document
+
+
+
+            // Header of the document
+            iTextSharp.text.Font font1bold = FontFactory.GetFont(FontFactory.TIMES_BOLD, 16, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
+            iTextSharp.text.Font font1 = FontFactory.GetFont(FontFactory.TIMES, 16, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
+            iTextSharp.text.Font font = FontFactory.GetFont(FontFactory.TIMES, 11, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
+            iTextSharp.text.Font fontTitle = FontFactory.GetFont(FontFactory.TIMES_BOLD, 18, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
+            iTextSharp.text.Font fontRight = FontFactory.GetFont(FontFactory.TIMES_BOLD, 13, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
+
+            Paragraph headerClearance = new Paragraph($"Republic City of the Philippines", font1bold);
+            Paragraph headerClearance1 = new Paragraph($"City of Caloocan", font);
+            Paragraph headerClearance2 = new Paragraph($"OFFICE OF THE PUNONG BARANGAY", font1);
+            Paragraph headerClearance3 = new Paragraph($"Barangay 22, Zone 2, District II", font);
+            Paragraph title = new Paragraph($"\n\nCERTIFICATE OF INDIGENCY", fontTitle);
+            Paragraph whom = new Paragraph($"\n\n\nTO WHOM MAY IT CONCERN:", fontTitle);
+            Paragraph bodyIndigency = new Paragraph($"\n\n\t\t\tThis is to Certify that {textBox1.Text}., A resident of {textBox4.Text} will use this Barangay Clearance.\n" +
+                $"\n\t\tThis Clearance is issued for whatever legal purpose or purposes this may serve.\n" +
+                $"\n\t\tSigned this on the (Date Today) at BARANGAY 22 ZONE 2 DISTRICT II , CALOOCAN CITY, NATIONAL CAPITAL REGION, PHILIPPINES.\n" +
+                $"\n\t\tThis Clearance is valid only for 1 year from the issuance.\n", font);
+
+
+            Paragraph dateRight = new Paragraph($"DATE TODAY", font);
+
+            Paragraph verify = new Paragraph($"\n\n\n\n\nVERIFIED BY:", font);
+            Paragraph witnessMan = new Paragraph($"ANTHONY S. MULAWIN", fontRight);
+            Paragraph pos = new Paragraph($"Secretary", font);
+
+            Paragraph dateLeft = new Paragraph($"\t\t\tDATE TODAY", font);
+            Paragraph attest = new Paragraph($"\n\n\t\t\tATTESTED BY:", font);
+            Paragraph punongBarangay = new Paragraph($"\t\t\tPunong Barangay", font);
+            Paragraph chairMan = new Paragraph($"\t\t\tRONALD BAUTISTA", fontRight);
+
+            headerClearance.Alignment = Element.ALIGN_CENTER;
+            headerClearance1.Alignment = Element.ALIGN_CENTER;
+            headerClearance2.Alignment = Element.ALIGN_CENTER;
+            headerClearance3.Alignment = Element.ALIGN_CENTER;
+            title.Alignment = Element.ALIGN_CENTER;
+
+            verify.Alignment = Element.ALIGN_RIGHT;
+            chairMan.Alignment = Element.ALIGN_RIGHT;
+            dateRight.Alignment = Element.ALIGN_RIGHT;
+            witnessMan.Alignment = Element.ALIGN_RIGHT;
+            pos.Alignment = Element.ALIGN_RIGHT;
+
+            dateLeft.Alignment = Element.ALIGN_LEFT;
+            attest.Alignment = Element.ALIGN_LEFT;
+            chairMan.Alignment = Element.ALIGN_LEFT;
+            punongBarangay.Alignment = Element.ALIGN_LEFT;
+
+            doc.Add(headerClearance);
+            doc.Add(headerClearance1);
+            doc.Add(headerClearance2);
+            doc.Add(headerClearance3);
+            doc.Add(title);
+            doc.Add(whom);
+            doc.Add(bodyIndigency);
+
+            doc.Add(verify);
+            doc.Add(witnessMan);
+            doc.Add(pos);
+            doc.Add(dateRight);
+
+            doc.Add(attest);
+            doc.Add(chairMan);
+            doc.Add(punongBarangay);
+            doc.Add(dateLeft);
+
+
+
+
+
+            // --------------------------------------------------------
+
+
+
+
+            // Close the document
+            doc.Close();
         }
     }
 }
