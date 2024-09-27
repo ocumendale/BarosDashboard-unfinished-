@@ -30,11 +30,15 @@ namespace BarosDashboard
             this.WindowState = FormWindowState.Maximized;
             this.TopMost = true;
         }
+        
+        
+
         private void GetDataFromMySQL()
         {
             string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
             string query = "INSERT INTO brgy_id (Fname, contact_num, home, height, weight, blood_type, birthday, sex, civil_status, emergency_contact_name, emergency_contact_number, precinct_number) VALUES (@Fullname, @ContactNumber, @home, @height, @weight, @bloodType, @birthday, @sex, @civilStatus, @emergency_name, @emergency_Con, @precinctNumber)";
 
+       
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -93,7 +97,7 @@ namespace BarosDashboard
             else if (radioButtonWidowed.Checked)
                 return "Widowed";
             else
-                return null; // or handle as needed
+                return null; 
         }
 
 
@@ -106,9 +110,26 @@ namespace BarosDashboard
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Damn");
-            GetDataFromMySQL();
+            if (ValidateInputs())
+            {
+                GetDataFromMySQL();
+                MessageBox.Show("Your information has been successfully submitted!", "Submission Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Please complete all required fields before submitting.", "Incomplete Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
+        }
+        private bool ValidateInputs()
+        {
+            // Example validation: ensure the critical textboxes are not empty
+            if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text) || string.IsNullOrWhiteSpace(textBox4.Text))
+            {
+                return false;
+            }
+            // Add more validation checks as needed
+            return true;
         }
 
 

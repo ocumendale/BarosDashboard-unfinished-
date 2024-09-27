@@ -13,6 +13,7 @@ using MySql.Data.MySqlClient;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
 using Rectangle = iTextSharp.text.Rectangle;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BarosDashboard
 {
@@ -76,9 +77,32 @@ namespace BarosDashboard
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            GeneratePDF();
-            MessageBox.Show("PDF GENERATED SUCCESSFULLY!");
-            GetDataFromMySQL();
+            // Check inputs before attempting to send data to MySQL
+            if (ValidateInputs())
+            {             
+                
+                GetDataFromMySQL();
+                MessageBox.Show("Your information has been successfully submitted!", "Submission Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                GeneratePDF();
+                MessageBox.Show("PDF GENERATED SUCCESSFULLY!");
+            }
+            else
+            {
+                MessageBox.Show("Please complete all required fields before submitting.", "Incomplete Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private bool ValidateInputs()
+        {
+            // Check if critical textboxes are empty
+            if (string.IsNullOrWhiteSpace(textBox1.Text) ||  // Fullname
+                string.IsNullOrWhiteSpace(textBox2.Text) ||  // Contact number
+                string.IsNullOrWhiteSpace(textBox4.Text) ||  // Home address
+            string.IsNullOrWhiteSpace(textBox3.Text))        // Reason of Request
+            {
+                return false;
+            }
+            return true;
         }
         private void GeneratePDF()
         {

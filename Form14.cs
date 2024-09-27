@@ -33,6 +33,73 @@ namespace BarosDashboard
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            // Check inputs before attempting to send data to MySQL
+            if (ValidateInputs())
+            {
+                GetDataFromMySQL();
+                MessageBox.Show("Your information has been successfully submitted!", "Submission Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Please complete all required fields before submitting.", "Incomplete Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }     
+
+        }
+        private bool ValidateInputs()
+        {
+            // Check if critical textboxes are empty
+            if (string.IsNullOrWhiteSpace(textBox1.Text) ||
+                string.IsNullOrWhiteSpace(textBox2.Text) ||
+                string.IsNullOrWhiteSpace(textBox4.Text) ||
+                string.IsNullOrWhiteSpace(textBox3.Text) ||
+                string.IsNullOrWhiteSpace(textBox5.Text))
+            {
+                return false;
+            }
+            return true;
+        }
+
+
+
+
+
+        private void GetDataFromMySQL()
+        {
+            string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
+            string query = "INSERT INTO brgy_cert (Fname, contact_num, home, reason, years) VALUES (@Fullname, @Contactnumber, @home, @reason, @years)";
+
+           
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        // Add parameters
+                        cmd.Parameters.AddWithValue("@Fullname", textBox1.Text);
+                        cmd.Parameters.AddWithValue("@Contactnumber", textBox2.Text);
+                        cmd.Parameters.AddWithValue("@home", textBox4.Text);
+                        cmd.Parameters.AddWithValue("@reason", textBox3.Text);
+                        cmd.Parameters.AddWithValue("@years", textBox5.Text);
+
+
+                        // Open the connection
+                        conn.Open();
+
+                        // Execute the query
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        // Close the connection
+                        conn.Close();
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
             DateTime currentDate = DateTime.Now;
             // Create a PDF document
             Document doc = new Document();
@@ -153,42 +220,6 @@ namespace BarosDashboard
             doc.Close();
 
             MessageBox.Show("PDF GENERATED SUCCESSFULLY!");
-            GetDataFromMySQL();
-        }
-        private void GetDataFromMySQL()
-        {
-            string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
-            string query = "INSERT INTO brgy_cert (Fname, contact_num, home, reason, years) VALUES (@Fullname, @Contactnumber, @home, @reason, @years)";
-
-            try
-            {
-                using (MySqlConnection conn = new MySqlConnection(connectionString))
-                {
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
-                    {
-                        // Add parameters
-                        cmd.Parameters.AddWithValue("@Fullname", textBox1.Text);
-                        cmd.Parameters.AddWithValue("@Contactnumber", textBox2.Text);
-                        cmd.Parameters.AddWithValue("@home", textBox4.Text);
-                        cmd.Parameters.AddWithValue("@reason", textBox3.Text);
-                        cmd.Parameters.AddWithValue("@years", textBox5.Text);
-
-
-                        // Open the connection
-                        conn.Open();
-
-                        // Execute the query
-                        int rowsAffected = cmd.ExecuteNonQuery();
-
-                        // Close the connection
-                        conn.Close();
-                    }
-                }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
-            }
         }
 
         private void FormCertif_Load(object sender, EventArgs e)

@@ -49,14 +49,45 @@ namespace BarosDashboard
 
         private void button1_Click(object sender, EventArgs e)
         {
-            GeneratePDF();
-            MessageBox.Show("PDF GENERATED SUCCESSFULLY!");
-            GetDataFromMySQL();
+            // Check inputs before attempting to send data to MySQL
+            if (ValidateInputs())
+            {
+               
+                GetDataFromMySQL();
+                MessageBox.Show("Your information has been successfully submitted!", "Submission Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                GeneratePDF();
+                MessageBox.Show("PDF GENERATED SUCCESSFULLY!");
+            }
+            else
+            {
+                MessageBox.Show("Please complete all required fields before submitting.", "Incomplete Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
+
+        private bool ValidateInputs()
+        {
+            // Check if critical textboxes are empty
+            if (string.IsNullOrWhiteSpace(textBox1.Text) ||
+                string.IsNullOrWhiteSpace(textBox2.Text) ||
+                string.IsNullOrWhiteSpace(textBox4.Text) ||
+                string.IsNullOrWhiteSpace(textBox3.Text) ||
+                string.IsNullOrWhiteSpace(textBox5.Text))
+            {
+                return false;
+            }
+            return true;
+        }
+
+
+
+
         private void GetDataFromMySQL()
         {
             string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
             string query = "INSERT INTO brgy_in (Fname, contact_num, home, reason, years) VALUES (@Fullname, @Contactnumber, @home, @reason, @years)";
+
+            
+
 
             try
             {
@@ -86,16 +117,8 @@ namespace BarosDashboard
             {
                 MessageBox.Show($"Error: {ex.Message}");
             }
-        }
 
-        private void backCourt_Click_1(object sender, EventArgs e)
-        {
-            DocuReq docureq = new DocuReq();
-            docureq.Show();
-            Visible = false;
-        }
-        private void GeneratePDF()
-        {
+
             DateTime currentDate = DateTime.Now;
             // Create a PDF document
             Document doc = new Document();
@@ -217,6 +240,17 @@ namespace BarosDashboard
 
             // Close the document
             doc.Close();
+        }
+
+        private void backCourt_Click_1(object sender, EventArgs e)
+        {
+            DocuReq docureq = new DocuReq();
+            docureq.Show();
+            Visible = false;
+        }
+        private void GeneratePDF()
+        {
+            
         }
     }
 }

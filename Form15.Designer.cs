@@ -29,6 +29,7 @@ namespace BarosDashboard
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormId));
             backId = new Button();
             textBox4 = new TextBox();
             label9 = new Label();
@@ -71,8 +72,10 @@ namespace BarosDashboard
             label14 = new Label();
             Fname_Em = new TextBox();
             label15 = new Label();
+            signUpLogo = new PictureBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)signUpLogo).BeginInit();
             SuspendLayout();
             // 
             // backId
@@ -92,7 +95,7 @@ namespace BarosDashboard
             textBox4.Anchor = AnchorStyles.Right;
             textBox4.BackColor = Color.DarkGoldenrod;
             textBox4.Font = new Font("Segoe UI", 26.25F);
-            textBox4.Location = new Point(227, 539);
+            textBox4.Location = new Point(238, 539);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(592, 54);
             textBox4.TabIndex = 160;
@@ -103,7 +106,7 @@ namespace BarosDashboard
             label9.Anchor = AnchorStyles.Right;
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold);
-            label9.Location = new Point(227, 496);
+            label9.Location = new Point(238, 496);
             label9.Name = "label9";
             label9.Size = new Size(240, 40);
             label9.TabIndex = 159;
@@ -128,7 +131,7 @@ namespace BarosDashboard
             textBox3.Anchor = AnchorStyles.Right;
             textBox3.BackColor = Color.DarkGoldenrod;
             textBox3.Font = new Font("Segoe UI", 26.25F);
-            textBox3.Location = new Point(227, 662);
+            textBox3.Location = new Point(238, 662);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(592, 54);
             textBox3.TabIndex = 156;
@@ -139,7 +142,7 @@ namespace BarosDashboard
             label8.Anchor = AnchorStyles.Right;
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold);
-            label8.Location = new Point(227, 619);
+            label8.Location = new Point(238, 619);
             label8.Name = "label8";
             label8.Size = new Size(310, 40);
             label8.TabIndex = 155;
@@ -150,7 +153,7 @@ namespace BarosDashboard
             textBox2.Anchor = AnchorStyles.Left;
             textBox2.BackColor = Color.DarkGoldenrod;
             textBox2.Font = new Font("Segoe UI", 26.25F);
-            textBox2.Location = new Point(238, 400);
+            textBox2.Location = new Point(244, 400);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(592, 54);
             textBox2.TabIndex = 154;
@@ -161,7 +164,7 @@ namespace BarosDashboard
             label7.Anchor = AnchorStyles.Left;
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold);
-            label7.Location = new Point(238, 357);
+            label7.Location = new Point(244, 357);
             label7.Name = "label7";
             label7.Size = new Size(283, 40);
             label7.TabIndex = 153;
@@ -379,9 +382,13 @@ namespace BarosDashboard
             // 
             // dateTimePickerBirthday
             // 
-            dateTimePickerBirthday.CalendarForeColor = Color.Black;
+            dateTimePickerBirthday.CalendarForeColor = Color.DarkGoldenrod;
+            dateTimePickerBirthday.CalendarMonthBackground = Color.DarkGoldenrod;
+            dateTimePickerBirthday.CalendarTitleBackColor = Color.DarkGoldenrod;
+            dateTimePickerBirthday.CalendarTitleForeColor = Color.DarkGoldenrod;
+            dateTimePickerBirthday.CalendarTrailingForeColor = Color.DarkGoldenrod;
             dateTimePickerBirthday.Font = new Font("Segoe UI", 18F);
-            dateTimePickerBirthday.Location = new Point(991, 715);
+            dateTimePickerBirthday.Location = new Point(991, 704);
             dateTimePickerBirthday.Name = "dateTimePickerBirthday";
             dateTimePickerBirthday.Size = new Size(394, 39);
             dateTimePickerBirthday.TabIndex = 172;
@@ -426,6 +433,7 @@ namespace BarosDashboard
             txt_Weight.Name = "txt_Weight";
             txt_Weight.Size = new Size(284, 39);
             txt_Weight.TabIndex = 168;
+            txt_Weight.TextAlign = HorizontalAlignment.Center;
             // 
             // labelWeight
             // 
@@ -445,10 +453,12 @@ namespace BarosDashboard
             txt_Height.Name = "txt_Height";
             txt_Height.Size = new Size(284, 39);
             txt_Height.TabIndex = 166;
+            txt_Height.TextAlign = HorizontalAlignment.Center;
             // 
             // labelHeight
             // 
             labelHeight.AutoSize = true;
+            labelHeight.BackColor = Color.Transparent;
             labelHeight.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelHeight.Location = new Point(991, 285);
             labelHeight.Name = "labelHeight";
@@ -461,7 +471,7 @@ namespace BarosDashboard
             contact_Em.Anchor = AnchorStyles.Left;
             contact_Em.BackColor = Color.DarkGoldenrod;
             contact_Em.Font = new Font("Segoe UI", 26.25F);
-            contact_Em.Location = new Point(227, 990);
+            contact_Em.Location = new Point(250, 990);
             contact_Em.Name = "contact_Em";
             contact_Em.Size = new Size(592, 54);
             contact_Em.TabIndex = 183;
@@ -472,7 +482,7 @@ namespace BarosDashboard
             label10.Anchor = AnchorStyles.Left;
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold);
-            label10.Location = new Point(227, 947);
+            label10.Location = new Point(250, 947);
             label10.Name = "label10";
             label10.Size = new Size(283, 40);
             label10.TabIndex = 182;
@@ -483,7 +493,7 @@ namespace BarosDashboard
             label11.Anchor = AnchorStyles.Top;
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(622, 892);
+            label11.Location = new Point(627, 892);
             label11.Name = "label11";
             label11.Size = new Size(178, 32);
             label11.TabIndex = 181;
@@ -494,7 +504,7 @@ namespace BarosDashboard
             label12.Anchor = AnchorStyles.Top;
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.Location = new Point(227, 892);
+            label12.Location = new Point(247, 892);
             label12.Name = "label12";
             label12.Size = new Size(143, 32);
             label12.TabIndex = 180;
@@ -505,7 +515,7 @@ namespace BarosDashboard
             label13.Anchor = AnchorStyles.Top;
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label13.Location = new Point(425, 892);
+            label13.Location = new Point(430, 892);
             label13.Name = "label13";
             label13.Size = new Size(149, 32);
             label13.TabIndex = 179;
@@ -516,7 +526,7 @@ namespace BarosDashboard
             label14.Anchor = AnchorStyles.Top;
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label14.Location = new Point(227, 792);
+            label14.Location = new Point(243, 792);
             label14.Name = "label14";
             label14.Size = new Size(177, 40);
             label14.TabIndex = 178;
@@ -527,7 +537,7 @@ namespace BarosDashboard
             Fname_Em.Anchor = AnchorStyles.Top;
             Fname_Em.BackColor = Color.DarkGoldenrod;
             Fname_Em.Font = new Font("Segoe UI", 26.25F);
-            Fname_Em.Location = new Point(227, 835);
+            Fname_Em.Location = new Point(243, 835);
             Fname_Em.Name = "Fname_Em";
             Fname_Em.Size = new Size(592, 54);
             Fname_Em.TabIndex = 177;
@@ -538,11 +548,24 @@ namespace BarosDashboard
             label15.Anchor = AnchorStyles.Top;
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.Location = new Point(227, 762);
+            label15.Location = new Point(242, 762);
             label15.Name = "label15";
             label15.Size = new Size(377, 30);
             label15.TabIndex = 184;
             label15.Text = "CONTACT PERSON FOR EMERGENCY";
+            // 
+            // signUpLogo
+            // 
+            signUpLogo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            signUpLogo.BackColor = Color.Transparent;
+            signUpLogo.Image = (Image)resources.GetObject("signUpLogo.Image");
+            signUpLogo.Location = new Point(503, 202);
+            signUpLogo.Margin = new Padding(0);
+            signUpLogo.Name = "signUpLogo";
+            signUpLogo.Size = new Size(800, 592);
+            signUpLogo.SizeMode = PictureBoxSizeMode.StretchImage;
+            signUpLogo.TabIndex = 189;
+            signUpLogo.TabStop = false;
             // 
             // FormId
             // 
@@ -585,6 +608,7 @@ namespace BarosDashboard
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(backId);
+            Controls.Add(signUpLogo);
             Name = "FormId";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "BARANGAY ID";
@@ -593,6 +617,7 @@ namespace BarosDashboard
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)signUpLogo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -646,5 +671,6 @@ namespace BarosDashboard
         private Label label14;
         private TextBox Fname_Em;
         private Label label15;
+        private PictureBox signUpLogo;
     }
 }
