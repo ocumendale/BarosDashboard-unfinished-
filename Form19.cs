@@ -53,10 +53,34 @@ namespace BarosDashboard
 
         private void button1_Click(object sender, EventArgs e)
         {
-            GeneratePDF();
-            MessageBox.Show("Your PDF has been successfully Generated!");
-            GetDataFromMySQL();
+            if (ValidateInputs())
+            {
+                GetDataFromMySQL();  // Insert data into MySQL database
+                MessageBox.Show("Your information has been successfully submitted!", "Submission Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                GeneratePDF();       // Generate PDF after successful data submission
+                MessageBox.Show("Your PDF has been successfully generated!");
+            }
+            else
+            {
+                MessageBox.Show("Please complete all required fields before submitting.", "Incomplete Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
+
+        private bool IsNotNullOrWhiteSpace(string input)
+        {
+            return !string.IsNullOrWhiteSpace(input);
+        }
+
+        private bool ValidateInputs()
+        {
+            return IsNotNullOrWhiteSpace(textBox1.Text) &&   // Full name
+                   IsNotNullOrWhiteSpace(textBox2.Text) &&   // Contact number
+                   IsNotNullOrWhiteSpace(textBox3.Text) &&   // Reason
+                   IsNotNullOrWhiteSpace(textBox4.Text) &&   // Date
+                   IsNotNullOrWhiteSpace(textBox5.Text) &&   // Quantity
+                   IsNotNullOrWhiteSpace(textBox6.Text);     // Time
+        }
+
         private void GetDataFromMySQL()
         {
             string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";

@@ -61,14 +61,41 @@ namespace BarosDashboard
 
         private void button1_Click(object sender, EventArgs e)
         {
-            GeneratePDF();
-            MessageBox.Show("Your PDF has been successfully Generated!");
-            GetDataFromMySQL();
+            if (ValidateInputs())
+            {
+                GetDataFromMySQL();
+                MessageBox.Show("Your information has been successfully submitted!", "Submission Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                GeneratePDF();
+                MessageBox.Show("PDF GENERATED SUCCESSFULLY!");
+            }
+            else
+            {
+                MessageBox.Show("Please complete all required fields before submitting.", "Incomplete Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
+        private bool IsNotNullOrWhiteSpace(string input)
+        {
+            return !string.IsNullOrWhiteSpace(input);
+        }
+        private bool ValidateInputs()
+        {
+            // Use the IsNotNullOrWhiteSpace method for each textbox
+            return IsNotNullOrWhiteSpace(textBox1.Text) &&
+                   IsNotNullOrWhiteSpace(textBox2.Text) &&
+                   IsNotNullOrWhiteSpace(textBox3.Text) &&
+                   IsNotNullOrWhiteSpace(textBox4.Text) &&
+                   IsNotNullOrWhiteSpace(textBox6.Text); // Use textBox6 instead of textBox5 since it's used in your code
+        }
+
+
+
+
         private void GetDataFromMySQL()
         {
             string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
             string query = "INSERT INTO basketball_court (Fname, contact_num, reason, date, time) VALUES (@Fullname, @Contactnumber, @reason, @date, @time)";
+
+            
 
             try
             {

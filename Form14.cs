@@ -100,6 +100,7 @@ namespace BarosDashboard
             {
                 MessageBox.Show($"Error: {ex.Message}");
             }
+
             DateTime currentDate = DateTime.Now;
             // Create a PDF document
             Document doc = new Document();
