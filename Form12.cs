@@ -52,11 +52,15 @@ namespace BarosDashboard
             // Check inputs before attempting to send data to MySQL
             if (ValidateInputs())
             {
-               
+
                 GetDataFromMySQL();
                 MessageBox.Show("Your information has been successfully submitted!", "Submission Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 GeneratePDF();
                 MessageBox.Show("PDF GENERATED SUCCESSFULLY!");
+
+                Form20 form20 = new Form20();
+                form20.Show();
+                Visible = false;
             }
             else
             {
@@ -84,9 +88,9 @@ namespace BarosDashboard
         private void GetDataFromMySQL()
         {
             string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
-            string query = "INSERT INTO brgy_in (Fname, contact_num, home, reason, years) VALUES (@Fullname, @Contactnumber, @home, @reason, @years)";
+            string query = "INSERT INTO brgy_in (Fname, contact_num, home, reason, years, user_id) VALUES (@Fullname, @Contactnumber, @home, @reason, @years, @userID)";
+            int userId = LoggedInUser.UserId;
 
-            
 
 
             try
@@ -101,6 +105,7 @@ namespace BarosDashboard
                         cmd.Parameters.AddWithValue("@home", textBox4.Text);
                         cmd.Parameters.AddWithValue("@reason", textBox3.Text);
                         cmd.Parameters.AddWithValue("@years", textBox5.Text);
+                        cmd.Parameters.AddWithValue("@UserID", userId);
 
                         // Open the connection
                         conn.Open();
@@ -250,7 +255,7 @@ namespace BarosDashboard
         }
         private void GeneratePDF()
         {
-            
+
         }
     }
 }

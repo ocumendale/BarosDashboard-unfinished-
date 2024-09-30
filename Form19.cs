@@ -59,6 +59,10 @@ namespace BarosDashboard
                 MessageBox.Show("Your information has been successfully submitted!", "Submission Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 GeneratePDF();       // Generate PDF after successful data submission
                 MessageBox.Show("Your PDF has been successfully generated!");
+
+                Form20 form20 = new Form20();
+                form20.Show();
+                Visible = false;
             }
             else
             {
@@ -84,7 +88,9 @@ namespace BarosDashboard
         private void GetDataFromMySQL()
         {
             string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
-            string query = "INSERT INTO tent (Fname, contact_num, reason, date, time, quantity) VALUES (@Fullname, @Contactnumber, @reason, @date, @time, @quantity)";
+            string query = "INSERT INTO tent (Fname, contact_num, reason, date, time, quantity, user_id) VALUES (@Fullname, @Contactnumber, @reason, @date, @time, @quantity, @userID)";
+
+            int userId = LoggedInUser.UserId;
 
             try
             {
@@ -99,6 +105,7 @@ namespace BarosDashboard
                         cmd.Parameters.AddWithValue("@date", textBox4.Text);
                         cmd.Parameters.AddWithValue("@time", textBox6.Text);
                         cmd.Parameters.AddWithValue("@quantity", textBox5.Text);
+                        cmd.Parameters.AddWithValue("@UserID", userId);
 
                         // Open the connection
                         conn.Open();

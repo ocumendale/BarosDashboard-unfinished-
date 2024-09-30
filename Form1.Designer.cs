@@ -180,25 +180,27 @@
             // 
             Greet.Anchor = AnchorStyles.Top;
             Greet.AutoSize = true;
-            Greet.BackColor = Color.Transparent;
-            Greet.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Greet.Location = new Point(510, 166);
+            Greet.BackColor = Color.Goldenrod;
+            Greet.Font = new Font("MS UI Gothic", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Greet.ForeColor = Color.White;
+            Greet.Location = new Point(139, 409);
             Greet.Name = "Greet";
-            Greet.Size = new Size(462, 72);
+            Greet.Size = new Size(1189, 192);
             Greet.TabIndex = 4;
             Greet.Text = "Please let us know how we can help you. \r\nBecause here, A helping hand is always \r\nwithin reach.";
+            Greet.TextAlign = ContentAlignment.TopCenter;
             // 
             // label2
             // 
             label2.Anchor = AnchorStyles.Top;
             label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
+            label2.BackColor = Color.Goldenrod;
             label2.FlatStyle = FlatStyle.Flat;
-            label2.Font = new Font("MS UI Gothic", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = SystemColors.ControlText;
-            label2.Location = new Point(550, 14);
+            label2.Font = new Font("MS UI Gothic", 48F, FontStyle.Bold);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(464, 335);
             label2.Name = "label2";
-            label2.Size = new Size(314, 33);
+            label2.Size = new Size(613, 64);
             label2.TabIndex = 3;
             label2.Text = "WELCOME KABARO!";
             label2.Click += label2_Click;

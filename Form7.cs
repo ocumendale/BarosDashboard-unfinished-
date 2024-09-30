@@ -41,7 +41,7 @@ namespace BarosDashboard
             string conn = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
             string contact = txt_ContactNum.Text.Trim();
             string password = txt_password.Text.Trim();
-            LoggedInUser.uname = txt_ContactNum.Text;
+            LoggedInUser.Uname = txt_ContactNum.Text;
             if (string.IsNullOrEmpty(contact) || string.IsNullOrEmpty(password))
             {
                 signin_Btn.Text = "Please enter both contact and password.";
@@ -53,16 +53,19 @@ namespace BarosDashboard
                 using (MySqlConnection con = new MySqlConnection(conn))
                 {
                     con.Open();
-                    string query = "SELECT COUNT(1) FROM users WHERE contact=@contact AND password=@password";
+                    string query = "SELECT user_id FROM users WHERE contact=@contact AND password=@password";
                     using (MySqlCommand cmd = new MySqlCommand(query, con))
                     {
                         cmd.Parameters.AddWithValue("@contact", contact);
                         cmd.Parameters.AddWithValue("@password", password);
 
-                        int count = Convert.ToInt32(cmd.ExecuteScalar());
+                        object result = cmd.ExecuteScalar();
 
-                        if (count == 1)
+                        if (result != null)
                         {
+                            int userId = Convert.ToInt32(result);
+                            LoggedInUser.UserId = userId;
+
                             signin_Btn.Text = "Login successful!";
                             Form1 form1 = new Form1();
                             form1.Show();

@@ -36,9 +36,10 @@ namespace BarosDashboard
         private void GetDataFromMySQL()
         {
             string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
-            string query = "INSERT INTO brgy_id (Fname, contact_num, home, height, weight, blood_type, birthday, sex, civil_status, emergency_contact_name, emergency_contact_number, precinct_number) VALUES (@Fullname, @ContactNumber, @home, @height, @weight, @bloodType, @birthday, @sex, @civilStatus, @emergency_name, @emergency_Con, @precinctNumber)";
+            string query = "INSERT INTO brgy_id (Fname, contact_num, home, height, weight, blood_type, birthday, sex, civil_status, emergency_contact_name, emergency_contact_number, precinct_number, user_id) VALUES (@Fullname, @ContactNumber, @home, @height, @weight, @bloodType, @birthday, @sex, @civilStatus, @emergency_name, @emergency_Con, @precinctNumber, @userID)";
 
-       
+            int userId = LoggedInUser.UserId;
+
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -58,6 +59,9 @@ namespace BarosDashboard
                         cmd.Parameters.AddWithValue("@emergency_name", Fname_Em.Text); 
                         cmd.Parameters.AddWithValue("@emergency_Con", contact_Em.Text);
                         cmd.Parameters.AddWithValue("@precinctNumber", textBoxPrecinctNumber.Text);
+                        cmd.Parameters.AddWithValue("@UserID", userId);
+
+
 
                         // Open the connection
                         conn.Open();
@@ -114,6 +118,10 @@ namespace BarosDashboard
             {
                 GetDataFromMySQL();
                 MessageBox.Show("Your information has been successfully submitted!", "Submission Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                Form20 form20 = new Form20();
+                form20.Show();
+                Visible = false;
             }
             else
             {

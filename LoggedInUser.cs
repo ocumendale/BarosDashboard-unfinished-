@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace BarosDashboard
 {
-    public class LoggedInUser
+    public static class LoggedInUser
     {
-
-        public string Uname;
-        public static string uname {  get; set; }
-
-
+        public static int UserId { get; set; } 
+        public static string Uname { get; set; }
     }
 }

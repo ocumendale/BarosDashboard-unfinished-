@@ -65,7 +65,7 @@ namespace BarosDashboard
         private void Form1_Load(object sender, EventArgs e)
         {
             
-            label2.Text = $"Welcome Kabaro {LoggedInUser.uname}!!!" ;
+           
 
 
             this.WindowState = FormWindowState.Maximized;

@@ -14,6 +14,7 @@ using System.ComponentModel.DataAnnotations;
 using System.IO;
 using Rectangle = iTextSharp.text.Rectangle;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace BarosDashboard
 {
@@ -38,7 +39,8 @@ namespace BarosDashboard
         private void GetDataFromMySQL()
         {
             string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
-            string query = "INSERT INTO brgy_clear (Fname, contact_num, home, reason) VALUES (@Fullname, @Contactnumber, @home, @reason)";
+            string query = "INSERT INTO brgy_clear (Fname, contact_num, home, reason, user_id) VALUES (@Fullname, @Contactnumber, @home, @reason, @userID)";
+            int userId = LoggedInUser.UserId;
 
             try
             {
@@ -51,6 +53,7 @@ namespace BarosDashboard
                         cmd.Parameters.AddWithValue("@Contactnumber", textBox2.Text);
                         cmd.Parameters.AddWithValue("@home", textBox4.Text);
                         cmd.Parameters.AddWithValue("@reason", textBox3.Text);
+                        cmd.Parameters.AddWithValue("@UserID", userId);
 
                         // Open the connection
                         conn.Open();
@@ -85,6 +88,10 @@ namespace BarosDashboard
                 MessageBox.Show("Your information has been successfully submitted!", "Submission Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 GeneratePDF();
                 MessageBox.Show("PDF GENERATED SUCCESSFULLY!");
+
+                Form20 form20 = new Form20();
+                form20.Show();
+                Visible = false;
             }
             else
             {
