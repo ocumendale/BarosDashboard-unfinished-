@@ -228,5 +228,25 @@ namespace BarosDashboard
             contentCell.Border = Rectangle.NO_BORDER;
             table.AddCell(contentCell);
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void signUpLogo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

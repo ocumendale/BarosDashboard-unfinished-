@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reserve));
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
@@ -36,14 +35,16 @@
             Request = new Label();
             backReq = new Button();
             label2 = new Label();
-            signUpLogo = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)signUpLogo).BeginInit();
+            panel2 = new Panel();
+            panel1 = new Panel();
             SuspendLayout();
             // 
             // button3
             // 
-            button3.BackColor = Color.Goldenrod;
+            button3.BackColor = Color.FromArgb(246, 180, 71);
+            button3.FlatAppearance.BorderSize = 0;
             button3.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold);
+            button3.ForeColor = Color.Black;
             button3.Location = new Point(1031, 667);
             button3.Name = "button3";
             button3.Size = new Size(505, 284);
@@ -54,8 +55,10 @@
             // 
             // button2
             // 
-            button2.BackColor = Color.Goldenrod;
+            button2.BackColor = Color.FromArgb(246, 180, 71);
+            button2.FlatAppearance.BorderSize = 0;
             button2.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold);
+            button2.ForeColor = Color.Black;
             button2.Location = new Point(399, 667);
             button2.Name = "button2";
             button2.Size = new Size(505, 284);
@@ -66,8 +69,10 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.Goldenrod;
+            button1.BackColor = Color.FromArgb(246, 180, 71);
+            button1.FlatAppearance.BorderSize = 0;
             button1.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold);
+            button1.ForeColor = Color.Black;
             button1.Location = new Point(1031, 309);
             button1.Name = "button1";
             button1.Size = new Size(505, 284);
@@ -78,8 +83,10 @@
             // 
             // FormBas
             // 
-            FormBas.BackColor = Color.Goldenrod;
+            FormBas.BackColor = Color.FromArgb(246, 180, 71);
+            FormBas.FlatAppearance.BorderSize = 0;
             FormBas.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold);
+            FormBas.ForeColor = Color.Black;
             FormBas.Location = new Point(399, 309);
             FormBas.Name = "FormBas";
             FormBas.Size = new Size(505, 284);
@@ -91,10 +98,10 @@
             // Request
             // 
             Request.AutoSize = true;
-            Request.Font = new Font("Segoe UI", 48F, FontStyle.Bold);
-            Request.Location = new Point(730, 93);
+            Request.Font = new Font("Lucida Fax", 72F, FontStyle.Bold);
+            Request.Location = new Point(581, 81);
             Request.Name = "Request";
-            Request.Size = new Size(464, 86);
+            Request.Size = new Size(762, 109);
             Request.TabIndex = 0;
             Request.Text = "RESERVATION";
             Request.Click += Request_Click;
@@ -114,23 +121,28 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold);
-            label2.Location = new Point(883, 179);
+            label2.Font = new Font("Lucida Fax", 27.75F, FontStyle.Bold);
+            label2.Location = new Point(875, 213);
             label2.Name = "label2";
-            label2.Size = new Size(188, 50);
+            label2.Size = new Size(202, 43);
             label2.TabIndex = 8;
             label2.Text = "SERVICES";
             // 
-            // signUpLogo
+            // panel2
             // 
-            signUpLogo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            signUpLogo.Image = (Image)resources.GetObject("signUpLogo.Image");
-            signUpLogo.Location = new Point(444, 229);
-            signUpLogo.Name = "signUpLogo";
-            signUpLogo.Size = new Size(1060, 821);
-            signUpLogo.SizeMode = PictureBoxSizeMode.StretchImage;
-            signUpLogo.TabIndex = 86;
-            signUpLogo.TabStop = false;
+            panel2.BackColor = Color.MidnightBlue;
+            panel2.Location = new Point(431, 337);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(494, 281);
+            panel2.TabIndex = 109;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.MidnightBlue;
+            panel1.Location = new Point(1061, 336);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(494, 281);
+            panel1.TabIndex = 110;
             // 
             // reserve
             // 
@@ -145,12 +157,12 @@
             Controls.Add(backReq);
             Controls.Add(button1);
             Controls.Add(FormBas);
-            Controls.Add(signUpLogo);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             Name = "reserve";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Reservation";
             Load += reserve_Load;
-            ((System.ComponentModel.ISupportInitialize)signUpLogo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -163,6 +175,7 @@
         private Label Request;
         private Button backReq;
         private Label label2;
-        private PictureBox signUpLogo;
+        private Panel panel2;
+        private Panel panel1;
     }
 }

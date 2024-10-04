@@ -236,5 +236,10 @@ namespace BarosDashboard
             contentCell.Border = Rectangle.NO_BORDER;
             table.AddCell(contentCell);
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
