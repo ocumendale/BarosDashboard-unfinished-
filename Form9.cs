@@ -19,9 +19,7 @@ namespace BarosDashboard
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            ManageTransaction manage = new ManageTransaction();
-            manage.ShowDialog();
+            
         }
 
         private void Reservation_Resize(object sender, EventArgs e)

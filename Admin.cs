@@ -26,9 +26,7 @@ namespace BarosDashboard
 
         private void EmergencyRes_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            EmergencyResponses emergencyResponses = new EmergencyResponses();
-            emergencyResponses.Show();
+            
         }
 
         private void DocuReq_Click(object sender, EventArgs e)
@@ -47,16 +45,24 @@ namespace BarosDashboard
 
         private void ResComplaints_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            ResidentsComplaints residentsComplaints = new ResidentsComplaints();
-            residentsComplaints.Show();
+            
         }
 
         private void Events_Click(object sender, EventArgs e)
         {
+          
+        }
+
+        private void Admin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void signout_Click(object sender, EventArgs e)
+        {
             this.Hide();
-            Events events = new Events();
-            events.Show();
+            login log = new login();
+            log.Show();
         }
     }
 }

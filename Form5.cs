@@ -48,9 +48,7 @@ namespace BarosDashboard
 
         private void button6_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            ManageTransaction manage = new ManageTransaction();
-            manage.ShowDialog();
+
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -71,6 +69,11 @@ namespace BarosDashboard
         {
             this.WindowState = FormWindowState.Maximized;
             this.TopMost = true;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -54,7 +54,7 @@
             // backCourt
             // 
             backCourt.BackColor = Color.Goldenrod;
-            backCourt.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            backCourt.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             backCourt.Location = new Point(12, 12);
             backCourt.Name = "backCourt";
             backCourt.Size = new Size(97, 53);
@@ -103,10 +103,10 @@
             // 
             label11.Anchor = AnchorStyles.Bottom;
             label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold);
+            label11.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
             label11.Location = new Point(318, 755);
             label11.Name = "label11";
-            label11.Size = new Size(371, 40);
+            label11.Size = new Size(423, 33);
             label11.TabIndex = 121;
             label11.Text = "DETAILS OF RESERVATION";
             // 
@@ -148,10 +148,10 @@
             // 
             label8.Anchor = AnchorStyles.Right;
             label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold);
+            label8.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
             label8.Location = new Point(318, 631);
             label8.Name = "label8";
-            label8.Size = new Size(310, 40);
+            label8.Size = new Size(342, 33);
             label8.TabIndex = 116;
             label8.Text = "REASON OF REQUEST";
             // 
@@ -170,10 +170,10 @@
             // 
             label7.Anchor = AnchorStyles.Left;
             label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold);
+            label7.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
             label7.Location = new Point(328, 497);
             label7.Name = "label7";
-            label7.Size = new Size(283, 40);
+            label7.Size = new Size(308, 33);
             label7.TabIndex = 114;
             label7.Text = "CONTACT NUMBER";
             // 
@@ -214,10 +214,10 @@
             // 
             label3.Anchor = AnchorStyles.Top;
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
             label3.Location = new Point(321, 324);
             label3.Name = "label3";
-            label3.Size = new Size(177, 40);
+            label3.Size = new Size(190, 33);
             label3.TabIndex = 110;
             label3.Text = "FULL NAME";
             // 
@@ -237,10 +237,10 @@
             // 
             label2.Anchor = AnchorStyles.Top;
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Lucida Fax", 15.75F, FontStyle.Bold);
             label2.Location = new Point(697, 218);
             label2.Name = "label2";
-            label2.Size = new Size(525, 30);
+            label2.Size = new Size(578, 24);
             label2.TabIndex = 108;
             label2.Text = "FILL OUT THIS FORM FOR RESERVATION OF COURT";
             // 
@@ -248,10 +248,10 @@
             // 
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Lucida Fax", 72F, FontStyle.Bold);
             label1.Location = new Point(480, 90);
             label1.Name = "label1";
-            label1.Size = new Size(980, 128);
+            label1.Size = new Size(1081, 109);
             label1.TabIndex = 107;
             label1.Text = "BASKETBALL COURT";
             // 

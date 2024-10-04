@@ -33,7 +33,7 @@ namespace BarosDashboard
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Hide();
+           this.Hide();
             Contact contact = new Contact();
             contact.ShowDialog();
         }
@@ -47,9 +47,7 @@ namespace BarosDashboard
 
         private void button6_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            ManageTransaction manage = new ManageTransaction();
-            manage.ShowDialog();
+           
         }
 
         private void label7_Click(object sender, EventArgs e)

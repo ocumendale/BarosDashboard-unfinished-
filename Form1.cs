@@ -42,9 +42,7 @@ namespace BarosDashboard
 
         private void button6_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            ManageTransaction manage = new ManageTransaction();
-            manage.ShowDialog();
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

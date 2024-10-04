@@ -19,9 +19,7 @@ namespace BarosDashboard
 
         private void backReq_Click(object sender, EventArgs e)
         {
-            ManageTransaction manage = new ManageTransaction();
-            manage.Show();
-            Visible = false;
+            
         }
 
         private void manageReq_Load(object sender, EventArgs e)

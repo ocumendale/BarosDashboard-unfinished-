@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace BarosDashboard
 {
     public partial class ResidentsAssistance : Form
+
     {
+        MySqlConnection con = new MySqlConnection("server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;");
         public ResidentsAssistance()
         {
             InitializeComponent();
@@ -33,16 +36,12 @@ namespace BarosDashboard
 
         private void ResComplaints_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            ResidentsComplaints residentsComplaints = new ResidentsComplaints();
-            residentsComplaints.Show();
+           
         }
 
         private void EmergencyRes_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            EmergencyResponses emergencyResponses = new EmergencyResponses();
-            emergencyResponses.Show();
+            
         }
 
         private void Announcements_Click(object sender, EventArgs e)
@@ -55,8 +54,40 @@ namespace BarosDashboard
         private void Events_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Events events = new Events();
-            events.Show();
+            login log = new login();
+            log.Show();
+        }
+
+        private void Basketball_Click(object sender, EventArgs e)
+        {
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM basketball_court", con);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            dataGridView2.DataSource = ds.Tables[0];
+        }
+
+        private void Tent_Click(object sender, EventArgs e)
+        {
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM tent", con);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            dataGridView2.DataSource = ds.Tables[0];
+        }
+
+        private void Table_Click(object sender, EventArgs e)
+        {
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM table_", con);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            dataGridView2.DataSource = ds.Tables[0];
+        }
+
+        private void Chair_Click(object sender, EventArgs e)
+        {
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM chair", con);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            dataGridView2.DataSource = ds.Tables[0];
         }
     }
 }

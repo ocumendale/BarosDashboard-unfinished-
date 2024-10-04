@@ -34,7 +34,6 @@
             button3 = new Button();
             button4 = new Button();
             button5 = new Button();
-            button6 = new Button();
             HBF2 = new PictureBox();
             panel1 = new Panel();
             signUpLogo = new PictureBox();
@@ -53,7 +52,7 @@
             button1.BackColor = Color.FromArgb(246, 180, 71);
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold);
+            button1.Font = new Font("Yu Gothic UI", 36F, FontStyle.Bold);
             button1.ForeColor = SystemColors.ActiveCaptionText;
             button1.Location = new Point(3, 90);
             button1.Name = "button1";
@@ -68,10 +67,10 @@
             button2.Anchor = AnchorStyles.Left;
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold);
-            button2.Location = new Point(6, 238);
+            button2.Font = new Font("Yu Gothic UI", 36F, FontStyle.Bold);
+            button2.Location = new Point(6, 291);
             button2.Name = "button2";
-            button2.Size = new Size(431, 97);
+            button2.Size = new Size(442, 97);
             button2.TabIndex = 1;
             button2.Text = "About Us";
             button2.UseVisualStyleBackColor = true;
@@ -81,8 +80,8 @@
             button3.Anchor = AnchorStyles.Left;
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold);
-            button3.Location = new Point(6, 394);
+            button3.Font = new Font("Yu Gothic UI", 36F, FontStyle.Bold);
+            button3.Location = new Point(6, 497);
             button3.Name = "button3";
             button3.Size = new Size(431, 97);
             button3.TabIndex = 2;
@@ -95,8 +94,8 @@
             button4.Anchor = AnchorStyles.Left;
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold);
-            button4.Location = new Point(11, 562);
+            button4.Font = new Font("Yu Gothic UI", 36F, FontStyle.Bold);
+            button4.Location = new Point(3, 702);
             button4.Name = "button4";
             button4.Size = new Size(431, 97);
             button4.TabIndex = 3;
@@ -109,28 +108,14 @@
             button5.Anchor = AnchorStyles.Left;
             button5.FlatAppearance.BorderSize = 0;
             button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold);
-            button5.Location = new Point(6, 728);
+            button5.Font = new Font("Yu Gothic UI", 36F, FontStyle.Bold);
+            button5.Location = new Point(3, 906);
             button5.Name = "button5";
             button5.Size = new Size(431, 97);
             button5.TabIndex = 4;
             button5.Text = "Services";
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
-            // 
-            // button6
-            // 
-            button6.Anchor = AnchorStyles.Left;
-            button6.FlatAppearance.BorderSize = 0;
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold);
-            button6.Location = new Point(3, 876);
-            button6.Name = "button6";
-            button6.Size = new Size(435, 155);
-            button6.TabIndex = 5;
-            button6.Text = "Manage\r\nTransaction";
-            button6.UseVisualStyleBackColor = true;
-            button6.Click += button6_Click;
             // 
             // HBF2
             // 
@@ -148,7 +133,6 @@
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(HBF2);
-            panel1.Controls.Add(button6);
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button4);
             panel1.Controls.Add(button3);
@@ -233,7 +217,6 @@
         private Button button3;
         private Button button4;
         private Button button5;
-        private Button button6;
         private PictureBox HBF2;
         private Panel panel1;
         private PictureBox signUpLogo;

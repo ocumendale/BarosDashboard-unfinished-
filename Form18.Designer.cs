@@ -227,10 +227,10 @@
             // 
             label3.Anchor = AnchorStyles.Top;
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
             label3.Location = new Point(321, 324);
             label3.Name = "label3";
-            label3.Size = new Size(177, 40);
+            label3.Size = new Size(190, 33);
             label3.TabIndex = 90;
             label3.Text = "FULL NAME";
             // 
@@ -249,10 +249,10 @@
             // 
             label2.Anchor = AnchorStyles.Top;
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Lucida Fax", 15.75F, FontStyle.Bold);
             label2.Location = new Point(697, 218);
             label2.Name = "label2";
-            label2.Size = new Size(520, 30);
+            label2.Size = new Size(571, 24);
             label2.TabIndex = 88;
             label2.Text = "FILL OUT THIS FORM FOR RESERVATION OF CHAIR";
             // 
@@ -260,10 +260,10 @@
             // 
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Lucida Fax", 72F, FontStyle.Bold);
             label1.Location = new Point(781, 90);
             label1.Name = "label1";
-            label1.Size = new Size(349, 128);
+            label1.Size = new Size(373, 109);
             label1.TabIndex = 87;
             label1.Text = "CHAIR";
             // 
