@@ -62,7 +62,7 @@
             // backChair
             // 
             backChair.BackColor = Color.Goldenrod;
-            backChair.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
+            backChair.Font = new Font("Lucida Fax", 15.75F, FontStyle.Bold);
             backChair.Location = new Point(12, 12);
             backChair.Name = "backChair";
             backChair.Size = new Size(97, 53);

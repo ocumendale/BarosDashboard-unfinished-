@@ -31,19 +31,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Services));
             panel3 = new Panel();
             label1 = new Label();
-            panel2 = new Panel();
-            button8 = new Button();
-            button7 = new Button();
-            label2 = new Label();
             panel1 = new Panel();
             button5 = new Button();
             button4 = new Button();
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
+            panel4 = new Panel();
+            label2 = new Label();
+            button7 = new Button();
+            button8 = new Button();
+            panel2 = new Panel();
+            signUpLogo = new PictureBox();
             panel3.SuspendLayout();
-            panel2.SuspendLayout();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)signUpLogo).BeginInit();
             SuspendLayout();
             // 
             // panel3
@@ -67,54 +69,6 @@
             label1.TabIndex = 2;
             label1.Text = "SERVICES";
             // 
-            // panel2
-            // 
-            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
-            panel2.BackgroundImageLayout = ImageLayout.Stretch;
-            panel2.Controls.Add(button8);
-            panel2.Controls.Add(button7);
-            panel2.Controls.Add(label2);
-            panel2.Location = new Point(441, 84);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1468, 1020);
-            panel2.TabIndex = 4;
-            // 
-            // button8
-            // 
-            button8.BackColor = Color.Goldenrod;
-            button8.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold);
-            button8.Location = new Point(886, 518);
-            button8.Name = "button8";
-            button8.Size = new Size(490, 216);
-            button8.TabIndex = 2;
-            button8.Text = "BARANGAY DOCUMENT REQUEST";
-            button8.UseVisualStyleBackColor = false;
-            button8.Click += button8_Click;
-            // 
-            // button7
-            // 
-            button7.BackColor = Color.Goldenrod;
-            button7.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button7.Location = new Point(187, 520);
-            button7.Name = "button7";
-            button7.Size = new Size(490, 214);
-            button7.TabIndex = 1;
-            button7.Text = "RESERVATION";
-            button7.UseVisualStyleBackColor = false;
-            button7.Click += button7_Click;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Goldenrod;
-            label2.Font = new Font("MS UI Gothic", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(187, 312);
-            label2.Name = "label2";
-            label2.Size = new Size(1189, 97);
-            label2.TabIndex = 0;
-            label2.Text = "CHOOSE A TRANSACTION";
-            // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
@@ -133,8 +87,8 @@
             // 
             button5.FlatAppearance.BorderSize = 0;
             button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Yu Gothic UI", 36F, FontStyle.Bold);
-            button5.Location = new Point(3, 906);
+            button5.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
+            button5.Location = new Point(7, 906);
             button5.Name = "button5";
             button5.Size = new Size(431, 97);
             button5.TabIndex = 4;
@@ -146,8 +100,8 @@
             // 
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Yu Gothic UI", 36F, FontStyle.Bold);
-            button4.Location = new Point(3, 702);
+            button4.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
+            button4.Location = new Point(7, 702);
             button4.Name = "button4";
             button4.Size = new Size(431, 97);
             button4.TabIndex = 3;
@@ -159,8 +113,8 @@
             // 
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Yu Gothic UI", 36F, FontStyle.Bold);
-            button3.Location = new Point(6, 497);
+            button3.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
+            button3.Location = new Point(7, 497);
             button3.Name = "button3";
             button3.Size = new Size(431, 97);
             button3.TabIndex = 2;
@@ -172,10 +126,10 @@
             // 
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Yu Gothic UI", 36F, FontStyle.Bold);
-            button2.Location = new Point(6, 291);
+            button2.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
+            button2.Location = new Point(7, 291);
             button2.Name = "button2";
-            button2.Size = new Size(442, 97);
+            button2.Size = new Size(433, 97);
             button2.TabIndex = 1;
             button2.Text = "About Us";
             button2.UseVisualStyleBackColor = true;
@@ -185,9 +139,9 @@
             // 
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Yu Gothic UI", 36F, FontStyle.Bold);
+            button1.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
             button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(3, 90);
+            button1.Location = new Point(6, 90);
             button1.Name = "button1";
             button1.Size = new Size(431, 97);
             button1.TabIndex = 0;
@@ -195,40 +149,111 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // panel4
+            // 
+            panel4.BackColor = Color.MidnightBlue;
+            panel4.Location = new Point(615, 606);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(490, 214);
+            panel4.TabIndex = 128;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.MidnightBlue;
+            label2.Font = new Font("Lucida Fax", 72F, FontStyle.Bold);
+            label2.ForeColor = Color.FromArgb(246, 180, 71);
+            label2.Location = new Point(515, 315);
+            label2.Name = "label2";
+            label2.Size = new Size(1349, 109);
+            label2.TabIndex = 0;
+            label2.Text = "CHOOSE A TRANSACTION";
+            // 
+            // button7
+            // 
+            button7.BackColor = Color.FromArgb(246, 180, 71);
+            button7.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
+            button7.Location = new Point(591, 587);
+            button7.Name = "button7";
+            button7.Size = new Size(490, 214);
+            button7.TabIndex = 1;
+            button7.Text = "RESERVATION";
+            button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
+            // 
+            // button8
+            // 
+            button8.BackColor = Color.FromArgb(246, 180, 71);
+            button8.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
+            button8.Location = new Point(1290, 585);
+            button8.Name = "button8";
+            button8.Size = new Size(490, 216);
+            button8.TabIndex = 2;
+            button8.Text = "BARANGAY DOCUMENT REQUEST";
+            button8.UseVisualStyleBackColor = false;
+            button8.Click += button8_Click;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.MidnightBlue;
+            panel2.Location = new Point(1313, 606);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(490, 214);
+            panel2.TabIndex = 129;
+            // 
+            // signUpLogo
+            // 
+            signUpLogo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            signUpLogo.Image = (Image)resources.GetObject("signUpLogo.Image");
+            signUpLogo.Location = new Point(780, 218);
+            signUpLogo.Margin = new Padding(0);
+            signUpLogo.Name = "signUpLogo";
+            signUpLogo.Size = new Size(799, 660);
+            signUpLogo.SizeMode = PictureBoxSizeMode.StretchImage;
+            signUpLogo.TabIndex = 130;
+            signUpLogo.TabStop = false;
+            // 
             // Services
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 180, 71);
             ClientSize = new Size(1911, 1118);
+            Controls.Add(button8);
             Controls.Add(panel3);
-            Controls.Add(panel2);
+            Controls.Add(button7);
+            Controls.Add(label2);
+            Controls.Add(panel4);
             Controls.Add(panel1);
+            Controls.Add(panel2);
+            Controls.Add(signUpLogo);
             Name = "Services";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Services";
             Load += Services_Load;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)signUpLogo).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Panel panel3;
         private Label label1;
-        private Panel panel2;
         private Panel panel1;
         private Button button5;
         private Button button4;
         private Button button3;
         private Button button2;
         private Button button1;
-        private Button button7;
+        private Panel panel4;
         private Label label2;
+        private Button button7;
         private Button button8;
+        private Panel panel2;
+        private PictureBox signUpLogo;
     }
 }

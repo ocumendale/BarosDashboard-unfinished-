@@ -31,11 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HowItWorks));
             panel3 = new Panel();
             label1 = new Label();
-            panel2 = new Panel();
+            button6 = new Button();
             label10 = new Label();
             label9 = new Label();
             label8 = new Label();
-            GetStarted = new Button();
             label7 = new Label();
             label6 = new Label();
             label5 = new Label();
@@ -49,10 +48,11 @@
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
+            signUpLogo = new PictureBox();
             panel3.SuspendLayout();
-            panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)HBF4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)signUpLogo).BeginInit();
             SuspendLayout();
             // 
             // panel3
@@ -77,32 +77,26 @@
             label1.TabIndex = 2;
             label1.Text = "HOW IT WORKS?";
             // 
-            // panel2
+            // button6
             // 
-            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
-            panel2.BackgroundImageLayout = ImageLayout.Stretch;
-            panel2.Controls.Add(label10);
-            panel2.Controls.Add(label9);
-            panel2.Controls.Add(label8);
-            panel2.Controls.Add(GetStarted);
-            panel2.Controls.Add(label7);
-            panel2.Controls.Add(label6);
-            panel2.Controls.Add(label5);
-            panel2.Controls.Add(label4);
-            panel2.Controls.Add(label3);
-            panel2.Controls.Add(label2);
-            panel2.Location = new Point(444, 91);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1468, 1020);
-            panel2.TabIndex = 4;
+            button6.BackColor = Color.MidnightBlue;
+            button6.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
+            button6.ForeColor = Color.FromArgb(246, 180, 71);
+            button6.Location = new Point(1122, 778);
+            button6.Name = "button6";
+            button6.Size = new Size(220, 85);
+            button6.TabIndex = 10;
+            button6.Text = "Get Started";
+            button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click_1;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.BackColor = Color.Goldenrod;
+            label10.BackColor = Color.MidnightBlue;
             label10.Font = new Font("Segoe UI", 24F);
-            label10.Location = new Point(1015, 459);
+            label10.ForeColor = Color.FromArgb(246, 180, 71);
+            label10.Location = new Point(1484, 626);
             label10.Name = "label10";
             label10.Size = new Size(382, 90);
             label10.TabIndex = 9;
@@ -112,9 +106,10 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.BackColor = Color.Goldenrod;
+            label9.BackColor = Color.MidnightBlue;
             label9.Font = new Font("Segoe UI", 24F);
-            label9.Location = new Point(582, 459);
+            label9.ForeColor = Color.FromArgb(246, 180, 71);
+            label9.Location = new Point(1051, 626);
             label9.Name = "label9";
             label9.Size = new Size(362, 90);
             label9.TabIndex = 8;
@@ -124,35 +119,23 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.BackColor = Color.Goldenrod;
+            label8.BackColor = Color.MidnightBlue;
             label8.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(138, 459);
+            label8.ForeColor = Color.FromArgb(246, 180, 71);
+            label8.Location = new Point(607, 626);
             label8.Name = "label8";
             label8.Size = new Size(365, 135);
             label8.TabIndex = 7;
             label8.Text = "Choose your transaction\r\n(Barangay documents\r\n of reservations)";
             label8.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // GetStarted
-            // 
-            GetStarted.BackColor = Color.DarkGoldenrod;
-            GetStarted.FlatStyle = FlatStyle.System;
-            GetStarted.Font = new Font("MS UI Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            GetStarted.ForeColor = Color.DarkGoldenrod;
-            GetStarted.Location = new Point(638, 766);
-            GetStarted.Name = "GetStarted";
-            GetStarted.Size = new Size(260, 80);
-            GetStarted.TabIndex = 6;
-            GetStarted.Text = "Get Started";
-            GetStarted.UseVisualStyleBackColor = false;
-            GetStarted.Click += GetStarted_Click;
-            // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.BackColor = Color.Goldenrod;
+            label7.BackColor = Color.MidnightBlue;
             label7.Font = new Font("MS UI Gothic", 72F, FontStyle.Bold);
-            label7.Location = new Point(1173, 274);
+            label7.ForeColor = Color.FromArgb(246, 180, 71);
+            label7.Location = new Point(1642, 441);
             label7.Name = "label7";
             label7.Size = new Size(91, 97);
             label7.TabIndex = 5;
@@ -162,9 +145,10 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.BackColor = Color.Goldenrod;
+            label6.BackColor = Color.MidnightBlue;
             label6.Font = new Font("MS UI Gothic", 72F, FontStyle.Bold);
-            label6.Location = new Point(708, 274);
+            label6.ForeColor = Color.FromArgb(246, 180, 71);
+            label6.Location = new Point(1177, 441);
             label6.Name = "label6";
             label6.Size = new Size(91, 97);
             label6.TabIndex = 4;
@@ -173,9 +157,10 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.BackColor = Color.Goldenrod;
+            label5.BackColor = Color.MidnightBlue;
             label5.Font = new Font("MS UI Gothic", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(267, 274);
+            label5.ForeColor = Color.FromArgb(246, 180, 71);
+            label5.Location = new Point(736, 441);
             label5.Name = "label5";
             label5.Size = new Size(91, 97);
             label5.TabIndex = 3;
@@ -184,9 +169,10 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.BackColor = Color.Goldenrod;
+            label4.BackColor = Color.MidnightBlue;
             label4.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold);
-            label4.Location = new Point(1124, 392);
+            label4.ForeColor = Color.FromArgb(246, 180, 71);
+            label4.Location = new Point(1593, 559);
             label4.Name = "label4";
             label4.Size = new Size(193, 48);
             label4.TabIndex = 2;
@@ -195,9 +181,10 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.BackColor = Color.Goldenrod;
+            label3.BackColor = Color.MidnightBlue;
             label3.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold);
-            label3.Location = new Point(653, 392);
+            label3.ForeColor = Color.FromArgb(246, 180, 71);
+            label3.Location = new Point(1122, 559);
             label3.Name = "label3";
             label3.Size = new Size(193, 48);
             label3.TabIndex = 1;
@@ -206,9 +193,10 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = Color.Goldenrod;
+            label2.BackColor = Color.MidnightBlue;
             label2.Font = new Font("MS UI Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(205, 392);
+            label2.ForeColor = Color.FromArgb(246, 180, 71);
+            label2.Location = new Point(674, 559);
             label2.Name = "label2";
             label2.Size = new Size(213, 48);
             label2.TabIndex = 0;
@@ -244,10 +232,10 @@
             // 
             button5.FlatAppearance.BorderSize = 0;
             button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Yu Gothic UI", 36F, FontStyle.Bold);
+            button5.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
             button5.Location = new Point(3, 906);
             button5.Name = "button5";
-            button5.Size = new Size(431, 97);
+            button5.Size = new Size(438, 97);
             button5.TabIndex = 4;
             button5.Text = "Services";
             button5.UseVisualStyleBackColor = true;
@@ -257,8 +245,8 @@
             // 
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Yu Gothic UI", 36F, FontStyle.Bold);
-            button4.Location = new Point(3, 702);
+            button4.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
+            button4.Location = new Point(7, 702);
             button4.Name = "button4";
             button4.Size = new Size(431, 97);
             button4.TabIndex = 3;
@@ -269,8 +257,8 @@
             // 
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Yu Gothic UI", 36F, FontStyle.Bold);
-            button3.Location = new Point(6, 497);
+            button3.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
+            button3.Location = new Point(7, 497);
             button3.Name = "button3";
             button3.Size = new Size(431, 97);
             button3.TabIndex = 2;
@@ -282,10 +270,10 @@
             // 
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Yu Gothic UI", 36F, FontStyle.Bold);
+            button2.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
             button2.Location = new Point(6, 291);
             button2.Name = "button2";
-            button2.Size = new Size(442, 97);
+            button2.Size = new Size(435, 97);
             button2.TabIndex = 1;
             button2.Text = "About Us";
             button2.UseVisualStyleBackColor = true;
@@ -296,9 +284,9 @@
             button1.BackColor = Color.FromArgb(246, 180, 71);
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Yu Gothic UI", 36F, FontStyle.Bold);
+            button1.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
             button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(3, 90);
+            button1.Location = new Point(6, 90);
             button1.Name = "button1";
             button1.Size = new Size(431, 97);
             button1.TabIndex = 0;
@@ -306,33 +294,54 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // signUpLogo
+            // 
+            signUpLogo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            signUpLogo.Image = (Image)resources.GetObject("signUpLogo.Image");
+            signUpLogo.Location = new Point(736, 228);
+            signUpLogo.Margin = new Padding(0);
+            signUpLogo.Name = "signUpLogo";
+            signUpLogo.Size = new Size(983, 801);
+            signUpLogo.SizeMode = PictureBoxSizeMode.StretchImage;
+            signUpLogo.TabIndex = 131;
+            signUpLogo.TabStop = false;
+            // 
             // HowItWorks
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 180, 71);
             ClientSize = new Size(1911, 1118);
+            Controls.Add(button6);
             Controls.Add(panel3);
-            Controls.Add(panel2);
+            Controls.Add(label10);
+            Controls.Add(label9);
             Controls.Add(panel1);
+            Controls.Add(label8);
+            Controls.Add(label6);
+            Controls.Add(label7);
+            Controls.Add(label2);
+            Controls.Add(label3);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(signUpLogo);
             Name = "HowItWorks";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "How It Works";
             Load += HowItWorks_Load;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)HBF4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)signUpLogo).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Panel panel3;
         private Label label1;
-        private Panel panel2;
         private Panel panel1;
         private Button button5;
         private Button button4;
@@ -346,9 +355,10 @@
         private Label label4;
         private Label label3;
         private Label label2;
-        private Button GetStarted;
         private Label label9;
         private Label label8;
         private Label label10;
+        private Button button6;
+        private PictureBox signUpLogo;
     }
 }

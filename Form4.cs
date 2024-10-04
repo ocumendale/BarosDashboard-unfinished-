@@ -33,7 +33,7 @@ namespace BarosDashboard
 
         private void button3_Click(object sender, EventArgs e)
         {
-           this.Hide();
+            this.Hide();
             Contact contact = new Contact();
             contact.ShowDialog();
         }
@@ -47,7 +47,7 @@ namespace BarosDashboard
 
         private void button6_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -57,15 +57,20 @@ namespace BarosDashboard
 
         private void GetStarted_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Services services = new Services();
-            services.ShowDialog();
+
         }
 
         private void HowItWorks_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
             this.TopMost = true;
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Services services = new Services();
+            services.ShowDialog();
         }
     }
 }

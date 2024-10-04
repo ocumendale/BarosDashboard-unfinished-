@@ -48,7 +48,7 @@ namespace BarosDashboard
             else
             {
                 MessageBox.Show("Please complete all required fields before submitting.", "Incomplete Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }     
+            }
 
         }
         private bool ValidateInputs()
@@ -233,6 +233,11 @@ namespace BarosDashboard
         {
             this.WindowState = FormWindowState.Maximized;
             this.TopMost = true;
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

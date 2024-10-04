@@ -283,6 +283,24 @@
         AAAAAAAAAKDHZmb+C7NI5qDdae7/AAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>In the Philippines, barangays serve as the smallest administrative units, 
+each with its own office. 
+These offices are where you can request important documents like
+clearances or certifications. This process is vital for various reasons, 
+from job applications to administrative needs. 
+We as a group we chose this system because even
+though the residents always request documents, only few people in our 
+industry think about making a computerized system for this. we want to 
+understand the ins and outs of the manual document request system 
+currently used by barangay offices. By thoroughly examining this process,
+we hope to find ways to make it better and more efficient. we want to use 
+technology to create a digital system that simplifies the document request
+process in barangays. In today's world, where technology is
+advancing rapidly, there's a lot of potential to improve 
+how barangay offices work.
+</value>
+  </data>
   <data name="signUpLogo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfAAAAH3CAYAAABEqQ1eAAAABGdBTUEAALGPC/xhBQAA/8dJREFUeF7s
@@ -5341,24 +5359,6 @@
         SkpKr7XKqlY509N1jy9/MONZFLDpNWYBcGxNetv33a7AU2Vltdmjo6O/nLpFSUlJSUlJ6bVWdryobNmK
         zL9NW6n9Psa7MQZuNtjJanKS3er+UlFBaevOnQfem7pcSUlJSUlJ6bUWVhIrrqjZojfZP4253kihA94B
         b4Q87iCx+/7Ytm27vET0v1K3KCkpvWr9f//f/w++TSa5reOkpQAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>In the Philippines, barangays serve as the smallest administrative units, 
-each with its own office. 
-These offices are where you can request important documents like
-clearances or certifications. This process is vital for various reasons, 
-from job applications to administrative needs. 
-We as a group we chose this system because even
-though the residents always request documents, only few people in our 
-industry think about making a computerized system for this. we want to 
-understand the ins and outs of the manual document request system 
-currently used by barangay offices. By thoroughly examining this process,
-we hope to find ways to make it better and more efficient. we want to use 
-technology to create a digital system that simplifies the document request
-process in barangays. In today's world, where technology is
-advancing rapidly, there's a lot of potential to improve 
-how barangay offices work.
 </value>
   </data>
 </root>

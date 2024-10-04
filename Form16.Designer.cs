@@ -59,7 +59,7 @@
             // backCourt
             // 
             backCourt.BackColor = Color.Goldenrod;
-            backCourt.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            backCourt.Font = new Font("Lucida Fax", 15.75F, FontStyle.Bold);
             backCourt.Location = new Point(12, 12);
             backCourt.Name = "backCourt";
             backCourt.Size = new Size(97, 53);
@@ -83,7 +83,7 @@
             // 
             button1.Anchor = AnchorStyles.Bottom;
             button1.BackColor = Color.MidnightBlue;
-            button1.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold);
+            button1.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
             button1.ForeColor = Color.FromArgb(246, 180, 71);
             button1.Location = new Point(498, 969);
             button1.Name = "button1";

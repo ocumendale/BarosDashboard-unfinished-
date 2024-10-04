@@ -30,8 +30,8 @@ namespace BarosDashboard
             this.WindowState = FormWindowState.Maximized;
             this.TopMost = true;
         }
-        
-        
+
+
 
         private void GetDataFromMySQL()
         {
@@ -56,7 +56,7 @@ namespace BarosDashboard
                         cmd.Parameters.AddWithValue("@birthday", dateTimePickerBirthday.Value.Date);
                         cmd.Parameters.AddWithValue("@sex", GetSelectedSex());
                         cmd.Parameters.AddWithValue("@civilStatus", GetSelectedCivilStatus());
-                        cmd.Parameters.AddWithValue("@emergency_name", Fname_Em.Text); 
+                        cmd.Parameters.AddWithValue("@emergency_name", Fname_Em.Text);
                         cmd.Parameters.AddWithValue("@emergency_Con", contact_Em.Text);
                         cmd.Parameters.AddWithValue("@precinctNumber", textBoxPrecinctNumber.Text);
                         cmd.Parameters.AddWithValue("@UserID", userId);
@@ -101,7 +101,7 @@ namespace BarosDashboard
             else if (radioButtonWidowed.Checked)
                 return "Widowed";
             else
-                return null; 
+                return null;
         }
 
 
@@ -147,6 +147,16 @@ namespace BarosDashboard
         }
 
         private void dateTimePickerBirthday_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelPrecinctNumber_Click(object sender, EventArgs e)
         {
 
         }
