@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
+            button6 = new Button();
             HBF1 = new PictureBox();
             button5 = new Button();
             button4 = new Button();
@@ -52,6 +53,7 @@
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel1.BackColor = Color.FromArgb(246, 180, 71);
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(button6);
             panel1.Controls.Add(HBF1);
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button4);
@@ -62,6 +64,21 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(442, 1115);
             panel1.TabIndex = 0;
+            // 
+            // button6
+            // 
+            button6.Anchor = AnchorStyles.Left;
+            button6.BackColor = Color.FromArgb(246, 180, 71);
+            button6.FlatAppearance.BorderSize = 0;
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
+            button6.Location = new Point(-1, 951);
+            button6.Name = "button6";
+            button6.Size = new Size(442, 83);
+            button6.TabIndex = 7;
+            button6.Text = "LOGOUT";
+            button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click_1;
             // 
             // HBF1
             // 
@@ -83,11 +100,11 @@
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
             button5.ForeColor = Color.Black;
-            button5.Location = new Point(3, 906);
+            button5.Location = new Point(3, 781);
             button5.Name = "button5";
             button5.Size = new Size(438, 97);
             button5.TabIndex = 4;
-            button5.Text = "Services";
+            button5.Text = "SERVICES";
             button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
             // 
@@ -99,11 +116,11 @@
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
             button4.ForeColor = Color.Black;
-            button4.Location = new Point(3, 702);
+            button4.Location = new Point(-1, 606);
             button4.Name = "button4";
-            button4.Size = new Size(438, 97);
+            button4.Size = new Size(451, 97);
             button4.TabIndex = 3;
-            button4.Text = "How it works?";
+            button4.Text = "HOW IT WORKS?";
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
             // 
@@ -115,11 +132,11 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
             button3.ForeColor = Color.Black;
-            button3.Location = new Point(3, 497);
+            button3.Location = new Point(-1, 428);
             button3.Name = "button3";
             button3.Size = new Size(438, 97);
             button3.TabIndex = 2;
-            button3.Text = "Contact";
+            button3.Text = "CONTACT";
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
@@ -131,11 +148,11 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
             button2.ForeColor = Color.Black;
-            button2.Location = new Point(6, 291);
+            button2.Location = new Point(6, 251);
             button2.Name = "button2";
             button2.Size = new Size(435, 97);
             button2.TabIndex = 1;
-            button2.Text = "About Us";
+            button2.Text = "ABOUT US";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
@@ -151,7 +168,7 @@
             button1.Name = "button1";
             button1.Size = new Size(438, 97);
             button1.TabIndex = 0;
-            button1.Text = "Home";
+            button1.Text = "HOME";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
@@ -257,5 +274,6 @@
         private Label Greet;
         private PictureBox HBF1;
         private PictureBox signUpLogo;
+        private Button button6;
     }
 }

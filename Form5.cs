@@ -75,5 +75,24 @@ namespace BarosDashboard
         {
 
         }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+
+                LoggedInUser.UserId = 0;
+                LoggedInUser.Uname = string.Empty;
+
+
+                login loginForm = new login();
+                loginForm.Show();
+
+
+                this.Close();
+            }
+        }
     }
 }

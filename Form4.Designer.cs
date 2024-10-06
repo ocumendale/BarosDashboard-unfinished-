@@ -49,6 +49,7 @@
             button2 = new Button();
             button1 = new Button();
             signUpLogo = new PictureBox();
+            button7 = new Button();
             panel3.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)HBF4).BeginInit();
@@ -208,6 +209,7 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(button7);
             panel1.Controls.Add(HBF4);
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button4);
@@ -235,11 +237,11 @@
             button5.FlatAppearance.BorderSize = 0;
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
-            button5.Location = new Point(3, 906);
+            button5.Location = new Point(3, 781);
             button5.Name = "button5";
             button5.Size = new Size(438, 97);
             button5.TabIndex = 4;
-            button5.Text = "Services";
+            button5.Text = "SERVICES";
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
             // 
@@ -248,11 +250,11 @@
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
-            button4.Location = new Point(7, 702);
+            button4.Location = new Point(-1, 606);
             button4.Name = "button4";
-            button4.Size = new Size(431, 97);
+            button4.Size = new Size(451, 97);
             button4.TabIndex = 3;
-            button4.Text = "How it works?";
+            button4.Text = "HOW IT WORKS?";
             button4.UseVisualStyleBackColor = true;
             // 
             // button3
@@ -260,11 +262,11 @@
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
-            button3.Location = new Point(7, 497);
+            button3.Location = new Point(2, 428);
             button3.Name = "button3";
             button3.Size = new Size(431, 97);
             button3.TabIndex = 2;
-            button3.Text = "Contact";
+            button3.Text = "CONTACT";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
@@ -273,11 +275,11 @@
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
-            button2.Location = new Point(6, 291);
+            button2.Location = new Point(6, 251);
             button2.Name = "button2";
             button2.Size = new Size(435, 97);
             button2.TabIndex = 1;
-            button2.Text = "About Us";
+            button2.Text = "ABOUT US";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
@@ -292,7 +294,7 @@
             button1.Name = "button1";
             button1.Size = new Size(431, 97);
             button1.TabIndex = 0;
-            button1.Text = "Home";
+            button1.Text = "HOME";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
@@ -307,6 +309,19 @@
             signUpLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             signUpLogo.TabIndex = 131;
             signUpLogo.TabStop = false;
+            // 
+            // button7
+            // 
+            button7.FlatAppearance.BorderSize = 0;
+            button7.FlatStyle = FlatStyle.Flat;
+            button7.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
+            button7.Location = new Point(-1, 951);
+            button7.Name = "button7";
+            button7.Size = new Size(438, 97);
+            button7.TabIndex = 8;
+            button7.Text = "LOGOUT";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // HowItWorks
             // 
@@ -362,5 +377,6 @@
         private Label label10;
         private Button button6;
         private PictureBox signUpLogo;
+        private Button button7;
     }
 }
