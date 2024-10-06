@@ -61,8 +61,11 @@
             // 
             // backTable
             // 
-            backTable.BackColor = Color.Goldenrod;
+            backTable.BackColor = Color.MidnightBlue;
+            backTable.FlatAppearance.BorderSize = 0;
+            backTable.FlatStyle = FlatStyle.Flat;
             backTable.Font = new Font("Lucida Fax", 15.75F, FontStyle.Bold);
+            backTable.ForeColor = Color.FromArgb(246, 180, 71);
             backTable.Location = new Point(12, 12);
             backTable.Name = "backTable";
             backTable.Size = new Size(97, 53);
@@ -75,6 +78,8 @@
             // 
             button1.Anchor = AnchorStyles.Bottom;
             button1.BackColor = Color.MidnightBlue;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold);
             button1.ForeColor = Color.FromArgb(246, 180, 71);
             button1.Location = new Point(526, 954);
@@ -302,7 +307,7 @@
             // panel2
             // 
             panel2.BackColor = Color.MidnightBlue;
-            panel2.Location = new Point(284, 340);
+            panel2.Location = new Point(284, 338);
             panel2.Name = "panel2";
             panel2.Size = new Size(700, 55);
             panel2.TabIndex = 109;
@@ -310,7 +315,7 @@
             // panel1
             // 
             panel1.BackColor = Color.MidnightBlue;
-            panel1.Location = new Point(280, 532);
+            panel1.Location = new Point(280, 531);
             panel1.Name = "panel1";
             panel1.Size = new Size(700, 55);
             panel1.TabIndex = 110;

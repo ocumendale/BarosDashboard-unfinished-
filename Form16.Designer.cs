@@ -58,8 +58,11 @@
             // 
             // backCourt
             // 
-            backCourt.BackColor = Color.Goldenrod;
+            backCourt.BackColor = Color.MidnightBlue;
+            backCourt.FlatAppearance.BorderSize = 0;
+            backCourt.FlatStyle = FlatStyle.Flat;
             backCourt.Font = new Font("Lucida Fax", 15.75F, FontStyle.Bold);
+            backCourt.ForeColor = Color.FromArgb(246, 180, 71);
             backCourt.Location = new Point(12, 12);
             backCourt.Name = "backCourt";
             backCourt.Size = new Size(97, 53);
@@ -83,9 +86,11 @@
             // 
             button1.Anchor = AnchorStyles.Bottom;
             button1.BackColor = Color.MidnightBlue;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
             button1.ForeColor = Color.FromArgb(246, 180, 71);
-            button1.Location = new Point(498, 969);
+            button1.Location = new Point(528, 968);
             button1.Name = "button1";
             button1.Size = new Size(186, 63);
             button1.TabIndex = 124;
@@ -275,7 +280,7 @@
             // panel2
             // 
             panel2.BackColor = Color.MidnightBlue;
-            panel2.Location = new Point(284, 340);
+            panel2.Location = new Point(284, 338);
             panel2.Name = "panel2";
             panel2.Size = new Size(700, 55);
             panel2.TabIndex = 127;
@@ -283,7 +288,7 @@
             // panel1
             // 
             panel1.BackColor = Color.MidnightBlue;
-            panel1.Location = new Point(280, 532);
+            panel1.Location = new Point(280, 531);
             panel1.Name = "panel1";
             panel1.Size = new Size(700, 55);
             panel1.TabIndex = 128;

@@ -80,6 +80,8 @@
             // button6
             // 
             button6.BackColor = Color.MidnightBlue;
+            button6.FlatAppearance.BorderSize = 0;
+            button6.FlatStyle = FlatStyle.Flat;
             button6.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
             button6.ForeColor = Color.FromArgb(246, 180, 71);
             button6.Location = new Point(1122, 778);

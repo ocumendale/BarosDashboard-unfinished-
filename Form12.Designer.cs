@@ -58,8 +58,11 @@ namespace BarosDashboard
             // 
             // backCourt
             // 
-            backCourt.BackColor = Color.Goldenrod;
+            backCourt.BackColor = Color.MidnightBlue;
+            backCourt.FlatAppearance.BorderSize = 0;
+            backCourt.FlatStyle = FlatStyle.Flat;
             backCourt.Font = new Font("Lucida Fax", 15.75F, FontStyle.Bold);
+            backCourt.ForeColor = Color.FromArgb(246, 180, 71);
             backCourt.Location = new Point(12, 12);
             backCourt.Name = "backCourt";
             backCourt.Size = new Size(97, 53);
@@ -94,6 +97,8 @@ namespace BarosDashboard
             // 
             button1.Anchor = AnchorStyles.Bottom;
             button1.BackColor = Color.MidnightBlue;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold);
             button1.ForeColor = Color.FromArgb(246, 180, 71);
             button1.Location = new Point(526, 1004);

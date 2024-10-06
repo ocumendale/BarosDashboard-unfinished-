@@ -86,6 +86,8 @@
             // 
             contactbtn.Anchor = AnchorStyles.None;
             contactbtn.BackColor = Color.MidnightBlue;
+            contactbtn.FlatAppearance.BorderSize = 0;
+            contactbtn.FlatStyle = FlatStyle.Flat;
             contactbtn.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
             contactbtn.ForeColor = Color.FromArgb(246, 180, 71);
             contactbtn.Location = new Point(1074, 663);

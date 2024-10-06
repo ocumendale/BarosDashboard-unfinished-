@@ -92,7 +92,7 @@
             ResAssist.Name = "ResAssist";
             ResAssist.Size = new Size(342, 46);
             ResAssist.TabIndex = 3;
-            ResAssist.Text = "RESIDENT ASSISTANCE";
+            ResAssist.Text = "RESERVATION";
             ResAssist.TextAlign = ContentAlignment.MiddleLeft;
             ResAssist.UseVisualStyleBackColor = true;
             ResAssist.Click += ResAssist_Click;

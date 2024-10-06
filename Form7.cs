@@ -44,7 +44,7 @@ namespace BarosDashboard
             LoggedInUser.Uname = txt_ContactNum.Text;
             if (string.IsNullOrEmpty(contact) || string.IsNullOrEmpty(password))
             {
-                signin_Btn.Text = "Please enter both contact and password.";
+                MessageBox.Show("Please enter both contact and password.");
                 return;
             }
 
@@ -74,7 +74,7 @@ namespace BarosDashboard
                         }
                         else
                         {
-                            signin_Btn.Text = "Incorrect contact or password.";
+                            MessageBox.Show("Incorrect contact or password.");
                         }
                     }
                 }

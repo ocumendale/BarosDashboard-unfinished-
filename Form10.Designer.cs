@@ -89,6 +89,7 @@
             // FormBas
             // 
             FormBas.BackColor = Color.FromArgb(246, 180, 71);
+            FormBas.FlatAppearance.BorderColor = Color.Black;
             FormBas.FlatAppearance.BorderSize = 0;
             FormBas.Font = new Font("Lucida Fax", 26.25F, FontStyle.Bold);
             FormBas.ForeColor = Color.Black;
@@ -113,8 +114,11 @@
             // 
             // backReq
             // 
-            backReq.BackColor = Color.Goldenrod;
+            backReq.BackColor = Color.MidnightBlue;
+            backReq.FlatAppearance.BorderSize = 0;
+            backReq.FlatStyle = FlatStyle.Flat;
             backReq.Font = new Font("Lucida Fax", 15.75F, FontStyle.Bold);
+            backReq.ForeColor = Color.FromArgb(246, 180, 71);
             backReq.Location = new Point(12, 12);
             backReq.Name = "backReq";
             backReq.Size = new Size(97, 53);

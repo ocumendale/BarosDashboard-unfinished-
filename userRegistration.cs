@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace BarosDashboard
 {
@@ -34,11 +35,11 @@ namespace BarosDashboard
             if (string.IsNullOrEmpty(fullName) || string.IsNullOrEmpty(contact) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(email))
             {
                 MessageBox.Show("Please fill in all fields.");
-                login log = new login();
-                log.Show();
-                this.Hide();
+                
                 return;
             }
+            else
+            
 
             try
             {
@@ -55,7 +56,11 @@ namespace BarosDashboard
 
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Registration successful!");
-                    }
+
+                            login log = new login();
+                            log.Show();
+                            this.Hide();
+                        }
                 }
             }
             catch (MySqlException ex)
@@ -103,12 +108,29 @@ namespace BarosDashboard
 
         private void clear_btn_Click(object sender, EventArgs e)
         {
+            fullname_txtb.Clear();
+            email_txtb.Clear();
+            contact_txtb.Clear();
+            password_txtb.Clear();
 
+            
         }
 
         private void email_txtb_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkbxShowPass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkbxShowPass.Checked)
+            {
+                password_txtb.PasswordChar = '\0'; // Show password
+            }
+            else
+            {
+                password_txtb.PasswordChar = '*'; // Hide password
+            }
         }
     }
 }

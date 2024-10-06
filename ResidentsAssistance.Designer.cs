@@ -93,7 +93,7 @@
             ResAssist.Name = "ResAssist";
             ResAssist.Size = new Size(321, 44);
             ResAssist.TabIndex = 3;
-            ResAssist.Text = "RESIDENT ASSISTANCE";
+            ResAssist.Text = "RESERVATION";
             ResAssist.TextAlign = ContentAlignment.MiddleLeft;
             ResAssist.UseVisualStyleBackColor = true;
             // 
@@ -298,6 +298,7 @@
             Name = "ResidentsAssistance";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ResidentsAssistance";
+            Load += ResidentsAssistance_Load;
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();

@@ -36,19 +36,17 @@ namespace BarosDashboard
 
         private void ResComplaints_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void EmergencyRes_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Announcements_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Announcements announcements = new Announcements();
-            announcements.Show();
+            
         }
 
         private void Events_Click(object sender, EventArgs e)
@@ -88,6 +86,12 @@ namespace BarosDashboard
             DataSet ds = new DataSet();
             da.Fill(ds);
             dataGridView2.DataSource = ds.Tables[0];
+        }
+
+        private void ResidentsAssistance_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            this.TopMost = true;
         }
     }
 }

@@ -41,6 +41,8 @@ namespace BarosDashboard
             loginlbl = new Label();
             signUp_btn = new Button();
             checkBox1 = new CheckBox();
+            panel3 = new Panel();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)signUpLogo).BeginInit();
             SuspendLayout();
             // 
@@ -69,11 +71,11 @@ namespace BarosDashboard
             // 
             // clear2_btn
             // 
-            clear2_btn.BackColor = Color.DarkGoldenrod;
+            clear2_btn.BackColor = Color.MidnightBlue;
             clear2_btn.FlatStyle = FlatStyle.Flat;
-            clear2_btn.Font = new Font("Segoe UI", 20.25F);
-            clear2_btn.ForeColor = Color.FromArgb(24, 25, 56);
-            clear2_btn.Location = new Point(384, 668);
+            clear2_btn.Font = new Font("Lucida Fax", 20.25F);
+            clear2_btn.ForeColor = Color.FromArgb(246, 180, 71);
+            clear2_btn.Location = new Point(384, 692);
             clear2_btn.Name = "clear2_btn";
             clear2_btn.Size = new Size(188, 69);
             clear2_btn.TabIndex = 24;
@@ -83,12 +85,12 @@ namespace BarosDashboard
             // 
             // signin_Btn
             // 
-            signin_Btn.BackColor = Color.FromArgb(24, 25, 56);
+            signin_Btn.BackColor = Color.MidnightBlue;
             signin_Btn.FlatAppearance.BorderSize = 0;
             signin_Btn.FlatStyle = FlatStyle.Flat;
-            signin_Btn.Font = new Font("Segoe UI", 20.25F);
+            signin_Btn.Font = new Font("Lucida Fax", 20.25F);
             signin_Btn.ForeColor = Color.FromArgb(246, 180, 71);
-            signin_Btn.Location = new Point(652, 668);
+            signin_Btn.Location = new Point(652, 692);
             signin_Btn.Name = "signin_Btn";
             signin_Btn.Size = new Size(188, 69);
             signin_Btn.TabIndex = 23;
@@ -98,7 +100,7 @@ namespace BarosDashboard
             // 
             // txt_ContactNum
             // 
-            txt_ContactNum.BackColor = Color.DarkGoldenrod;
+            txt_ContactNum.BackColor = Color.FromArgb(246, 180, 71);
             txt_ContactNum.BorderStyle = BorderStyle.FixedSingle;
             txt_ContactNum.Cursor = Cursors.IBeam;
             txt_ContactNum.Font = new Font("Segoe UI", 20.25F);
@@ -113,16 +115,16 @@ namespace BarosDashboard
             // contactNum
             // 
             contactNum.AutoSize = true;
-            contactNum.Font = new Font("Segoe UI", 24F);
-            contactNum.Location = new Point(384, 357);
+            contactNum.Font = new Font("Lucida Fax", 24F);
+            contactNum.Location = new Point(479, 354);
             contactNum.Name = "contactNum";
-            contactNum.Size = new Size(256, 45);
+            contactNum.Size = new Size(281, 37);
             contactNum.TabIndex = 21;
             contactNum.Text = "Contact Number";
             // 
             // txt_password
             // 
-            txt_password.BackColor = Color.DarkGoldenrod;
+            txt_password.BackColor = Color.FromArgb(246, 180, 71);
             txt_password.BorderStyle = BorderStyle.FixedSingle;
             txt_password.Cursor = Cursors.IBeam;
             txt_password.Font = new Font("Segoe UI", 20.25F);
@@ -137,10 +139,10 @@ namespace BarosDashboard
             // passWord
             // 
             passWord.AutoSize = true;
-            passWord.Font = new Font("Segoe UI", 24F);
-            passWord.Location = new Point(384, 505);
+            passWord.Font = new Font("Lucida Fax", 24F);
+            passWord.Location = new Point(532, 505);
             passWord.Name = "passWord";
-            passWord.Size = new Size(162, 45);
+            passWord.Size = new Size(180, 37);
             passWord.TabIndex = 19;
             passWord.Text = "Password ";
             // 
@@ -157,12 +159,12 @@ namespace BarosDashboard
             // 
             // signUp_btn
             // 
-            signUp_btn.BackColor = Color.FromArgb(24, 25, 56);
+            signUp_btn.BackColor = Color.MidnightBlue;
             signUp_btn.FlatAppearance.BorderSize = 0;
             signUp_btn.FlatStyle = FlatStyle.Flat;
-            signUp_btn.Font = new Font("Segoe UI", 20.25F);
+            signUp_btn.Font = new Font("Lucida Fax", 20.25F);
             signUp_btn.ForeColor = Color.FromArgb(246, 180, 71);
-            signUp_btn.Location = new Point(515, 770);
+            signUp_btn.Location = new Point(515, 794);
             signUp_btn.Name = "signUp_btn";
             signUp_btn.Size = new Size(188, 69);
             signUp_btn.TabIndex = 27;
@@ -174,13 +176,29 @@ namespace BarosDashboard
             // 
             checkBox1.AutoSize = true;
             checkBox1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            checkBox1.Location = new Point(656, 620);
+            checkBox1.Location = new Point(656, 644);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(184, 29);
             checkBox1.TabIndex = 28;
             checkBox1.Text = "Show Password";
             checkBox1.UseVisualStyleBackColor = true;
             checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.MidnightBlue;
+            panel3.Location = new Point(392, 409);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(456, 61);
+            panel3.TabIndex = 130;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.MidnightBlue;
+            panel1.Location = new Point(393, 561);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(456, 61);
+            panel1.TabIndex = 131;
             // 
             // login
             // 
@@ -199,6 +217,8 @@ namespace BarosDashboard
             Controls.Add(txt_password);
             Controls.Add(passWord);
             Controls.Add(loginlbl);
+            Controls.Add(panel3);
+            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "login";
             StartPosition = FormStartPosition.CenterScreen;
@@ -232,5 +252,7 @@ namespace BarosDashboard
         private Label loginlbl;
         private Button signUp_btn;
         private CheckBox checkBox1;
+        private Panel panel3;
+        private Panel panel1;
     }
 }

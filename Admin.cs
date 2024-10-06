@@ -19,9 +19,7 @@ namespace BarosDashboard
 
         private void Announcements_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Announcements announcements = new Announcements();
-            announcements.Show();
+            
         }
 
         private void EmergencyRes_Click(object sender, EventArgs e)
@@ -55,7 +53,8 @@ namespace BarosDashboard
 
         private void Admin_Load(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Maximized;
+            this.TopMost = true;
         }
 
         private void signout_Click(object sender, EventArgs e)

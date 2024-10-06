@@ -140,12 +140,12 @@ namespace BarosDashboard
         }
         private void GeneratePDF()
         {
-            string outputPath = "BasketballReservationDetails.pdf";
+            
             DateTime currentDate = DateTime.Now;
 
             // Create a new document
             Document document = new Document(PageSize.A4);
-            PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(outputPath, FileMode.Create));
+            PdfWriter writer = PdfWriter.GetInstance(document, new FileStream($"_bBall{textBox1.Text}.pdf", FileMode.Create));
 
             // Open the document to enable writing
             document.Open();

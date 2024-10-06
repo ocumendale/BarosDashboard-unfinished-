@@ -39,13 +39,14 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 72F, FontStyle.Bold);
-            label1.Location = new Point(333, 227);
+            label1.BackColor = Color.MidnightBlue;
+            label1.Font = new Font("Lucida Fax", 72F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(246, 180, 71);
+            label1.Location = new Point(319, 202);
             label1.Name = "label1";
-            label1.Size = new Size(1269, 128);
+            label1.Size = new Size(1380, 109);
             label1.TabIndex = 0;
             label1.Text = "TRANSACTION SUCESSFUL";
-
             // 
             // signUpLogo
             // 
@@ -58,12 +59,14 @@
             signUpLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             signUpLogo.TabIndex = 106;
             signUpLogo.TabStop = false;
-           
             // 
             // button1
             // 
-            button1.BackColor = Color.DarkGoldenrod;
-            button1.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.BackColor = Color.MidnightBlue;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Lucida Fax", 48F, FontStyle.Bold);
+            button1.ForeColor = Color.FromArgb(246, 180, 71);
             button1.Location = new Point(444, 522);
             button1.Name = "button1";
             button1.Size = new Size(451, 182);
@@ -74,8 +77,11 @@
             // 
             // button2
             // 
-            button2.BackColor = Color.DarkGoldenrod;
-            button2.Font = new Font("Segoe UI", 48F, FontStyle.Bold);
+            button2.BackColor = Color.MidnightBlue;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Lucida Fax", 48F, FontStyle.Bold);
+            button2.ForeColor = Color.FromArgb(246, 180, 71);
             button2.Location = new Point(1026, 522);
             button2.Name = "button2";
             button2.Size = new Size(451, 182);

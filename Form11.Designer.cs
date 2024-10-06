@@ -67,9 +67,12 @@
             // 
             // button5
             // 
-            button5.BackColor = Color.Goldenrod;
+            button5.BackColor = Color.MidnightBlue;
             button5.BackgroundImage = Properties.Resources.backbbtn;
+            button5.FlatAppearance.BorderSize = 0;
+            button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Lucida Fax", 15.75F, FontStyle.Bold);
+            button5.ForeColor = Color.FromArgb(246, 180, 71);
             button5.Location = new Point(12, 12);
             button5.Name = "button5";
             button5.Size = new Size(97, 53);
@@ -105,6 +108,7 @@
             // button3
             // 
             button3.BackColor = Color.FromArgb(246, 180, 71);
+            button3.FlatAppearance.BorderSize = 0;
             button3.Font = new Font("Lucida Fax", 26.25F, FontStyle.Bold);
             button3.Location = new Point(399, 309);
             button3.Name = "button3";
