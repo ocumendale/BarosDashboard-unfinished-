@@ -112,5 +112,12 @@ namespace BarosDashboard
                 txt_password.PasswordChar = '*'; // Hide password
             }
         }
+
+        private void btnToScan_Click(object sender, EventArgs e)
+        {
+            Scanner scanner = new Scanner();
+            scanner.Show();
+            this.Hide();
+        }
     }
 }

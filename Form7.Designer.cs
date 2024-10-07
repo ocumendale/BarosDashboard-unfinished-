@@ -43,6 +43,7 @@ namespace BarosDashboard
             checkBox1 = new CheckBox();
             panel3 = new Panel();
             panel1 = new Panel();
+            btnToScan = new Button();
             ((System.ComponentModel.ISupportInitialize)signUpLogo).BeginInit();
             SuspendLayout();
             // 
@@ -73,7 +74,7 @@ namespace BarosDashboard
             // 
             clear2_btn.BackColor = Color.MidnightBlue;
             clear2_btn.FlatStyle = FlatStyle.Flat;
-            clear2_btn.Font = new Font("Lucida Fax", 20.25F);
+            clear2_btn.Font = new Font("Microsoft Sans Serif", 20.25F);
             clear2_btn.ForeColor = Color.FromArgb(246, 180, 71);
             clear2_btn.Location = new Point(384, 692);
             clear2_btn.Name = "clear2_btn";
@@ -88,7 +89,7 @@ namespace BarosDashboard
             signin_Btn.BackColor = Color.MidnightBlue;
             signin_Btn.FlatAppearance.BorderSize = 0;
             signin_Btn.FlatStyle = FlatStyle.Flat;
-            signin_Btn.Font = new Font("Lucida Fax", 20.25F);
+            signin_Btn.Font = new Font("Microsoft Sans Serif", 20.25F);
             signin_Btn.ForeColor = Color.FromArgb(246, 180, 71);
             signin_Btn.Location = new Point(652, 692);
             signin_Btn.Name = "signin_Btn";
@@ -115,10 +116,10 @@ namespace BarosDashboard
             // contactNum
             // 
             contactNum.AutoSize = true;
-            contactNum.Font = new Font("Lucida Fax", 24F);
+            contactNum.Font = new Font("Microsoft Sans Serif", 24F);
             contactNum.Location = new Point(479, 354);
             contactNum.Name = "contactNum";
-            contactNum.Size = new Size(281, 37);
+            contactNum.Size = new Size(252, 37);
             contactNum.TabIndex = 21;
             contactNum.Text = "Contact Number";
             // 
@@ -139,10 +140,10 @@ namespace BarosDashboard
             // passWord
             // 
             passWord.AutoSize = true;
-            passWord.Font = new Font("Lucida Fax", 24F);
+            passWord.Font = new Font("Microsoft Sans Serif", 24F);
             passWord.Location = new Point(532, 505);
             passWord.Name = "passWord";
-            passWord.Size = new Size(180, 37);
+            passWord.Size = new Size(167, 37);
             passWord.TabIndex = 19;
             passWord.Text = "Password ";
             // 
@@ -162,7 +163,7 @@ namespace BarosDashboard
             signUp_btn.BackColor = Color.MidnightBlue;
             signUp_btn.FlatAppearance.BorderSize = 0;
             signUp_btn.FlatStyle = FlatStyle.Flat;
-            signUp_btn.Font = new Font("Lucida Fax", 20.25F);
+            signUp_btn.Font = new Font("Microsoft Sans Serif", 20.25F);
             signUp_btn.ForeColor = Color.FromArgb(246, 180, 71);
             signUp_btn.Location = new Point(515, 794);
             signUp_btn.Name = "signUp_btn";
@@ -200,12 +201,28 @@ namespace BarosDashboard
             panel1.Size = new Size(456, 61);
             panel1.TabIndex = 131;
             // 
+            // btnToScan
+            // 
+            btnToScan.BackColor = Color.MidnightBlue;
+            btnToScan.FlatAppearance.BorderSize = 0;
+            btnToScan.FlatStyle = FlatStyle.Flat;
+            btnToScan.Font = new Font("Microsoft Sans Serif", 20.25F);
+            btnToScan.ForeColor = Color.FromArgb(246, 180, 71);
+            btnToScan.Location = new Point(1179, 965);
+            btnToScan.Name = "btnToScan";
+            btnToScan.Size = new Size(419, 69);
+            btnToScan.TabIndex = 132;
+            btnToScan.Text = "Sign In via QR Code";
+            btnToScan.UseVisualStyleBackColor = false;
+            btnToScan.Click += btnToScan_Click;
+            // 
             // login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 180, 71);
             ClientSize = new Size(1911, 1118);
+            Controls.Add(btnToScan);
             Controls.Add(checkBox1);
             Controls.Add(signUp_btn);
             Controls.Add(signUpLogo);
@@ -254,5 +271,6 @@ namespace BarosDashboard
         private CheckBox checkBox1;
         private Panel panel3;
         private Panel panel1;
+        private Button btnToScan;
     }
 }
