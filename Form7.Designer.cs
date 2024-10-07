@@ -44,6 +44,8 @@ namespace BarosDashboard
             panel3 = new Panel();
             panel1 = new Panel();
             btnToScan = new Button();
+            btnAdminLogin = new Button();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)signUpLogo).BeginInit();
             SuspendLayout();
             // 
@@ -98,6 +100,7 @@ namespace BarosDashboard
             signin_Btn.Text = "Sign In";
             signin_Btn.UseVisualStyleBackColor = false;
             signin_Btn.Click += signin_Btn_Click;
+            signin_Btn.Enter += signin_Btn_Click;
             // 
             // txt_ContactNum
             // 
@@ -111,6 +114,7 @@ namespace BarosDashboard
             txt_ContactNum.Name = "txt_ContactNum";
             txt_ContactNum.Size = new Size(456, 61);
             txt_ContactNum.TabIndex = 22;
+            txt_ContactNum.TextAlign = HorizontalAlignment.Center;
             txt_ContactNum.TextChanged += cNum_tb_TextChanged;
             // 
             // contactNum
@@ -136,6 +140,7 @@ namespace BarosDashboard
             txt_password.PasswordChar = '*';
             txt_password.Size = new Size(456, 61);
             txt_password.TabIndex = 20;
+            txt_password.TextAlign = HorizontalAlignment.Center;
             // 
             // passWord
             // 
@@ -216,12 +221,42 @@ namespace BarosDashboard
             btnToScan.UseVisualStyleBackColor = false;
             btnToScan.Click += btnToScan_Click;
             // 
+            // btnAdminLogin
+            // 
+            btnAdminLogin.BackColor = Color.MidnightBlue;
+            btnAdminLogin.FlatAppearance.BorderSize = 0;
+            btnAdminLogin.FlatStyle = FlatStyle.Flat;
+            btnAdminLogin.Font = new Font("Microsoft Sans Serif", 20.25F);
+            btnAdminLogin.ForeColor = Color.FromArgb(246, 180, 71);
+            btnAdminLogin.Location = new Point(1227, 192);
+            btnAdminLogin.Name = "btnAdminLogin";
+            btnAdminLogin.Size = new Size(286, 69);
+            btnAdminLogin.TabIndex = 133;
+            btnAdminLogin.Text = "Sign in to admin.";
+            btnAdminLogin.UseVisualStyleBackColor = false;
+            btnAdminLogin.Click += btnAdminLogin_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Microsoft Sans Serif", 24F);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(12, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(26, 37);
+            label1.TabIndex = 134;
+            label1.Text = " ";
+            label1.Click += label1_Click;
+            // 
             // login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 180, 71);
             ClientSize = new Size(1911, 1118);
+            Controls.Add(label1);
+            Controls.Add(btnAdminLogin);
             Controls.Add(btnToScan);
             Controls.Add(checkBox1);
             Controls.Add(signUp_btn);
@@ -272,5 +307,7 @@ namespace BarosDashboard
         private Panel panel3;
         private Panel panel1;
         private Button btnToScan;
+        private Button btnAdminLogin;
+        private Label label1;
     }
 }

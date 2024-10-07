@@ -10,23 +10,23 @@ using System.Windows.Forms;
 
 namespace BarosDashboard
 {
-    public partial class Scanner : Form
+    public partial class Pending : Form
     {
-        public Scanner()
+        public Pending()
         {
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void back2Login_Click(object sender, EventArgs e)
         {
-
+            login mLog = new login();
+            mLog.Show();
+            this.Hide();
         }
 
-        private void btnToMlogin_Click(object sender, EventArgs e)
+        private void Pending_Load(object sender, EventArgs e)
         {
-            login mlogin = new login();
-            mlogin.Show();
-            this.Close();
+
         }
     }
 }

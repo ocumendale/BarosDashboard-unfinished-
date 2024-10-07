@@ -48,6 +48,9 @@
             panel1 = new Panel();
             panel2 = new Panel();
             panel4 = new Panel();
+            address_txb = new TextBox();
+            label3 = new Label();
+            panel5 = new Panel();
             ((System.ComponentModel.ISupportInitialize)signUpLogo).BeginInit();
             SuspendLayout();
             // 
@@ -107,7 +110,7 @@
             checkbxShowPass.Cursor = Cursors.Hand;
             checkbxShowPass.FlatStyle = FlatStyle.Flat;
             checkbxShowPass.Font = new Font("Lucida Fax", 24F);
-            checkbxShowPass.Location = new Point(486, 773);
+            checkbxShowPass.Location = new Point(486, 769);
             checkbxShowPass.Name = "checkbxShowPass";
             checkbxShowPass.Size = new Size(282, 41);
             checkbxShowPass.TabIndex = 44;
@@ -122,7 +125,7 @@
             password_txtb.Cursor = Cursors.IBeam;
             password_txtb.Font = new Font("Segoe UI", 20.25F);
             password_txtb.ForeColor = Color.FromArgb(24, 25, 56);
-            password_txtb.Location = new Point(301, 691);
+            password_txtb.Location = new Point(315, 697);
             password_txtb.Multiline = true;
             password_txtb.Name = "password_txtb";
             password_txtb.PasswordChar = '*';
@@ -135,7 +138,7 @@
             // 
             password_lbl.AutoSize = true;
             password_lbl.Font = new Font("Lucida Fax", 24F);
-            password_lbl.Location = new Point(449, 643);
+            password_lbl.Location = new Point(463, 649);
             password_lbl.Name = "password_lbl";
             password_lbl.Size = new Size(170, 37);
             password_lbl.TabIndex = 41;
@@ -148,7 +151,7 @@
             fullname_txtb.Cursor = Cursors.IBeam;
             fullname_txtb.Font = new Font("Segoe UI", 20.25F);
             fullname_txtb.ForeColor = Color.FromArgb(24, 25, 56);
-            fullname_txtb.Location = new Point(301, 261);
+            fullname_txtb.Location = new Point(66, 422);
             fullname_txtb.Multiline = true;
             fullname_txtb.Name = "fullname_txtb";
             fullname_txtb.Size = new Size(456, 61);
@@ -160,7 +163,7 @@
             // 
             fullnamelbl.AutoSize = true;
             fullnamelbl.Font = new Font("Lucida Fax", 24F);
-            fullnamelbl.Location = new Point(443, 214);
+            fullnamelbl.Location = new Point(208, 375);
             fullnamelbl.Name = "fullnamelbl";
             fullnamelbl.Size = new Size(179, 37);
             fullnamelbl.TabIndex = 39;
@@ -173,7 +176,7 @@
             contact_txtb.Cursor = Cursors.IBeam;
             contact_txtb.Font = new Font("Segoe UI", 20.25F);
             contact_txtb.ForeColor = Color.FromArgb(24, 25, 56);
-            contact_txtb.Location = new Point(301, 542);
+            contact_txtb.Location = new Point(553, 422);
             contact_txtb.Multiline = true;
             contact_txtb.Name = "contact_txtb";
             contact_txtb.Size = new Size(456, 61);
@@ -184,7 +187,7 @@
             // 
             contact_lbl.AutoSize = true;
             contact_lbl.Font = new Font("Lucida Fax", 24F);
-            contact_lbl.Location = new Point(391, 495);
+            contact_lbl.Location = new Point(643, 375);
             contact_lbl.Name = "contact_lbl";
             contact_lbl.Size = new Size(281, 37);
             contact_lbl.TabIndex = 37;
@@ -198,7 +201,7 @@
             email_txtb.Cursor = Cursors.IBeam;
             email_txtb.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             email_txtb.ForeColor = Color.FromArgb(24, 25, 56);
-            email_txtb.Location = new Point(301, 401);
+            email_txtb.Location = new Point(66, 562);
             email_txtb.Multiline = true;
             email_txtb.Name = "email_txtb";
             email_txtb.Size = new Size(456, 61);
@@ -211,7 +214,7 @@
             email_lbl.AutoSize = true;
             email_lbl.BackColor = Color.Transparent;
             email_lbl.Font = new Font("Lucida Fax", 24F);
-            email_lbl.Location = new Point(473, 355);
+            email_lbl.Location = new Point(238, 516);
             email_lbl.Name = "email_lbl";
             email_lbl.Size = new Size(106, 37);
             email_lbl.TabIndex = 35;
@@ -222,7 +225,7 @@
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.Font = new Font("Lucida Fax", 72F, FontStyle.Bold);
-            label1.Location = new Point(742, 94);
+            label1.Location = new Point(696, 99);
             label1.Name = "label1";
             label1.Size = new Size(538, 109);
             label1.TabIndex = 34;
@@ -247,7 +250,7 @@
             // panel3
             // 
             panel3.BackColor = Color.MidnightBlue;
-            panel3.Location = new Point(309, 268);
+            panel3.Location = new Point(74, 429);
             panel3.Name = "panel3";
             panel3.Size = new Size(456, 61);
             panel3.TabIndex = 129;
@@ -255,7 +258,7 @@
             // panel1
             // 
             panel1.BackColor = Color.MidnightBlue;
-            panel1.Location = new Point(308, 407);
+            panel1.Location = new Point(73, 568);
             panel1.Name = "panel1";
             panel1.Size = new Size(456, 61);
             panel1.TabIndex = 130;
@@ -263,7 +266,7 @@
             // panel2
             // 
             panel2.BackColor = Color.MidnightBlue;
-            panel2.Location = new Point(309, 548);
+            panel2.Location = new Point(561, 428);
             panel2.Name = "panel2";
             panel2.Size = new Size(456, 61);
             panel2.TabIndex = 131;
@@ -271,10 +274,42 @@
             // panel4
             // 
             panel4.BackColor = Color.MidnightBlue;
-            panel4.Location = new Point(312, 697);
+            panel4.Location = new Point(326, 703);
             panel4.Name = "panel4";
             panel4.Size = new Size(456, 61);
             panel4.TabIndex = 132;
+            // 
+            // address_txb
+            // 
+            address_txb.BackColor = Color.FromArgb(246, 180, 71);
+            address_txb.BorderStyle = BorderStyle.FixedSingle;
+            address_txb.Cursor = Cursors.IBeam;
+            address_txb.Font = new Font("Segoe UI", 20.25F);
+            address_txb.ForeColor = Color.FromArgb(24, 25, 56);
+            address_txb.Location = new Point(549, 562);
+            address_txb.Multiline = true;
+            address_txb.Name = "address_txb";
+            address_txb.Size = new Size(456, 61);
+            address_txb.TabIndex = 134;
+            address_txb.TextAlign = HorizontalAlignment.Center;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Lucida Fax", 24F);
+            label3.Location = new Point(707, 516);
+            label3.Name = "label3";
+            label3.Size = new Size(148, 37);
+            label3.TabIndex = 133;
+            label3.Text = "Address";
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.MidnightBlue;
+            panel5.Location = new Point(557, 568);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(456, 61);
+            panel5.TabIndex = 137;
             // 
             // userRegistration
             // 
@@ -282,6 +317,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 180, 71);
             ClientSize = new Size(1911, 1118);
+            Controls.Add(address_txb);
+            Controls.Add(label3);
+            Controls.Add(panel5);
             Controls.Add(button1);
             Controls.Add(signUpLogo);
             Controls.Add(alreadytxt);
@@ -333,5 +371,8 @@
         private Panel panel1;
         private Panel panel2;
         private Panel panel4;
+        private TextBox address_txb;
+        private Label label3;
+        private Panel panel5;
     }
 }

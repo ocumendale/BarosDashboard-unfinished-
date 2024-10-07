@@ -18,6 +18,7 @@ namespace BarosDashboard
         public login()
         {
             InitializeComponent();
+            btnAdminLogin.Hide();
         }
 
         private void login_Load(object sender, EventArgs e)
@@ -36,12 +37,11 @@ namespace BarosDashboard
 
         private void signin_Btn_Click(object sender, EventArgs e)
         {
-
-
             string conn = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
             string contact = txt_ContactNum.Text.Trim();
             string password = txt_password.Text.Trim();
             LoggedInUser.Uname = txt_ContactNum.Text;
+
             if (string.IsNullOrEmpty(contact) || string.IsNullOrEmpty(password))
             {
                 MessageBox.Show("Please enter both contact and password.");
@@ -53,28 +53,47 @@ namespace BarosDashboard
                 using (MySqlConnection con = new MySqlConnection(conn))
                 {
                     con.Open();
-                    string query = "SELECT user_id FROM users WHERE contact=@contact AND password=@password";
+                    // Modified query to select the status along with the user_id
+                    string query = "SELECT user_id, stats FROM users WHERE contact=@contact AND password=@password";
                     using (MySqlCommand cmd = new MySqlCommand(query, con))
                     {
                         cmd.Parameters.AddWithValue("@contact", contact);
                         cmd.Parameters.AddWithValue("@password", password);
 
-                        object result = cmd.ExecuteScalar();
-
-                        if (result != null)
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
-                            int userId = Convert.ToInt32(result);
-                            LoggedInUser.UserId = userId;
+                            if (reader.Read())
+                            {
+                                int userId = reader.GetInt32("user_id");
+                                string status = reader.GetString("stats");
 
-                            signin_Btn.Text = "Login successful!";
-                            Form1 form1 = new Form1();
-                            form1.Show();
-                            this.Hide();
+                                // Check if the account is still pending
+                                if (status == "Pending")
+                                {
+                                    Pending lpend = new Pending();
+                                    lpend.Show();
+                                    this.Hide();
+                                    return; // Don't proceed with login
+                                }
 
-                        }
-                        else
-                        {
-                            MessageBox.Show("Incorrect contact or password.");
+                                // Check if the account is accepted
+                                if (status == "Accepted")
+                                {
+                                    LoggedInUser.UserId = userId;
+                                    signin_Btn.Text = "Login successful!";
+                                    Form1 form1 = new Form1();
+                                    form1.Show();
+                                    this.Hide();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Your account has been rejected or is in an invalid state.");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Incorrect contact or password.");
+                            }
                         }
                     }
                 }
@@ -115,9 +134,23 @@ namespace BarosDashboard
 
         private void btnToScan_Click(object sender, EventArgs e)
         {
-            Scanner scanner = new Scanner();
+            qrLogin scanner = new qrLogin();
             scanner.Show();
             this.Hide();
+        }
+
+
+
+        private void btnAdminLogin_Click(object sender, EventArgs e)
+        {
+            Admin admin = new Admin();
+            admin.Show();
+            this.Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            btnAdminLogin.Show();
         }
     }
 }

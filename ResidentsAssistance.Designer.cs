@@ -49,6 +49,7 @@
             panel5 = new Panel();
             panel6 = new Panel();
             panel7 = new Panel();
+            reg_btn = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -60,6 +61,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(246, 180, 71);
+            panel1.Controls.Add(reg_btn);
             panel1.Controls.Add(Events);
             panel1.Controls.Add(ResAssist);
             panel1.Controls.Add(DocuReq);
@@ -75,7 +77,7 @@
             Events.FlatAppearance.BorderSize = 0;
             Events.FlatStyle = FlatStyle.Flat;
             Events.Font = new Font("Yu Gothic UI", 20.25F);
-            Events.Location = new Point(47, 826);
+            Events.Location = new Point(49, 871);
             Events.Name = "Events";
             Events.Size = new Size(156, 44);
             Events.TabIndex = 7;
@@ -283,6 +285,20 @@
             panel7.Size = new Size(1422, 160);
             panel7.TabIndex = 18;
             // 
+            // reg_btn
+            // 
+            reg_btn.FlatAppearance.BorderSize = 0;
+            reg_btn.FlatStyle = FlatStyle.Flat;
+            reg_btn.Font = new Font("Yu Gothic UI", 20.25F);
+            reg_btn.Location = new Point(49, 798);
+            reg_btn.Name = "reg_btn";
+            reg_btn.Size = new Size(359, 56);
+            reg_btn.TabIndex = 8;
+            reg_btn.Text = "REGISTRATION";
+            reg_btn.TextAlign = ContentAlignment.MiddleLeft;
+            reg_btn.UseVisualStyleBackColor = true;
+            reg_btn.Click += reg_btn_Click;
+            // 
             // ResidentsAssistance
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -332,5 +348,6 @@
         private Panel panel5;
         private Panel panel6;
         private Panel panel7;
+        private Button reg_btn;
     }
 }

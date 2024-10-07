@@ -9,10 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace BarosDashboard
 {
     public partial class ManageTransaction : Form
     {
+        string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
+        int userId = LoggedInUser.UserId;
+
         public ManageTransaction()
         {
             InitializeComponent();
@@ -20,14 +24,8 @@ namespace BarosDashboard
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ShowGridView();
-        }
-        private void ShowGridView()
-        {
-            string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
-            int userId = LoggedInUser.UserId;
 
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM basketball_court WHERE user_id", connectionString);
+            MySqlDataAdapter da = new MySqlDataAdapter($"SELECT * FROM basketball_court WHERE user_id = {userId}", connectionString);
             DataSet ds = new DataSet();
             da.Fill(ds);
             dataGridView1.DataSource = ds.Tables[0];
@@ -95,10 +93,69 @@ namespace BarosDashboard
 
         private void table_Click(object sender, EventArgs e)
         {
-            string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
-            int userId = LoggedInUser.UserId;
 
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM table_ WHERE user_id", connectionString);
+
+            MySqlDataAdapter da = new MySqlDataAdapter($"SELECT * FROM table_ WHERE user_id = {userId}", connectionString);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            dataGridView1.DataSource = ds.Tables[0];
+        }
+
+        private void Chair_Click(object sender, EventArgs e)
+        {
+
+
+            MySqlDataAdapter da = new MySqlDataAdapter($"SELECT * FROM chair WHERE user_id = {userId}", connectionString);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            dataGridView1.DataSource = ds.Tables[0];
+        }
+
+        private void tent_Click(object sender, EventArgs e)
+        {
+
+
+            MySqlDataAdapter da = new MySqlDataAdapter($"SELECT * FROM tent WHERE user_id = {userId}", connectionString);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            dataGridView1.DataSource = ds.Tables[0];
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+
+            MySqlDataAdapter da = new MySqlDataAdapter($"SELECT * FROM brgy_cert WHERE user_id = {userId} ", connectionString);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            dataGridView1.DataSource = ds.Tables[0];
+        }
+
+        private void indigency_Click(object sender, EventArgs e)
+        {
+
+
+            MySqlDataAdapter da = new MySqlDataAdapter($"SELECT * FROM brgy_in WHERE user_id =  {userId}", connectionString);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            dataGridView1.DataSource = ds.Tables[0];
+        }
+
+        private void clearance_Click(object sender, EventArgs e)
+        {
+
+
+            MySqlDataAdapter da = new MySqlDataAdapter($"SELECT * FROM brgy_clear WHERE user_id = {userId}", connectionString);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            dataGridView1.DataSource = ds.Tables[0];
+        }
+
+        private void ID_Click(object sender, EventArgs e)
+        {
+
+
+            MySqlDataAdapter da = new MySqlDataAdapter($"SELECT * FROM brgy_id WHERE user_id = {userId}", connectionString);
             DataSet ds = new DataSet();
             da.Fill(ds);
             dataGridView1.DataSource = ds.Tables[0];

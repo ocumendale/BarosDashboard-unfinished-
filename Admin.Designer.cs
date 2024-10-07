@@ -44,6 +44,7 @@
             panel5 = new Panel();
             panel6 = new Panel();
             panel7 = new Panel();
+            reg_btn = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -54,6 +55,7 @@
             // 
             panel1.BackColor = Color.FromArgb(246, 180, 71);
             panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.Controls.Add(reg_btn);
             panel1.Controls.Add(signout);
             panel1.Controls.Add(ResAssist);
             panel1.Controls.Add(DocuReq);
@@ -69,7 +71,7 @@
             signout.FlatAppearance.BorderSize = 0;
             signout.FlatStyle = FlatStyle.Flat;
             signout.Font = new Font("Yu Gothic UI", 20.25F);
-            signout.Location = new Point(47, 826);
+            signout.Location = new Point(44, 895);
             signout.Name = "signout";
             signout.RightToLeft = RightToLeft.Yes;
             signout.Size = new Size(152, 51);
@@ -216,6 +218,20 @@
             panel7.Size = new Size(1422, 93);
             panel7.TabIndex = 6;
             // 
+            // reg_btn
+            // 
+            reg_btn.FlatAppearance.BorderSize = 0;
+            reg_btn.FlatStyle = FlatStyle.Flat;
+            reg_btn.Font = new Font("Yu Gothic UI", 20.25F);
+            reg_btn.Location = new Point(50, 809);
+            reg_btn.Name = "reg_btn";
+            reg_btn.Size = new Size(359, 56);
+            reg_btn.TabIndex = 7;
+            reg_btn.Text = "REGISTRATION";
+            reg_btn.TextAlign = ContentAlignment.MiddleLeft;
+            reg_btn.UseVisualStyleBackColor = true;
+            reg_btn.Click += reg_btn_Click;
+            // 
             // Admin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -260,5 +276,6 @@
         private Panel panel5;
         private Panel panel6;
         private Panel panel7;
+        private Button reg_btn;
     }
 }

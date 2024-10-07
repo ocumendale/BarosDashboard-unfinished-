@@ -46,7 +46,7 @@ namespace BarosDashboard
 
         private void Announcements_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Events_Click(object sender, EventArgs e)
@@ -92,6 +92,13 @@ namespace BarosDashboard
         {
             this.WindowState = FormWindowState.Maximized;
             this.TopMost = true;
+        }
+
+        private void reg_btn_Click(object sender, EventArgs e)
+        {
+            reg_approval approval = new reg_approval();
+            approval.Show();
+            this.Hide();
         }
     }
 }

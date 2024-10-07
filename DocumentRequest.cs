@@ -14,7 +14,7 @@ namespace BarosDashboard
 {
     public partial class DocumentRequest : Form
     {
-        
+
         MySqlConnection con = new MySqlConnection("server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;");
         public DocumentRequest()
         {
@@ -37,7 +37,7 @@ namespace BarosDashboard
 
         private void ResComplaints_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void EmergencyRes_Click(object sender, EventArgs e)
@@ -46,7 +46,7 @@ namespace BarosDashboard
 
         private void Announcements_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Events_Click(object sender, EventArgs e)
@@ -102,5 +102,11 @@ namespace BarosDashboard
 
         }
 
+        private void reg_btn_Click(object sender, EventArgs e)
+        {
+            reg_approval approval = new reg_approval();
+            approval.Show();
+            this.Hide();
+        }
     }
 }

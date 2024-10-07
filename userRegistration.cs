@@ -31,6 +31,7 @@ namespace BarosDashboard
             string contact = contact_txtb.Text.Trim();
             string email = email_txtb.Text.Trim();
             string password = password_txtb.Text.Trim();
+            string address = address_txb.Text.Trim();
 
             if (string.IsNullOrEmpty(fullName) || string.IsNullOrEmpty(contact) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(email))
             {
@@ -46,19 +47,20 @@ namespace BarosDashboard
                 using (MySqlConnection con = new MySqlConnection(connString))
                 {
                     con.Open();
-                    string query = "INSERT INTO users (fullName, contact, password, email) VALUES (@fullName, @contact, @password, @email)";
-                    using (MySqlCommand cmd = new MySqlCommand(query, con))
+                        string query = "INSERT INTO users (fullName, contact, password, email, address) VALUES (@fullName, @contact, @password, @email, @address)";
+                        using (MySqlCommand cmd = new MySqlCommand(query, con))
                     {
                         cmd.Parameters.AddWithValue("@fullName", fullName);
                         cmd.Parameters.AddWithValue("@contact", contact);
                         cmd.Parameters.AddWithValue("@password", password);
                         cmd.Parameters.AddWithValue("@email", email);
+                        cmd.Parameters.AddWithValue("@address", address);
 
                         cmd.ExecuteNonQuery();
-                        MessageBox.Show("Registration successful!");
+                        
 
-                            login log = new login();
-                            log.Show();
+                            Pending pend = new Pending();
+                            pend.Show();
                             this.Hide();
                         }
                 }

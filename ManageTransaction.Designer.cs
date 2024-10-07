@@ -41,6 +41,12 @@
             panel3 = new Panel();
             label1 = new Label();
             table = new Button();
+            Chair = new Button();
+            tent = new Button();
+            button2 = new Button();
+            indigency = new Button();
+            clearance = new Button();
+            ID = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
@@ -177,12 +183,78 @@
             table.UseVisualStyleBackColor = true;
             table.Click += table_Click;
             // 
+            // Chair
+            // 
+            Chair.Location = new Point(830, 110);
+            Chair.Name = "Chair";
+            Chair.Size = new Size(117, 52);
+            Chair.TabIndex = 5;
+            Chair.Text = "Chair";
+            Chair.UseVisualStyleBackColor = true;
+            Chair.Click += Chair_Click;
+            // 
+            // tent
+            // 
+            tent.Location = new Point(1017, 110);
+            tent.Name = "tent";
+            tent.Size = new Size(117, 52);
+            tent.TabIndex = 6;
+            tent.Text = "Tent";
+            tent.UseVisualStyleBackColor = true;
+            tent.Click += tent_Click;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(1177, 110);
+            button2.Name = "button2";
+            button2.Size = new Size(117, 52);
+            button2.TabIndex = 7;
+            button2.Text = "Barangay Certificate";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // indigency
+            // 
+            indigency.Location = new Point(1335, 110);
+            indigency.Name = "indigency";
+            indigency.Size = new Size(117, 52);
+            indigency.TabIndex = 8;
+            indigency.Text = "Barangay Indigency";
+            indigency.UseVisualStyleBackColor = true;
+            indigency.Click += indigency_Click;
+            // 
+            // clearance
+            // 
+            clearance.Location = new Point(1486, 110);
+            clearance.Name = "clearance";
+            clearance.Size = new Size(117, 52);
+            clearance.TabIndex = 9;
+            clearance.Text = "Barangay Clearance";
+            clearance.UseVisualStyleBackColor = true;
+            clearance.Click += clearance_Click;
+            // 
+            // ID
+            // 
+            ID.Location = new Point(1641, 110);
+            ID.Name = "ID";
+            ID.Size = new Size(117, 52);
+            ID.TabIndex = 10;
+            ID.Text = "Barangay ID";
+            ID.UseVisualStyleBackColor = true;
+            ID.Click += ID_Click;
+            // 
             // ManageTransaction
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 180, 71);
             ClientSize = new Size(1911, 1118);
+            Controls.Add(ID);
+            Controls.Add(clearance);
+            Controls.Add(indigency);
+            Controls.Add(button2);
+            Controls.Add(tent);
+            Controls.Add(Chair);
             Controls.Add(table);
             Controls.Add(panel3);
             Controls.Add(panel1);
@@ -213,5 +285,11 @@
         private Panel panel3;
         private Label label1;
         private Button table;
+        private Button Chair;
+        private Button tent;
+        private Button button2;
+        private Button indigency;
+        private Button clearance;
+        private Button ID;
     }
 }
