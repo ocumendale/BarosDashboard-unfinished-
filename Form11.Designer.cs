@@ -84,6 +84,7 @@
             // button1
             // 
             button1.BackColor = Color.FromArgb(246, 180, 71);
+            button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Lucida Fax", 26.25F, FontStyle.Bold);
             button1.Location = new Point(399, 667);
             button1.Name = "button1";
@@ -96,6 +97,7 @@
             // button2
             // 
             button2.BackColor = Color.FromArgb(246, 180, 71);
+            button2.FlatStyle = FlatStyle.Popup;
             button2.Font = new Font("Lucida Fax", 26.25F, FontStyle.Bold);
             button2.Location = new Point(1031, 309);
             button2.Name = "button2";
@@ -109,6 +111,7 @@
             // 
             button3.BackColor = Color.FromArgb(246, 180, 71);
             button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Popup;
             button3.Font = new Font("Lucida Fax", 26.25F, FontStyle.Bold);
             button3.Location = new Point(399, 309);
             button3.Name = "button3";
@@ -121,6 +124,7 @@
             // button4
             // 
             button4.BackColor = Color.FromArgb(246, 180, 71);
+            button4.FlatStyle = FlatStyle.Popup;
             button4.Font = new Font("Lucida Fax", 26.25F, FontStyle.Bold);
             button4.Location = new Point(1031, 667);
             button4.Name = "button4";

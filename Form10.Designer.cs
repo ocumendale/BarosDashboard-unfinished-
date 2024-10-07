@@ -48,6 +48,7 @@
             // 
             button3.BackColor = Color.FromArgb(246, 180, 71);
             button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Popup;
             button3.Font = new Font("Lucida Fax", 26.25F, FontStyle.Bold);
             button3.ForeColor = Color.Black;
             button3.Location = new Point(1031, 667);
@@ -62,6 +63,7 @@
             // 
             button2.BackColor = Color.FromArgb(246, 180, 71);
             button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Popup;
             button2.Font = new Font("Lucida Fax", 26.25F, FontStyle.Bold);
             button2.ForeColor = Color.Black;
             button2.Location = new Point(399, 667);
@@ -76,6 +78,7 @@
             // 
             button1.BackColor = Color.FromArgb(246, 180, 71);
             button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Lucida Fax", 26.25F, FontStyle.Bold);
             button1.ForeColor = Color.Black;
             button1.Location = new Point(1031, 309);
@@ -91,6 +94,7 @@
             FormBas.BackColor = Color.FromArgb(246, 180, 71);
             FormBas.FlatAppearance.BorderColor = Color.Black;
             FormBas.FlatAppearance.BorderSize = 0;
+            FormBas.FlatStyle = FlatStyle.Popup;
             FormBas.Font = new Font("Lucida Fax", 26.25F, FontStyle.Bold);
             FormBas.ForeColor = Color.Black;
             FormBas.Location = new Point(399, 309);

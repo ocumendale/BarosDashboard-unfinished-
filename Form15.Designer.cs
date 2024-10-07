@@ -149,6 +149,7 @@ namespace BarosDashboard
             textBox3.Size = new Size(592, 54);
             textBox3.TabIndex = 156;
             textBox3.TextAlign = HorizontalAlignment.Center;
+            textBox3.TextChanged += textBox3_TextChanged;
             // 
             // label8
             // 

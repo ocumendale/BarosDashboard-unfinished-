@@ -22,15 +22,19 @@ namespace BarosDashboard
 {
     public partial class FormBas : Form
     {
+        private string selectedTimeSlot = string.Empty; // Store the selected time slot
+
         public FormBas()
         {
             InitializeComponent();
         }
 
-        private void Form16_Load(object sender, EventArgs e)
+        private void FormBas_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
             this.TopMost = true;
+
+            LoadAvailableTimeSlots();
         }
 
         private void backCourt_Click(object sender, EventArgs e)
@@ -40,34 +44,23 @@ namespace BarosDashboard
             Visible = false;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (ValidateInputs())
             {
-                GetDataFromMySQL();
+                selectedTimeSlot = comboBox1.Text; // Store the currently selected time slot
+
+                if (!IsTimeSlotAvailable(dateTimePicker1.Value.Date, selectedTimeSlot))
+                {
+                    MessageBox.Show("The selected time slot is already reserved. Please choose another time.", "Time Slot Taken", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                GetDataFromMySQL(selectedTimeSlot);
                 MessageBox.Show("Your information has been successfully submitted!", "Submission Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                GeneratePDF();
-                MessageBox.Show("PDF GENERATED SUCCESSFULLY!");
+
+                // Reload available time slots to ensure the selected slot is removed for others
+                LoadAvailableTimeSlots();
 
                 Form20 form20 = new Form20();
                 form20.Show();
@@ -78,27 +71,77 @@ namespace BarosDashboard
                 MessageBox.Show("Please complete all required fields before submitting.", "Incomplete Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
         private bool IsNotNullOrWhiteSpace(string input)
         {
             return !string.IsNullOrWhiteSpace(input);
         }
+
         private bool ValidateInputs()
         {
-            // Use the IsNotNullOrWhiteSpace method for each textbox
             return IsNotNullOrWhiteSpace(textBox1.Text) &&
                    IsNotNullOrWhiteSpace(textBox2.Text) &&
                    IsNotNullOrWhiteSpace(textBox3.Text) &&
-                   IsNotNullOrWhiteSpace(textBox4.Text) &&
-                   IsNotNullOrWhiteSpace(textBox6.Text); // Use textBox6 instead of textBox5 since it's used in your code
+                   comboBox1.SelectedItem != null;
         }
 
+        private bool IsTimeSlotAvailable(DateTime reservationDate, string selectedTimeSlot)
+        {
+            string[] timeRange = selectedTimeSlot.Split('-');
+            string startTime = timeRange[0].Trim();
+            string endTime = timeRange[1].Trim();
 
+            TimeSpan start = TimeSpan.Parse(DateTime.Parse(startTime).ToString("HH:mm:ss"));
+            TimeSpan end = TimeSpan.Parse(DateTime.Parse(endTime).ToString("HH:mm:ss"));
 
+            string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
+            string query = "SELECT reservation_start_time, reservation_end_time FROM basketball_court WHERE reservation_date = @reserveDate";
 
-        private void GetDataFromMySQL()
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@reserveDate", reservationDate);
+                        conn.Open();
+
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                TimeSpan reservedStart = TimeSpan.Parse(reader["reservation_start_time"].ToString());
+                                TimeSpan reservedEnd = TimeSpan.Parse(reader["reservation_end_time"].ToString());
+
+                                // Debugging: Log the reserved time slots
+                                Console.WriteLine($"Reserved Start: {reservedStart}, Reserved End: {reservedEnd}");
+
+                                // Check for overlap
+                                if ((start < reservedEnd && end > reservedStart))
+                                {
+                                    Console.WriteLine($"Overlap detected with reserved slot: {reservedStart} - {reservedEnd}");
+                                    return false;
+                                }
+                            }
+                        }
+
+                        conn.Close();
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"Error retrieving time slots: {ex.Message}");
+            }
+
+            return true;
+        }
+
+        private void GetDataFromMySQL(string selectedTimeSlot)
         {
             string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
-            string query = "INSERT INTO basketball_court (Fname, contact_num, reason, date, time, user_id) VALUES (@Fullname, @Contactnumber, @reason, @date, @time, @userID)";
+            string query = "INSERT INTO basketball_court (Fname, contact_num, reason, user_id, reservation_date, reservation_start_time, reservation_end_time) " +
+                           "VALUES (@Fullname, @Contactnumber, @reason, @userID, @reserveDate, @startTime, @endTime)";
 
             int userId = LoggedInUser.UserId;
 
@@ -108,22 +151,21 @@ namespace BarosDashboard
                 {
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
-                        // Add parameters
                         cmd.Parameters.AddWithValue("@Fullname", textBox1.Text);
                         cmd.Parameters.AddWithValue("@Contactnumber", textBox2.Text);
                         cmd.Parameters.AddWithValue("@reason", textBox3.Text);
-                        cmd.Parameters.AddWithValue("@date", textBox4.Text);
-                        cmd.Parameters.AddWithValue("@time", textBox6.Text);
                         cmd.Parameters.AddWithValue("@UserID", userId);
+                        cmd.Parameters.AddWithValue("@reserveDate", dateTimePicker1.Value.Date);
 
+                        string[] timeRange = selectedTimeSlot.Split('-');
+                        string startTime = timeRange[0].Trim();
+                        string endTime = timeRange[1].Trim();
 
-                        // Open the connection
+                        cmd.Parameters.AddWithValue("@startTime", DateTime.Parse(startTime).ToString("HH:mm:ss"));
+                        cmd.Parameters.AddWithValue("@endTime", DateTime.Parse(endTime).ToString("HH:mm:ss"));
+
                         conn.Open();
-
-                        // Execute the query
-                        int rowsAffected = cmd.ExecuteNonQuery();
-
-                        // Close the connection
+                        cmd.ExecuteNonQuery();
                         conn.Close();
                     }
                 }
@@ -134,118 +176,113 @@ namespace BarosDashboard
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void LoadAvailableTimeSlots()
         {
+            comboBox1.Items.Clear();
 
+            List<string> allTimeSlots = new List<string>
+            {
+                "09:00 AM - 11:00 AM",
+                "11:00 AM - 01:00 PM",
+                "01:00 PM - 03:00 PM",
+                "03:00 PM - 05:00 PM",
+                "05:00 PM - 07:00 PM",
+                "07:00 PM - 09:00 PM",
+                "09:00 PM - 11:00 PM"
+            };
+
+            DateTime selectedDate = dateTimePicker1.Value.Date;
+            List<string> takenTimeSlots = GetTakenTimeSlots(selectedDate);
+
+            Console.WriteLine("Taken Time Slots: " + string.Join(", ", takenTimeSlots));
+
+            if (selectedDate < DateTime.Now.Date)
+            {
+                foreach (string timeSlot in allTimeSlots)
+                {
+                    comboBox1.Items.Add(timeSlot);
+                }
+            }
+            else
+            {
+                foreach (string timeSlot in allTimeSlots)
+                {
+                    if (!takenTimeSlots.Contains(timeSlot) && timeSlot != selectedTimeSlot)
+                    {
+                        comboBox1.Items.Add(timeSlot);
+                        Console.WriteLine($"Available time slot: {timeSlot}");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Time slot {timeSlot} is already taken or is selected by the current user.");
+                    }
+                }
+            }
+
+            button1.Enabled = comboBox1.Items.Count > 0;
+
+            if (comboBox1.Items.Count == 0)
+            {
+                MessageBox.Show("No available time slots for the selected date.", "Fully Booked", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
-        private void GeneratePDF()
+
+        private List<string> GetTakenTimeSlots(DateTime reservationDate)
         {
-            
-            DateTime currentDate = DateTime.Now;
+            List<string> takenTimeSlots = new List<string>();
 
-            // Create a new document
-            Document document = new Document(PageSize.A4);
-            PdfWriter writer = PdfWriter.GetInstance(document, new FileStream($"_bBall{textBox1.Text}.pdf", FileMode.Create));
+            string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
+            string query = "SELECT reservation_start_time, reservation_end_time FROM basketball_court WHERE reservation_date = @reserveDate";
 
-            // Open the document to enable writing
-            document.Open();
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@reserveDate", reservationDate);
+                        conn.Open();
 
-            //background image with opacity
-            iTextSharp.text.Image background = iTextSharp.text.Image.GetInstance("C:\\Barangay Picture\\Caloocan_City.png");
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                string startTime = DateTime.Parse(reader["reservation_start_time"].ToString()).ToString("hh:mm tt");
+                                string endTime = DateTime.Parse(reader["reservation_end_time"].ToString()).ToString("hh:mm tt");
+                                string takenSlot = $"{startTime} - {endTime}";
 
-            float imageWidth = 500f;
-            float imageHeight = 300f;
-            background.ScaleAbsolute(imageWidth, imageHeight);
+                                Console.WriteLine($"Adding taken slot: {takenSlot}");
+                                takenTimeSlots.Add(takenSlot);
+                            }
+                        }
 
-            // Get the page size
-            Rectangle pageSize = document.PageSize;
-            float pageWidth = pageSize.Width;
-            float pageHeight = pageSize.Height;
+                        conn.Close();
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"Error retrieving time slots: {ex.Message}");
+            }
 
-            // Calculate the center position
-            float xPosition = (pageWidth - imageWidth) / 2;
-            float yPosition = (pageHeight - imageHeight) / 2;
-
-            // Set the absolute position to center the image
-            background.SetAbsolutePosition(xPosition, yPosition);
-
-            // Create a PdfGState to control the opacity
-            PdfGState gState = new PdfGState();
-            gState.FillOpacity = 0.1f; // Set opacity (0.0f to 1.0f, where 1.0 is fully opaque)
-
-            // Add the background image with opacity
-            PdfContentByte canvas = writer.DirectContent;
-            canvas.SaveState();
-            canvas.SetGState(gState);
-            canvas.AddImage(background);
-            canvas.RestoreState();
-
-            // Set up fonts and colors
-            Font titleFont = FontFactory.GetFont("Arial", 18, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
-            Font contentFont = FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
-            Font labelFont = FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
-
-
-            // Title Section
-            Paragraph title = new Paragraph("BASKETBALL COURT RESERVATION DETAILS", titleFont);
-            title.Alignment = Element.ALIGN_CENTER;
-            document.Add(title);
-
-            // Adding Spacing
-            document.Add(new Paragraph("\n"));
-            document.Add(new Paragraph("\n"));
-            document.Add(new Paragraph("\n"));
-            // Table for content
-            PdfPTable table = new PdfPTable(2);
-            table.WidthPercentage = 90;
-
-            AddTableRow(table, " ", " ", labelFont, contentFont);
-            // Add cells to the table with borders
-            AddTableRow(table, $"FULL NAME", textBox1.Text, labelFont, contentFont);
-            AddTableRow(table, " ", " ", labelFont, contentFont);
-            AddTableRow(table, $"CONTACT NUMBER", textBox2.Text, labelFont, contentFont);
-            AddTableRow(table, " ", " ", labelFont, contentFont);
-            AddTableRow(table, $"REASON OF REQUEST", textBox3.Text, labelFont, contentFont);
-            AddTableRow(table, " ", " ", labelFont, contentFont);
-            AddTableRow(table, $"DATE OF TRANSACTION", currentDate.ToString("yyyy-MM-dd"), labelFont, contentFont);
-            AddTableRow(table, " ", " ", labelFont, contentFont);
-            AddTableRow(table, $"TIME OF TRANSACTION", currentDate.ToString("hh:mm tt"), labelFont, contentFont);
-            AddTableRow(table, " ", " ", labelFont, contentFont);
-            AddTableRow(table, $"LOCATION", "475 Tilapia St. CC", labelFont, contentFont);
-            AddTableRow(table, " ", " ", labelFont, contentFont);
-            AddTableRow(table, $"DATE OF RESERVATION", textBox4.Text, labelFont, contentFont);
-            AddTableRow(table, " ", " ", labelFont, contentFont);
-            AddTableRow(table, $"TIME OF RESERVATION", textBox6.Text, labelFont, contentFont);
-            AddTableRow(table, " ", " ", labelFont, contentFont);
-            AddTableRow(table, $"SIZE", "Good for 10", labelFont, contentFont);  // Added size field
-            AddTableRow(table, " ", " ", labelFont, contentFont);
-            AddTableRow(table, $"TRANSACTION STATUS", "Pending", labelFont, contentFont);
-            AddTableRow(table, " ", " ", labelFont, contentFont);
-            AddTableRow(table, " ", " ", labelFont, contentFont);
-
-            // Add the table to the document
-            document.Add(table);
-
-            // Closing instructions
-            document.Add(new Paragraph("\n"));
-            document.Add(new Paragraph("\n"));
-            Paragraph instruction = new Paragraph("Please present this copy to the Brgy. Hall, hours before the reservation", contentFont);
-            instruction.Alignment = Element.ALIGN_CENTER;
-            document.Add(instruction);
-
-            // Close the document
-            document.Close();
+            return takenTimeSlots;
         }
-        // Helper method for adding rows to the table
-        private static void AddTableRow(PdfPTable table, string label, string content, Font labelFont, Font contentFont)
-        {
-            PdfPCell labelCell = new PdfPCell(new Phrase(label, labelFont));
-            labelCell.Border = Rectangle.NO_BORDER;
-            table.AddCell(labelCell);
 
-            PdfPCell contentCell = new PdfPCell(new Phrase(content, contentFont));
-            contentCell.Border = Rectangle.NO_BORDER;
-            table.AddCell(contentCell);
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            LoadAvailableTimeSlots();
+        }
+
+        private void FormBas_Load_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            this.TopMost = true;
+            LoadAvailableTimeSlots();
+        }
+
+        private void dateTimePicker1_ValueChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

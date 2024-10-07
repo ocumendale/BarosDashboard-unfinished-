@@ -187,6 +187,7 @@
             // button7
             // 
             button7.BackColor = Color.FromArgb(246, 180, 71);
+            button7.FlatStyle = FlatStyle.Popup;
             button7.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
             button7.Location = new Point(591, 587);
             button7.Name = "button7";
@@ -199,6 +200,7 @@
             // button8
             // 
             button8.BackColor = Color.FromArgb(246, 180, 71);
+            button8.FlatStyle = FlatStyle.Popup;
             button8.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
             button8.Location = new Point(1290, 585);
             button8.Name = "button8";

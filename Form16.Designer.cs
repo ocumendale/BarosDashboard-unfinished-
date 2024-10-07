@@ -32,10 +32,8 @@
             backCourt = new Button();
             label9 = new Label();
             button1 = new Button();
-            textBox6 = new TextBox();
             label11 = new Label();
             label10 = new Label();
-            textBox4 = new TextBox();
             textBox3 = new TextBox();
             label8 = new Label();
             textBox2 = new TextBox();
@@ -51,8 +49,8 @@
             panel2 = new Panel();
             panel1 = new Panel();
             panel3 = new Panel();
-            panel4 = new Panel();
-            panel5 = new Panel();
+            dateTimePicker1 = new DateTimePicker();
+            comboBox1 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)signUpLogo).BeginInit();
             SuspendLayout();
             // 
@@ -75,10 +73,10 @@
             // 
             label9.Anchor = AnchorStyles.Bottom;
             label9.AutoSize = true;
-            label9.Font = new Font("Yu Gothic UI", 14.25F, FontStyle.Bold);
-            label9.Location = new Point(482, 898);
+            label9.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
+            label9.Location = new Point(402, 901);
             label9.Name = "label9";
-            label9.Size = new Size(58, 25);
+            label9.Size = new Size(99, 33);
             label9.TabIndex = 126;
             label9.Text = "DATE";
             // 
@@ -98,17 +96,6 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // textBox6
-            // 
-            textBox6.Anchor = AnchorStyles.Bottom;
-            textBox6.BackColor = Color.FromArgb(246, 180, 71);
-            textBox6.Font = new Font("Segoe UI", 12F);
-            textBox6.Location = new Point(645, 860);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(160, 29);
-            textBox6.TabIndex = 123;
-            textBox6.TextAlign = HorizontalAlignment.Center;
-            // 
             // label11
             // 
             label11.Anchor = AnchorStyles.Bottom;
@@ -124,24 +111,12 @@
             // 
             label10.Anchor = AnchorStyles.Bottom;
             label10.AutoSize = true;
-            label10.Font = new Font("Yu Gothic UI", 14.25F, FontStyle.Bold);
-            label10.Location = new Point(697, 895);
+            label10.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
+            label10.Location = new Point(773, 901);
             label10.Name = "label10";
-            label10.Size = new Size(56, 25);
+            label10.Size = new Size(92, 33);
             label10.TabIndex = 119;
             label10.Text = "TIME";
-            // 
-            // textBox4
-            // 
-            textBox4.Anchor = AnchorStyles.Bottom;
-            textBox4.BackColor = Color.FromArgb(246, 180, 71);
-            textBox4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox4.Location = new Point(432, 860);
-            textBox4.Name = "textBox4";
-            textBox4.PlaceholderText = "yyyy/mm/dd";
-            textBox4.Size = new Size(160, 29);
-            textBox4.TabIndex = 118;
-            textBox4.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox3
             // 
@@ -241,7 +216,6 @@
             textBox1.Size = new Size(707, 54);
             textBox1.TabIndex = 109;
             textBox1.TextAlign = HorizontalAlignment.Center;
-            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // label2
             // 
@@ -301,21 +275,29 @@
             panel3.Size = new Size(700, 55);
             panel3.TabIndex = 128;
             // 
-            // panel4
+            // dateTimePicker1
             // 
-            panel4.BackColor = Color.MidnightBlue;
-            panel4.Location = new Point(441, 874);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(160, 30);
-            panel4.TabIndex = 129;
+            dateTimePicker1.CalendarMonthBackground = Color.FromArgb(246, 180, 71);
+            dateTimePicker1.CalendarTitleBackColor = Color.FromArgb(246, 180, 71);
+            dateTimePicker1.CalendarTitleForeColor = Color.FromArgb(246, 180, 71);
+            dateTimePicker1.CalendarTrailingForeColor = Color.FromArgb(246, 180, 71);
+            dateTimePicker1.Cursor = Cursors.IBeam;
+            dateTimePicker1.Font = new Font("Lucida Fax", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateTimePicker1.Location = new Point(280, 856);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(360, 30);
+            dateTimePicker1.TabIndex = 131;
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged_1;
             // 
-            // panel5
+            // comboBox1
             // 
-            panel5.BackColor = Color.MidnightBlue;
-            panel5.Location = new Point(656, 874);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(160, 30);
-            panel5.TabIndex = 130;
+            comboBox1.BackColor = Color.FromArgb(246, 180, 71);
+            comboBox1.Font = new Font("Lucida Fax", 14.25F);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(697, 856);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(247, 30);
+            comboBox1.TabIndex = 132;
             // 
             // FormBas
             // 
@@ -323,12 +305,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 180, 71);
             ClientSize = new Size(1911, 1118);
+            Controls.Add(comboBox1);
+            Controls.Add(dateTimePicker1);
             Controls.Add(label9);
             Controls.Add(button1);
-            Controls.Add(textBox6);
             Controls.Add(label11);
             Controls.Add(label10);
-            Controls.Add(textBox4);
             Controls.Add(textBox3);
             Controls.Add(label8);
             Controls.Add(textBox2);
@@ -345,12 +327,10 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(panel3);
-            Controls.Add(panel4);
-            Controls.Add(panel5);
             Name = "FormBas";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "BASKETBALL COURT";
-            Load += Form16_Load;
+            Load += FormBas_Load_1;
             ((System.ComponentModel.ISupportInitialize)signUpLogo).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -361,10 +341,8 @@
         private Button backCourt;
         private Label label9;
         private Button button1;
-        private TextBox textBox6;
         private Label label11;
         private Label label10;
-        private TextBox textBox4;
         private TextBox textBox3;
         private Label label8;
         private TextBox textBox2;
@@ -380,7 +358,7 @@
         private Panel panel2;
         private Panel panel1;
         private Panel panel3;
-        private Panel panel4;
-        private Panel panel5;
+        private DateTimePicker dateTimePicker1;
+        private ComboBox comboBox1;
     }
 }
