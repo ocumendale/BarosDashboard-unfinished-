@@ -42,6 +42,7 @@
             label3 = new Label();
             label2 = new Label();
             panel1 = new Panel();
+            button7 = new Button();
             HBF4 = new PictureBox();
             button5 = new Button();
             button4 = new Button();
@@ -49,7 +50,7 @@
             button2 = new Button();
             button1 = new Button();
             signUpLogo = new PictureBox();
-            button7 = new Button();
+            button8 = new Button();
             panel3.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)HBF4).BeginInit();
@@ -209,6 +210,7 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(button8);
             panel1.Controls.Add(button7);
             panel1.Controls.Add(HBF4);
             panel1.Controls.Add(button5);
@@ -220,6 +222,19 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(442, 1115);
             panel1.TabIndex = 3;
+            // 
+            // button7
+            // 
+            button7.FlatAppearance.BorderSize = 0;
+            button7.FlatStyle = FlatStyle.Flat;
+            button7.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
+            button7.Location = new Point(-1, 888);
+            button7.Name = "button7";
+            button7.Size = new Size(438, 97);
+            button7.TabIndex = 8;
+            button7.Text = "LOGOUT";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // HBF4
             // 
@@ -237,7 +252,7 @@
             button5.FlatAppearance.BorderSize = 0;
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
-            button5.Location = new Point(3, 781);
+            button5.Location = new Point(3, 718);
             button5.Name = "button5";
             button5.Size = new Size(438, 97);
             button5.TabIndex = 4;
@@ -250,7 +265,7 @@
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
-            button4.Location = new Point(-1, 606);
+            button4.Location = new Point(-1, 543);
             button4.Name = "button4";
             button4.Size = new Size(451, 97);
             button4.TabIndex = 3;
@@ -262,7 +277,7 @@
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
-            button3.Location = new Point(2, 428);
+            button3.Location = new Point(2, 365);
             button3.Name = "button3";
             button3.Size = new Size(431, 97);
             button3.TabIndex = 2;
@@ -275,7 +290,7 @@
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
-            button2.Location = new Point(6, 251);
+            button2.Location = new Point(6, 188);
             button2.Name = "button2";
             button2.Size = new Size(435, 97);
             button2.TabIndex = 1;
@@ -290,7 +305,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
             button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(6, 90);
+            button1.Location = new Point(6, 27);
             button1.Name = "button1";
             button1.Size = new Size(431, 97);
             button1.TabIndex = 0;
@@ -310,18 +325,20 @@
             signUpLogo.TabIndex = 131;
             signUpLogo.TabStop = false;
             // 
-            // button7
+            // button8
             // 
-            button7.FlatAppearance.BorderSize = 0;
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
-            button7.Location = new Point(-1, 951);
-            button7.Name = "button7";
-            button7.Size = new Size(438, 97);
-            button7.TabIndex = 8;
-            button7.Text = "LOGOUT";
-            button7.UseVisualStyleBackColor = true;
-            button7.Click += button7_Click;
+            button8.Anchor = AnchorStyles.Left;
+            button8.BackColor = Color.FromArgb(246, 180, 71);
+            button8.FlatAppearance.BorderSize = 0;
+            button8.FlatStyle = FlatStyle.Flat;
+            button8.Font = new Font("Lucida Fax", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button8.Location = new Point(-5, 991);
+            button8.Name = "button8";
+            button8.Size = new Size(442, 83);
+            button8.TabIndex = 10;
+            button8.Text = "Manage Transaction";
+            button8.UseVisualStyleBackColor = false;
+            button8.Click += button8_Click;
             // 
             // HowItWorks
             // 
@@ -378,5 +395,6 @@
         private Button button6;
         private PictureBox signUpLogo;
         private Button button7;
+        private Button button8;
     }
 }

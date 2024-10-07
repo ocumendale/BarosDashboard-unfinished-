@@ -84,5 +84,12 @@ namespace BarosDashboard
                 this.Close();
             }
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ManageTransaction manageTransaction = new ManageTransaction();
+            manageTransaction.Show();
+        }
     }
 }

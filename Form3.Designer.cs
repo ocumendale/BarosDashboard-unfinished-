@@ -43,6 +43,7 @@
             button2 = new Button();
             button1 = new Button();
             signUpLogo = new PictureBox();
+            button7 = new Button();
             panel3.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -118,6 +119,7 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(button7);
             panel1.Controls.Add(button6);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(button5);
@@ -135,7 +137,7 @@
             button6.FlatAppearance.BorderSize = 0;
             button6.FlatStyle = FlatStyle.Flat;
             button6.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
-            button6.Location = new Point(-1, 951);
+            button6.Location = new Point(4, 885);
             button6.Name = "button6";
             button6.Size = new Size(438, 97);
             button6.TabIndex = 8;
@@ -159,7 +161,7 @@
             button5.FlatAppearance.BorderSize = 0;
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
-            button5.Location = new Point(3, 781);
+            button5.Location = new Point(8, 715);
             button5.Margin = new Padding(3, 2, 3, 2);
             button5.Name = "button5";
             button5.Size = new Size(438, 97);
@@ -173,7 +175,7 @@
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
-            button4.Location = new Point(-1, 606);
+            button4.Location = new Point(4, 540);
             button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
             button4.Size = new Size(451, 97);
@@ -187,7 +189,7 @@
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
-            button3.Location = new Point(-1, 428);
+            button3.Location = new Point(4, 362);
             button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
             button3.Size = new Size(438, 97);
@@ -200,7 +202,7 @@
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
-            button2.Location = new Point(6, 251);
+            button2.Location = new Point(11, 185);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
             button2.Size = new Size(435, 97);
@@ -215,7 +217,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
             button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(3, 90);
+            button1.Location = new Point(8, 24);
             button1.Name = "button1";
             button1.Size = new Size(438, 97);
             button1.TabIndex = 0;
@@ -234,6 +236,21 @@
             signUpLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             signUpLogo.TabIndex = 132;
             signUpLogo.TabStop = false;
+            // 
+            // button7
+            // 
+            button7.Anchor = AnchorStyles.Left;
+            button7.BackColor = Color.FromArgb(246, 180, 71);
+            button7.FlatAppearance.BorderSize = 0;
+            button7.FlatStyle = FlatStyle.Flat;
+            button7.Font = new Font("Lucida Fax", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button7.Location = new Point(-5, 988);
+            button7.Name = "button7";
+            button7.Size = new Size(442, 83);
+            button7.TabIndex = 10;
+            button7.Text = "Manage Transaction";
+            button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
             // 
             // Contact
             // 
@@ -276,5 +293,6 @@
         private Label label3;
         private PictureBox signUpLogo;
         private Button button6;
+        private Button button7;
     }
 }

@@ -73,7 +73,6 @@ namespace BarosDashboard
             DataSet ds = new DataSet();
             da.Fill(ds);
             dataGridView2.DataSource = ds.Tables[0];
-            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -102,5 +101,6 @@ namespace BarosDashboard
             dataGridView2.DataSource = ds.Tables[0];
 
         }
+
     }
 }

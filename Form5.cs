@@ -94,5 +94,12 @@ namespace BarosDashboard
                 this.Close();
             }
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ManageTransaction manageTransaction = new ManageTransaction();
+            manageTransaction.Show();
+        }
     }
 }
