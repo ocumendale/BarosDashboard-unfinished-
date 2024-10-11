@@ -61,6 +61,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(886, 770);
             dataGridView1.TabIndex = 1;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.MouseCaptureChanged += MouseClickChanged_;
             // 
             // pictureBoxQRCode

@@ -32,7 +32,70 @@ namespace BarosDashboard
         }
 
 
+        private void GeneratePDF()
+        {
+            // Define the dimensions of the portrait ID card
+            Rectangle idCardSizePortrait = new Rectangle(54f * 2.835f, 85.6f * 2.835f);
 
+            Document doc = new Document(idCardSizePortrait);
+            PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream("PortraitIDCard.pdf", FileMode.Create));
+            doc.Open();
+
+            // Add the background image and scale it to fit the ID card size
+            iTextSharp.text.Image background = iTextSharp.text.Image.GetInstance("C:\\Barangay Picture\\Caloocan_City.png");
+            background.ScaleToFit(idCardSizePortrait.Width, idCardSizePortrait.Height);
+            background.SetAbsolutePosition(0f, 50f);
+
+            PdfContentByte canvas = writer.DirectContent;
+
+            // Add the image with opacity
+            PdfGState gState = new PdfGState { FillOpacity = 0.1f, StrokeOpacity = 0.1f };
+            canvas.SaveState();
+            canvas.SetGState(gState);
+            canvas.AddImage(background);
+            canvas.RestoreState();
+
+            // Define fonts
+            iTextSharp.text.Font fontHeader = FontFactory.GetFont(FontFactory.TIMES_BOLD, 8, BaseColor.BLACK);
+            iTextSharp.text.Font fontRegular = FontFactory.GetFont(FontFactory.TIMES, 6, BaseColor.BLACK);
+            iTextSharp.text.Font fontBold = FontFactory.GetFont(FontFactory.TIMES_BOLD, 5, BaseColor.BLACK);
+
+            // Add header text
+            ColumnText.ShowTextAligned(canvas, Element.ALIGN_CENTER, new Phrase("Republic of the Philippines", fontHeader), idCardSizePortrait.Width / 2, idCardSizePortrait.Height - 30f, 0);
+            ColumnText.ShowTextAligned(canvas, Element.ALIGN_CENTER, new Phrase("City of Caloocan", fontHeader), idCardSizePortrait.Width / 2, idCardSizePortrait.Height - 45f, 0);
+            ColumnText.ShowTextAligned(canvas, Element.ALIGN_CENTER, new Phrase("OFFICE OF THE PUNONG BARANGAY", fontBold), idCardSizePortrait.Width / 2, idCardSizePortrait.Height - 60f, 0);
+            ColumnText.ShowTextAligned(canvas, Element.ALIGN_CENTER, new Phrase("Barangay 22, Zone 2, District II", fontRegular), idCardSizePortrait.Width / 2, idCardSizePortrait.Height - 75f, 0);
+
+            // Add full name and details text
+            ColumnText.ShowTextAligned(canvas, Element.ALIGN_CENTER, new Phrase($"{textBox1.Text}", fontBold), idCardSizePortrait.Width / 2, idCardSizePortrait.Height - 150f, 0);
+            ColumnText.ShowTextAligned(canvas, Element.ALIGN_CENTER, new Phrase("FULL NAME", fontRegular), idCardSizePortrait.Width / 2, idCardSizePortrait.Height - 165f, 0);
+
+            // Move the line under the name higher
+            canvas.MoveTo(10f, idCardSizePortrait.Height - 160f); // Raised by 10 points
+            canvas.LineTo(idCardSizePortrait.Width - 10f, idCardSizePortrait.Height - 160f);
+            canvas.Stroke();
+
+            ColumnText.ShowTextAligned(canvas, Element.ALIGN_CENTER, new Phrase($"{textBox4.Text}", fontBold), idCardSizePortrait.Width / 2, idCardSizePortrait.Height - 195f, 0);
+            ColumnText.ShowTextAligned(canvas, Element.ALIGN_CENTER, new Phrase("RESIDENCE ADDRESS", fontRegular), idCardSizePortrait.Width / 2, idCardSizePortrait.Height - 205f, 0);
+
+            // Move the line under the address higher
+            canvas.MoveTo(10f, idCardSizePortrait.Height - 200f); // Raised by 10 points
+            canvas.LineTo(idCardSizePortrait.Width - 10f, idCardSizePortrait.Height - 200f);
+            canvas.Stroke();
+
+            // Add signature label
+            ColumnText.ShowTextAligned(canvas, Element.ALIGN_CENTER, new Phrase("SIGNATURE", fontRegular), idCardSizePortrait.Width / 2, idCardSizePortrait.Height - 240f, 0);
+
+            // Add profile picture
+            iTextSharp.text.Image profilePic = iTextSharp.text.Image.GetInstance("C:\\Users\\natha\\OneDrive\\Documents\\Pictures\\Screenshots\\unggoy.png");
+            profilePic.ScaleAbsolute(40f, 40f);
+            profilePic.SetAbsolutePosition(idCardSizePortrait.Width - 45f, 120f);
+            PdfContentByte underCanvas = writer.DirectContentUnder;
+            underCanvas.AddImage(profilePic);
+
+            // Close the document
+            doc.Close();
+        }
         private void GetDataFromMySQL()
         {
             string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
@@ -116,6 +179,7 @@ namespace BarosDashboard
         {
             if (ValidateInputs())
             {
+                GeneratePDF();
                 GetDataFromMySQL();
                 MessageBox.Show("Your information has been successfully submitted!", "Submission Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

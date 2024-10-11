@@ -88,7 +88,7 @@ namespace BarosDashboard
         private void GetDataFromMySQL()
         {
             string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
-            string query = "INSERT INTO tent (Fname, contact_num, reason, date, time, quantity, user_id) VALUES (@Fullname, @Contactnumber, @reason, @date, @time, @quantity, @userID)";
+            string query = "INSERT INTO reservation (Fname, contact_num, reservation_type, reason, reservation_date, reservation_start_time, reservation_end_time, quantity, user_id) VALUES (@Fullname, @contactNum, @reservationType @reason, @Resdate, @Restime, @quantity, @userID)";
 
             int userId = LoggedInUser.UserId;
 
@@ -101,9 +101,10 @@ namespace BarosDashboard
                         // Add parameters
                         cmd.Parameters.AddWithValue("@Fullname", textBox1.Text);
                         cmd.Parameters.AddWithValue("@Contactnumber", textBox2.Text);
+                      
                         cmd.Parameters.AddWithValue("@reason", textBox3.Text);
-                        cmd.Parameters.AddWithValue("@date", textBox4.Text);
-                        cmd.Parameters.AddWithValue("@time", textBox6.Text);
+                        cmd.Parameters.AddWithValue("@Resdate", textBox4.Text);
+                        cmd.Parameters.AddWithValue("@Restime", textBox6.Text);
                         cmd.Parameters.AddWithValue("@quantity", textBox5.Text);
                         cmd.Parameters.AddWithValue("@UserID", userId);
 

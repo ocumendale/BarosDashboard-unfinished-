@@ -94,6 +94,7 @@
             // 
             textBox6.Anchor = AnchorStyles.Bottom;
             textBox6.BackColor = Color.FromArgb(246, 180, 71);
+            textBox6.BorderStyle = BorderStyle.FixedSingle;
             textBox6.Font = new Font("Segoe UI", 12F);
             textBox6.Location = new Point(539, 841);
             textBox6.Name = "textBox6";
@@ -128,6 +129,7 @@
             // 
             textBox5.Anchor = AnchorStyles.Bottom;
             textBox5.BackColor = Color.FromArgb(246, 180, 71);
+            textBox5.BorderStyle = BorderStyle.FixedSingle;
             textBox5.Font = new Font("Segoe UI", 12F);
             textBox5.Location = new Point(748, 841);
             textBox5.Name = "textBox5";
@@ -150,6 +152,7 @@
             // 
             textBox4.Anchor = AnchorStyles.Bottom;
             textBox4.BackColor = Color.FromArgb(246, 180, 71);
+            textBox4.BorderStyle = BorderStyle.FixedSingle;
             textBox4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox4.Location = new Point(332, 841);
             textBox4.Name = "textBox4";
@@ -162,6 +165,7 @@
             // 
             textBox3.Anchor = AnchorStyles.Right;
             textBox3.BackColor = Color.FromArgb(246, 180, 71);
+            textBox3.BorderStyle = BorderStyle.FixedSingle;
             textBox3.Font = new Font("Segoe UI", 26.25F);
             textBox3.Location = new Point(266, 675);
             textBox3.Name = "textBox3";
@@ -184,6 +188,7 @@
             // 
             textBox2.Anchor = AnchorStyles.Left;
             textBox2.BackColor = Color.FromArgb(246, 180, 71);
+            textBox2.BorderStyle = BorderStyle.FixedSingle;
             textBox2.Font = new Font("Segoe UI", 26.25F);
             textBox2.Location = new Point(266, 522);
             textBox2.Name = "textBox2";
@@ -254,6 +259,7 @@
             // 
             textBox1.Anchor = AnchorStyles.Top;
             textBox1.BackColor = Color.FromArgb(246, 180, 71);
+            textBox1.BorderStyle = BorderStyle.FixedSingle;
             textBox1.Font = new Font("Segoe UI", 26.25F);
             textBox1.Location = new Point(266, 334);
             textBox1.Name = "textBox1";

@@ -120,12 +120,12 @@ namespace BarosDashboard
             // contactNum
             // 
             contactNum.AutoSize = true;
-            contactNum.Font = new Font("Microsoft Sans Serif", 24F);
-            contactNum.Location = new Point(479, 354);
+            contactNum.Font = new Font("Lucida Fax", 24F);
+            contactNum.Location = new Point(459, 354);
             contactNum.Name = "contactNum";
-            contactNum.Size = new Size(252, 37);
+            contactNum.Size = new Size(324, 37);
             contactNum.TabIndex = 21;
-            contactNum.Text = "Contact Number";
+            contactNum.Text = "CONTACT NUMBER";
             // 
             // txt_password
             // 
@@ -145,21 +145,21 @@ namespace BarosDashboard
             // passWord
             // 
             passWord.AutoSize = true;
-            passWord.Font = new Font("Microsoft Sans Serif", 24F);
-            passWord.Location = new Point(532, 505);
+            passWord.Font = new Font("Lucida Fax", 24F);
+            passWord.Location = new Point(519, 505);
             passWord.Name = "passWord";
-            passWord.Size = new Size(167, 37);
+            passWord.Size = new Size(197, 37);
             passWord.TabIndex = 19;
-            passWord.Text = "Password ";
+            passWord.Text = "PASSWORD";
             // 
             // loginlbl
             // 
             loginlbl.Anchor = AnchorStyles.Top;
             loginlbl.AutoSize = true;
-            loginlbl.Font = new Font("MS UI Gothic", 72F, FontStyle.Bold);
+            loginlbl.Font = new Font("Lucida Fax", 72F, FontStyle.Bold);
             loginlbl.Location = new Point(742, 94);
             loginlbl.Name = "loginlbl";
-            loginlbl.Size = new Size(373, 97);
+            loginlbl.Size = new Size(430, 109);
             loginlbl.TabIndex = 18;
             loginlbl.Text = "SIGN IN";
             // 
@@ -228,7 +228,7 @@ namespace BarosDashboard
             btnAdminLogin.FlatStyle = FlatStyle.Flat;
             btnAdminLogin.Font = new Font("Microsoft Sans Serif", 20.25F);
             btnAdminLogin.ForeColor = Color.FromArgb(246, 180, 71);
-            btnAdminLogin.Location = new Point(1227, 192);
+            btnAdminLogin.Location = new Point(1273, 192);
             btnAdminLogin.Name = "btnAdminLogin";
             btnAdminLogin.Size = new Size(286, 69);
             btnAdminLogin.TabIndex = 133;

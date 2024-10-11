@@ -105,6 +105,7 @@
             // 
             textBox6.Anchor = AnchorStyles.Bottom;
             textBox6.BackColor = Color.FromArgb(246, 180, 71);
+            textBox6.BorderStyle = BorderStyle.FixedSingle;
             textBox6.Font = new Font("Segoe UI", 12F);
             textBox6.Location = new Point(539, 841);
             textBox6.Name = "textBox6";
@@ -138,6 +139,7 @@
             // 
             textBox5.Anchor = AnchorStyles.Bottom;
             textBox5.BackColor = Color.FromArgb(246, 180, 71);
+            textBox5.BorderStyle = BorderStyle.FixedSingle;
             textBox5.Font = new Font("Segoe UI", 12F);
             textBox5.Location = new Point(748, 841);
             textBox5.Name = "textBox5";
@@ -160,6 +162,7 @@
             // 
             textBox4.Anchor = AnchorStyles.Bottom;
             textBox4.BackColor = Color.FromArgb(246, 180, 71);
+            textBox4.BorderStyle = BorderStyle.FixedSingle;
             textBox4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox4.Location = new Point(332, 841);
             textBox4.Name = "textBox4";
@@ -172,8 +175,9 @@
             // 
             textBox3.Anchor = AnchorStyles.Right;
             textBox3.BackColor = Color.FromArgb(246, 180, 71);
+            textBox3.BorderStyle = BorderStyle.FixedSingle;
             textBox3.Font = new Font("Segoe UI", 26.25F);
-            textBox3.Location = new Point(266, 675);
+            textBox3.Location = new Point(262, 675);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(707, 54);
             textBox3.TabIndex = 117;
@@ -184,7 +188,7 @@
             label8.Anchor = AnchorStyles.Right;
             label8.AutoSize = true;
             label8.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
-            label8.Location = new Point(451, 635);
+            label8.Location = new Point(447, 632);
             label8.Name = "label8";
             label8.Size = new Size(342, 33);
             label8.TabIndex = 116;
@@ -194,6 +198,7 @@
             // 
             textBox2.Anchor = AnchorStyles.Left;
             textBox2.BackColor = Color.FromArgb(246, 180, 71);
+            textBox2.BorderStyle = BorderStyle.FixedSingle;
             textBox2.Font = new Font("Segoe UI", 26.25F);
             textBox2.Location = new Point(266, 522);
             textBox2.Name = "textBox2";
@@ -260,6 +265,7 @@
             // 
             textBox1.Anchor = AnchorStyles.Top;
             textBox1.BackColor = Color.FromArgb(246, 180, 71);
+            textBox1.BorderStyle = BorderStyle.FixedSingle;
             textBox1.Font = new Font("Segoe UI", 26.25F);
             textBox1.Location = new Point(266, 334);
             textBox1.Name = "textBox1";
@@ -320,7 +326,7 @@
             // panel3
             // 
             panel3.BackColor = Color.MidnightBlue;
-            panel3.Location = new Point(289, 684);
+            panel3.Location = new Point(285, 684);
             panel3.Name = "panel3";
             panel3.Size = new Size(699, 56);
             panel3.TabIndex = 129;

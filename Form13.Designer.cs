@@ -71,6 +71,7 @@
             // 
             textBox4.Anchor = AnchorStyles.Right;
             textBox4.BackColor = Color.FromArgb(246, 180, 71);
+            textBox4.BorderStyle = BorderStyle.FixedSingle;
             textBox4.Font = new Font("Segoe UI", 26.25F);
             textBox4.Location = new Point(260, 640);
             textBox4.Name = "textBox4";
@@ -109,6 +110,7 @@
             // 
             textBox3.Anchor = AnchorStyles.Right;
             textBox3.BackColor = Color.FromArgb(246, 180, 71);
+            textBox3.BorderStyle = BorderStyle.FixedSingle;
             textBox3.Font = new Font("Segoe UI", 26.25F);
             textBox3.Location = new Point(260, 785);
             textBox3.Name = "textBox3";
@@ -131,6 +133,7 @@
             // 
             textBox2.Anchor = AnchorStyles.Left;
             textBox2.BackColor = Color.FromArgb(246, 180, 71);
+            textBox2.BorderStyle = BorderStyle.FixedSingle;
             textBox2.Font = new Font("Segoe UI", 26.25F);
             textBox2.Location = new Point(266, 502);
             textBox2.Name = "textBox2";
@@ -197,6 +200,7 @@
             // 
             textBox1.Anchor = AnchorStyles.Top;
             textBox1.BackColor = Color.FromArgb(246, 180, 71);
+            textBox1.BorderStyle = BorderStyle.FixedSingle;
             textBox1.Font = new Font("Segoe UI", 26.25F);
             textBox1.Location = new Point(266, 334);
             textBox1.Name = "textBox1";

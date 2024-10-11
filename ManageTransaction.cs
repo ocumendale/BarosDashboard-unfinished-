@@ -16,6 +16,8 @@ namespace BarosDashboard
     {
         string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
         int userId = LoggedInUser.UserId;
+        string Chair_ = reserve.chair_;
+        
 
         public ManageTransaction()
         {
@@ -25,7 +27,7 @@ namespace BarosDashboard
         private void button1_Click(object sender, EventArgs e)
         {
 
-            MySqlDataAdapter da = new MySqlDataAdapter($"SELECT * FROM basketball_court WHERE user_id = {userId}", connectionString);
+            MySqlDataAdapter da = new MySqlDataAdapter($"SELECT * FROM baros.reservations WHERE user_id = {userId} AND reservation_type = 'BASKETBALL COURT';", connectionString);
             DataSet ds = new DataSet();
             da.Fill(ds);
             dataGridView1.DataSource = ds.Tables[0];
@@ -95,7 +97,7 @@ namespace BarosDashboard
         {
 
 
-            MySqlDataAdapter da = new MySqlDataAdapter($"SELECT * FROM table_ WHERE user_id = {userId}", connectionString);
+            MySqlDataAdapter da = new MySqlDataAdapter($"SELECT * FROM reservations WHERE user_id = {userId} AND reservation_type = 'TABLE';", connectionString);
             DataSet ds = new DataSet();
             da.Fill(ds);
             dataGridView1.DataSource = ds.Tables[0];
@@ -103,9 +105,7 @@ namespace BarosDashboard
 
         private void Chair_Click(object sender, EventArgs e)
         {
-
-
-            MySqlDataAdapter da = new MySqlDataAdapter($"SELECT * FROM chair WHERE user_id = {userId}", connectionString);
+            MySqlDataAdapter da = new MySqlDataAdapter($"SELECT * FROM baros.reservations WHERE user_id = {userId} AND reservation_type = 'CHAIR';", connectionString);
             DataSet ds = new DataSet();
             da.Fill(ds);
             dataGridView1.DataSource = ds.Tables[0];
@@ -115,7 +115,7 @@ namespace BarosDashboard
         {
 
 
-            MySqlDataAdapter da = new MySqlDataAdapter($"SELECT * FROM tent WHERE user_id = {userId}", connectionString);
+            MySqlDataAdapter da = new MySqlDataAdapter($"SELECT * FROM baros.reservations WHERE user_id = {userId} AND reservation_type = 'TENT';", connectionString);
             DataSet ds = new DataSet();
             da.Fill(ds);
             dataGridView1.DataSource = ds.Tables[0];

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResidentsAssistance));
             panel1 = new Panel();
+            reg_btn = new Button();
             Events = new Button();
             ResAssist = new Button();
             DocuReq = new Button();
@@ -41,6 +42,8 @@
             label2 = new Label();
             baros = new Label();
             panel4 = new Panel();
+            rejectbtn = new Button();
+            acceptbtn = new Button();
             dataGridView2 = new DataGridView();
             Basketball = new Button();
             Tent = new Button();
@@ -49,7 +52,6 @@
             panel5 = new Panel();
             panel6 = new Panel();
             panel7 = new Panel();
-            reg_btn = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -71,6 +73,20 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(521, 1199);
             panel1.TabIndex = 3;
+            // 
+            // reg_btn
+            // 
+            reg_btn.FlatAppearance.BorderSize = 0;
+            reg_btn.FlatStyle = FlatStyle.Flat;
+            reg_btn.Font = new Font("Yu Gothic UI", 20.25F);
+            reg_btn.Location = new Point(49, 798);
+            reg_btn.Name = "reg_btn";
+            reg_btn.Size = new Size(359, 56);
+            reg_btn.TabIndex = 8;
+            reg_btn.Text = "REGISTRATION";
+            reg_btn.TextAlign = ContentAlignment.MiddleLeft;
+            reg_btn.UseVisualStyleBackColor = true;
+            reg_btn.Click += reg_btn_Click;
             // 
             // Events
             // 
@@ -192,6 +208,8 @@
             // 
             panel4.BackColor = SystemColors.InactiveBorder;
             panel4.BorderStyle = BorderStyle.Fixed3D;
+            panel4.Controls.Add(rejectbtn);
+            panel4.Controls.Add(acceptbtn);
             panel4.Controls.Add(dataGridView2);
             panel4.Controls.Add(Basketball);
             panel4.Controls.Add(Tent);
@@ -202,6 +220,36 @@
             panel4.Size = new Size(1236, 927);
             panel4.TabIndex = 14;
             // 
+            // rejectbtn
+            // 
+            rejectbtn.BackColor = Color.MidnightBlue;
+            rejectbtn.FlatAppearance.BorderSize = 0;
+            rejectbtn.FlatStyle = FlatStyle.Flat;
+            rejectbtn.Font = new Font("Lucida Fax", 15.75F, FontStyle.Bold);
+            rejectbtn.ForeColor = Color.FromArgb(246, 180, 71);
+            rejectbtn.Location = new Point(706, 764);
+            rejectbtn.Name = "rejectbtn";
+            rejectbtn.Size = new Size(175, 53);
+            rejectbtn.TabIndex = 10;
+            rejectbtn.Text = "Reject";
+            rejectbtn.UseVisualStyleBackColor = false;
+            rejectbtn.Click += rejectbtn_Click_1;
+            // 
+            // acceptbtn
+            // 
+            acceptbtn.BackColor = Color.MidnightBlue;
+            acceptbtn.FlatAppearance.BorderSize = 0;
+            acceptbtn.FlatStyle = FlatStyle.Flat;
+            acceptbtn.Font = new Font("Lucida Fax", 15.75F, FontStyle.Bold);
+            acceptbtn.ForeColor = Color.FromArgb(246, 180, 71);
+            acceptbtn.Location = new Point(336, 764);
+            acceptbtn.Name = "acceptbtn";
+            acceptbtn.Size = new Size(175, 53);
+            acceptbtn.TabIndex = 9;
+            acceptbtn.Text = "Accept";
+            acceptbtn.UseVisualStyleBackColor = false;
+            acceptbtn.Click += acceptbtn_Click_1;
+            // 
             // dataGridView2
             // 
             dataGridView2.BackgroundColor = Color.MidnightBlue;
@@ -209,8 +257,9 @@
             dataGridView2.GridColor = Color.FromArgb(246, 180, 71);
             dataGridView2.Location = new Point(40, 133);
             dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(1143, 770);
+            dataGridView2.Size = new Size(1143, 577);
             dataGridView2.TabIndex = 4;
+            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
             // 
             // Basketball
             // 
@@ -285,20 +334,6 @@
             panel7.Size = new Size(1422, 160);
             panel7.TabIndex = 18;
             // 
-            // reg_btn
-            // 
-            reg_btn.FlatAppearance.BorderSize = 0;
-            reg_btn.FlatStyle = FlatStyle.Flat;
-            reg_btn.Font = new Font("Yu Gothic UI", 20.25F);
-            reg_btn.Location = new Point(49, 798);
-            reg_btn.Name = "reg_btn";
-            reg_btn.Size = new Size(359, 56);
-            reg_btn.TabIndex = 8;
-            reg_btn.Text = "REGISTRATION";
-            reg_btn.TextAlign = ContentAlignment.MiddleLeft;
-            reg_btn.UseVisualStyleBackColor = true;
-            reg_btn.Click += reg_btn_Click;
-            // 
             // ResidentsAssistance
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -349,5 +384,7 @@
         private Panel panel6;
         private Panel panel7;
         private Button reg_btn;
+        private Button rejectbtn;
+        private Button acceptbtn;
     }
 }

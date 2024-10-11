@@ -82,6 +82,7 @@ namespace BarosDashboard
             panel9 = new Panel();
             panel10 = new Panel();
             panel11 = new Panel();
+            checkBox1 = new CheckBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -105,6 +106,7 @@ namespace BarosDashboard
             // 
             textBox4.Anchor = AnchorStyles.Right;
             textBox4.BackColor = Color.FromArgb(246, 180, 71);
+            textBox4.BorderStyle = BorderStyle.FixedSingle;
             textBox4.Font = new Font("Segoe UI", 26.25F);
             textBox4.Location = new Point(23, 556);
             textBox4.Name = "textBox4";
@@ -143,6 +145,7 @@ namespace BarosDashboard
             // 
             textBox3.Anchor = AnchorStyles.Right;
             textBox3.BackColor = Color.FromArgb(246, 180, 71);
+            textBox3.BorderStyle = BorderStyle.FixedSingle;
             textBox3.Font = new Font("Segoe UI", 26.25F);
             textBox3.Location = new Point(776, 239);
             textBox3.Name = "textBox3";
@@ -166,6 +169,7 @@ namespace BarosDashboard
             // 
             textBox2.Anchor = AnchorStyles.Left;
             textBox2.BackColor = Color.FromArgb(246, 180, 71);
+            textBox2.BorderStyle = BorderStyle.FixedSingle;
             textBox2.Font = new Font("Segoe UI", 26.25F);
             textBox2.Location = new Point(27, 411);
             textBox2.Name = "textBox2";
@@ -232,6 +236,7 @@ namespace BarosDashboard
             // 
             textBox1.Anchor = AnchorStyles.Top;
             textBox1.BackColor = Color.FromArgb(246, 180, 71);
+            textBox1.BorderStyle = BorderStyle.FixedSingle;
             textBox1.Font = new Font("Segoe UI", 26.25F);
             textBox1.Location = new Point(25, 239);
             textBox1.Name = "textBox1";
@@ -377,6 +382,7 @@ namespace BarosDashboard
             // textBoxPrecinctNumber
             // 
             textBoxPrecinctNumber.BackColor = Color.FromArgb(246, 180, 71);
+            textBoxPrecinctNumber.BorderStyle = BorderStyle.FixedSingle;
             textBoxPrecinctNumber.Font = new Font("Segoe UI", 18F);
             textBoxPrecinctNumber.Location = new Point(1088, 391);
             textBoxPrecinctNumber.Name = "textBoxPrecinctNumber";
@@ -443,6 +449,7 @@ namespace BarosDashboard
             // txt_Weight
             // 
             txt_Weight.BackColor = Color.FromArgb(246, 180, 71);
+            txt_Weight.BorderStyle = BorderStyle.FixedSingle;
             txt_Weight.Font = new Font("Segoe UI", 18F);
             txt_Weight.Location = new Point(773, 542);
             txt_Weight.Name = "txt_Weight";
@@ -463,6 +470,7 @@ namespace BarosDashboard
             // txt_Height
             // 
             txt_Height.BackColor = Color.FromArgb(246, 180, 71);
+            txt_Height.BorderStyle = BorderStyle.FixedSingle;
             txt_Height.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txt_Height.Location = new Point(773, 391);
             txt_Height.Name = "txt_Height";
@@ -485,6 +493,7 @@ namespace BarosDashboard
             // 
             contact_Em.Anchor = AnchorStyles.Left;
             contact_Em.BackColor = Color.FromArgb(246, 180, 71);
+            contact_Em.BorderStyle = BorderStyle.FixedSingle;
             contact_Em.Font = new Font("Segoe UI", 26.25F);
             contact_Em.Location = new Point(646, 924);
             contact_Em.Name = "contact_Em";
@@ -552,6 +561,7 @@ namespace BarosDashboard
             // 
             Fname_Em.Anchor = AnchorStyles.Top;
             Fname_Em.BackColor = Color.FromArgb(246, 180, 71);
+            Fname_Em.BorderStyle = BorderStyle.FixedSingle;
             Fname_Em.Font = new Font("Segoe UI", 26.25F);
             Fname_Em.Location = new Point(646, 746);
             Fname_Em.Name = "Fname_Em";
@@ -629,6 +639,7 @@ namespace BarosDashboard
             // panel8
             // 
             panel8.BackColor = Color.MidnightBlue;
+            panel8.BorderStyle = BorderStyle.FixedSingle;
             panel8.Location = new Point(1091, 396);
             panel8.Name = "panel8";
             panel8.Size = new Size(284, 39);
@@ -658,12 +669,23 @@ namespace BarosDashboard
             panel11.Size = new Size(592, 54);
             panel11.TabIndex = 198;
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(397, 94);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(83, 19);
+            checkBox1.TabIndex = 203;
+            checkBox1.Text = "checkBox1";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
             // FormId
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 180, 71);
             ClientSize = new Size(1911, 1118);
+            Controls.Add(checkBox1);
             Controls.Add(label15);
             Controls.Add(contact_Em);
             Controls.Add(label10);
@@ -782,5 +804,6 @@ namespace BarosDashboard
         private Panel panel9;
         private Panel panel10;
         private Panel panel11;
+        private CheckBox checkBox1;
     }
 }

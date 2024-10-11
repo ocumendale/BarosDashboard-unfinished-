@@ -143,8 +143,8 @@ namespace BarosDashboard
 
         private void btnAdminLogin_Click(object sender, EventArgs e)
         {
-            Admin admin = new Admin();
-            admin.Show();
+            adminLogin login = new adminLogin();
+            login.Show();
             this.Hide();
         }
 

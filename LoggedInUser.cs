@@ -8,7 +8,8 @@ namespace BarosDashboard
 {
     public static class LoggedInUser
     {
-        public static int UserId { get; set; } 
+        public static int UserId { get; set; }
+        
         public static string Uname { get; set; }
     }
 }
