@@ -12,6 +12,7 @@ using iTextSharp.text.pdf;
 using iTextSharp.text;
 using System.IO;
 using ZXing;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BarosDashboard
 {
@@ -73,6 +74,7 @@ namespace BarosDashboard
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+          
             int userId = LoggedInUser.UserId;
             chair_ = resType.Text;
 
@@ -149,6 +151,18 @@ namespace BarosDashboard
                 // Display detailed error information
                 MessageBox.Show($"Error: {ex.Message}");
             }
+        }
+        private bool IsNotNullOrWhiteSpace(string input)
+        {
+            return !string.IsNullOrWhiteSpace(input);
+        }
+
+        private bool ValidateInputs()
+        {
+            return IsNotNullOrWhiteSpace(textBox1.Text) &&
+                   IsNotNullOrWhiteSpace(quantity.Text) 
+  &&
+                   time.SelectedItem != null;
         }
 
         private void time_SelectedIndexChanged(object sender, EventArgs e) { }

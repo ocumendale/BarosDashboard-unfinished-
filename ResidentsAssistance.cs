@@ -12,89 +12,12 @@ using MySql.Data.MySqlClient;
 namespace BarosDashboard
 {
     public partial class ResidentsAssistance : Form
-
     {
         MySqlConnection con = new MySqlConnection("server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;");
+
         public ResidentsAssistance()
         {
             InitializeComponent();
-        }
-
-        private void MyProfile_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Admin admin = new Admin();
-            admin.Show();
-        }
-
-        private void DocuReq_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            DocumentRequest documentRequest = new DocumentRequest();
-            documentRequest.Show();
-        }
-
-        private void ResComplaints_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EmergencyRes_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Announcements_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Events_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            login log = new login();
-            log.Show();
-        }
-
-        private void Basketball_Click(object sender, EventArgs e)
-        {
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM reservations WHERE reservation_type = 'BASKETBALL COURT';", con);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            dataGridView2.DataSource = ds.Tables[0];
-            dataGridView2.Columns["fname"].Width = 150; // 
-            dataGridView2.Columns["reason"].Width = 50; // 
-
-        }
-
-        private void Tent_Click(object sender, EventArgs e)
-        {
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM reservations WHERE reservation_type = 'TENT';", con);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            dataGridView2.DataSource = ds.Tables[0];
-            dataGridView2.Columns["fname"].Width = 150; // 
-            dataGridView2.Columns["quantity"].Width = 50; // 
-        }
-
-        private void Table_Click(object sender, EventArgs e)
-        {
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM reservations WHERE reservation_type = 'TABLE';", con);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            dataGridView2.DataSource = ds.Tables[0];
-            dataGridView2.Columns["fname"].Width = 150; // 
-            dataGridView2.Columns["quantity"].Width = 50; // 
-        }
-
-        private void Chair_Click(object sender, EventArgs e)
-        {
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM reservations WHERE reservation_type = 'CHAIR';", con);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            dataGridView2.DataSource = ds.Tables[0];
-            dataGridView2.Columns["fname"].Width = 150; //
-            dataGridView2.Columns["quantity"].Width = 50; //                                            
         }
 
         private void ResidentsAssistance_Load(object sender, EventArgs e)
@@ -103,60 +26,106 @@ namespace BarosDashboard
             this.TopMost = true;
         }
 
-        private void reg_btn_Click(object sender, EventArgs e)
+        // Method to load reservations by reservation type
+        private void LoadReservations(string reservationType)
         {
-            reg_approval approval = new reg_approval();
-            approval.Show();
-            this.Hide();
+            string query = $"SELECT * FROM basketball_court WHERE reservation_type = '{reservationType}';";
+            MySqlDataAdapter da = new MySqlDataAdapter(query, con);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            dataGridView2.DataSource = ds.Tables[0];
+
+            dataGridView2.Columns["fname"].Width = 150;
+            if (dataGridView2.Columns.Contains("quantity"))
+            {
+                dataGridView2.Columns["quantity"].Width = 50;
+            }
         }
 
-        private void rejectbtn_Click(object sender, EventArgs e)
+        private void Basketball_Click(object sender, EventArgs e)
         {
-
+            LoadReservations("BASKETBALL COURT");
         }
 
+        private void Tent_Click(object sender, EventArgs e)
+        {
+            LoadReservations("TENT");
+        }
+
+        private void Table_Click(object sender, EventArgs e)
+        {
+            LoadReservations("TABLE");
+        }
+
+        private void Chair_Click(object sender, EventArgs e)
+        {
+            LoadReservations("CHAIR");
+        }
+
+        // Accept the selected reservation
         private void acceptbtn_Click_1(object sender, EventArgs e)
         {
-            // Update the status to "Accepted" when the accept button is clicked
             if (dataGridView2.SelectedRows.Count > 0)
             {
+                // Get the selected reservation data
                 int userId = Convert.ToInt32(dataGridView2.SelectedRows[0].Cells["user_id"].Value);
-                UpdateUserStatus(userId, "Accepted");
+                string reservationType = dataGridView2.SelectedRows[0].Cells["reservation_type"].Value.ToString();
+
+                // Accept only the selected reservation type for the user
+                UpdateReservationStatus(userId, reservationType, "Accepted");
             }
-        }
-        private void UpdateUserStatus(int userId, string newStatus)
-        {
-            string conn = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
-            using (MySqlConnection con = new MySqlConnection(conn))
+            else
             {
-                con.Open();
-                string query = "UPDATE users SET stats = @newStatus WHERE user_id = @userId";
-                using (MySqlCommand cmd = new MySqlCommand(query, con))
-                {
-                    cmd.Parameters.AddWithValue("@newStatus", newStatus);
-                    cmd.Parameters.AddWithValue("@userId", userId);
-                    cmd.ExecuteNonQuery();
-                }
+                MessageBox.Show("Please select a reservation to accept.");
             }
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+        // Reject the selected reservation
         private void rejectbtn_Click_1(object sender, EventArgs e)
         {
             if (dataGridView2.SelectedRows.Count > 0)
             {
+                // Get the selected reservation data
                 int userId = Convert.ToInt32(dataGridView2.SelectedRows[0].Cells["user_id"].Value);
-                UpdateUserStatus(userId, "Rejected");
+                string reservationType = dataGridView2.SelectedRows[0].Cells["reservation_type"].Value.ToString();
+
+                // Reject only the selected reservation type for the user
+                UpdateReservationStatus(userId, reservationType, "Rejected");
+            }
+            else
+            {
+                MessageBox.Show("Please select a reservation to reject.");
+            }
+        }
+
+        // Update the reservation status in the database for the specific selected reservation type
+        private void UpdateReservationStatus(int userId, string reservationType, string newStatus)
+        {
+            try
+            {
+                string query = "UPDATE basketball_court SET reservation_status = @newStatus WHERE user_id = @userId AND reservation_type = @reservationType";
+                using (MySqlConnection con = new MySqlConnection("server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;"))
+                {
+                    con.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@newStatus", newStatus);
+                        cmd.Parameters.AddWithValue("@userId", userId);
+                        cmd.Parameters.AddWithValue("@reservationType", reservationType);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                // Reload reservations after status update, but only for the current reservation type
+                LoadReservations(reservationType);
+                MessageBox.Show($"Reservation {newStatus.ToLower()} successfully.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating reservation: " + ex.Message);
             }
         }
     }
 }
+
+

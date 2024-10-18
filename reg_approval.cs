@@ -10,7 +10,7 @@ namespace BarosDashboard
     public partial class reg_approval : Form
     {
         private string selectedUsername;
-        private bool isGeneratingQR = false; // Add a flag to prevent multiple QR generations
+        private bool isGeneratingQR = false; // Flag to prevent multiple QR generations
 
         public reg_approval()
         {
@@ -57,19 +57,14 @@ namespace BarosDashboard
         {
             if (pictureBoxQRCode.Image != null)
             {
-                // Create a SaveFileDialog to prompt user for a file location
                 using (SaveFileDialog saveFileDialog = new SaveFileDialog())
                 {
                     saveFileDialog.Filter = "PNG Image|*.png|JPEG Image|*.jpg|Bitmap Image|*.bmp";
                     saveFileDialog.Title = "Save QR Code Image";
-
-                    // Set the default file name to the selected username
                     saveFileDialog.FileName = $"{selectedUsername}_QRCode"; // Automatically name it based on username
 
-                    // Show the dialog and get result
                     if (saveFileDialog.ShowDialog() == DialogResult.OK)
                     {
-                        // Save the QR code image to the selected file path
                         pictureBoxQRCode.Image.Save(saveFileDialog.FileName);
                         MessageBox.Show("QR Code saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -88,6 +83,7 @@ namespace BarosDashboard
 
         private void button2_Click(object sender, EventArgs e)
         {
+            // Reject the selected user
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 int userId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["user_id"].Value);
@@ -97,7 +93,7 @@ namespace BarosDashboard
 
         private void acceptbtn_Click(object sender, EventArgs e)
         {
-            // Update the status to "Accepted" when the accept button is clicked
+            // Accept the selected user
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 int userId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["user_id"].Value);
@@ -177,7 +173,6 @@ namespace BarosDashboard
             {
                 isGeneratingQR = false; // Reset flag when done
             }
-
         }
 
         private void UpdateUserStatus(int userId, string newStatus)

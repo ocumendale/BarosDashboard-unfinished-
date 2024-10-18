@@ -48,19 +48,26 @@ namespace BarosDashboard
         {
             if (ValidateInputs())
             {
-                selectedTimeSlot = comboBox1.Text; // Store the currently selected time slot
-
-                if (!IsTimeSlotAvailable(dateTimePicker1.Value.Date, selectedTimeSlot))
+                // Only check time slots for BASKETBALL COURT
+                if (resType.SelectedItem.ToString() == "BASKETBALL COURT")
                 {
-                    MessageBox.Show("The selected time slot is already reserved. Please choose another time.", "Time Slot Taken", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    selectedTimeSlot = comboBox1.Text; // Store the currently selected time slot
+
+                    if (!IsTimeSlotAvailable(dateTimePicker1.Value.Date, selectedTimeSlot))
+                    {
+                        MessageBox.Show("The selected time slot is already reserved. Please choose another time.", "Time Slot Taken", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
                 }
 
                 GetDataFromMySQL(selectedTimeSlot);
                 MessageBox.Show("Your information has been successfully submitted!", "Submission Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Reload available time slots to ensure the selected slot is removed for others
-                LoadAvailableTimeSlots();
+                // Reload available time slots only for basketball court
+                if (resType.SelectedItem.ToString() == "BASKETBALL COURT")
+                {
+                    LoadAvailableTimeSlots();
+                }
 
                 Form20 form20 = new Form20();
                 form20.Show();
@@ -77,12 +84,15 @@ namespace BarosDashboard
             return !string.IsNullOrWhiteSpace(input);
         }
 
+        // Validate inputs based on the reservation type
         private bool ValidateInputs()
         {
-            return IsNotNullOrWhiteSpace(textBox1.Text) &&
-                   IsNotNullOrWhiteSpace(textBox2.Text) &&
-                   IsNotNullOrWhiteSpace(textBox3.Text) &&
-                   comboBox1.SelectedItem != null;
+            bool isReservationTypeWithTimeSlot = resType.SelectedItem.ToString() == "BASKETBALL COURT";
+
+            return IsNotNullOrWhiteSpace(textBox1.Text) &&  // Validate Fullname
+                   IsNotNullOrWhiteSpace(textBox2.Text) &&  // Validate Contact number
+                   IsNotNullOrWhiteSpace(textBox3.Text) &&  // Validate Reason
+                   (!isReservationTypeWithTimeSlot || IsNotNullOrWhiteSpace(comboBox1.Text)); // Only validate time slot for BASKETBALL COURT
         }
 
         private bool IsTimeSlotAvailable(DateTime reservationDate, string selectedTimeSlot)
@@ -113,13 +123,9 @@ namespace BarosDashboard
                                 TimeSpan reservedStart = TimeSpan.Parse(reader["reservation_start_time"].ToString());
                                 TimeSpan reservedEnd = TimeSpan.Parse(reader["reservation_end_time"].ToString());
 
-                                // Debugging: Log the reserved time slots
-                                Console.WriteLine($"Reserved Start: {reservedStart}, Reserved End: {reservedEnd}");
-
                                 // Check for overlap
                                 if ((start < reservedEnd && end > reservedStart))
                                 {
-                                    Console.WriteLine($"Overlap detected with reserved slot: {reservedStart} - {reservedEnd}");
                                     return false;
                                 }
                             }
@@ -140,10 +146,10 @@ namespace BarosDashboard
         private void GetDataFromMySQL(string selectedTimeSlot)
         {
             string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
-            string query = "INSERT INTO basketball_court (Fname, contact_num, reason, user_id, reservation_date, reservation_start_time, reservation_end_time) " +
-                           "VALUES (@Fullname, @Contactnumber, @reason, @userID, @reserveDate, @startTime, @endTime)";
+            string query = "INSERT INTO basketball_court (Fname, contact_num, reason, user_id, reservation_date, reservation_start_time, reservation_end_time, quantity, reservation_type) " +
+                           "VALUES (@Fullname, @Contactnumber, @reason, @userID, @reserveDate, @startTime, @endTime, @quantity, @resType)";
 
-            int userId = LoggedInUser.UserId;
+            int userId = LoggedInUser.UserId;  // Get the user ID of the logged-in user
 
             try
             {
@@ -151,18 +157,42 @@ namespace BarosDashboard
                 {
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
+                        // Adding parameters
                         cmd.Parameters.AddWithValue("@Fullname", textBox1.Text);
                         cmd.Parameters.AddWithValue("@Contactnumber", textBox2.Text);
                         cmd.Parameters.AddWithValue("@reason", textBox3.Text);
-                        cmd.Parameters.AddWithValue("@UserID", userId);
+                        cmd.Parameters.AddWithValue("@userID", userId);  // Assign the correct user ID
                         cmd.Parameters.AddWithValue("@reserveDate", dateTimePicker1.Value.Date);
 
-                        string[] timeRange = selectedTimeSlot.Split('-');
-                        string startTime = timeRange[0].Trim();
-                        string endTime = timeRange[1].Trim();
+                        // Only add time slot if the reservation is for a basketball court
+                        if (resType.SelectedItem.ToString() == "BASKETBALL COURT")
+                        {
+                            string[] timeRange = selectedTimeSlot.Split('-');
+                            string startTime = timeRange[0].Trim();
+                            string endTime = timeRange[1].Trim();
 
-                        cmd.Parameters.AddWithValue("@startTime", DateTime.Parse(startTime).ToString("HH:mm:ss"));
-                        cmd.Parameters.AddWithValue("@endTime", DateTime.Parse(endTime).ToString("HH:mm:ss"));
+                            cmd.Parameters.AddWithValue("@startTime", DateTime.Parse(startTime).ToString("HH:mm:ss"));
+                            cmd.Parameters.AddWithValue("@endTime", DateTime.Parse(endTime).ToString("HH:mm:ss"));
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@startTime", DBNull.Value);
+                            cmd.Parameters.AddWithValue("@endTime", DBNull.Value);
+                        }
+
+                        // Get the reservation type from the ComboBox (resType)
+                        string reservationType = resType.SelectedItem.ToString();
+                        cmd.Parameters.AddWithValue("@resType", reservationType);
+
+                        // If quantity is used (in cases like "Tent"), set it; otherwise set to NULL
+                        if (reservationType == "Tent" || reservationType == "Chair" || reservationType == "Table")
+                        {
+                            cmd.Parameters.AddWithValue("@quantity", quantybox.Text);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@quantity", DBNull.Value);
+                        }
 
                         conn.Open();
                         cmd.ExecuteNonQuery();
@@ -194,8 +224,6 @@ namespace BarosDashboard
             DateTime selectedDate = dateTimePicker1.Value.Date;
             List<string> takenTimeSlots = GetTakenTimeSlots(selectedDate);
 
-            Console.WriteLine("Taken Time Slots: " + string.Join(", ", takenTimeSlots));
-
             if (selectedDate < DateTime.Now.Date)
             {
                 foreach (string timeSlot in allTimeSlots)
@@ -210,11 +238,6 @@ namespace BarosDashboard
                     if (!takenTimeSlots.Contains(timeSlot) && timeSlot != selectedTimeSlot)
                     {
                         comboBox1.Items.Add(timeSlot);
-                        Console.WriteLine($"Available time slot: {timeSlot}");
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Time slot {timeSlot} is already taken or is selected by the current user.");
                     }
                 }
             }
@@ -236,6 +259,7 @@ namespace BarosDashboard
 
             try
             {
+
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
@@ -251,12 +275,9 @@ namespace BarosDashboard
                                 string endTime = DateTime.Parse(reader["reservation_end_time"].ToString()).ToString("hh:mm tt");
                                 string takenSlot = $"{startTime} - {endTime}";
 
-                                Console.WriteLine($"Adding taken slot: {takenSlot}");
                                 takenTimeSlots.Add(takenSlot);
                             }
                         }
-
-                        conn.Close();
                     }
                 }
             }
@@ -273,16 +294,28 @@ namespace BarosDashboard
             LoadAvailableTimeSlots();
         }
 
+        private void resType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (resType.SelectedItem.ToString() == "BASKETBALL COURT")
+            {
+                quantybox.Hide();
+                panel6.Hide();
+                label12.Hide();
+                comboBox1.Enabled = true; // Enable time slot selection for basketball court
+            }
+            else
+            {
+                quantybox.Show();
+                panel6.Show();
+                label12.Show();
+                comboBox1.Enabled = false; // Disable time slot selection for other types
+            }
+        }
+
         private void FormBas_Load_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
             this.TopMost = true;
-            LoadAvailableTimeSlots();
-        }
-
-        private void dateTimePicker1_ValueChanged_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -86,7 +86,7 @@
             reg_btn.Text = "REGISTRATION";
             reg_btn.TextAlign = ContentAlignment.MiddleLeft;
             reg_btn.UseVisualStyleBackColor = true;
-            reg_btn.Click += reg_btn_Click;
+          
             // 
             // Events
             // 
@@ -99,7 +99,7 @@
             Events.TabIndex = 7;
             Events.Text = "SIGN OUT";
             Events.UseVisualStyleBackColor = true;
-            Events.Click += Events_Click;
+          
             // 
             // ResAssist
             // 
@@ -126,7 +126,7 @@
             DocuReq.TabIndex = 2;
             DocuReq.Text = "DOCUMENT REQUEST";
             DocuReq.UseVisualStyleBackColor = true;
-            DocuReq.Click += DocuReq_Click;
+           
             // 
             // MyProfile
             // 
@@ -139,7 +139,7 @@
             MyProfile.TabIndex = 1;
             MyProfile.Text = "MY PROFILE";
             MyProfile.UseVisualStyleBackColor = true;
-            MyProfile.Click += MyProfile_Click;
+          
             // 
             // panel2
             // 
@@ -219,6 +219,7 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(1236, 927);
             panel4.TabIndex = 14;
+           
             // 
             // rejectbtn
             // 
@@ -259,7 +260,7 @@
             dataGridView2.Name = "dataGridView2";
             dataGridView2.Size = new Size(1143, 577);
             dataGridView2.TabIndex = 4;
-            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
+      
             // 
             // Basketball
             // 
