@@ -35,6 +35,7 @@
             contactbtn = new Button();
             label2 = new Label();
             panel1 = new Panel();
+            button7 = new Button();
             button6 = new Button();
             pictureBox1 = new PictureBox();
             button5 = new Button();
@@ -43,7 +44,8 @@
             button2 = new Button();
             button1 = new Button();
             signUpLogo = new PictureBox();
-            button7 = new Button();
+            panel5 = new Panel();
+            panel4 = new Panel();
             panel3.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -58,16 +60,17 @@
             panel3.ForeColor = Color.Black;
             panel3.Location = new Point(442, 1);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1471, 84);
+            panel3.Size = new Size(1473, 102);
             panel3.TabIndex = 5;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("MS UI Gothic", 18F, FontStyle.Bold);
-            label1.Location = new Point(3, 37);
+            label1.Font = new Font("Lucida Fax", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.MidnightBlue;
+            label1.Location = new Point(66, 54);
             label1.Name = "label1";
-            label1.Size = new Size(124, 24);
+            label1.Size = new Size(215, 43);
             label1.TabIndex = 2;
             label1.Text = "CONTACT";
             // 
@@ -75,12 +78,12 @@
             // 
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
-            label3.BackColor = Color.MidnightBlue;
-            label3.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
-            label3.ForeColor = Color.FromArgb(246, 180, 71);
-            label3.Location = new Point(714, 520);
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Lucida Fax", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(823, 406);
             label3.Name = "label3";
-            label3.Size = new Size(921, 110);
+            label3.Size = new Size(677, 84);
             label3.TabIndex = 3;
             label3.Text = "If you have questions or inquiries, \r\n             Please Contact us.";
             // 
@@ -92,9 +95,9 @@
             contactbtn.FlatStyle = FlatStyle.Flat;
             contactbtn.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
             contactbtn.ForeColor = Color.FromArgb(246, 180, 71);
-            contactbtn.Location = new Point(1074, 663);
+            contactbtn.Location = new Point(1083, 509);
             contactbtn.Name = "contactbtn";
-            contactbtn.Size = new Size(220, 85);
+            contactbtn.Size = new Size(159, 45);
             contactbtn.TabIndex = 2;
             contactbtn.Text = "Contacts";
             contactbtn.UseVisualStyleBackColor = false;
@@ -104,12 +107,12 @@
             // 
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
-            label2.BackColor = Color.MidnightBlue;
-            label2.Font = new Font("Lucida Fax", 72.1F, FontStyle.Bold);
-            label2.ForeColor = Color.FromArgb(246, 180, 71);
-            label2.Location = new Point(780, 389);
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Lucida Fax", 48F, FontStyle.Bold);
+            label2.ForeColor = Color.MidnightBlue;
+            label2.Location = new Point(892, 332);
             label2.Name = "label2";
-            label2.Size = new Size(802, 111);
+            label2.Size = new Size(531, 74);
             label2.TabIndex = 1;
             label2.Text = "GET IN TOUCH";
             label2.Click += label2_Click;
@@ -132,16 +135,33 @@
             panel1.Size = new Size(442, 1115);
             panel1.TabIndex = 3;
             // 
+            // button7
+            // 
+            button7.Anchor = AnchorStyles.Left;
+            button7.BackColor = Color.FromArgb(246, 180, 71);
+            button7.FlatAppearance.BorderSize = 0;
+            button7.FlatStyle = FlatStyle.Flat;
+            button7.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
+            button7.Location = new Point(34, 776);
+            button7.Name = "button7";
+            button7.Size = new Size(442, 83);
+            button7.TabIndex = 10;
+            button7.Text = "Manage Transaction";
+            button7.TextAlign = ContentAlignment.MiddleLeft;
+            button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
+            // 
             // button6
             // 
             button6.FlatAppearance.BorderSize = 0;
             button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
-            button6.Location = new Point(4, 885);
+            button6.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
+            button6.Location = new Point(34, 883);
             button6.Name = "button6";
             button6.Size = new Size(438, 97);
             button6.TabIndex = 8;
             button6.Text = "LOGOUT";
+            button6.TextAlign = ContentAlignment.MiddleLeft;
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click_1;
             // 
@@ -160,13 +180,14 @@
             // 
             button5.FlatAppearance.BorderSize = 0;
             button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
-            button5.Location = new Point(8, 715);
+            button5.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
+            button5.Location = new Point(34, 663);
             button5.Margin = new Padding(3, 2, 3, 2);
             button5.Name = "button5";
             button5.Size = new Size(438, 97);
             button5.TabIndex = 4;
             button5.Text = "SERVICES";
+            button5.TextAlign = ContentAlignment.MiddleLeft;
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
             // 
@@ -174,13 +195,14 @@
             // 
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
-            button4.Location = new Point(4, 540);
+            button4.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
+            button4.Location = new Point(34, 558);
             button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
             button4.Size = new Size(451, 97);
             button4.TabIndex = 3;
             button4.Text = "HOW IT WORKS?";
+            button4.TextAlign = ContentAlignment.MiddleLeft;
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
@@ -188,26 +210,29 @@
             // 
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
-            button3.Location = new Point(4, 362);
+            button3.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
+            button3.ForeColor = Color.MidnightBlue;
+            button3.Location = new Point(34, 455);
             button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
             button3.Size = new Size(438, 97);
             button3.TabIndex = 2;
             button3.Text = "CONTACT";
+            button3.TextAlign = ContentAlignment.MiddleLeft;
             button3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
-            button2.Location = new Point(11, 185);
+            button2.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
+            button2.Location = new Point(34, 344);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
             button2.Size = new Size(435, 97);
             button2.TabIndex = 1;
             button2.Text = "ABOUT US";
+            button2.TextAlign = ContentAlignment.MiddleLeft;
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
@@ -215,42 +240,45 @@
             // 
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Lucida Fax", 36F, FontStyle.Bold);
+            button1.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
             button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(8, 24);
+            button1.Location = new Point(34, 228);
             button1.Name = "button1";
             button1.Size = new Size(438, 97);
             button1.TabIndex = 0;
             button1.Text = "HOME";
+            button1.TextAlign = ContentAlignment.MiddleLeft;
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // signUpLogo
             // 
-            signUpLogo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             signUpLogo.Image = (Image)resources.GetObject("signUpLogo.Image");
-            signUpLogo.Location = new Point(780, 218);
+            signUpLogo.Location = new Point(922, 583);
             signUpLogo.Margin = new Padding(0);
             signUpLogo.Name = "signUpLogo";
-            signUpLogo.Size = new Size(799, 660);
+            signUpLogo.Size = new Size(475, 408);
             signUpLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             signUpLogo.TabIndex = 132;
             signUpLogo.TabStop = false;
             // 
-            // button7
+            // panel5
             // 
-            button7.Anchor = AnchorStyles.Left;
-            button7.BackColor = Color.FromArgb(246, 180, 71);
-            button7.FlatAppearance.BorderSize = 0;
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("Lucida Fax", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button7.Location = new Point(-5, 988);
-            button7.Name = "button7";
-            button7.Size = new Size(442, 83);
-            button7.TabIndex = 10;
-            button7.Text = "Manage Transaction";
-            button7.UseVisualStyleBackColor = false;
-            button7.Click += button7_Click;
+            panel5.BackColor = Color.MidnightBlue;
+            panel5.Location = new Point(435, -3);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(10, 1198);
+            panel5.TabIndex = 136;
+            panel5.Paint += this.panel5_Paint;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.MidnightBlue;
+            panel4.Location = new Point(436, 97);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(1519, 10);
+            panel4.TabIndex = 135;
+            panel4.Paint += panel4_Paint;
             // 
             // Contact
             // 
@@ -258,12 +286,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 180, 71);
             ClientSize = new Size(1911, 1118);
+            Controls.Add(panel1);
+            Controls.Add(panel5);
             Controls.Add(label3);
             Controls.Add(contactbtn);
             Controls.Add(panel3);
             Controls.Add(label2);
-            Controls.Add(panel1);
             Controls.Add(signUpLogo);
+            Controls.Add(panel4);
             Name = "Contact";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Contact";
@@ -294,5 +324,7 @@
         private PictureBox signUpLogo;
         private Button button6;
         private Button button7;
+        private Panel panel5;
+        private Panel panel4;
     }
 }

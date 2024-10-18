@@ -145,6 +145,7 @@
             // 
             // home
             // 
+            home.ForeColor = Color.Black;
             home.Location = new Point(99, 48);
             home.Name = "home";
             home.Size = new Size(181, 71);

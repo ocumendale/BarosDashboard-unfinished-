@@ -52,6 +52,7 @@
             panel5 = new Panel();
             panel6 = new Panel();
             panel7 = new Panel();
+            GeneratePDF = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -86,7 +87,6 @@
             reg_btn.Text = "REGISTRATION";
             reg_btn.TextAlign = ContentAlignment.MiddleLeft;
             reg_btn.UseVisualStyleBackColor = true;
-          
             // 
             // Events
             // 
@@ -99,7 +99,6 @@
             Events.TabIndex = 7;
             Events.Text = "SIGN OUT";
             Events.UseVisualStyleBackColor = true;
-          
             // 
             // ResAssist
             // 
@@ -126,7 +125,6 @@
             DocuReq.TabIndex = 2;
             DocuReq.Text = "DOCUMENT REQUEST";
             DocuReq.UseVisualStyleBackColor = true;
-           
             // 
             // MyProfile
             // 
@@ -139,7 +137,6 @@
             MyProfile.TabIndex = 1;
             MyProfile.Text = "MY PROFILE";
             MyProfile.UseVisualStyleBackColor = true;
-          
             // 
             // panel2
             // 
@@ -208,6 +205,7 @@
             // 
             panel4.BackColor = SystemColors.InactiveBorder;
             panel4.BorderStyle = BorderStyle.Fixed3D;
+            panel4.Controls.Add(GeneratePDF);
             panel4.Controls.Add(rejectbtn);
             panel4.Controls.Add(acceptbtn);
             panel4.Controls.Add(dataGridView2);
@@ -219,7 +217,6 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(1236, 927);
             panel4.TabIndex = 14;
-           
             // 
             // rejectbtn
             // 
@@ -228,7 +225,7 @@
             rejectbtn.FlatStyle = FlatStyle.Flat;
             rejectbtn.Font = new Font("Lucida Fax", 15.75F, FontStyle.Bold);
             rejectbtn.ForeColor = Color.FromArgb(246, 180, 71);
-            rejectbtn.Location = new Point(706, 764);
+            rejectbtn.Location = new Point(728, 692);
             rejectbtn.Name = "rejectbtn";
             rejectbtn.Size = new Size(175, 53);
             rejectbtn.TabIndex = 10;
@@ -243,7 +240,7 @@
             acceptbtn.FlatStyle = FlatStyle.Flat;
             acceptbtn.Font = new Font("Lucida Fax", 15.75F, FontStyle.Bold);
             acceptbtn.ForeColor = Color.FromArgb(246, 180, 71);
-            acceptbtn.Location = new Point(336, 764);
+            acceptbtn.Location = new Point(314, 692);
             acceptbtn.Name = "acceptbtn";
             acceptbtn.Size = new Size(175, 53);
             acceptbtn.TabIndex = 9;
@@ -258,9 +255,8 @@
             dataGridView2.GridColor = Color.FromArgb(246, 180, 71);
             dataGridView2.Location = new Point(40, 133);
             dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(1143, 577);
+            dataGridView2.Size = new Size(1143, 490);
             dataGridView2.TabIndex = 4;
-      
             // 
             // Basketball
             // 
@@ -335,6 +331,21 @@
             panel7.Size = new Size(1422, 160);
             panel7.TabIndex = 18;
             // 
+            // GeneratePDF
+            // 
+            GeneratePDF.BackColor = Color.MidnightBlue;
+            GeneratePDF.FlatAppearance.BorderSize = 0;
+            GeneratePDF.FlatStyle = FlatStyle.Flat;
+            GeneratePDF.Font = new Font("Lucida Fax", 15.75F, FontStyle.Bold);
+            GeneratePDF.ForeColor = Color.FromArgb(246, 180, 71);
+            GeneratePDF.Location = new Point(508, 820);
+            GeneratePDF.Name = "GeneratePDF";
+            GeneratePDF.Size = new Size(217, 53);
+            GeneratePDF.TabIndex = 11;
+            GeneratePDF.Text = "Generate File PDF";
+            GeneratePDF.UseVisualStyleBackColor = false;
+            GeneratePDF.Click += GeneratePDF_Click;
+            // 
             // ResidentsAssistance
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -387,5 +398,6 @@
         private Button reg_btn;
         private Button rejectbtn;
         private Button acceptbtn;
+        private Button GeneratePDF;
     }
 }
