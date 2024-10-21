@@ -269,7 +269,7 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(10, 1198);
             panel5.TabIndex = 136;
-            panel5.Paint += this.panel5_Paint;
+          
             // 
             // panel4
             // 
