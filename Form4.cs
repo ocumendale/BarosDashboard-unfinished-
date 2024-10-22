@@ -98,6 +98,21 @@ namespace BarosDashboard
             ManageTransaction manageTransaction = new ManageTransaction();
             manageTransaction.Show();
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

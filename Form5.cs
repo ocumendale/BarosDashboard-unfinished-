@@ -53,7 +53,7 @@ namespace BarosDashboard
 
         private void button7_Click(object sender, EventArgs e)
         {
-            FormBas reserve = new FormBas();
+            FormRes reserve = new FormRes();
             reserve.Show();
             Visible = false;
         }

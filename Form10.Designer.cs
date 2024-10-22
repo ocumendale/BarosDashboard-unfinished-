@@ -56,7 +56,6 @@
             label1 = new Label();
             date1 = new DateTimePicker();
             time = new ComboBox();
-            textBox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -159,7 +158,7 @@
             label11.Anchor = AnchorStyles.Bottom;
             label11.AutoSize = true;
             label11.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
-            label11.Location = new Point(372, 802);
+            label11.Location = new Point(384, 779);
             label11.Name = "label11";
             label11.Size = new Size(423, 33);
             label11.TabIndex = 159;
@@ -325,7 +324,7 @@
             resType.Font = new Font("Segoe UI", 18F);
             resType.FormattingEnabled = true;
             resType.Items.AddRange(new object[] { "BASKETBALL COURT", "TENT", "CHAIR", "TABLE" });
-            resType.Location = new Point(447, 736);
+            resType.Location = new Point(447, 729);
             resType.Name = "resType";
             resType.Size = new Size(292, 40);
             resType.TabIndex = 203;
@@ -367,20 +366,12 @@
             time.TabIndex = 206;
             time.SelectedIndexChanged += time_SelectedIndexChanged;
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(1056, 878);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 207;
-            // 
             // reserve
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 180, 71);
             ClientSize = new Size(1911, 1118);
-            Controls.Add(textBox1);
             Controls.Add(time);
             Controls.Add(date1);
             Controls.Add(label1);
@@ -447,6 +438,5 @@
         private Label label1;
         private DateTimePicker date1;
         private ComboBox time;
-        private TextBox textBox1;
     }
 }

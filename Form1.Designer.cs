@@ -32,7 +32,6 @@
             panel1 = new Panel();
             button7 = new Button();
             button6 = new Button();
-            HBF1 = new PictureBox();
             button5 = new Button();
             button4 = new Button();
             button3 = new Button();
@@ -47,7 +46,6 @@
             panel4 = new Panel();
             panel5 = new Panel();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)HBF1).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)signUpLogo).BeginInit();
             SuspendLayout();
@@ -58,7 +56,6 @@
             panel1.BackColor = Color.FromArgb(246, 180, 71);
             panel1.Controls.Add(button7);
             panel1.Controls.Add(button6);
-            panel1.Controls.Add(HBF1);
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button4);
             panel1.Controls.Add(button3);
@@ -75,7 +72,7 @@
             button7.BackColor = Color.FromArgb(246, 180, 71);
             button7.FlatAppearance.BorderSize = 0;
             button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("Lucida Fax", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button7.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
             button7.Location = new Point(34, 776);
             button7.Name = "button7";
             button7.Size = new Size(401, 83);
@@ -91,8 +88,8 @@
             button6.BackColor = Color.FromArgb(246, 180, 71);
             button6.FlatAppearance.BorderSize = 0;
             button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Lucida Fax", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button6.Location = new Point(34, 883);
+            button6.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
+            button6.Location = new Point(34, 882);
             button6.Name = "button6";
             button6.Size = new Size(442, 83);
             button6.TabIndex = 7;
@@ -100,18 +97,6 @@
             button6.TextAlign = ContentAlignment.MiddleLeft;
             button6.UseVisualStyleBackColor = false;
             button6.Click += button6_Click_1;
-            // 
-            // HBF1
-            // 
-            HBF1.BackColor = Color.Transparent;
-            HBF1.Image = (Image)resources.GetObject("HBF1.Image");
-            HBF1.Location = new Point(27, 41);
-            HBF1.Name = "HBF1";
-            HBF1.Size = new Size(62, 41);
-            HBF1.SizeMode = PictureBoxSizeMode.Zoom;
-            HBF1.TabIndex = 6;
-            HBF1.TabStop = false;
-            HBF1.Click += pictureBox1_Click;
             // 
             // button5
             // 
@@ -306,7 +291,6 @@
             Text = "BAROS Dashboard";
             Load += Form1_Load;
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)HBF1).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)signUpLogo).EndInit();
@@ -326,7 +310,6 @@
         private Panel panel3;
         private Label label2;
         private Label Greet;
-        private PictureBox HBF1;
         private PictureBox signUpLogo;
         private Button button6;
         private Button button7;

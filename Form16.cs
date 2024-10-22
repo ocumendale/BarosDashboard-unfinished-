@@ -20,11 +20,11 @@ using Microsoft.VisualBasic.ApplicationServices;
 
 namespace BarosDashboard
 {
-    public partial class FormBas : Form
+    public partial class FormRes : Form
     {
         private string selectedTimeSlot = string.Empty; // Store the selected time slot
 
-        public FormBas()
+        public FormRes()
         {
             InitializeComponent();
         }
@@ -39,8 +39,8 @@ namespace BarosDashboard
 
         private void backCourt_Click(object sender, EventArgs e)
         {
-            reserve res = new reserve();
-            res.Show();
+            Services serve = new Services();
+            serve.Show();
             Visible = false;
         }
 

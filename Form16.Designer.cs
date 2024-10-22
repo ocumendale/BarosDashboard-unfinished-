@@ -1,6 +1,6 @@
 ﻿namespace BarosDashboard
 {
-    partial class FormBas
+    partial class FormRes
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBas));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRes));
             backCourt = new Button();
             label9 = new Label();
             button1 = new Button();
@@ -361,7 +361,7 @@
             label13.TabIndex = 175;
             label13.Text = "TYPE OF RESERVATION";
             // 
-            // FormBas
+            // FormRes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -394,9 +394,9 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(panel3);
-            Name = "FormBas";
+            Name = "FormRes";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "BASKETBALL COURT";
+            Text = "RESERVATIONS";
             Load += FormBas_Load_1;
             ((System.ComponentModel.ISupportInitialize)signUpLogo).EndInit();
             ResumeLayout(false);

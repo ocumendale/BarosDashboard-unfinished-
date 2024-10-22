@@ -31,7 +31,7 @@ namespace BarosDashboard
 
         private void reserveCourt_Click(object sender, EventArgs e)
         {
-            FormBas formbas = new FormBas();
+            FormRes formbas = new FormRes();
             formbas.Show();
             Visible = false;
         }
@@ -134,7 +134,7 @@ namespace BarosDashboard
                         cmd.Parameters.AddWithValue("@reason", reqbox.Text);
                         cmd.Parameters.AddWithValue("@Resdate", formattedDate);
                         cmd.Parameters.AddWithValue("@Restime", time.Text);
-                        cmd.Parameters.AddWithValue("@Endtime", textBox1.Text);
+         
                         cmd.Parameters.AddWithValue("@quantity", quantity.Text);
                         cmd.Parameters.AddWithValue("@userID", userId);  // Foreign key to user_id in users table
                         cmd.Parameters.AddWithValue("@resStatus", "Pending");
@@ -159,8 +159,7 @@ namespace BarosDashboard
 
         private bool ValidateInputs()
         {
-            return IsNotNullOrWhiteSpace(textBox1.Text) &&
-                   IsNotNullOrWhiteSpace(quantity.Text) 
+            return IsNotNullOrWhiteSpace(quantity.Text) 
   &&
                    time.SelectedItem != null;
         }

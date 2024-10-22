@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DocumentRequest));
             panel1 = new Panel();
+            reg_btn = new Button();
             signout = new Button();
             ResAssist = new Button();
             DocuReq = new Button();
@@ -41,6 +42,9 @@
             label2 = new Label();
             baros = new Label();
             panel4 = new Panel();
+            button6 = new Button();
+            button5 = new Button();
+            button4 = new Button();
             dataGridView2 = new DataGridView();
             button3 = new Button();
             button2 = new Button();
@@ -49,7 +53,6 @@
             panel5 = new Panel();
             panel6 = new Panel();
             panel7 = new Panel();
-            reg_btn = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -71,6 +74,20 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(521, 1199);
             panel1.TabIndex = 3;
+            // 
+            // reg_btn
+            // 
+            reg_btn.FlatAppearance.BorderSize = 0;
+            reg_btn.FlatStyle = FlatStyle.Flat;
+            reg_btn.Font = new Font("Yu Gothic UI", 20.25F);
+            reg_btn.Location = new Point(50, 805);
+            reg_btn.Name = "reg_btn";
+            reg_btn.Size = new Size(359, 56);
+            reg_btn.TabIndex = 8;
+            reg_btn.Text = "REGISTRATION";
+            reg_btn.TextAlign = ContentAlignment.MiddleLeft;
+            reg_btn.UseVisualStyleBackColor = true;
+            reg_btn.Click += reg_btn_Click;
             // 
             // signout
             // 
@@ -193,6 +210,9 @@
             // 
             panel4.BackColor = SystemColors.InactiveBorder;
             panel4.BorderStyle = BorderStyle.Fixed3D;
+            panel4.Controls.Add(button6);
+            panel4.Controls.Add(button5);
+            panel4.Controls.Add(button4);
             panel4.Controls.Add(dataGridView2);
             panel4.Controls.Add(button3);
             panel4.Controls.Add(button2);
@@ -203,14 +223,50 @@
             panel4.Size = new Size(1236, 927);
             panel4.TabIndex = 8;
             // 
+            // button6
+            // 
+            button6.BackColor = Color.MidnightBlue;
+            button6.ForeColor = SystemColors.ButtonFace;
+            button6.Location = new Point(479, 750);
+            button6.Name = "button6";
+            button6.Size = new Size(236, 58);
+            button6.TabIndex = 7;
+            button6.Text = "Generate PDF";
+            button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.MidnightBlue;
+            button5.ForeColor = SystemColors.ButtonFace;
+            button5.Location = new Point(837, 750);
+            button5.Name = "button5";
+            button5.Size = new Size(236, 58);
+            button5.TabIndex = 6;
+            button5.Text = "Reject";
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.MidnightBlue;
+            button4.ForeColor = SystemColors.ButtonFace;
+            button4.Location = new Point(115, 750);
+            button4.Name = "button4";
+            button4.Size = new Size(236, 58);
+            button4.TabIndex = 5;
+            button4.Text = "Accept";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
+            // 
             // dataGridView2
             // 
             dataGridView2.BackgroundColor = Color.MidnightBlue;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.GridColor = Color.FromArgb(246, 180, 71);
-            dataGridView2.Location = new Point(47, 150);
+            dataGridView2.Location = new Point(47, 142);
             dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(1143, 770);
+            dataGridView2.Size = new Size(1143, 562);
             dataGridView2.TabIndex = 4;
             // 
             // button3
@@ -285,20 +341,6 @@
             panel7.Size = new Size(1422, 160);
             panel7.TabIndex = 12;
             // 
-            // reg_btn
-            // 
-            reg_btn.FlatAppearance.BorderSize = 0;
-            reg_btn.FlatStyle = FlatStyle.Flat;
-            reg_btn.Font = new Font("Yu Gothic UI", 20.25F);
-            reg_btn.Location = new Point(50, 805);
-            reg_btn.Name = "reg_btn";
-            reg_btn.Size = new Size(359, 56);
-            reg_btn.TabIndex = 8;
-            reg_btn.Text = "REGISTRATION";
-            reg_btn.TextAlign = ContentAlignment.MiddleLeft;
-            reg_btn.UseVisualStyleBackColor = true;
-            reg_btn.Click += reg_btn_Click;
-            // 
             // DocumentRequest
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -350,5 +392,8 @@
         private Button button1;
         private DataGridView dataGridView2;
         private Button reg_btn;
+        private Button button6;
+        private Button button5;
+        private Button button4;
     }
 }
