@@ -4,6 +4,8 @@ using System.Drawing;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using QRCoder;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace BarosDashboard
 {
@@ -16,9 +18,7 @@ namespace BarosDashboard
         {
             InitializeComponent();
             LoadUsers();
-
             btnSaveQR.Hide();
-            // Hook the MouseClickChanged_ to the MouseClick event of the DataGridView
             dataGridView1.MouseClick += MouseClickChanged_;
         }
 
@@ -39,8 +39,7 @@ namespace BarosDashboard
                 {
                     DataTable dt = new DataTable();
                     da.Fill(dt);
-
-                    dataGridView1.DataSource = dt; // Bind the DataGridView to the DataTable
+                    dataGridView1.DataSource = dt;
                     dataGridView1.Columns["address"].Width = 450; // Set width of address column
                 }
             }
@@ -61,7 +60,7 @@ namespace BarosDashboard
                 {
                     saveFileDialog.Filter = "PNG Image|*.png|JPEG Image|*.jpg|Bitmap Image|*.bmp";
                     saveFileDialog.Title = "Save QR Code Image";
-                    saveFileDialog.FileName = $"{selectedUsername}_QRCode"; // Automatically name it based on username
+                    saveFileDialog.FileName = $"{selectedUsername}_QRCode";
 
                     if (saveFileDialog.ShowDialog() == DialogResult.OK)
                     {
@@ -101,20 +100,20 @@ namespace BarosDashboard
             }
         }
 
-        private void SaveQRCodeToDatabase(string userID, string qrData)
+        private void SaveQRCodeToDatabase(string userID, string combinedHash)
         {
             using (MySqlConnection connection = new MySqlConnection("SERVER=LOCALHOST; DATABASE=baros; UID=root; PASSWORD=Daiki002039!;"))
             {
                 connection.Open();
-                string query = "UPDATE users SET QRCode = @qrData WHERE user_id = @userID";
+                string query = "UPDATE users SET hashedPassword = @combinedHash WHERE user_id = @userID";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@qrData", qrData);
+                cmd.Parameters.AddWithValue("@combinedHash", combinedHash);
                 cmd.Parameters.AddWithValue("@userID", userID);
                 cmd.ExecuteNonQuery();
             }
         }
 
-        // This method generates the QR code and handles row selection
+        // This method now combines hashed password and QR code data
         private void MouseClickChanged_(object sender, EventArgs e)
         {
             if (isGeneratingQR) return; // Prevent multiple QR generation
@@ -126,7 +125,8 @@ namespace BarosDashboard
                 {
                     // Get selected user's data
                     string selectedUserID = dataGridView1.SelectedRows[0].Cells["user_id"].Value.ToString();
-                    selectedUsername = dataGridView1.SelectedRows[0].Cells["fullName"].Value.ToString(); // Store the selected username
+                    selectedUsername = dataGridView1.SelectedRows[0].Cells["fullName"].Value.ToString();
+                    string password = dataGridView1.SelectedRows[0].Cells["password"].Value.ToString();
 
                     // Get the current status of the selected user
                     string userStatus = dataGridView1.SelectedRows[0].Cells["stats"].Value.ToString();
@@ -139,26 +139,31 @@ namespace BarosDashboard
                                         "Invalid Action",
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Warning);
-                        return; // Exit the method if status is not eligible for QR generation
+                        return; // Exit if status is not eligible
                     }
 
-                    // Generate QR code based on user's data
-                    string qrData = selectedUserID; // Use UserID for uniqueness
+                    // 1. Hash the password
+                    string hashedPassword = HashPassword(password);
+
+                    // 2. Combine hashed password with the userID (as QR code data)
+                    string combinedData = hashedPassword + selectedUserID;
+
+                    // 3. Generate QR code based on combined data
                     QRCodeGenerator qrGenerator = new QRCodeGenerator();
-                    QRCodeData qrCodeData = qrGenerator.CreateQrCode(qrData, QRCodeGenerator.ECCLevel.Q);
+                    QRCodeData qrCodeData = qrGenerator.CreateQrCode(combinedData, QRCodeGenerator.ECCLevel.Q);
                     QRCode qrCode = new QRCode(qrCodeData);
                     Bitmap qrCodeImage = qrCode.GetGraphic(20);
 
-                    // Resize the QR code image to fit the PictureBox
-                    Bitmap resizedImage = new Bitmap(qrCodeImage, new Size(856, 770)); // Set the size as per your requirements
+                    // Resize QR code image to fit the PictureBox
+                    Bitmap resizedImage = new Bitmap(qrCodeImage, new Size(856, 770));
 
                     // Display QR code in PictureBox
                     pictureBoxQRCode.Image = resizedImage;
 
-                    // Save QR code data to the database
-                    SaveQRCodeToDatabase(selectedUserID, qrData);
+                    // 4. Save the combined data (hashedPassword + QR code data) to the database
+                    SaveQRCodeToDatabase(selectedUserID, combinedData);
 
-                    btnSaveQR.Show(); // Show the Save button
+                    btnSaveQR.Show(); // Show Save button
                 }
                 else
                 {
@@ -171,7 +176,7 @@ namespace BarosDashboard
             }
             finally
             {
-                isGeneratingQR = false; // Reset flag when done
+                isGeneratingQR = false; // Reset flag
             }
         }
 
@@ -191,6 +196,23 @@ namespace BarosDashboard
             }
             // Reload the user data to reflect the updated status
             LoadUsers();
+        }
+
+        private string HashPassword(string password)
+        {
+            // Create SHA256 hash
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+
+                // Convert byte array to a string
+                StringBuilder sb = new StringBuilder();
+                foreach (byte b in hashBytes)
+                {
+                    sb.Append(b.ToString("x2"));
+                }
+                return sb.ToString();
+            }
         }
 
         private void pictureBoxQRCode_Click(object sender, EventArgs e)

@@ -142,6 +142,7 @@ namespace BarosDashboard
             txt_password.Size = new Size(456, 61);
             txt_password.TabIndex = 20;
             txt_password.TextAlign = HorizontalAlignment.Center;
+            txt_password.TextChanged += txt_password_TextChanged;
             // 
             // passWord
             // 

@@ -48,7 +48,7 @@ namespace BarosDashboard
                 using (MySqlConnection connection = new MySqlConnection("server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;"))
                 {
                     connection.Open();
-                    string query = "SELECT * FROM users WHERE QRCode = @qrData";
+                    string query = "SELECT * FROM users WHERE hashedPassword = @qrData";
                     MySqlCommand cmd = new MySqlCommand(query, connection);
                     cmd.Parameters.AddWithValue("@qrData", qrData);
 
