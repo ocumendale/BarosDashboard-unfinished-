@@ -57,7 +57,7 @@ namespace BarosDashboard
                         {
                             if (reader.Read())
                             {
-                                Admin admin = new Admin();
+                                DocumentRequest admin = new DocumentRequest();
                                 admin.Show();
                                 this.Hide();
                             }

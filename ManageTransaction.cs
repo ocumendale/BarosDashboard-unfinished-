@@ -17,7 +17,7 @@ namespace BarosDashboard
         string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
         int userId = LoggedInUser.UserId;
         string Chair_ = reserve.chair_;
-        
+
 
         public ManageTransaction()
         {
@@ -27,10 +27,36 @@ namespace BarosDashboard
         private void button1_Click(object sender, EventArgs e)
         {
 
-            MySqlDataAdapter da = new MySqlDataAdapter($"SELECT * FROM basketball_court WHERE user_id = {userId} AND reservation_type = 'BASKETBALL COURT';", connectionString);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            dataGridView1.DataSource = ds.Tables[0];
+            try
+            {
+                // SQL Query to select specific columns for basketball court reservations
+                string query = @"
+            SELECT reservation_id, reservation_type, user_id, Fname, contact_num, reason, reservation_date, 
+                   reservation_start_time, reservation_end_time, reservation_status
+            FROM reservations_ 
+            WHERE user_id = @userId AND reservation_type = 'BASKETBALL COURT';";
+
+                // Create a new MySqlDataAdapter
+                MySqlDataAdapter da = new MySqlDataAdapter(query, connectionString);
+
+                // Use a parameter to safely pass the userId
+                da.SelectCommand.Parameters.AddWithValue("@userId", userId);
+
+                // Fill the dataset
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+
+                // Bind the data to the DataGridView
+                dataGridView1.DataSource = ds.Tables[0];
+
+                // Optional: Adjust column widths or other settings if needed
+                dataGridView1.Columns["Fname"].Width = 150;
+            }
+            catch (Exception ex)
+            {
+                // Show error message if there's an issue
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
         private void ManageTransaction_Load(object sender, EventArgs e)
@@ -96,69 +122,218 @@ namespace BarosDashboard
         private void table_Click(object sender, EventArgs e)
         {
 
+            try
+            {
+                string query = @"
+            SELECT reservation_id, reservation_type, user_id, Fname, contact_num, reason, reservation_date, reservation_status
+            FROM reservations_ 
+            WHERE user_id = @userId AND reservation_type = 'TABLE';";
 
-            MySqlDataAdapter da = new MySqlDataAdapter($"SELECT * FROM basketball_court WHERE user_id = {userId} AND reservation_type = 'TABLE';", connectionString);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            dataGridView1.DataSource = ds.Tables[0];
+                // Create a new MySqlDataAdapter
+                MySqlDataAdapter da = new MySqlDataAdapter(query, connectionString);
+
+                // Use a parameter to safely pass the userId
+                da.SelectCommand.Parameters.AddWithValue("@userId", userId);
+
+                // Fill the dataset
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+
+                // Bind the data to the DataGridView
+                dataGridView1.DataSource = ds.Tables[0];
+
+                // Optional: Adjust column widths or other settings if needed
+                dataGridView1.Columns["Fname"].Width = 150;
+            }
+            catch (Exception ex)
+            {
+                // Show error message if there's an issue
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
         private void Chair_Click(object sender, EventArgs e)
         {
-            MySqlDataAdapter da = new MySqlDataAdapter($"SELECT * FROM basketball_court WHERE user_id = {userId} AND reservation_type = 'CHAIR';", connectionString);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            dataGridView1.DataSource = ds.Tables[0];
+            try
+            {
+                // SQL Query to select specific columns for basketball court reservations
+                string query = @"
+            SELECT reservation_id, reservation_type, user_id, Fname, contact_num, reason, reservation_date, reservation_status
+            FROM reservations_ 
+            WHERE user_id = @userId AND reservation_type = 'CHAIR';";
+
+                // Create a new MySqlDataAdapter
+                MySqlDataAdapter da = new MySqlDataAdapter(query, connectionString);
+
+                // Use a parameter to safely pass the userId
+                da.SelectCommand.Parameters.AddWithValue("@userId", userId);
+
+                // Fill the dataset
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+
+                // Bind the data to the DataGridView
+                dataGridView1.DataSource = ds.Tables[0];
+
+                // Optional: Adjust column widths or other settings if needed
+                dataGridView1.Columns["Fname"].Width = 150;
+            }
+            catch (Exception ex)
+            {
+                // Show error message if there's an issue
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
         private void tent_Click(object sender, EventArgs e)
         {
 
+            try
+            {
+                // SQL Query to select specific columns for basketball court reservations
+                string query = @"
+            SELECT reservation_id, reservation_type, user_id, Fname, contact_num, reason, reservation_date, reservation_status
+            FROM reservations_ 
+            WHERE user_id = @userId AND reservation_type = 'TENT';";
 
-            MySqlDataAdapter da = new MySqlDataAdapter($"SELECT * FROM basketball_court WHERE user_id = {userId} AND reservation_type = 'TENT';", connectionString);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            dataGridView1.DataSource = ds.Tables[0];
+                // Create a new MySqlDataAdapter
+                MySqlDataAdapter da = new MySqlDataAdapter(query, connectionString);
+
+                // Use a parameter to safely pass the userId
+                da.SelectCommand.Parameters.AddWithValue("@userId", userId);
+
+                // Fill the dataset
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+
+                // Bind the data to the DataGridView
+                dataGridView1.DataSource = ds.Tables[0];
+
+                // Optional: Adjust column widths or other settings if needed
+                dataGridView1.Columns["Fname"].Width = 150;
+            }
+            catch (Exception ex)
+            {
+                // Show error message if there's an issue
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            try
+            {
+                // SQL Query to select specific columns
+                string query = @"
+                    SELECT brgyid_id, typeofDocu, Fname, contact_num, home, reason, yrsofrecidency, request_status 
+                    FROM request_ 
+                    WHERE user_id = @userId AND typeOfDocu = 'BARANGAY CERTIFICATE';";
 
+                // Create a new MySqlDataAdapter
+                MySqlDataAdapter da = new MySqlDataAdapter(query, connectionString);
 
-            MySqlDataAdapter da = new MySqlDataAdapter($"SELECT * FROM brgy_cert WHERE user_id = {userId} ", connectionString);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            dataGridView1.DataSource = ds.Tables[0];
+                // Use a parameter to safely pass the userId
+                da.SelectCommand.Parameters.AddWithValue("@userId", userId);
+
+                // Fill the dataset
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+
+                // Bind the data to the DataGridView
+                dataGridView1.DataSource = ds.Tables[0];
+
+                // Optional: Adjust column widths or other settings if needed
+                dataGridView1.Columns["Fname"].Width = 150;
+            }
+            catch (Exception ex)
+            {
+                // Show error message if there's an issue
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
         private void indigency_Click(object sender, EventArgs e)
         {
 
+            try
+            {
+                // SQL Query to select specific columns
+                string query = @"
+                    SELECT brgyid_id, typeofDocu, Fname, contact_num, home, reason, yrsofrecidency, request_status 
+                    FROM request_ 
+                    WHERE user_id = @userId AND typeOfDocu = 'BARANGAY INDIGENCY';";
 
-            MySqlDataAdapter da = new MySqlDataAdapter($"SELECT * FROM brgy_in WHERE user_id =  {userId}", connectionString);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            dataGridView1.DataSource = ds.Tables[0];
+                // Create a new MySqlDataAdapter
+                MySqlDataAdapter da = new MySqlDataAdapter(query, connectionString);
+
+                // Use a parameter to safely pass the userId
+                da.SelectCommand.Parameters.AddWithValue("@userId", userId);
+
+                // Fill the dataset
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+
+                // Bind the data to the DataGridView
+                dataGridView1.DataSource = ds.Tables[0];
+
+                // Optional: Adjust column widths or other settings if needed
+                dataGridView1.Columns["Fname"].Width = 150;
+            }
+            catch (Exception ex)
+            {
+                // Show error message if there's an issue
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
         private void clearance_Click(object sender, EventArgs e)
         {
 
 
-            MySqlDataAdapter da = new MySqlDataAdapter($"SELECT * FROM brgy_clear WHERE user_id = {userId}", connectionString);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            dataGridView1.DataSource = ds.Tables[0];
+            try
+            {
+                // SQL Query to select specific columns
+                string query = @"
+                    SELECT brgyid_id, typeofDocu, Fname, contact_num, home, reason, yrsofrecidency, request_status 
+                    FROM request_ 
+                    WHERE user_id = @userId AND typeOfDocu = 'BARANGAY CLEARANCE';";
+
+                // Create a new MySqlDataAdapter
+                MySqlDataAdapter da = new MySqlDataAdapter(query, connectionString);
+
+                // Use a parameter to safely pass the userId
+                da.SelectCommand.Parameters.AddWithValue("@userId", userId);
+
+                // Fill the dataset
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+
+                // Bind the data to the DataGridView
+                dataGridView1.DataSource = ds.Tables[0];
+
+                // Optional: Adjust column widths or other settings if needed
+                dataGridView1.Columns["Fname"].Width = 150;
+            }
+            catch (Exception ex)
+            {
+                // Show error message if there's an issue
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
         private void ID_Click(object sender, EventArgs e)
         {
 
 
-            MySqlDataAdapter da = new MySqlDataAdapter($"SELECT * FROM brgy_id WHERE user_id = {userId}", connectionString);
+            MySqlDataAdapter da = new MySqlDataAdapter($"SELECT * FROM request_ WHERE user_id = {userId} AND typeOfDocu = 'BARANGAY ID';", connectionString);
             DataSet ds = new DataSet();
             da.Fill(ds);
             dataGridView1.DataSource = ds.Tables[0];
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

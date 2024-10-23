@@ -19,9 +19,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
 
 namespace BarosDashboard
 {
-    public partial class FormId : Form
+    public partial class FormDocu : Form
     {
-        public FormId()
+        public FormDocu()
         {
             InitializeComponent();
         }
@@ -245,8 +245,8 @@ namespace BarosDashboard
 
         private void backId_Click(object sender, EventArgs e)
         {
-            DocuReq docureq = new DocuReq();
-            docureq.Show();
+            Services serv = new Services();
+            serv.Show();
             this.Hide();
         }
 
@@ -333,7 +333,7 @@ namespace BarosDashboard
                 Married.Hide();
                 radioButtonWidowed.Hide();
             }
-            else 
+            else
             {
                 labelHeight.Show();
                 txt_Height.Show();
@@ -381,6 +381,11 @@ namespace BarosDashboard
         }
 
         private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
         {
 
         }

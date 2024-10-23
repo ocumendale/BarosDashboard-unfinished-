@@ -48,7 +48,7 @@ namespace BarosDashboard
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Admin admin = new Admin();
+            DocumentRequest admin = new DocumentRequest();
             admin.Show();
             this.Hide();
         }

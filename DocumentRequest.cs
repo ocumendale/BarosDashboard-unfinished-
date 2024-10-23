@@ -55,9 +55,14 @@ namespace BarosDashboard
 
         private void Events_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            login log = new login();
-            log.Show();
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                login loginForm = new login();
+                loginForm.Show();
+                this.Close();
+            }
         }
 
         private void DocumentRequest_Load(object sender, EventArgs e)
@@ -73,18 +78,130 @@ namespace BarosDashboard
 
         private void button3_Click(object sender, EventArgs e)
         {
-            LoadReservations("BARANGAY CERTIFICATE");
+            try
+            {
+                // Open your database connection
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                // SQL Query
+                string query = @"
+                SELECT typeofDocu, brgyid_id, Fname, contact_num, home, reason, yrsofrecidency, request_status
+                FROM request_ 
+                WHERE typeOfDocu = 'BARANGAY CERTIFICATE';";
+
+                // Execute Query
+                MySqlDataAdapter da = new MySqlDataAdapter(query, con);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+
+                // Bind to DataGridView
+                dataGridView2.DataSource = ds.Tables[0];
+
+                // Optional: Adjust column widths or other settings
+                dataGridView2.Columns["Fname"].Width = 150;
+            }
+            catch (Exception ex)
+            {
+                // Show error message if there's an issue
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                // Close the connection
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            LoadReservations("BARANGAY INDIGENCY");
+            try
+            {
+                // Open your database connection
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                // SQL Query
+                string query = @"
+            SELECT typeofDocu, brgyid_id, Fname, contact_num, home, reason, yrsofrecidency, request_status
+            FROM request_ 
+            WHERE typeOfDocu = 'BARANGAY INDIGENCY';";
+
+                // Execute Query
+                MySqlDataAdapter da = new MySqlDataAdapter(query, con);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+
+                // Bind to DataGridView
+                dataGridView2.DataSource = ds.Tables[0];
+
+                // Optional: Adjust column widths or other settings
+                dataGridView2.Columns["Fname"].Width = 150;
+            }
+            catch (Exception ex)
+            {
+                // Show error message if there's an issue
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                // Close the connection
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            LoadReservations("BARANGAY CLEARANCE");
+            try
+            {
+                // Open your database connection
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                // SQL Query
+                string query = @"
+            SELECT typeofDocu, brgyid_id, Fname, contact_num, home, reason, yrsofrecidency, request_status
+            FROM request_ 
+            WHERE typeOfDocu = 'BARANGAY CLEARANCE';";
+
+                // Execute Query
+                MySqlDataAdapter da = new MySqlDataAdapter(query, con);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+
+                // Bind to DataGridView
+                dataGridView2.DataSource = ds.Tables[0];
+
+                // Optional: Adjust column widths or other settings
+                dataGridView2.Columns["Fname"].Width = 150;
+            }
+            catch (Exception ex)
+            {
+                // Show error message if there's an issue
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                // Close the connection
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
 
         }
 
@@ -177,26 +294,13 @@ namespace BarosDashboard
 
         private void button6_Click(object sender, EventArgs e)
         {
-            int userId = Convert.ToInt32(dataGridView2.SelectedRows[0].Cells["user_id"].Value);
-            string typeOfDocu = dataGridView2.SelectedRows[0].Cells["typeOfDocu"].Value.ToString();
-            string RStats = dataGridView2.SelectedRows[0].Cells["request_status"].Value.ToString();
+            
 
-            if (dataGridView2.SelectedRows.Count > 0 && typeOfDocu == "BARANGAY CLEARANCE" && RStats == "Accepted")
-            {
-               GenerateClearPDF(userId, typeOfDocu);
-            }
-            else if (dataGridView2.SelectedRows.Count > 0 && typeOfDocu == "BARANGAY INDIGENCY" && RStats == "Accepted")
-            {
-                GenerateIndiPDF(userId, typeOfDocu);
-            }
-            else if (dataGridView2.SelectedRows.Count > 0 && typeOfDocu == "BARANGAY CERTIFICATE" && RStats == "Accepted")
-            {
-                GenerateCertPDF(userId, typeOfDocu);
-            }
-            else
-            {
-                MessageBox.Show("The Request is not yet Accepted!");
-            }
+
+            string typeOfDocu = dataGridView2.SelectedRows[0].Cells["brgyid_id"].Value.ToString();
+            string RStats = dataGridView2.SelectedRows[0].Cells["Fname"].Value.ToString();
+
+            
         }
 
         private void GenerateCertPDF(int userId, string typeOfDocu)

@@ -34,7 +34,6 @@
             signout = new Button();
             ResAssist = new Button();
             DocuReq = new Button();
-            MyProfile = new Button();
             panel2 = new Panel();
             label1 = new Label();
             pictureBox1 = new PictureBox();
@@ -68,7 +67,6 @@
             panel1.Controls.Add(signout);
             panel1.Controls.Add(ResAssist);
             panel1.Controls.Add(DocuReq);
-            panel1.Controls.Add(MyProfile);
             panel1.Controls.Add(panel2);
             panel1.Location = new Point(1, 1);
             panel1.Name = "panel1";
@@ -80,9 +78,9 @@
             reg_btn.FlatAppearance.BorderSize = 0;
             reg_btn.FlatStyle = FlatStyle.Flat;
             reg_btn.Font = new Font("Yu Gothic UI", 20.25F);
-            reg_btn.Location = new Point(50, 805);
+            reg_btn.Location = new Point(59, 753);
             reg_btn.Name = "reg_btn";
-            reg_btn.Size = new Size(359, 56);
+            reg_btn.Size = new Size(342, 100);
             reg_btn.TabIndex = 8;
             reg_btn.Text = "REGISTRATION";
             reg_btn.TextAlign = ContentAlignment.MiddleLeft;
@@ -94,11 +92,12 @@
             signout.FlatAppearance.BorderSize = 0;
             signout.FlatStyle = FlatStyle.Flat;
             signout.Font = new Font("Yu Gothic UI", 20.25F);
-            signout.Location = new Point(44, 892);
+            signout.Location = new Point(59, 859);
             signout.Name = "signout";
-            signout.Size = new Size(149, 41);
+            signout.Size = new Size(342, 100);
             signout.TabIndex = 7;
             signout.Text = "SIGN OUT";
+            signout.TextAlign = ContentAlignment.MiddleLeft;
             signout.UseVisualStyleBackColor = true;
             signout.Click += Events_Click;
             // 
@@ -107,9 +106,9 @@
             ResAssist.FlatAppearance.BorderSize = 0;
             ResAssist.FlatStyle = FlatStyle.Flat;
             ResAssist.Font = new Font("Yu Gothic UI", 20.25F);
-            ResAssist.Location = new Point(49, 733);
+            ResAssist.Location = new Point(59, 647);
             ResAssist.Name = "ResAssist";
-            ResAssist.Size = new Size(342, 46);
+            ResAssist.Size = new Size(342, 100);
             ResAssist.TabIndex = 3;
             ResAssist.Text = "RESERVATION";
             ResAssist.TextAlign = ContentAlignment.MiddleLeft;
@@ -122,26 +121,14 @@
             DocuReq.FlatStyle = FlatStyle.Flat;
             DocuReq.Font = new Font("Yu Gothic UI", 20.25F);
             DocuReq.ForeColor = Color.MidnightBlue;
-            DocuReq.Location = new Point(36, 651);
+            DocuReq.Location = new Point(59, 541);
             DocuReq.Name = "DocuReq";
-            DocuReq.Size = new Size(316, 44);
+            DocuReq.Size = new Size(342, 100);
             DocuReq.TabIndex = 2;
             DocuReq.Text = "DOCUMENT REQUEST";
+            DocuReq.TextAlign = ContentAlignment.MiddleLeft;
             DocuReq.UseVisualStyleBackColor = true;
             DocuReq.Click += DocuReq_Click;
-            // 
-            // MyProfile
-            // 
-            MyProfile.FlatAppearance.BorderSize = 0;
-            MyProfile.FlatStyle = FlatStyle.Flat;
-            MyProfile.Font = new Font("Yu Gothic UI", 20.25F);
-            MyProfile.Location = new Point(44, 568);
-            MyProfile.Name = "MyProfile";
-            MyProfile.Size = new Size(177, 42);
-            MyProfile.TabIndex = 1;
-            MyProfile.Text = "MY PROFILE";
-            MyProfile.UseVisualStyleBackColor = true;
-            MyProfile.Click += MyProfile_Click;
             // 
             // panel2
             // 
@@ -157,11 +144,11 @@
             label1.AutoSize = true;
             label1.Font = new Font("Yu Gothic UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ActiveCaptionText;
-            label1.Location = new Point(59, 332);
+            label1.Location = new Point(139, 331);
             label1.Name = "label1";
-            label1.Size = new Size(377, 37);
+            label1.Size = new Size(211, 37);
             label1.TabIndex = 1;
-            label1.Text = "HELLO! SANTOS, NATHANIEL";
+            label1.Text = "HELLO! ADMIN!";
             // 
             // pictureBox1
             // 
@@ -226,36 +213,45 @@
             // button6
             // 
             button6.BackColor = Color.MidnightBlue;
-            button6.ForeColor = SystemColors.ButtonFace;
-            button6.Location = new Point(479, 750);
+            button6.FlatAppearance.BorderSize = 0;
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.Font = new Font("Lucida Fax", 15.75F, FontStyle.Bold);
+            button6.ForeColor = Color.FromArgb(246, 180, 71);
+            button6.Location = new Point(539, 742);
             button6.Name = "button6";
-            button6.Size = new Size(236, 58);
+            button6.Size = new Size(208, 77);
             button6.TabIndex = 7;
-            button6.Text = "Generate PDF";
+            button6.Text = "GENERATED FILE PDF";
             button6.UseVisualStyleBackColor = false;
             button6.Click += button6_Click;
             // 
             // button5
             // 
             button5.BackColor = Color.MidnightBlue;
-            button5.ForeColor = SystemColors.ButtonFace;
-            button5.Location = new Point(837, 750);
+            button5.FlatAppearance.BorderSize = 0;
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Font = new Font("Lucida Fax", 15.75F, FontStyle.Bold);
+            button5.ForeColor = Color.FromArgb(246, 180, 71);
+            button5.Location = new Point(891, 742);
             button5.Name = "button5";
-            button5.Size = new Size(236, 58);
+            button5.Size = new Size(208, 77);
             button5.TabIndex = 6;
-            button5.Text = "Reject";
+            button5.Text = "REJECT";
             button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
             // 
             // button4
             // 
             button4.BackColor = Color.MidnightBlue;
-            button4.ForeColor = SystemColors.ButtonFace;
-            button4.Location = new Point(115, 750);
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Lucida Fax", 15.75F, FontStyle.Bold);
+            button4.ForeColor = Color.FromArgb(246, 180, 71);
+            button4.Location = new Point(169, 742);
             button4.Name = "button4";
-            button4.Size = new Size(236, 58);
+            button4.Size = new Size(208, 77);
             button4.TabIndex = 5;
-            button4.Text = "Accept";
+            button4.Text = "ACCEPT";
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
             // 
@@ -272,10 +268,13 @@
             // button3
             // 
             button3.BackColor = Color.MidnightBlue;
-            button3.ForeColor = SystemColors.ButtonFace;
-            button3.Location = new Point(47, 63);
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Lucida Fax", 14.25F, FontStyle.Bold);
+            button3.ForeColor = Color.FromArgb(246, 180, 71);
+            button3.Location = new Point(47, 43);
             button3.Name = "button3";
-            button3.Size = new Size(236, 58);
+            button3.Size = new Size(236, 78);
             button3.TabIndex = 3;
             button3.Text = "BARANGAY CERTIFICATE";
             button3.UseVisualStyleBackColor = false;
@@ -284,10 +283,13 @@
             // button2
             // 
             button2.BackColor = Color.MidnightBlue;
-            button2.ForeColor = SystemColors.ButtonFace;
-            button2.Location = new Point(354, 63);
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Lucida Fax", 14.25F, FontStyle.Bold);
+            button2.ForeColor = Color.FromArgb(246, 180, 71);
+            button2.Location = new Point(354, 43);
             button2.Name = "button2";
-            button2.Size = new Size(236, 58);
+            button2.Size = new Size(236, 78);
             button2.TabIndex = 2;
             button2.Text = "BARANGAY INDIGENCY";
             button2.UseVisualStyleBackColor = false;
@@ -296,10 +298,13 @@
             // button1
             // 
             button1.BackColor = Color.MidnightBlue;
-            button1.ForeColor = SystemColors.ButtonFace;
-            button1.Location = new Point(651, 63);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Lucida Fax", 14.25F, FontStyle.Bold);
+            button1.ForeColor = Color.FromArgb(246, 180, 71);
+            button1.Location = new Point(651, 43);
             button1.Name = "button1";
-            button1.Size = new Size(236, 58);
+            button1.Size = new Size(236, 78);
             button1.TabIndex = 1;
             button1.Text = "BARANGAY CLEARANCE";
             button1.UseVisualStyleBackColor = false;
@@ -308,10 +313,13 @@
             // brgy_id
             // 
             brgy_id.BackColor = Color.MidnightBlue;
-            brgy_id.ForeColor = SystemColors.ButtonFace;
-            brgy_id.Location = new Point(954, 63);
+            brgy_id.FlatAppearance.BorderSize = 0;
+            brgy_id.FlatStyle = FlatStyle.Flat;
+            brgy_id.Font = new Font("Lucida Fax", 14.25F, FontStyle.Bold);
+            brgy_id.ForeColor = Color.FromArgb(246, 180, 71);
+            brgy_id.Location = new Point(954, 43);
             brgy_id.Name = "brgy_id";
-            brgy_id.Size = new Size(236, 58);
+            brgy_id.Size = new Size(236, 78);
             brgy_id.TabIndex = 0;
             brgy_id.Text = "BARANGAY ID";
             brgy_id.UseVisualStyleBackColor = false;
@@ -374,7 +382,6 @@
         private Button signout;
         private Button ResAssist;
         private Button DocuReq;
-        private Button MyProfile;
         private Panel panel2;
         private Label label1;
         private PictureBox pictureBox1;

@@ -121,6 +121,7 @@ namespace BarosDashboard
             // 
             contactNum.AutoSize = true;
             contactNum.Font = new Font("Lucida Fax", 24F);
+            contactNum.ForeColor = Color.Black;
             contactNum.Location = new Point(459, 354);
             contactNum.Name = "contactNum";
             contactNum.Size = new Size(324, 37);
@@ -146,6 +147,7 @@ namespace BarosDashboard
             // 
             passWord.AutoSize = true;
             passWord.Font = new Font("Lucida Fax", 24F);
+            passWord.ForeColor = Color.Black;
             passWord.Location = new Point(519, 505);
             passWord.Name = "passWord";
             passWord.Size = new Size(197, 37);
@@ -157,6 +159,7 @@ namespace BarosDashboard
             loginlbl.Anchor = AnchorStyles.Top;
             loginlbl.AutoSize = true;
             loginlbl.Font = new Font("Lucida Fax", 72F, FontStyle.Bold);
+            loginlbl.ForeColor = Color.Black;
             loginlbl.Location = new Point(742, 94);
             loginlbl.Name = "loginlbl";
             loginlbl.Size = new Size(430, 109);
@@ -182,6 +185,7 @@ namespace BarosDashboard
             // 
             checkBox1.AutoSize = true;
             checkBox1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            checkBox1.ForeColor = Color.Black;
             checkBox1.Location = new Point(656, 644);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(184, 29);

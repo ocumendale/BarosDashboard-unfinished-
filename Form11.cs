@@ -51,7 +51,7 @@ namespace BarosDashboard
 
         private void button4_Click(object sender, EventArgs e)
         {
-            FormId formId = new FormId();
+            FormDocu formId = new FormDocu();
             formId.Show();
             Visible = false;
         }

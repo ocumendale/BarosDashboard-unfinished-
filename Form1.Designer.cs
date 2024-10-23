@@ -73,11 +73,11 @@
             button7.FlatAppearance.BorderSize = 0;
             button7.FlatStyle = FlatStyle.Flat;
             button7.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
-            button7.Location = new Point(34, 776);
+            button7.Location = new Point(33, 764);
             button7.Name = "button7";
-            button7.Size = new Size(401, 83);
+            button7.Size = new Size(395, 97);
             button7.TabIndex = 8;
-            button7.Text = "Manage Transaction";
+            button7.Text = "MANAGE TRANSACTION";
             button7.TextAlign = ContentAlignment.MiddleLeft;
             button7.UseVisualStyleBackColor = false;
             button7.Click += button7_Click;
@@ -89,9 +89,9 @@
             button6.FlatAppearance.BorderSize = 0;
             button6.FlatStyle = FlatStyle.Flat;
             button6.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
-            button6.Location = new Point(34, 882);
+            button6.Location = new Point(33, 867);
             button6.Name = "button6";
-            button6.Size = new Size(442, 83);
+            button6.Size = new Size(395, 97);
             button6.TabIndex = 7;
             button6.Text = "LOGOUT";
             button6.TextAlign = ContentAlignment.MiddleLeft;
@@ -106,9 +106,9 @@
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
             button5.ForeColor = Color.Black;
-            button5.Location = new Point(34, 663);
+            button5.Location = new Point(33, 661);
             button5.Name = "button5";
-            button5.Size = new Size(357, 97);
+            button5.Size = new Size(395, 97);
             button5.TabIndex = 4;
             button5.Text = "SERVICES";
             button5.TextAlign = ContentAlignment.MiddleLeft;
@@ -123,9 +123,9 @@
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
             button4.ForeColor = Color.Black;
-            button4.Location = new Point(34, 558);
+            button4.Location = new Point(33, 558);
             button4.Name = "button4";
-            button4.Size = new Size(316, 97);
+            button4.Size = new Size(395, 97);
             button4.TabIndex = 3;
             button4.Text = "HOW IT WORKS?";
             button4.TextAlign = ContentAlignment.MiddleLeft;
@@ -142,7 +142,7 @@
             button3.ForeColor = Color.Black;
             button3.Location = new Point(34, 455);
             button3.Name = "button3";
-            button3.Size = new Size(390, 97);
+            button3.Size = new Size(395, 97);
             button3.TabIndex = 2;
             button3.Text = "CONTACT";
             button3.TextAlign = ContentAlignment.MiddleLeft;
@@ -157,9 +157,9 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
             button2.ForeColor = Color.Black;
-            button2.Location = new Point(34, 344);
+            button2.Location = new Point(33, 352);
             button2.Name = "button2";
-            button2.Size = new Size(359, 97);
+            button2.Size = new Size(395, 97);
             button2.TabIndex = 1;
             button2.Text = "ABOUT US";
             button2.TextAlign = ContentAlignment.MiddleLeft;
@@ -174,9 +174,9 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
             button1.ForeColor = Color.MidnightBlue;
-            button1.Location = new Point(34, 228);
+            button1.Location = new Point(33, 249);
             button1.Name = "button1";
-            button1.Size = new Size(316, 97);
+            button1.Size = new Size(395, 97);
             button1.TabIndex = 0;
             button1.Text = "HOME";
             button1.TextAlign = ContentAlignment.MiddleLeft;
@@ -190,7 +190,7 @@
             Greet.BackColor = Color.Transparent;
             Greet.Font = new Font("Lucida Fax", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Greet.ForeColor = Color.Black;
-            Greet.Location = new Point(809, 422);
+            Greet.Location = new Point(816, 422);
             Greet.Name = "Greet";
             Greet.Size = new Size(685, 111);
             Greet.TabIndex = 4;
@@ -205,7 +205,7 @@
             label2.FlatStyle = FlatStyle.Flat;
             label2.Font = new Font("Lucida Fax", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.MidnightBlue;
-            label2.Location = new Point(809, 331);
+            label2.Location = new Point(816, 331);
             label2.Name = "label2";
             label2.Size = new Size(697, 74);
             label2.TabIndex = 3;
@@ -237,7 +237,7 @@
             // 
             signUpLogo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             signUpLogo.Image = (Image)resources.GetObject("signUpLogo.Image");
-            signUpLogo.Location = new Point(922, 573);
+            signUpLogo.Location = new Point(944, 573);
             signUpLogo.Margin = new Padding(0);
             signUpLogo.Name = "signUpLogo";
             signUpLogo.Size = new Size(475, 408);
@@ -248,7 +248,7 @@
             // panel2
             // 
             panel2.BackColor = Color.MidnightBlue;
-            panel2.Location = new Point(717, 406);
+            panel2.Location = new Point(724, 406);
             panel2.Name = "panel2";
             panel2.Size = new Size(878, 10);
             panel2.TabIndex = 132;
@@ -256,7 +256,7 @@
             // panel4
             // 
             panel4.BackColor = Color.MidnightBlue;
-            panel4.Location = new Point(442, 96);
+            panel4.Location = new Point(442, 98);
             panel4.Name = "panel4";
             panel4.Size = new Size(1519, 10);
             panel4.TabIndex = 133;
@@ -264,7 +264,7 @@
             // panel5
             // 
             panel5.BackColor = Color.MidnightBlue;
-            panel5.Location = new Point(435, 1);
+            panel5.Location = new Point(438, 1);
             panel5.Name = "panel5";
             panel5.Size = new Size(10, 1198);
             panel5.TabIndex = 134;

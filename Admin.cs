@@ -59,9 +59,14 @@ namespace BarosDashboard
 
         private void signout_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            login log = new login();
-            log.Show();
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                login loginForm = new login();
+                loginForm.Show();
+                this.Close();
+            }
         }
 
         private void reg_btn_Click(object sender, EventArgs e)

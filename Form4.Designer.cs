@@ -108,9 +108,9 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.BackColor = Color.MidnightBlue;
+            label10.BackColor = Color.Transparent;
             label10.Font = new Font("Lucida Fax", 24F);
-            label10.ForeColor = Color.FromArgb(246, 180, 71);
+            label10.ForeColor = Color.MidnightBlue;
             label10.Location = new Point(1446, 345);
             label10.Name = "label10";
             label10.Size = new Size(431, 74);
@@ -121,9 +121,9 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.BackColor = Color.MidnightBlue;
+            label9.BackColor = Color.Transparent;
             label9.Font = new Font("Lucida Fax", 24F);
-            label9.ForeColor = Color.FromArgb(246, 180, 71);
+            label9.ForeColor = Color.MidnightBlue;
             label9.Location = new Point(1013, 345);
             label9.Name = "label9";
             label9.Size = new Size(411, 74);
@@ -135,9 +135,9 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.BackColor = Color.MidnightBlue;
+            label8.BackColor = Color.Transparent;
             label8.Font = new Font("Lucida Fax", 24F);
-            label8.ForeColor = Color.FromArgb(246, 180, 71);
+            label8.ForeColor = Color.MidnightBlue;
             label8.Location = new Point(569, 345);
             label8.Name = "label8";
             label8.Size = new Size(413, 111);
@@ -148,12 +148,12 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.BackColor = Color.MidnightBlue;
-            label7.Font = new Font("MS UI Gothic", 72F, FontStyle.Bold);
-            label7.ForeColor = Color.FromArgb(246, 180, 71);
+            label7.BackColor = Color.Transparent;
+            label7.Font = new Font("Lucida Fax", 72F, FontStyle.Bold);
+            label7.ForeColor = Color.MidnightBlue;
             label7.Location = new Point(1604, 160);
             label7.Name = "label7";
-            label7.Size = new Size(91, 97);
+            label7.Size = new Size(111, 109);
             label7.TabIndex = 5;
             label7.Text = "3";
             label7.Click += label7_Click;
@@ -161,36 +161,36 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.BackColor = Color.MidnightBlue;
-            label6.Font = new Font("MS UI Gothic", 72F, FontStyle.Bold);
-            label6.ForeColor = Color.FromArgb(246, 180, 71);
+            label6.BackColor = Color.Transparent;
+            label6.Font = new Font("Lucida Fax", 72F, FontStyle.Bold);
+            label6.ForeColor = Color.MidnightBlue;
             label6.Location = new Point(1157, 160);
             label6.Name = "label6";
-            label6.Size = new Size(91, 97);
+            label6.Size = new Size(111, 109);
             label6.TabIndex = 4;
             label6.Text = "2";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.BackColor = Color.MidnightBlue;
-            label5.Font = new Font("MS UI Gothic", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.FromArgb(246, 180, 71);
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Lucida Fax", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.MidnightBlue;
             label5.Location = new Point(728, 160);
             label5.Name = "label5";
-            label5.Size = new Size(91, 97);
+            label5.Size = new Size(111, 109);
             label5.TabIndex = 3;
             label5.Text = "1";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.BackColor = Color.MidnightBlue;
-            label4.Font = new Font("Lucida Fax", 24F);
-            label4.ForeColor = Color.FromArgb(246, 180, 71);
-            label4.Location = new Point(1584, 278);
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Lucida Fax", 48F, FontStyle.Bold);
+            label4.ForeColor = Color.MidnightBlue;
+            label4.Location = new Point(1508, 259);
             label4.Name = "label4";
-            label4.Size = new Size(139, 37);
+            label4.Size = new Size(289, 74);
             label4.TabIndex = 2;
             label4.Text = "SUBMIT";
             label4.Click += label4_Click;
@@ -198,24 +198,24 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.BackColor = Color.MidnightBlue;
-            label3.Font = new Font("Lucida Fax", 24F);
-            label3.ForeColor = Color.FromArgb(246, 180, 71);
-            label3.Location = new Point(1138, 278);
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Lucida Fax", 48F, FontStyle.Bold);
+            label3.ForeColor = Color.MidnightBlue;
+            label3.Location = new Point(1079, 259);
             label3.Name = "label3";
-            label3.Size = new Size(134, 37);
+            label3.Size = new Size(282, 74);
             label3.TabIndex = 1;
             label3.Text = "FILL UP";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = Color.MidnightBlue;
-            label2.Font = new Font("Lucida Fax", 24F);
-            label2.ForeColor = Color.FromArgb(246, 180, 71);
-            label2.Location = new Point(701, 278);
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Lucida Fax", 48F, FontStyle.Bold);
+            label2.ForeColor = Color.MidnightBlue;
+            label2.Location = new Point(621, 259);
             label2.Name = "label2";
-            label2.Size = new Size(151, 37);
+            label2.Size = new Size(313, 74);
             label2.TabIndex = 0;
             label2.Text = "CHOOSE";
             // 
@@ -248,9 +248,10 @@
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
-            button4.Location = new Point(33, 557);
+            button4.ForeColor = Color.MidnightBlue;
+            button4.Location = new Point(32, 557);
             button4.Name = "button4";
-            button4.Size = new Size(451, 97);
+            button4.Size = new Size(396, 97);
             button4.TabIndex = 3;
             button4.Text = "HOW IT WORKS?";
             button4.TextAlign = ContentAlignment.MiddleLeft;
@@ -263,11 +264,11 @@
             button8.FlatAppearance.BorderSize = 0;
             button8.FlatStyle = FlatStyle.Flat;
             button8.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
-            button8.Location = new Point(33, 765);
+            button8.Location = new Point(32, 770);
             button8.Name = "button8";
-            button8.Size = new Size(442, 83);
+            button8.Size = new Size(396, 83);
             button8.TabIndex = 10;
-            button8.Text = "Manage Transaction";
+            button8.Text = "MANAGE TRANSACTION";
             button8.TextAlign = ContentAlignment.MiddleLeft;
             button8.UseVisualStyleBackColor = false;
             button8.Click += button8_Click;
@@ -279,9 +280,9 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
             button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(33, 227);
+            button1.Location = new Point(32, 248);
             button1.Name = "button1";
-            button1.Size = new Size(316, 97);
+            button1.Size = new Size(395, 97);
             button1.TabIndex = 0;
             button1.Text = "HOME";
             button1.TextAlign = ContentAlignment.MiddleLeft;
@@ -293,9 +294,9 @@
             button7.FlatAppearance.BorderSize = 0;
             button7.FlatStyle = FlatStyle.Flat;
             button7.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
-            button7.Location = new Point(37, 854);
+            button7.Location = new Point(32, 875);
             button7.Name = "button7";
-            button7.Size = new Size(438, 97);
+            button7.Size = new Size(391, 80);
             button7.TabIndex = 8;
             button7.Text = "LOGOUT";
             button7.TextAlign = ContentAlignment.MiddleLeft;
@@ -307,9 +308,9 @@
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
-            button2.Location = new Point(33, 343);
+            button2.Location = new Point(32, 351);
             button2.Name = "button2";
-            button2.Size = new Size(435, 97);
+            button2.Size = new Size(396, 97);
             button2.TabIndex = 1;
             button2.Text = "ABOUT US";
             button2.TextAlign = ContentAlignment.MiddleLeft;
@@ -321,9 +322,9 @@
             button5.FlatAppearance.BorderSize = 0;
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
-            button5.Location = new Point(33, 662);
+            button5.Location = new Point(32, 660);
             button5.Name = "button5";
-            button5.Size = new Size(438, 97);
+            button5.Size = new Size(396, 97);
             button5.TabIndex = 4;
             button5.Text = "SERVICES";
             button5.TextAlign = ContentAlignment.MiddleLeft;

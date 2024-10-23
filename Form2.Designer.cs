@@ -34,7 +34,6 @@
             button3 = new Button();
             button4 = new Button();
             button5 = new Button();
-            HBF2 = new PictureBox();
             panel1 = new Panel();
             button7 = new Button();
             button6 = new Button();
@@ -45,7 +44,6 @@
             panel2 = new Panel();
             panel5 = new Panel();
             panel4 = new Panel();
-            ((System.ComponentModel.ISupportInitialize)HBF2).BeginInit();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)signUpLogo).BeginInit();
@@ -59,9 +57,9 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
             button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(34, 226);
+            button1.Location = new Point(32, 248);
             button1.Name = "button1";
-            button1.Size = new Size(363, 97);
+            button1.Size = new Size(395, 97);
             button1.TabIndex = 0;
             button1.Text = "HOME";
             button1.TextAlign = ContentAlignment.MiddleLeft;
@@ -75,9 +73,9 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
             button2.ForeColor = Color.MidnightBlue;
-            button2.Location = new Point(34, 342);
+            button2.Location = new Point(32, 351);
             button2.Name = "button2";
-            button2.Size = new Size(361, 97);
+            button2.Size = new Size(395, 97);
             button2.TabIndex = 1;
             button2.Text = "ABOUT US";
             button2.TextAlign = ContentAlignment.MiddleLeft;
@@ -89,9 +87,9 @@
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
-            button3.Location = new Point(34, 453);
+            button3.Location = new Point(33, 454);
             button3.Name = "button3";
-            button3.Size = new Size(438, 97);
+            button3.Size = new Size(395, 97);
             button3.TabIndex = 2;
             button3.Text = "CONTACT";
             button3.TextAlign = ContentAlignment.MiddleLeft;
@@ -104,9 +102,9 @@
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
-            button4.Location = new Point(34, 556);
+            button4.Location = new Point(32, 557);
             button4.Name = "button4";
-            button4.Size = new Size(451, 97);
+            button4.Size = new Size(395, 97);
             button4.TabIndex = 3;
             button4.Text = "HOW IT WORKS?";
             button4.TextAlign = ContentAlignment.MiddleLeft;
@@ -119,25 +117,14 @@
             button5.FlatAppearance.BorderSize = 0;
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
-            button5.Location = new Point(34, 661);
+            button5.Location = new Point(32, 660);
             button5.Name = "button5";
-            button5.Size = new Size(438, 97);
+            button5.Size = new Size(395, 97);
             button5.TabIndex = 4;
             button5.Text = "SERVICES";
             button5.TextAlign = ContentAlignment.MiddleLeft;
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
-            // 
-            // HBF2
-            // 
-            HBF2.BackColor = Color.Transparent;
-            HBF2.Image = (Image)resources.GetObject("HBF2.Image");
-            HBF2.Location = new Point(11, 10);
-            HBF2.Name = "HBF2";
-            HBF2.Size = new Size(46, 25);
-            HBF2.SizeMode = PictureBoxSizeMode.Zoom;
-            HBF2.TabIndex = 7;
-            HBF2.TabStop = false;
             // 
             // panel1
             // 
@@ -145,7 +132,6 @@
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(button7);
             panel1.Controls.Add(button6);
-            panel1.Controls.Add(HBF2);
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button4);
             panel1.Controls.Add(button3);
@@ -163,11 +149,11 @@
             button7.FlatAppearance.BorderSize = 0;
             button7.FlatStyle = FlatStyle.Flat;
             button7.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
-            button7.Location = new Point(34, 774);
+            button7.Location = new Point(32, 763);
             button7.Name = "button7";
-            button7.Size = new Size(442, 83);
+            button7.Size = new Size(395, 97);
             button7.TabIndex = 9;
-            button7.Text = "Manage Transaction";
+            button7.Text = "MANAGE TRANSACTION";
             button7.TextAlign = ContentAlignment.MiddleLeft;
             button7.UseVisualStyleBackColor = false;
             button7.Click += button7_Click;
@@ -178,9 +164,9 @@
             button6.FlatAppearance.BorderSize = 0;
             button6.FlatStyle = FlatStyle.Flat;
             button6.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
-            button6.Location = new Point(34, 881);
+            button6.Location = new Point(32, 866);
             button6.Name = "button6";
-            button6.Size = new Size(442, 83);
+            button6.Size = new Size(395, 97);
             button6.TabIndex = 8;
             button6.Text = "LOGOUT";
             button6.TextAlign = ContentAlignment.MiddleLeft;
@@ -205,7 +191,7 @@
             panel3.ForeColor = Color.Black;
             panel3.Location = new Point(442, 1);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1440, 102);
+            panel3.Size = new Size(1479, 102);
             panel3.TabIndex = 5;
             // 
             // label1
@@ -247,7 +233,7 @@
             panel5.BackColor = Color.MidnightBlue;
             panel5.Location = new Point(435, 3);
             panel5.Name = "panel5";
-            panel5.Size = new Size(10, 1198);
+            panel5.Size = new Size(13, 1198);
             panel5.TabIndex = 136;
             // 
             // panel4
@@ -255,7 +241,7 @@
             panel4.BackColor = Color.MidnightBlue;
             panel4.Location = new Point(441, 96);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1519, 10);
+            panel4.Size = new Size(1519, 13);
             panel4.TabIndex = 135;
             // 
             // AboutUsForm
@@ -275,7 +261,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "About Us";
             Load += AboutUsForm_Load;
-            ((System.ComponentModel.ISupportInitialize)HBF2).EndInit();
             panel1.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
@@ -290,7 +275,6 @@
         private Button button3;
         private Button button4;
         private Button button5;
-        private PictureBox HBF2;
         private Panel panel1;
         private Label AboutUs;
         private Panel panel3;

@@ -79,7 +79,7 @@
             label9.Anchor = AnchorStyles.Bottom;
             label9.AutoSize = true;
             label9.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
-            label9.Location = new Point(392, 882);
+            label9.Location = new Point(392, 898);
             label9.Name = "label9";
             label9.Size = new Size(99, 33);
             label9.TabIndex = 126;
@@ -93,7 +93,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
             button1.ForeColor = Color.FromArgb(246, 180, 71);
-            button1.Location = new Point(535, 1014);
+            button1.Location = new Point(535, 1030);
             button1.Name = "button1";
             button1.Size = new Size(186, 63);
             button1.TabIndex = 124;
@@ -106,7 +106,7 @@
             label11.Anchor = AnchorStyles.Bottom;
             label11.AutoSize = true;
             label11.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
-            label11.Location = new Point(409, 798);
+            label11.Location = new Point(432, 790);
             label11.Name = "label11";
             label11.Size = new Size(423, 33);
             label11.TabIndex = 121;
@@ -117,11 +117,12 @@
             label10.Anchor = AnchorStyles.Bottom;
             label10.AutoSize = true;
             label10.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
-            label10.Location = new Point(763, 882);
+            label10.Location = new Point(763, 898);
             label10.Name = "label10";
             label10.Size = new Size(92, 33);
             label10.TabIndex = 119;
             label10.Text = "TIME";
+            label10.Click += label10_Click;
             // 
             // textBox3
             // 
@@ -129,7 +130,7 @@
             textBox3.BackColor = Color.FromArgb(246, 180, 71);
             textBox3.BorderStyle = BorderStyle.FixedSingle;
             textBox3.Font = new Font("Segoe UI", 26.25F);
-            textBox3.Location = new Point(279, 562);
+            textBox3.Location = new Point(279, 579);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(707, 54);
             textBox3.TabIndex = 117;
@@ -140,7 +141,7 @@
             label8.Anchor = AnchorStyles.Right;
             label8.AutoSize = true;
             label8.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
-            label8.Location = new Point(464, 522);
+            label8.Location = new Point(464, 539);
             label8.Name = "label8";
             label8.Size = new Size(342, 33);
             label8.TabIndex = 116;
@@ -152,7 +153,7 @@
             textBox2.BackColor = Color.FromArgb(246, 180, 71);
             textBox2.BorderStyle = BorderStyle.FixedSingle;
             textBox2.Font = new Font("Segoe UI", 26.25F);
-            textBox2.Location = new Point(279, 409);
+            textBox2.Location = new Point(279, 426);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(707, 54);
             textBox2.TabIndex = 115;
@@ -163,7 +164,7 @@
             label7.Anchor = AnchorStyles.Left;
             label7.AutoSize = true;
             label7.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
-            label7.Location = new Point(481, 366);
+            label7.Location = new Point(481, 383);
             label7.Name = "label7";
             label7.Size = new Size(308, 33);
             label7.TabIndex = 114;
@@ -174,7 +175,7 @@
             label6.Anchor = AnchorStyles.Top;
             label6.AutoSize = true;
             label6.Font = new Font("Yu Gothic UI", 18F);
-            label6.Location = new Point(805, 290);
+            label6.Location = new Point(805, 311);
             label6.Name = "label6";
             label6.Size = new Size(166, 32);
             label6.TabIndex = 113;
@@ -185,7 +186,7 @@
             label5.Anchor = AnchorStyles.Top;
             label5.AutoSize = true;
             label5.Font = new Font("Yu Gothic UI", 18F);
-            label5.Location = new Point(298, 287);
+            label5.Location = new Point(298, 308);
             label5.Name = "label5";
             label5.Size = new Size(133, 32);
             label5.TabIndex = 112;
@@ -196,7 +197,7 @@
             label4.Anchor = AnchorStyles.Top;
             label4.AutoSize = true;
             label4.Font = new Font("Yu Gothic UI", 18F);
-            label4.Location = new Point(552, 290);
+            label4.Location = new Point(552, 311);
             label4.Name = "label4";
             label4.Size = new Size(139, 32);
             label4.TabIndex = 111;
@@ -207,7 +208,7 @@
             label3.Anchor = AnchorStyles.Top;
             label3.AutoSize = true;
             label3.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
-            label3.Location = new Point(535, 180);
+            label3.Location = new Point(535, 201);
             label3.Name = "label3";
             label3.Size = new Size(190, 33);
             label3.TabIndex = 110;
@@ -219,7 +220,7 @@
             textBox1.BackColor = Color.FromArgb(246, 180, 71);
             textBox1.BorderStyle = BorderStyle.FixedSingle;
             textBox1.Font = new Font("Segoe UI", 26.25F);
-            textBox1.Location = new Point(279, 221);
+            textBox1.Location = new Point(279, 242);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(707, 54);
             textBox1.TabIndex = 109;
@@ -251,7 +252,7 @@
             // 
             signUpLogo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             signUpLogo.Image = (Image)resources.GetObject("signUpLogo.Image");
-            signUpLogo.Location = new Point(1020, 272);
+            signUpLogo.Location = new Point(1086, 362);
             signUpLogo.Margin = new Padding(0);
             signUpLogo.Name = "signUpLogo";
             signUpLogo.Size = new Size(630, 488);
@@ -262,7 +263,7 @@
             // panel2
             // 
             panel2.BackColor = Color.MidnightBlue;
-            panel2.Location = new Point(297, 225);
+            panel2.Location = new Point(297, 246);
             panel2.Name = "panel2";
             panel2.Size = new Size(700, 55);
             panel2.TabIndex = 127;
@@ -270,7 +271,7 @@
             // panel1
             // 
             panel1.BackColor = Color.MidnightBlue;
-            panel1.Location = new Point(293, 418);
+            panel1.Location = new Point(293, 435);
             panel1.Name = "panel1";
             panel1.Size = new Size(700, 55);
             panel1.TabIndex = 128;
@@ -278,7 +279,7 @@
             // panel3
             // 
             panel3.BackColor = Color.MidnightBlue;
-            panel3.Location = new Point(302, 571);
+            panel3.Location = new Point(302, 588);
             panel3.Name = "panel3";
             panel3.Size = new Size(700, 55);
             panel3.TabIndex = 128;
@@ -291,7 +292,7 @@
             dateTimePicker1.CalendarTrailingForeColor = Color.FromArgb(246, 180, 71);
             dateTimePicker1.Cursor = Cursors.IBeam;
             dateTimePicker1.Font = new Font("Lucida Fax", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePicker1.Location = new Point(270, 837);
+            dateTimePicker1.Location = new Point(270, 853);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(360, 30);
             dateTimePicker1.TabIndex = 131;
@@ -302,7 +303,7 @@
             comboBox1.Font = new Font("Lucida Fax", 14.25F);
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "07:00 AM - 09:00 AM", "09:00 AM - 11:00 AM", "11:00 PM - 01:00 PM", "01:00 PM - 03:00 PM", "03:00 PM - 05:00 PM", "05:00 PM - 07:00 PM", "07:00 PM - 09:00 PM", "09:00 PM - 11:00 PM" });
-            comboBox1.Location = new Point(687, 837);
+            comboBox1.Location = new Point(687, 853);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(247, 30);
             comboBox1.TabIndex = 132;
@@ -312,7 +313,7 @@
             label12.Anchor = AnchorStyles.Bottom;
             label12.AutoSize = true;
             label12.Font = new Font("Lucida Fax", 14.25F, FontStyle.Bold);
-            label12.Location = new Point(574, 907);
+            label12.Location = new Point(574, 923);
             label12.Name = "label12";
             label12.Size = new Size(117, 22);
             label12.TabIndex = 172;
@@ -324,7 +325,7 @@
             quantybox.BackColor = Color.FromArgb(246, 180, 71);
             quantybox.BorderStyle = BorderStyle.FixedSingle;
             quantybox.Font = new Font("Segoe UI", 12F);
-            quantybox.Location = new Point(546, 942);
+            quantybox.Location = new Point(546, 958);
             quantybox.Name = "quantybox";
             quantybox.Size = new Size(160, 29);
             quantybox.TabIndex = 171;
@@ -333,7 +334,7 @@
             // panel6
             // 
             panel6.BackColor = Color.MidnightBlue;
-            panel6.Location = new Point(557, 957);
+            panel6.Location = new Point(557, 973);
             panel6.Name = "panel6";
             panel6.Size = new Size(159, 30);
             panel6.TabIndex = 173;
@@ -344,7 +345,7 @@
             resType.Font = new Font("Lucida Fax", 14.25F);
             resType.FormattingEnabled = true;
             resType.Items.AddRange(new object[] { "BASKETBALL COURT", "TENT", "CHAIR", "TABLE" });
-            resType.Location = new Point(487, 730);
+            resType.Location = new Point(487, 731);
             resType.Name = "resType";
             resType.Size = new Size(302, 30);
             resType.TabIndex = 174;
@@ -355,7 +356,7 @@
             label13.Anchor = AnchorStyles.Bottom;
             label13.AutoSize = true;
             label13.Font = new Font("Lucida Fax", 21.75F, FontStyle.Bold);
-            label13.Location = new Point(462, 671);
+            label13.Location = new Point(447, 675);
             label13.Name = "label13";
             label13.Size = new Size(370, 33);
             label13.TabIndex = 175;

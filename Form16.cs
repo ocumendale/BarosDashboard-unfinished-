@@ -105,7 +105,7 @@ namespace BarosDashboard
             TimeSpan end = TimeSpan.Parse(DateTime.Parse(endTime).ToString("HH:mm:ss"));
 
             string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
-            string query = "SELECT reservation_start_time, reservation_end_time FROM basketball_court WHERE reservation_date = @reserveDate";
+            string query = "SELECT reservation_start_time, reservation_end_time FROM reservations_ WHERE reservation_date = @reserveDate";
 
             try
             {
@@ -146,7 +146,7 @@ namespace BarosDashboard
         private void GetDataFromMySQL(string selectedTimeSlot)
         {
             string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
-            string query = "INSERT INTO basketball_court (Fname, contact_num, reason, user_id, reservation_date, reservation_start_time, reservation_end_time, quantity, reservation_type) " +
+            string query = "INSERT INTO reservations_ (Fname, contact_num, reason, user_id, reservation_date, reservation_start_time, reservation_end_time, quantity, reservation_type) " +
                            "VALUES (@Fullname, @Contactnumber, @reason, @userID, @reserveDate, @startTime, @endTime, @quantity, @resType)";
 
             int userId = LoggedInUser.UserId;  // Get the user ID of the logged-in user
@@ -255,7 +255,7 @@ namespace BarosDashboard
             List<string> takenTimeSlots = new List<string>();
 
             string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
-            string query = "SELECT reservation_start_time, reservation_end_time FROM basketball_court WHERE reservation_date = @reserveDate";
+            string query = "SELECT reservation_start_time, reservation_end_time FROM reservations_ WHERE reservation_date = @reserveDate";
 
             try
             {
@@ -303,12 +303,14 @@ namespace BarosDashboard
                 label12.Hide();
                 comboBox1.Enabled = true; // Enable time slot selection for basketball court
             }
+            
             else
             {
                 quantybox.Show();
                 panel6.Show();
                 label12.Show();
-                comboBox1.Enabled = false; // Disable time slot selection for other types
+                comboBox1.Hide();
+                label10.Hide(); 
             }
         }
 
@@ -316,6 +318,11 @@ namespace BarosDashboard
         {
             this.WindowState = FormWindowState.Maximized;
             this.TopMost = true;
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

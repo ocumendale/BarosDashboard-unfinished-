@@ -23,7 +23,8 @@ namespace BarosDashboard
 
         private void qrLogin_Load(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Maximized;
+            this.TopMost = true;
         }
 
         private void qrLogin_KeyPress(object sender, KeyPressEventArgs e)
