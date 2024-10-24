@@ -206,7 +206,7 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(1236, 927);
             panel4.TabIndex = 8;
-           
+            panel4.Paint += panel4_Paint;
             // 
             // button6
             // 
@@ -221,6 +221,7 @@
             button6.TabIndex = 7;
             button6.Text = "GENERATED FILE PDF";
             button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // button5
             // 
