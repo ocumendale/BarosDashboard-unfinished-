@@ -208,6 +208,7 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(1236, 927);
             panel4.TabIndex = 14;
+            panel4.Paint += panel4_Paint;
             // 
             // GeneratePDF
             // 

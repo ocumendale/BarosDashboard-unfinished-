@@ -717,29 +717,38 @@ namespace BarosDashboard
 
         private void GeneratePDF_Click(object sender, EventArgs e)
         {
-            int userId = Convert.ToInt32(dataGridView2.SelectedRows[0].Cells["user_id"].Value);
-            string reservationType = dataGridView2.SelectedRows[0].Cells["reservation_type"].Value.ToString();
-            string RStats = dataGridView2.SelectedRows[0].Cells["reservation_status"].Value.ToString();
 
-            if (dataGridView2.SelectedRows.Count > 0 && reservationType == "TABLE" && RStats == "Accepted")
+            if (dataGridView2.SelectedRows.Count == 1)
             {
-                GenerateTablePDF(userId, reservationType);
-            }
-            else if (dataGridView2.SelectedRows.Count > 0 && reservationType == "CHAIR" && RStats == "Accepted")
-            {
-                GenerateChairPDF(userId, reservationType);
-            }
-            else if (dataGridView2.SelectedRows.Count > 0 && reservationType == "TENT" && RStats == "Accepted")
-            {
-                GenerateTentPDF(userId, reservationType);
-            }
-            else if (dataGridView2.SelectedRows.Count > 0 && reservationType == $"{reservationType}" && RStats == "Accepted")
-            {
-                GenerateBasketballPDF(userId, reservationType);
+
+                int userId = Convert.ToInt32(dataGridView2.SelectedRows[0].Cells["user_id"].Value);
+                string reservationType = dataGridView2.SelectedRows[0].Cells["reservation_type"].Value.ToString();
+                string RStats = dataGridView2.SelectedRows[0].Cells["reservation_status"].Value.ToString();
+
+                if (reservationType == "TABLE" && RStats == "Accepted")
+                {
+                    GenerateTablePDF(userId, reservationType);
+                }
+                else if (reservationType == "CHAIR" && RStats == "Accepted")
+                {
+                    GenerateChairPDF(userId, reservationType);
+                }
+                else if (reservationType == "TENT" && RStats == "Accepted")
+                {
+                    GenerateTentPDF(userId, reservationType);
+                }
+                else if (reservationType == "BASKETBALL COURT" && RStats == "Accepted") //BASKETBALL COURT ba yung nasa database? kung hindi palitan mo
+                {
+                    GenerateBasketballPDF(userId, reservationType);
+                }
+                else
+                {
+                    MessageBox.Show("This Reservation is not yet Accepted!");
+                }
             }
             else
             {
-                MessageBox.Show("This Reservation is not yet Accepted!");
+                MessageBox.Show("Please select an entire row to generate a PDF.");
             }
         }
 
@@ -774,6 +783,11 @@ namespace BarosDashboard
                 loginForm.Show();
                 this.Close();
             }
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

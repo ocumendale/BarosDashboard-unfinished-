@@ -125,7 +125,7 @@ namespace BarosDashboard
             try
             {
                 string query = @"
-            SELECT reservation_id, reservation_type, user_id, Fname, contact_num, reason, reservation_date, reservation_status
+            SELECT reservation_id, reservation_type, user_id, Fname, contact_num, reason, quantity, reservation_date, reservation_status
             FROM reservations_ 
             WHERE user_id = @userId AND reservation_type = 'TABLE';";
 
@@ -158,7 +158,7 @@ namespace BarosDashboard
             {
                 // SQL Query to select specific columns for basketball court reservations
                 string query = @"
-            SELECT reservation_id, reservation_type, user_id, Fname, contact_num, reason, reservation_date, reservation_status
+            SELECT reservation_id, reservation_type, user_id, Fname, contact_num, reason, quantity, reservation_date, reservation_status
             FROM reservations_ 
             WHERE user_id = @userId AND reservation_type = 'CHAIR';";
 
@@ -192,7 +192,7 @@ namespace BarosDashboard
             {
                 // SQL Query to select specific columns for basketball court reservations
                 string query = @"
-            SELECT reservation_id, reservation_type, user_id, Fname, contact_num, reason, reservation_date, reservation_status
+            SELECT reservation_id, reservation_type, user_id, Fname, contact_num, reason, quantity, reservation_date, reservation_status
             FROM reservations_ 
             WHERE user_id = @userId AND reservation_type = 'TENT';";
 
