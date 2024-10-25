@@ -48,8 +48,8 @@ namespace BarosDashboard
         {
             if (ValidateInputs())
             {
-                // Only check time slots for BASKETBALL COURT
-                if (resType.SelectedItem.ToString() == "BASKETBALL COURT")
+                // Ensure that resType.SelectedItem is not null before calling ToString()
+                if (resType.SelectedItem != null && resType.SelectedItem.ToString() == "BASKETBALL COURT")
                 {
                     selectedTimeSlot = comboBox1.Text; // Store the currently selected time slot
 
@@ -64,7 +64,7 @@ namespace BarosDashboard
                 MessageBox.Show("Your information has been successfully submitted!", "Submission Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Reload available time slots only for basketball court
-                if (resType.SelectedItem.ToString() == "BASKETBALL COURT")
+                if (resType.SelectedItem != null && resType.SelectedItem.ToString() == "BASKETBALL COURT")
                 {
                     LoadAvailableTimeSlots();
                 }
@@ -79,6 +79,7 @@ namespace BarosDashboard
             }
         }
 
+
         private bool IsNotNullOrWhiteSpace(string input)
         {
             return !string.IsNullOrWhiteSpace(input);
@@ -87,12 +88,26 @@ namespace BarosDashboard
         // Validate inputs based on the reservation type
         private bool ValidateInputs()
         {
-            bool isReservationTypeWithTimeSlot = resType.SelectedItem.ToString() == "BASKETBALL COURT";
+            bool isReservationTypeWithTimeSlot = resType.SelectedItem != null && resType.SelectedItem.ToString() == "BASKETBALL COURT";
 
             return IsNotNullOrWhiteSpace(textBox1.Text) &&  // Validate Fullname
                    IsNotNullOrWhiteSpace(textBox2.Text) &&  // Validate Contact number
                    IsNotNullOrWhiteSpace(textBox3.Text) &&  // Validate Reason
-                   (!isReservationTypeWithTimeSlot || IsNotNullOrWhiteSpace(comboBox1.Text)); // Only validate time slot for BASKETBALL COURT
+                   (!isReservationTypeWithTimeSlot || IsNotNullOrWhiteSpace(comboBox1.Text)) && // Only validate time slot for BASKETBALL COURT
+                   (IsValidQuantity()); // Validate quantity if necessary
+        }
+
+
+        private bool IsValidQuantity()
+        {
+            // Only validate quantity for Tent, Chair, and Table reservations
+            string reservationType = resType.SelectedItem.ToString();
+            if (reservationType == "Tent" || reservationType == "Chair" || reservationType == "Table")
+            {
+                // Check if quantity is a valid integer
+                return int.TryParse(quantybox.Text, out int quantity) && quantity > 0;
+            }
+            return true; // Valid if not relevant
         }
 
         private bool IsTimeSlotAvailable(DateTime reservationDate, string selectedTimeSlot)
@@ -185,9 +200,9 @@ namespace BarosDashboard
                         cmd.Parameters.AddWithValue("@resType", reservationType);
 
                         // If quantity is used (in cases like "Tent"), set it; otherwise set to NULL
-                        if (reservationType == "Tent" || reservationType == "Chair" || reservationType == "Table")
+                        if (reservationType == "TENT" || reservationType == "CHAIR" || reservationType == "TABLE")
                         {
-                            cmd.Parameters.AddWithValue("@quantity", quantybox.Text);
+                            cmd.Parameters.AddWithValue("@quantity", int.Parse(quantybox.Text)); // Parse to int
                         }
                         else
                         {
@@ -235,47 +250,37 @@ namespace BarosDashboard
             {
                 foreach (string timeSlot in allTimeSlots)
                 {
-                    if (!takenTimeSlots.Contains(timeSlot) && timeSlot != selectedTimeSlot)
+                    if (!takenTimeSlots.Contains(timeSlot))
                     {
                         comboBox1.Items.Add(timeSlot);
                     }
                 }
             }
-
-            button1.Enabled = comboBox1.Items.Count > 0;
-
-            if (comboBox1.Items.Count == 0)
-            {
-                MessageBox.Show("No available time slots for the selected date.", "Fully Booked", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
         }
 
-        private List<string> GetTakenTimeSlots(DateTime reservationDate)
+        private List<string> GetTakenTimeSlots(DateTime selectedDate)
         {
-            List<string> takenTimeSlots = new List<string>();
+            List<string> timeSlots = new List<string>();
 
             string connectionString = "server=localhost;uid=root;pwd=Daiki002039!;database=baros;SslMode=None;";
             string query = "SELECT reservation_start_time, reservation_end_time FROM reservations_ WHERE reservation_date = @reserveDate";
 
             try
             {
-
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@reserveDate", reservationDate);
+                        cmd.Parameters.AddWithValue("@reserveDate", selectedDate);
                         conn.Open();
 
                         using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
                             while (reader.Read())
                             {
-                                string startTime = DateTime.Parse(reader["reservation_start_time"].ToString()).ToString("hh:mm tt");
-                                string endTime = DateTime.Parse(reader["reservation_end_time"].ToString()).ToString("hh:mm tt");
-                                string takenSlot = $"{startTime} - {endTime}";
-
-                                takenTimeSlots.Add(takenSlot);
+                                string startTime = reader["reservation_start_time"].ToString();
+                                string endTime = reader["reservation_end_time"].ToString();
+                                timeSlots.Add($"{startTime} - {endTime}");
                             }
                         }
                     }
@@ -286,7 +291,7 @@ namespace BarosDashboard
                 MessageBox.Show($"Error retrieving time slots: {ex.Message}");
             }
 
-            return takenTimeSlots;
+            return timeSlots;
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -296,33 +301,31 @@ namespace BarosDashboard
 
         private void resType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (resType.SelectedItem.ToString() == "BASKETBALL COURT")
+            if (resType.SelectedItem != null && resType.SelectedItem.ToString() == "BASKETBALL COURT")
             {
-                quantybox.Hide();
-                panel6.Hide();
-                label12.Hide();
-                comboBox1.Enabled = true; // Enable time slot selection for basketball court
+                quantybox.Hide();          // Hide the quantity input
+                panel6.Hide();             // Hide the quantity panel
+                label12.Hide();            // Hide the quantity label
+
+                comboBox1.Show();          // Ensure the combo box is shown
+                comboBox1.Enabled = true;  // Enable time slot selection for basketball court
+                label10.Show();            // Ensure the label for the combo box (if any) is also shown
             }
-            
             else
             {
-                quantybox.Show();
-                panel6.Show();
-                label12.Show();
-                comboBox1.Hide();
-                label10.Hide(); 
+                quantybox.Show();          // Show the quantity input
+                panel6.Show();             // Show the quantity panel
+                label12.Show();            // Show the quantity label
+
+                comboBox1.Hide();          // Hide the combo box
+                label10.Hide();            // Hide the label for the combo box (if any)
             }
         }
 
-        private void FormBas_Load_1(object sender, EventArgs e)
+        private void FormRes_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
             this.TopMost = true;
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

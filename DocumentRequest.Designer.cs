@@ -85,6 +85,7 @@
             reg_btn.Text = "REGISTRATION";
             reg_btn.TextAlign = ContentAlignment.MiddleLeft;
             reg_btn.UseVisualStyleBackColor = true;
+            reg_btn.Click += reg_btn_Click;
             // 
             // signout
             // 
@@ -98,6 +99,7 @@
             signout.Text = "SIGN OUT";
             signout.TextAlign = ContentAlignment.MiddleLeft;
             signout.UseVisualStyleBackColor = true;
+            signout.Click += signout_Click;
             // 
             // ResAssist
             // 

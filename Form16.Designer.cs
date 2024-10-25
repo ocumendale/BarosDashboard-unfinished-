@@ -122,7 +122,6 @@
             label10.Size = new Size(92, 33);
             label10.TabIndex = 119;
             label10.Text = "TIME";
-            label10.Click += label10_Click;
             // 
             // textBox3
             // 
@@ -398,7 +397,7 @@
             Name = "FormRes";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "RESERVATIONS";
-            Load += FormBas_Load_1;
+            Load += FormRes_Load;
             ((System.ComponentModel.ISupportInitialize)signUpLogo).EndInit();
             ResumeLayout(false);
             PerformLayout();

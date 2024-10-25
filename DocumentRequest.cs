@@ -177,7 +177,7 @@ namespace BarosDashboard
                 // If the document type is 'BARANGAY ID', retrieve all columns
                 if (typeOfDocu == "BARANGAY ID")
                 {
-                    query = $"SELECT * FROM request_ WHERE typeOfDocu = '{typeOfDocu}';";
+                    query = $"SELECT user_id, brgyid_id, typeofDocu, Fname, contact_num, home, reason, precinct_number, height, weight, blood_type, birthday, sex, civil_status, emergency_contact_name, emergency_contact_number, yrsofrecidency, request_status  FROM request_ WHERE typeOfDocu = '{typeOfDocu}';";
                 }
                 else
                 {
@@ -1062,6 +1062,25 @@ namespace BarosDashboard
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void reg_btn_Click(object sender, EventArgs e)
+        {
+            reg_approval reg = new reg_approval();
+            reg.Show();
+            this.Hide();
+        }
+
+        private void signout_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                login loginForm = new login();
+                loginForm.Show();
+                this.Close();
+            }
         }
     }
 }
